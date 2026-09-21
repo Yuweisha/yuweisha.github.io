@@ -1,8 +1,156 @@
-<html>
-<head>
-    <title>Yuweisha Mainpage</title>
-</head>
-<body>
-    <h1>THIS IS A PLACE HOLDER</h1>
-</body>
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Yuweisha · GitHub Profile</title>         
+        <meta name="description" content="Yuweisha 的个人主页"> 
+        <meta name="author" content="Yuweisha"> 
+        <link rel="stylesheet" href="style.css"> 
+    </head>     
+    <body> 
+        <!-- =========================
+     GitHub-style Header
+========================== -->         
+        <header class="site-header"> 
+            <div class="header-inner">                                   
+                <a href="index.html"><img src="rounded_icon_clipped.svg"/></a>
+                <nav class="header-nav"> 
+                    <a href="#about">About</a> 
+                    <a href="#projects">Projects</a> 
+                    <a href="#blog">Blog</a> 
+                </nav>                 
+            </div>             
+        </header>         
+        <!-- =========================
+     Main Profile
+========================== -->         
+        <main class="profile-layout"> 
+            <!-- =========================
+         Left Profile Column
+    ========================== -->             
+            <aside class="profile-sidebar" style="grid-area:1 / 1 / 2 / 2;"> 
+                <div class="avatar-wrapper"> 
+                    <!--
+                将下面的 avatar.svg 替换成你的头像。
+                例如：
+                <img src="assets/avatar.jpg" ...>
+            -->                     
+                    <img class="avatar" src="https://avatars.akamai.steamstatic.com/75cc1307290c978b444eb522ee25a243378cdf2a_full.jpg" alt="Yuweisha avatar"> 
+                </div>                 
+                <h1 class="profile-name">Yuweisha</h1> 
+                <p class="profile-username">@Yuweisha<br>别称:(Sato、Kita、Rice、Saileach)</p> 
+                <!-- ===== 修改这里 ===== -->                 
+                <p class="profile-bio"> 
+            这里填写你的个人简介。
+            可以写你正在做什么、喜欢什么，或者你希望别人如何认识你。 </p> 
+                <button class="edit-profile" type="button"> 
+                    Edit profile
+</button>                 
+                <div class="profile-links"> 
+                    <!-- ===== 修改这里 ===== -->                     
+                    <div class="profile-item"> 
+                        <span class="item-icon">📍</span> 
+                        <span>China</span> 
+                    </div>                     
+                    <div class="profile-item"> 
+                        <span class="item-icon">🔗</span> 
+                        <a href="https://github.com/Yuweisha" target="_blank" rel="noopener"> 
+                    github.com/Yuweisha </a> 
+                    </div>                     
+                    <!-- ===== 修改这里 ===== -->                     
+                    <div class="profile-item"> 
+                        <span class="item-icon">📧</span> 
+                        <a href="mailto:your@email.com">24511207@qq.com</a> 
+                    </div>
+                    <div class="profile-item"> 
+                        <span class="item-icon">🐧</span> 
+                        <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=24511207">QQ: 24511207</a>
+                    </div>
+                    <div class="profile-item"> 
+                        <span class="item-icon"><img src="https://yuweisha.github.io/Storage/steamicon.png"><br></span>
+                        <a href="https://steamcommunity.com/id/Yuweisha/">https://steamcommunity.com/id/Yuweisha/</a>                          
+                    </div>                     
+                </div>                                  
+            </aside>             
+            <!-- =========================
+         Right Content Column
+    ========================== -->             
+            <section class="profile-content"> 
+                <!-- =========================
+             Navigation Tabs
+        ========================== -->                 
+                <nav class="profile-tabs"> 
+                    <a class="active" href="#overview"><span>ℹ️</span>
+                总览</a>                      
+                    <a href="#blog"><span>🗂️</span>
+                日志</a> 
+                </nav>                 
+                <!-- =========================
+             About
+        ========================== -->                 
+                <section id="about" class="content-section"> 
+                    <div class="section-heading"> 
+                        <h2>关于我</h2> 
+                    </div>                     
+                    <div class="about-box"> 
+                        <!-- ===== 修改这里 ===== -->                         
+                        <p>你好，我是 <strong>Yuweisha</strong>。欢迎访问！</p> 
+                        <p>这是我的个人主页，目前仍然在施工当中。</p> 
+                        <p>这里是占位符<br><br><br><br><br><br><br><br><br><br></p> 
+                    </div>                     
+                </section>                 
+                <!-- =========================
+             Popular Repositories
+        ========================== -->                                  
+                <!-- =========================
+             Blog / Notes
+        ========================== -->                 
+                <section id="blog" class="content-section"> 
+                    <div class="section-heading"> 
+                        <h2>笔记和日志</h2> 
+                    </div>                     
+                    <div class="blog-list"> 
+                        <article class="blog-item"> 
+                            <time datetime="2026-09-21">Jan 01, 1970</time>                             
+                            <div> 
+                                <a href="#">PlaceHolder</a> 
+                                <p>PlaceHolder</p> 
+                            </div>                             
+                        </article>                         
+                        <article class="blog-item"> 
+                            <time datetime="2026-09-01">Jan 01, 1970</time>                             
+                            <div> 
+                                <a href="#">PlaceHolder</a> 
+                                <p>PlaceHolder</p> 
+                            </div>                             
+                        </article>                         
+                        <article class="blog-item"> 
+                            <time datetime="2026-08-15">Jan 01, 1970</time>                             
+                            <div> 
+                                <a href="#">PlaceHolder</a> 
+                                <p>PlaceHolder</p> 
+                            </div>                             
+                        </article>                         
+                    </div>                     
+                </section>                 
+                <!-- =========================
+             Skills
+        ========================== -->                                  
+                <!-- =========================
+             Footer
+        ========================== -->                 
+                <footer class="site-footer"> 
+                    <div> 
+                        © 2026 Yuweisha
+</div>                     
+                    <div class="footer-links"> 
+                        <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a> 
+                        <a href="#top"> 
+                    Back to top </a> 
+                    </div>                     
+                </footer>                 
+            </section>             
+        </main>         
+    </body>     
 </html>
