@@ -65,7 +65,6 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
 <div class="wrap">
   <div class="title">UMA Offline Mixer · 混音工具
 </div>
-  <div class="sub">V2.2 的修正版：支持「生成器直送工程」、按文件元数据精确裁剪编码延迟、支持 muted/solo/startOffsetMs、StereoPannerNode、并发下载与进度</div>
 
   <div id="handoff" class="note" style="display:none"></div>
 
@@ -93,10 +92,6 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
       <label class="check"><input id="localMedia" type="checkbox"> 本地媒体优先（data/media/…）</label>
     </div>
 
-    <div style="margin-top:12px" class="small">
-      资源解析优先级：track.media 绝对 URL → 本地镜像（勾选时）→ 媒体基址（留空则取 JSON URL 的 origin）。
-      JSON 直连失败时会尝试公共 CORS 代理；音频（/media/…）本身带 <code>Access-Control-Allow-Origin: *</code>，可直接跨域。
-    </div>
   </div>
 
   <div id="summary" class="card" style="display:none">
@@ -177,9 +172,9 @@ async function fetchProject(url){
       const r=await fetch(t.u,{cache:"no-store",signal:ctl.signal});clearTimeout(to);
       if(!r.ok)throw new Error("HTTP "+r.status);
       const x=jsonAuto(new Uint8Array(await r.arrayBuffer()));
-      if(t.name==="proxy")log("via proxy OK: "+t.u.slice(0,80)+"…");
+      if(t.name==="proxy")log("代理可用："+t.u.slice(0,80)+"…");
       return x.obj;
-    }catch(e){lastErr=e;log("fetch ["+t.name+"] 失败: "+t.u.slice(0,80)+"… → "+e.message)}
+    }catch(e){lastErr=e;log((t.name==="proxy"?"代理":"直连")+"获取失败："+t.u.slice(0,80)+"… → "+e.message)}
   }
   throw lastErr||new Error("Failed to fetch");
 }
@@ -191,7 +186,7 @@ function resolveMedia(raw){
   raw=String(raw).trim();
   if(isAbs(raw))return raw;
   const p=raw.replace(/^\/+/,"");
-  if($("localMedia").checked)return "data/media/"+p;      // 与 tools/fetch_stems.py 的落地目录一致（失败会自动回落）
+  if($("localMedia").checked)return "data/"+p;            // p 已含 media/…；与 fetch_all_audio.py 的落盘目录一致（失败自动回落）
   if(baseUrl)return new URL(raw,baseUrl).href;
   try{const u=new URL(projectUrl);return new URL(raw,u.origin+"/").href}catch{return raw}
 }
@@ -257,19 +252,19 @@ async function preload(){
     while(idx<list.length){
       const i=idx++, t=list[i];
       const rem=resolveMedia(t.media);
-      const local="data/media/"+sinkIndex(t);
+      const local="data/"+sinkIndex(t);                   // data/media/live/<曲>/…（sinkIndex 已含 media/…）
       const urls=$("localMedia").checked?[local,rem,(baseUrl||"https://uma.0xcjy.top/")+sinkIndex(t)]:[rem,(baseUrl||"https://uma.0xcjy.top/")+sinkIndex(t)];
       const st=$("ts-"+i), ue=$("tu-"+i);
       ue.textContent=urls[0]||"(无 URL)";
       try{
         if(!rem)throw new Error("没有可识别的音频 URL");
-        st.textContent="loading";
+        st.textContent="载入中";
         const b=await fetchFirstOk(urls.filter(Boolean),t.stream,ctx);
         buffers.set(t.id,b);ok++;
         st.textContent=b.duration.toFixed(3)+" s"+(t.stream&&t.stream.sampleRate!==b.sampleRate?" (⚠ "+b.sampleRate+"Hz)":"");
         st.className="small ok";
       }catch(e){
-        st.textContent="ERROR";st.className="small err";log("Track "+t.id+"("+t.name+"): "+e.message);
+        st.textContent="失败";st.className="small err";log("轨道 "+t.id+"（"+t.name+"）："+e.message);
       }
       done++;$("loaded").textContent=ok+" / "+list.length;
     }
@@ -280,12 +275,12 @@ async function preload(){
   buffers.forEach(b=>{if(b.length>maxLen)maxLen=b.length});
   const measured=maxLen/sampleRate;
   if(measured>0&&Math.abs(measured-durationSec)>0.004){
-    log("实测最长轨 "+maxLen+" samples = "+measured.toFixed(3)+" s；工程声明 "+durationSec.toFixed(3)
-        +" s（可能是默认选角的参考值）→ 采用实测值（与官方口径一致：返回轨道的最长者）");
+    log("实测最长轨 "+maxLen+" 个采样 = "+measured.toFixed(3)+" 秒；工程声明 "+durationSec.toFixed(3)
+        +" 秒（可能是默认选角的参考值）→ 采用实测值（与官方口径一致：返回轨道的最长者）");
     durationSec=measured;$("dur").textContent=fmt(durationSec);$("total").textContent=fmt(durationSec);$("seek").max=durationSec;
   }
   await ctx.close();
-  log("Audio preload: "+ok+" / "+list.length);
+  log("音频预载完成："+ok+" / "+list.length+" 轨");
 }
 
 /* ---------- 加载工程 ---------- */
@@ -346,9 +341,9 @@ async function loadProject(){
       box.appendChild(el);
     });
 
-    log("Project: "+project.tracks.length+" tracks / "+sampleRate+" Hz / "+(durationSec?durationSec.toFixed(3)+" s":"时长待实测"));
+    log("工程："+project.tracks.length+" 轨 / "+sampleRate+" Hz / "+(durationSec?durationSec.toFixed(3)+" 秒":"时长待实测"));
     await preload();
-  }catch(e){log("ERROR: "+(e.stack||e));alert(e.message||String(e))}
+  }catch(e){log("错误："+(e.stack||e));alert(e.message||String(e))}
   finally{$("load").disabled=false;$("loadLocal").disabled=false}
 }
 
@@ -427,9 +422,9 @@ async function playPlayback(){
     const g=createTrackGraph(audioCtx,b,t,durationSec,smooth);
     g.last.connect(masterGain);graph.push(g);
     const off=start-g.startOffsetSec;
-    if(off<0){ try{g.src.start(when-off,0)}catch(e){log("start "+t.id+": "+e.message)} continue; }
+    if(off<0){ try{g.src.start(when-off,0)}catch(e){log("轨道 "+t.id+" 启动失败："+e.message)} continue; }
     if(off>=b.duration)continue;
-    try{g.src.start(when,off)}catch(e){log("start "+t.id+": "+e.message)}
+    try{g.src.start(when,off)}catch(e){log("轨道 "+t.id+" 启动失败："+e.message)}
   }
   startedAt=when;pausedAt=start;
   await audioCtx.resume();
@@ -486,7 +481,7 @@ async function renderOffline(){
   a.click();
   setTimeout(()=>URL.revokeObjectURL(a.href),4000);
   $("exportStatus").textContent="完成 "+(blob.size/1048576).toFixed(2)+" MB";
-  log("WAV exported: "+a.download+" ("+(blob.size/1048576).toFixed(2)+" MB"+(sixteen?", 16-bit":", 32-bit float")+")");
+  log("已导出 WAV："+a.download+"（"+(blob.size/1048576).toFixed(2)+" MB，"+(sixteen?"16-bit PCM":"32-bit 浮点")+"）");
 }
 function exportBaseName(){
   try{
@@ -543,7 +538,7 @@ $("seek").oninput=e=>{pausedAt=Number(e.target.value);$("current").textContent=f
 $("seek").onchange=e=>seekTo(e.target.value);
 $("export").onclick=async()=>{
   $("export").disabled=true;
-  try{await renderOffline()}catch(e){$("exportStatus").textContent="失败";log("EXPORT ERROR: "+(e.stack||e));alert(e.message||String(e))}
+  try{await renderOffline()}catch(e){$("exportStatus").textContent="失败";log("导出失败："+(e.stack||e));alert(e.message||String(e))}
   finally{$("export").disabled=false}
 };
 
@@ -573,7 +568,7 @@ $("export").onclick=async()=>{
     }
   }
   if(auto&&localStorage.getItem("uma.project"))$("loadLocal").click();
-  log("混音工具 ready.（V2.2 的修正版：裁剪/自动化/声道/进度）");
+  log("混音工具 已就绪");
 })();
 </script>
 </body>

@@ -357,8 +357,7 @@
         return kv[0] + "=" + (c ? C.characterName(c) : kv[1]);
       }).join("、") + "）</span>" +
       "<b>平衡补偿</b><span>" + (balance ? "开（×N^(-1/3)）" : "关") + "</span>" +
-      "<b>时长</b><span>" + (durMs ? durMs + " ms" + (manual ? "（手动覆盖）" : "（按当前选角精算 = 官方口径）")
-        : "未设置（缺少 streams.json，需先在混音器里实测）") + "</span>";
+      "<b>时长</b><span>" + (durMs ? (durMs / 1000).toFixed(3) + " 秒" : "未设置") + "</span>";
     var json = JSON.stringify(current, null, 1);
     $("jsonPreview").textContent = json.length > 12000 ? json.slice(0, 12000) + "\n… （预览截断，下载得到完整 JSON）" : json;
   }
@@ -396,12 +395,6 @@
     } catch (e) {
       $("outMsg").textContent = "写入 localStorage 失败：" + e.message;
     }
-  }
-
-  function apiUrl() {
-    var u = C.projectQueryUrl(SITE, detail.musicId, cast, bgmId, balance);
-    if (navigator.clipboard) navigator.clipboard.writeText(u);
-    $("outMsg").innerHTML = "已复制官方 API URL（浏览器直连会被 CORS 拦，仅作核对/本地代理用）：<br><code>" + esc(u) + "</code>";
   }
 
   /** 实测校准：下载所选全部音频并解码，取最长者作为工程时长（官方 durationMs 口径） */
@@ -449,7 +442,6 @@
     $("btnDownload").onclick = download;
     $("btnCopy").onclick = copyJSON;
     $("btnMixer").onclick = sendToMixer;
-    $("btnApiUrl").onclick = apiUrl;
     $("btnCalibrate").onclick = calibrate;
     $("balance").addEventListener("change", function (e) { balance = e.target.checked; build(); });
     $("durInput").addEventListener("input", function () { durManual = true; });
