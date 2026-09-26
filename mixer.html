@@ -36,6 +36,15 @@ input:focus,textarea:focus{border-color:var(--accent)}.small{font-size:12px;colo
 .switch input{width:15px;height:15px;margin:0;accent-color:var(--accent);cursor:pointer}
 .switch:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
 .switch:has(input:checked) span{color:var(--accent-strong);font-weight:650}
+/* 歌词卡：逐行高亮 + 跟随滚动 */
+#lyrics{max-height:240px;overflow:auto}
+#lyrics p{margin:0;padding:7px 10px;border-radius:8px;color:var(--muted);line-height:1.45;cursor:pointer;transition:background .15s}
+#lyrics p .ja{display:block;font-size:14px}
+#lyrics p .zh{display:block;font-size:12.5px;color:var(--muted)}
+#lyrics p:hover{background:var(--panel2)}
+#lyrics p.active{background:var(--accent-soft);color:var(--text);box-shadow:inset 3px 0 0 var(--accent)}
+#lyrics p.active .zh{color:var(--accent-strong);font-weight:600}
+
 /* 底栏：与主页同款（固定贴底、半透明 + 模糊，始终可见） */
 .site-footer{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:12px max(20px,calc((100% - 1220px)/2 + 18px));background:rgba(246,248,250,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--line-light);box-shadow:0 -1px 3px rgba(31,35,40,.04);color:var(--muted);font-size:12px}
 .footer-links{display:flex;gap:18px}
@@ -122,6 +131,7 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
       <button id="play" class="btn primary">▶ 播放</button>
       <button id="pause" class="btn">⏸ 暂停</button>
       <button id="export" class="btn">导出 WAV</button>
+      <button id="exportMp3" class="btn">导出 MP3 · 320k</button>
       <label class="switch"><input id="wav16" type="checkbox"><span>16-bit PCM（默认 32-bit float）</span></label>
       <span id="exportStatus" class="small"></span>
     </div>
@@ -132,6 +142,14 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
     <div id="tracks" class="trackbox"></div>
   </div>
 
+  <div id="lyricsCard" class="card" style="display:none">
+    <div class="row" style="justify-content:space-between">
+      <div style="font-weight:700">歌词</div>
+      <span id="lyricsStat" class="small"></span>
+    </div>
+    <div id="lyrics"></div>
+  </div>
+
   <div class="card">
     <div style="font-weight:700;margin-bottom:10px">Log</div>
     <pre id="log"></pre>
@@ -139,6 +157,7 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
 </div>
 
 <script src="js/core.js"></script>
+<script src="js/lame.min.js"></script>
 <script>
 "use strict";
 const $=id=>document.getElementById(id);
@@ -209,10 +228,8 @@ function trimPlan(buffer,stream){
     const already=Math.abs(buffer.length-1-(durSamples-delay-pad))<=2;
     if(already&&!untrimmed){log("  浏览器已自动去 gapless 填充，本次跳过裁剪");return{head:0,tail:0}}
   }
-  // 官方 decoder 的 decodedSampleCount = 全部帧×1152；对拍：6643584 = 5767×1152（文件无 Xing/LAME 标签）
-  if(stream&&stream.decodedSampleCount&&Math.abs(buffer.length-stream.decodedSampleCount)>2){
-    log("  解码长度 "+buffer.length+" ≠ 官方 decodedSampleCount "+stream.decodedSampleCount+"，按比例保守裁剪");
-  }
+  // 官方 decodedSampleCount 按 MP3 整帧计（帧数×1152），浏览器解码会丢掉编码首尾填充：
+  // 实测各曲差 2643~3042 采样（55~63 ms），属正常现象，且不影响裁剪口径，故不再打印提示。
   return{head:delay,tail:pad};
 }
 async function decodeAudio(ctx,url,stream,retry=3){
@@ -258,7 +275,7 @@ async function preload(){
     while(idx<list.length){
       const i=idx++, t=list[i];
       const rem=resolveMedia(t.media);
-      const urls=[rem,(baseUrl||"https://uma.0xcjy.top/")+sinkIndex(t)];
+      const urls=[rem,(baseUrl||C.mediaBaseDefault())+sinkIndex(t)];
       const st=$("ts-"+i), ue=$("tu-"+i);
       ue.textContent=urls[0]||"(无 URL)";
       try{
@@ -280,8 +297,7 @@ async function preload(){
   buffers.forEach(b=>{if(b.length>maxLen)maxLen=b.length});
   const measured=maxLen/sampleRate;
   if(measured>0&&Math.abs(measured-durationSec)>0.004){
-    log("实测最长轨 "+maxLen+" 个采样 = "+measured.toFixed(3)+" 秒；工程声明 "+durationSec.toFixed(3)
-        +" 秒（可能是默认选角的参考值）→ 采用实测值（与官方口径一致：返回轨道的最长者）");
+    log("实测最长轨 "+maxLen+" 个采样 = "+measured.toFixed(3)+" 秒；工程声明 "+durationSec.toFixed(3)+" 秒");
     durationSec=measured;$("dur").textContent=fmt(durationSec);$("total").textContent=fmt(durationSec);$("seek").max=durationSec;
   }
   await ctx.close();
@@ -305,6 +321,7 @@ function keepOrphans(p){
 async function loadProject(){
   $("load").disabled=true; $("loadLocal").disabled=true;
   $("summary").style.display=$("player").style.display=$("tracksCard").style.display="none";
+    $("lyricsCard").style.display="none";
   buffers.clear(); disconnectGraph();
   try{
     projectUrl=$("projectUrl").value.trim();
@@ -348,6 +365,8 @@ async function loadProject(){
 
     log("工程："+project.tracks.length+" 轨 / "+sampleRate+" Hz / "+(durationSec?durationSec.toFixed(3)+" 秒":"时长待实测"));
     await preload();
+    $("lyricsCard").style.display="";
+    await loadLyrics();
   }catch(e){log("错误："+(e.stack||e));alert(e.message||String(e))}
   finally{$("load").disabled=false;$("loadLocal").disabled=false}
 }
@@ -411,6 +430,7 @@ function tick(){
   const p=position();
   $("current").textContent=fmt(p);
   if(document.activeElement!==$("seek"))$("seek").value=p;
+  syncLyrics(p);
   if(p>=durationSec-.002&&audioCtx?.state==="running"){pausePlayback();pausedAt=durationSec}
   raf=requestAnimationFrame(tick);
 }
@@ -449,11 +469,13 @@ function stopPlayback(){
 async function seekTo(v){
   pausedAt=Math.max(0,Math.min(durationSec,Number(v)));
   $("current").textContent=fmt(pausedAt);
+  syncLyrics(pausedAt);         // 拖动/点歌词后立即换高亮，不用等播放
   if(audioCtx?.state==="running")await playPlayback();
 }
 
 /* ---------- 导出 ---------- */
-async function renderOffline(){
+/* 渲染工程到 AudioBuffer（WAV 与 MP3 导出共用） */
+async function renderProjectBuffer(){
   if(!project||!buffers.size)throw new Error("没有可渲染的工程");
   if(!(durationSec>0))throw new Error("时长未知");
   const frames=Math.ceil(durationSec*sampleRate);
@@ -476,7 +498,12 @@ async function renderOffline(){
     n++;
   }
   $("exportStatus").textContent="渲染 "+n+" 条轨道…";
-  const rendered=await off.startRendering();
+  return await off.startRendering();
+}
+/* WAV 导出 */
+async function renderOffline(){
+  $("exportStatus").textContent="渲染…";
+  const rendered=await renderProjectBuffer();
   $("exportStatus").textContent="编码 WAV…";
   const sixteen=$("wav16").checked;
   const blob=new Blob([audioBufferToWav(rendered,sixteen)],{type:"audio/wav"});
@@ -488,6 +515,91 @@ async function renderOffline(){
   $("exportStatus").textContent="完成 "+(blob.size/1048576).toFixed(2)+" MB";
   log("已导出 WAV："+a.download+"（"+(blob.size/1048576).toFixed(2)+" MB，"+(sixteen?"16-bit PCM":"32-bit 浮点")+"）");
 }
+/* ---------- MP3（320 kbps CBR）导出 ---------- */
+function floatToInt16(f){
+  const n=f.length,out=new Int16Array(n);
+  for(let i=0;i<n;i++){const v=f[i]<-1?-1:(f[i]>1?1:f[i]);out[i]=v<0?v*32768:v*32767}
+  return out;
+}
+async function exportMp3(){
+  if(typeof lamejs==="undefined"||!lamejs.Mp3Encoder)throw new Error("MP3 编码器未载入（js/lame.min.js）");
+  const rendered=await renderProjectBuffer();
+  const sr=rendered.sampleRate;
+  const ch0=floatToInt16(rendered.getChannelData(0)),ch1=floatToInt16(rendered.getChannelData(1));
+  const enc=new lamejs.Mp3Encoder(2,sr,320);          // 320 kbps CBR
+  const step=1152*32,parts=[];
+  for(let i=0;i<ch0.length;i+=step){
+    const b=enc.encodeBuffer(ch0.subarray(i,i+step),ch1.subarray(i,i+step));
+    if(b.length)parts.push(new Uint8Array(b));
+    if((i/step)%8===0){
+      $("exportStatus").textContent="编码 MP3 … "+Math.min(100,Math.round(i/ch0.length*100))+"%";
+      await new Promise(r=>setTimeout(r,0));           // 让出主线程，进度能刷新
+    }
+  }
+  const tail=enc.flush();if(tail.length)parts.push(new Uint8Array(tail));
+  const blob=new Blob(parts,{type:"audio/mpeg"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=exportBaseName()+".mp3";
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+  $("exportStatus").textContent="完成 "+(blob.size/1048576).toFixed(2)+" MB";
+  log("已导出 MP3："+a.download+"（"+(blob.size/1048576).toFixed(2)+" MB，320 kbps / "+sr+" Hz）");
+}
+
+/* ---------- 歌词 ---------- */
+let lyricLines=[],lyricIdx=-1;
+function musicIdOf(){
+  if(project&&project._uma&&project._uma.musicId)return project._uma.musicId;   // 生成器直送的工程
+  if(project&&project.musicId)return project.musicId;
+  if(project&&project.id){                                                     // 官方 API 的工程：id = live-1001
+    const m=String(project.id).match(/live-(\d+)/);if(m)return m[1];
+  }
+  try{const m=new URL(projectUrl,location.href).searchParams.get("musicId");if(m)return m}catch{}
+  return null;
+}
+async function loadLyrics(){
+  lyricLines=[];lyricIdx=-1;
+  const box=$("lyrics");box.innerHTML="";
+  const id=musicIdOf();
+  if(!id){box.innerHTML='<div class="small">这份工程里没有曲目 id，无法匹配歌词</div>';return}
+  let data=null;
+  for(const url of ["data/live/songs/"+id+".json","https://uma.0xcjy.top/data/live/songs/"+id+".json"]){
+    try{const r=await fetch(url,{cache:"force-cache"});if(r.ok){data=await r.json();break}}catch{}
+  }
+  const ly=data&&data.lyrics;
+  if(!ly||!Object.keys(ly).length){
+    box.innerHTML='<div class="small">曲目 '+esc(id)+' 没有歌词资料</div>';
+    log("歌词：曲目 "+id+" 无资料");return;
+  }
+  lyricLines=Object.keys(ly).map(Number).filter(n=>Number.isFinite(n)).sort((a,b)=>a-b).map(ms=>{
+    const parts=String(ly[ms]).split("\n");
+    return {ms:ms,ja:parts[0]||"",zh:parts[1]||""};
+  });
+  box.innerHTML=lyricLines.map((l,i)=>'<p data-i="'+i+'"><span class="ja">'+esc(l.ja)+'</span>'
+    +(l.zh?'<span class="zh">'+esc(l.zh)+'</span>':"")+'</p>').join("");
+  box.querySelectorAll("p").forEach(el=>{
+    el.onclick=()=>{const l=lyricLines[Number(el.dataset.i)];if(l&&durationSec>0)seekTo(l.ms/1000)};
+  });
+  $("lyricsStat").textContent="—";
+  log("歌词已载入："+lyricLines.length+" 行（点击任一行可跳到该句）");
+}
+function syncLyrics(p){
+  if(!lyricLines.length)return;
+  let idx=-1;
+  for(let i=0;i<lyricLines.length;i++){if(lyricLines[i].ms/1000<=p+0.02)idx=i;else break}
+  if(idx===lyricIdx)return;
+  const ps=$("lyrics").querySelectorAll("p");
+  if(lyricIdx>=0&&ps[lyricIdx])ps[lyricIdx].classList.remove("active");
+  lyricIdx=idx;
+  if(idx>=0&&ps[idx]){
+    ps[idx].classList.add("active");
+    const box=$("lyrics");
+    box.scrollTop=ps[idx].offsetTop-box.clientHeight/2+ps[idx].offsetHeight/2;
+  }
+  $("lyricsStat").textContent=idx>=0?(idx+1)+" / "+lyricLines.length:"—";
+}
+
 function exportBaseName(){
   try{
     const h=JSON.parse(localStorage.getItem("uma.handoff")||"null");
@@ -541,6 +653,11 @@ $("pause").onclick=pausePlayback;
 $("stop").onclick=stopPlayback;
 $("seek").oninput=e=>{pausedAt=Number(e.target.value);$("current").textContent=fmt(pausedAt)};
 $("seek").onchange=e=>seekTo(e.target.value);
+$("exportMp3").onclick=async()=>{
+  $("exportMp3").disabled=true;
+  try{await exportMp3()}catch(e){$("exportStatus").textContent="失败";log("导出失败："+(e.stack||e));alert(e.message||String(e))}
+  finally{$("exportMp3").disabled=false}
+};
 $("export").onclick=async()=>{
   $("export").disabled=true;
   try{await renderOffline()}catch(e){$("exportStatus").textContent="失败";log("导出失败："+(e.stack||e));alert(e.message||String(e))}
@@ -568,7 +685,7 @@ $("export").onclick=async()=>{
       el.style.display="none";
     };
     if(!$("baseUrl").value){
-      var mb=handoff.mediaBase||"https://uma.0xcjy.top/";
+      var mb=handoff.mediaBase||C.mediaBaseDefault();
       $("baseUrl").value=mb.endsWith("/")?mb:mb+"/";
     }
   }

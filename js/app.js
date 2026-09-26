@@ -10,11 +10,13 @@
   var C = window.UmaCore;
   var $ = function (id) { return document.getElementById(id); };
 
-  var SITE = "https://uma.0xcjy.top";      // 音频源站（/media 带 ACAO:*）
+  var SITE = C.mediaBaseDefault();         // 音频源站：默认官方站；core.js 里 MEDIA_BASE_DEFAULT 可整站切到 R2
   var DATA = "data/live/";                 // 本站镜像数据目录
 
   var catalog = null, durations = {}, streams = {}, samples = {}, rates = {}, detail = null, curSong = null;
   var bgmId = null, balance = true, cast = [];   // cast = [[slot, charaId], ...]
+  /* 全曲同一角色：开启后所有槽位改用同一个角色；castBefore 记录开启前的逐槽选角以便还原 */
+  var sameCharId = null, castBefore = null;
   var durManual = false;                         // 时长输入框是否被用户手动改过（否则按 streams 精算）
   var openCombo = null;
 
@@ -148,6 +150,7 @@
     sel.onchange = function () { bgmId = sel.value; syncDuration(); build(); };
 
     syncDuration();
+    renderSameChar();
     renderSlots();
     build();
   }
@@ -196,6 +199,11 @@
     return hit ? Number(hit[1]) : null;
   }
   function setCast(slot, charaId) {
+    if (sameCharId) {
+      sameCharId = null; castBefore = null;
+      var sel0 = $("sameCharSel"); if (sel0) { sel0.value = ""; sel0.classList.remove("on"); }
+      setSameCharMsg("手动改了某个槽位，已退出「全曲同一角色」");
+    }
     cast = cast.map(function (kv) { return kv[0] === slot ? [slot, Number(charaId)] : kv; });
     renderSlots();
     build();
@@ -208,10 +216,65 @@
     openCombo = null;
   }
 
+  /* ---------------- 全曲同一角色 ---------------- */
+
+  function setSameCharMsg(t) { var el = $("sameCharMsg"); if (el) el.textContent = t || ""; }
+
+  function nameOfChara(id) {
+    var hit = (detail.characters || []).find(function (c) { return Number(c.charaId) === Number(id); });
+    return hit ? C.characterName(hit) : "chara " + id;
+  }
+
+  /** 下拉选项 = 本曲可用角色；换曲后若上次那位不在阵容里则自动退出 */
+  function renderSameChar() {
+    var sel = $("sameCharSel");
+    if (!sel) return;
+    var chs = detail.characters || [];
+    sel.innerHTML = '<option value="">（关闭）每个槽位单独选角</option>' +
+      chs.map(function (c) {
+        return '<option value="' + c.charaId + '">' + esc(C.characterName(c)) + "</option>";
+      }).join("");
+    var ids = chs.map(function (c) { return Number(c.charaId); });
+    if (sameCharId && ids.indexOf(Number(sameCharId)) < 0) {
+      sameCharId = null; castBefore = null;
+      sel.value = ""; sel.classList.remove("on");
+      setSameCharMsg("本曲阵容里没有上次那位角色，已退出「全曲同一角色」");
+      return;
+    }
+    sel.value = sameCharId ? String(sameCharId) : "";
+    sel.classList.toggle("on", !!sameCharId);
+    if (sameCharId) applySameChar(sameCharId);
+  }
+
+  function applySameChar(id) {
+    if (!sameCharId) castBefore = cast.map(function (kv) { return [kv[0], kv[1]]; });
+    sameCharId = Number(id);
+    cast = C.slotsOfSong(detail).map(function (slot) { return [slot, Number(id)]; });
+    var sel = $("sameCharSel");
+    if (sel) { sel.value = String(sameCharId); sel.classList.add("on"); }
+    renderSlots(); build();
+    var empty = cast.filter(function (kv) { return !C.wavesForCharacter(detail, kv[0], kv[1]).length; })
+                    .map(function (kv) { return kv[0]; });
+    setSameCharMsg("全部 " + cast.length + " 个槽位都由 " + nameOfChara(sameCharId) + " 演唱"
+      + (empty.length ? "（" + empty.join(" / ") + " 槽该角色无音源，会静音）" : ""));
+  }
+
+  function clearSameChar() {
+    sameCharId = null;
+    cast = castBefore ? castBefore : C.defaultCast(detail);
+    castBefore = null;
+    var sel = $("sameCharSel");
+    if (sel) { sel.value = ""; sel.classList.remove("on"); }
+    renderSlots(); build();
+    setSameCharMsg("已恢复逐槽位单独选角");
+  }
+
   function renderSlots() {
     var box = $("slots");
     box.innerHTML = "";
     C.slotsOfSong(detail).forEach(function (slot) { box.appendChild(slotRow(slot)); });
+    var sel = $("sameCharSel");                                   // 手动下拉里同步当前状态
+    if (sel) { sel.value = sameCharId ? String(sameCharId) : ""; sel.classList.toggle("on", !!sameCharId); }
     renderRuler();
   }
 
@@ -401,7 +464,15 @@
   /* ---------------- 绑定 ---------------- */
 
   document.addEventListener("DOMContentLoaded", function () {
-    $("btnReset").onclick = function () { cast = C.defaultCast(detail); renderSlots(); build(); };
+    $("btnReset").onclick = function () {
+      sameCharId = null; castBefore = null;
+      var sel = $("sameCharSel"); if (sel) { sel.value = ""; sel.classList.remove("on"); }
+      setSameCharMsg("");
+      cast = C.defaultCast(detail); renderSlots(); build();
+    };
+    $("sameCharSel").addEventListener("change", function (e) {
+      if (!e.target.value) clearSameChar(); else applySameChar(Number(e.target.value));
+    });
     $("btnDownload").onclick = download;
     $("btnCopy").onclick = copyJSON;
     $("btnMixer").onclick = sendToMixer;

@@ -19,6 +19,13 @@
   var SAMPLE_RATE = 48000;
   var ENCODER_DELAY = 576;      // 官方 stream.encoderDelaySamples（文件无 LAME/Xing 标签，服务端固定假定 576/576）
   var ENCODER_PADDING = 576;
+  /* 默认媒体基址：留空 = 走官方源站（工程 JSON 里的 /media/live/... 由它提供）。
+     想把整站默认切到 Cloudflare R2（或任何自建镜像），把下面这行改成公开域名即可，例如
+     var MEDIA_BASE_DEFAULT = "https://pub-xxxxxxx.r2.dev";                     */
+  var MEDIA_BASE_DEFAULT = "";
+  var OFFICIAL_MEDIA_BASE = "https://uma.0xcjy.top/";
+  function mediaBaseDefault() { return MEDIA_BASE_DEFAULT || OFFICIAL_MEDIA_BASE; }
+
   var MEDIA_DETAIL_PREFIX = "data/live/music/";   // 详情里的路径 → 媒体 URL 的映射前缀
   var MEDIA_URL_PREFIX = "/media/live/";
   var SLOT_ORDER = ["center", "left", "left2", "left3", "right", "right2", "right3"];
@@ -368,6 +375,7 @@
     buildAutomation: buildAutomation, evalAutomation: evalAutomation,
     buildProject: buildProject, mediaUrlsOfProject: mediaUrlsOfProject,
     projectQueryUrl: projectQueryUrl, exportBaseName: exportBaseName,
-    linToDb: linToDb, dbToLin: dbToLin
+    linToDb: linToDb, dbToLin: dbToLin,
+    mediaBaseDefault: mediaBaseDefault, MEDIA_BASE_DEFAULT: MEDIA_BASE_DEFAULT
   };
 });

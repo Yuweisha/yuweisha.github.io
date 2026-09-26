@@ -48,6 +48,14 @@ input:focus,select:focus{border-color:var(--accent)}
 .switch input[type=checkbox]{width:15px;height:15px;margin:0;accent-color:var(--accent);cursor:pointer}
 .switch:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
 .switch:has(input:checked) span{color:var(--accent-strong);font-weight:650}
+/* 全曲同一角色：圆角胶囊风格的下拉，与站点其它控件一致 */
+.picksel{appearance:none;-webkit-appearance:none;padding:7px 30px 7px 13px;border:1px solid var(--line);border-radius:999px;
+  background:var(--panel) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%2357606a'/></svg>") no-repeat right 12px center;
+  color:var(--text);font:inherit;font-size:13px;cursor:pointer;max-width:340px;transition:border-color .15s,box-shadow .15s,background-color .15s}
+.picksel:hover{border-color:var(--accent)}
+.picksel:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.picksel.on{border-color:var(--accent);background-color:var(--accent-soft);color:var(--accent-strong);font-weight:650}
+
 /* 底栏：与主页同款（固定贴底、半透明 + 模糊，始终可见） */
 .site-footer{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:12px max(20px,calc((100% - 1360px)/2 + 18px));background:rgba(246,248,250,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--line-light);box-shadow:0 -1px 3px rgba(31,35,40,.04);color:var(--muted);font-size:12px}
 .footer-links{display:flex;gap:18px}
@@ -165,6 +173,15 @@ a{color:var(--accent)}
         <div class="small">点开任一槽位的下拉即可<strong>搜索角色</strong>（中文名 / 日文名 / id 均可），条目显示中文名、日文名与角色 id，当前选择会高亮。蓝色条为该槽的出场时间轴。</div>
         <div class="ruler" id="ruler"></div>
         <div id="slots"></div>
+
+        <div class="row" style="margin-top:10px;justify-content:space-between;align-items:center">
+          <div class="row" style="gap:9px;align-items:center">
+            <label class="row" style="gap:8px;align-items:center;font-weight:700" for="sameCharSel">全曲同一角色</label>
+            <select id="sameCharSel" class="picksel"
+                    title="选一个角色，所有声部槽位都换成它：槽位数量、出场时间轴、增益与平衡规则都不变，只是每个槽位都改由这位角色演唱"></select>
+          </div>
+          <span class="small" id="sameCharMsg"></span>
+        </div>
 
         <div class="row" style="margin-top:12px;justify-content:space-between">
           <button class="btn" id="btnReset">恢复默认选角</button>
