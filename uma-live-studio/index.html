@@ -38,6 +38,9 @@ input:focus,select:focus{border-color:var(--accent)}
 .slot{border:1px solid var(--line);border-radius:11px;padding:10px;margin:9px 0;background:#0f1620}
 .slot .top{display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:center}
 .slotname{font-weight:700;color:#cfe0f5;font-variant-numeric:tabular-nums}
+/* 关键：作者样式一旦给元素设了 display，就会盖掉浏览器给 hidden 属性的默认样式，
+   于是 el.hidden 只改属性、不改渲染（真机上下拉面板常显、点不开也收不起）。这里显式补齐。 */
+[hidden]{display:none!important}
 .combo{position:relative}
 .combo-btn{width:100%;display:flex;gap:9px;align-items:baseline;text-align:left;padding:9px 11px;background:#0a1017;border:1px solid #354355;border-radius:9px;color:var(--text);cursor:pointer;font:inherit;font-weight:650}
 .combo-btn:hover{border-color:#4a5f7a}
