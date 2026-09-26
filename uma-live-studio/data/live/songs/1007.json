@@ -1,0 +1,991 @@
+{
+  "musicId": 1007,
+  "title": {
+    "ja": "ENDLESS DREAM!!",
+    "zh": null
+  },
+  "live": {
+    "sort": 2,
+    "musicType": 1,
+    "songCharaType": 2,
+    "memberCount": 18
+  },
+  "bgm": [
+    {
+      "id": "bgm_01",
+      "path": "data/live/music/1007/bgm_01_0.mp3"
+    },
+    {
+      "id": "bgm_02",
+      "path": "data/live/music/1007/bgm_02_0.mp3"
+    }
+  ],
+  "lyrics": {
+    "1425": "夢のゲートひらいて 輝き目指して\n推开梦想之门 瞄准未来的光辉",
+    "6555": "行こう！みんなで GO TO THE TOP!!\n冲吧！大家一起登上顶峰!!",
+    "20520": "誰より速く走りたい\n想跑得比所有人都迅速",
+    "25250": "ハートが加速する\n心跳也在加速",
+    "29925": "ドキドキしてるし！させちゃうし！\n心跳不已！已然行动！",
+    "34200": "毎日がスペシャルレース\n每天都是特别赛",
+    "38475": "とびっきりを見せたいなら\n如果想展现自己",
+    "43035": "自分の“らしさ”を 自分でいちばん\n那就更应该坚信",
+    "47595": "信じてあげなくっちゃね\n自己的“风格”",
+    "52440": "(せーの！LET'S GO!)\n (预备！ LET'S GO!)",
+    "54150": "風を切って駆け出す もうコドウ止まらない\n切开疾风向前奔驰 鼓动已无法停止",
+    "58995": "本命も 大穴も キミに一直線\n或焦点 抑或冷门 都要向你疾驰而去",
+    "63840": "夢と希望と尻尾にかけ\n赌上梦与希望",
+    "68115": "GET CHANCE 誓うよ GO TO THE TOP!!\n抓准机会 我起誓 要登上顶峰!!",
+    "81225": "夢のゲートひらいて 輝き目指して\n推开梦想之门 瞄准未来的光辉",
+    "86355": "歓声と 地響きと 光るしぶきと\n欢呼声 大地的回响 四散的光芒",
+    "91485": "愛とロマンがここにある\n也蕴含着爱与浪漫",
+    "95760": "見よう！一緒に ENDLESS DREAM!!\n看吧！一起 ENDLESS DREAM!!",
+    "100581": "(青空) 芝のにおい…大好き\n (蓝天) 热爱着青草的气息",
+    "109725": "終わらない夢を連れて どこまでも\n带着无止境的梦想 前往天涯海角"
+  },
+  "parts": [
+    {
+      "timeMs": 0,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 20564,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 29733,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 34429,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 38380,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 43067,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 45311,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 47533,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 58950,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 60342,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 61495,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 86347,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 87800,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 88914,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 95600,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 96770,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 102764,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    },
+    {
+      "timeMs": 107217,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    }
+  ],
+  "characters": [
+    {
+      "charaId": 1004,
+      "nameJa": "マルゼンスキー",
+      "nameEn": "Maruzensky",
+      "nameZh": "丸善斯基",
+      "waves": [
+        {
+          "charaId": 1004,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1004/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1005,
+      "nameJa": "フジキセキ",
+      "nameEn": "Fuji Kiseki",
+      "nameZh": "富士奇石",
+      "waves": [
+        {
+          "charaId": 1005,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1005/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1011,
+      "nameJa": "グラスワンダー",
+      "nameEn": "Grass Wonder",
+      "nameZh": "草上飞",
+      "waves": [
+        {
+          "charaId": 1011,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1011/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1012,
+      "nameJa": "ヒシアマゾン",
+      "nameEn": "Hishi Amazon",
+      "nameZh": "菱亚马逊",
+      "waves": [
+        {
+          "charaId": 1012,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1012/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1031,
+      "nameJa": "アイネスフウジン",
+      "nameEn": "Ines Fujin",
+      "nameZh": "艾尼斯风神",
+      "waves": [
+        {
+          "charaId": 1031,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1031/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1032,
+      "nameJa": "アグネスタキオン",
+      "nameEn": "Agnes Tachyon",
+      "nameZh": "爱丽速子",
+      "waves": [
+        {
+          "charaId": 1032,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1032/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1033,
+      "nameJa": "アドマイヤベガ",
+      "nameEn": "Admire Vega",
+      "nameZh": "爱慕织姬",
+      "waves": [
+        {
+          "charaId": 1033,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1033/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1035,
+      "nameJa": "ウイニングチケット",
+      "nameEn": "Winning Ticket",
+      "nameZh": "胜利奖券",
+      "waves": [
+        {
+          "charaId": 1035,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1035/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1040,
+      "nameJa": "ゴールドシチー",
+      "nameEn": "Gold City",
+      "nameZh": "黄金城市",
+      "waves": [
+        {
+          "charaId": 1040,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1040/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1048,
+      "nameJa": "トーセンジョーダン",
+      "nameEn": "Tosen Jordan",
+      "nameZh": "东瀛佐敦",
+      "waves": [
+        {
+          "charaId": 1048,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1048/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1069,
+      "nameJa": "サクラチヨノオー",
+      "nameEn": "Sakura Chiyono O",
+      "nameZh": "樱花千代王",
+      "waves": [
+        {
+          "charaId": 1069,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1069/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1124,
+      "nameJa": "バブルガムフェロー",
+      "nameEn": "Bubble Gum Fellow",
+      "nameZh": "吹波糖",
+      "waves": [
+        {
+          "charaId": 1124,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1124/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1130,
+      "nameJa": "ラッキーライラック",
+      "nameEn": "Lucky Lilac",
+      "nameZh": "旺紫丁",
+      "waves": [
+        {
+          "charaId": 1130,
+          "waveIndex": 0,
+          "path": "data/live/music/1007/chara_1130/chara_0.mp3"
+        }
+      ]
+    }
+  ],
+  "permissionCharaIds": [
+    1004,
+    1005,
+    1011,
+    1012,
+    1031,
+    1032,
+    1033,
+    1035,
+    1040,
+    1048,
+    1069,
+    1124,
+    1130
+  ],
+  "diagnostics": {
+    "missingBgm": false,
+    "missingLyrics": false,
+    "missingPart": false,
+    "availableVoiceCharaIds": [
+      1004,
+      1005,
+      1011,
+      1012,
+      1031,
+      1032,
+      1033,
+      1035,
+      1040,
+      1048,
+      1069,
+      1124,
+      1130
+    ]
+  }
+}

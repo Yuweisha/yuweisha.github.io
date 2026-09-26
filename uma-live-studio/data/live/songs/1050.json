@@ -1,0 +1,2312 @@
+{
+  "musicId": 1050,
+  "title": {
+    "ja": "We are DREAMERS!!",
+    "zh": null
+  },
+  "live": {
+    "sort": 301,
+    "musicType": 5,
+    "songCharaType": 2,
+    "memberCount": 18
+  },
+  "bgm": [
+    {
+      "id": "bgm_01",
+      "path": "data/live/music/1050/bgm_01_0.mp3"
+    },
+    {
+      "id": "bgm_02",
+      "path": "data/live/music/1050/bgm_02_0.mp3"
+    }
+  ],
+  "lyrics": {
+    "3083": "キミと見た夢が みんなの夢になる\n与你所见的梦想 将成为所有人的梦想",
+    "18300": "キミとの出会いがスタートライン (よーいドン！)\n起跑线是我与你邂逅的地方 (预备――跑！)",
+    "22200": "右も左も分からないまま走ったね\n那时我还懵懵懂懂 只管横冲直撞",
+    "27333": "まっすぐなキミの想いを頼りに (ファイト！)\n我将你那率真的心意作为依托 (加油！)",
+    "31283": "毎日のひとつひとつ 今に繋がった\n每天的一点一滴 造就了如今的我",
+    "36167": "走れば走るほど 気付かされるよ\n越是奔跑 便越能明白",
+    "40700": "[目標]<ゴール>までまだ遠くて 足りないものばっか\n终点依旧遥远 自己还远远不足",
+    "45383": "それでも走れば走るほど 感じるよ\n即便如此 我越是奔跑越能够感觉到",
+    "50200": "いつもどんな[勝負]<レース>も ひとりではないこと\n一直以来的每场比赛 我都不是孤身一人",
+    "56933": "夢の先にまた夢があるんだ\n梦想的前方还有着新的梦想",
+    "61617": "叶えたいことあるほど [可能性]<ゲート>は拓くよ\n越有想要实现的事 便越能开拓新的可能性",
+    "66300": "みんなのエール乗せて [一走]<いっぽ>ずつ叶えに行こう\n乘着大家的声援 一步一步去实现吧",
+    "71283": "キミの声を (チカラにして)\n将你的声音 (化作力量)",
+    "73617": "キミの声が (ミライになる)\n你的声音 (将开拓未来)",
+    "75967": "みんなと見る夢 どこまでも続くよ\n同大家所见的梦想 将会永无止境",
+    "92067": "空を見るように夢を見ていたい\n想同仰望天空一般追逐梦想",
+    "96750": "願うことから始まるドラマがあるよ\n从小小的愿望启程的故事也是存在的",
+    "101433": "風を起こすようにキセキを作り出そう\n用掀起狂风的般力量去创造奇迹吧",
+    "106400": "キミの希望 (乗せて行くよ)\n你的愿望 (我将乘它而行)",
+    "108750": "キミに夢を (見せて行くよ)\n我要让你 (见证我的梦想)",
+    "111083": "動かすんだ 心を 世界を\n我要让心脏 让世界 都鼓动起来",
+    "116067": "この走りで 全力で\n就用我这全力的奔跑",
+    "120167": "Dear DREAMERS...!!",
+    "121333": "夢の先にまた夢があるんだ\n梦想的前方还有着新的梦想",
+    "126017": "叶えたいことあるほど [可能性]<ゲート>は拓くよ\n越有想要实现的事 便越能开拓新的可能性",
+    "130650": "みんなのエール乗せて [一走]<いっぽ>ずつ叶えに行こう\n乘着大家的声援 一步一步去实现吧",
+    "135667": "キミの声を (チカラにして)\n将你的声音 (化作力量)",
+    "138017": "キミの声が (ミライになる)\n你的声音 (将开拓未来)",
+    "140350": "同じ夢を見よう これからもずっと\n今后也一起 去见证同一个梦想吧"
+  },
+  "parts": [
+    {
+      "timeMs": 0,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.02,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": -0.2
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.02,
+          "pan": -0.1
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.98,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.98,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 17800,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 27400,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 31400,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 36200,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 40750,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 45400,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 50250,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 53150,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.03,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": -0.2
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.03,
+          "pan": -0.1
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.97,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.97,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 61700,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 66400,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.03,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.03,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.97,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.97,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 71300,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 73600,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 76000,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.03,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": -0.2
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.03,
+          "pan": -0.1
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.97,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.97,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 91000,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 96800,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 101500,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 106400,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 108800,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 111100,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 113900,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 116100,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.03,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": -0.2
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.03,
+          "pan": -0.1
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.97,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.97,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 135700,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 138000,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    },
+    {
+      "timeMs": 140400,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.03,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": -0.2
+        },
+        {
+          "slot": "right",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1.03,
+          "pan": -0.1
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.97,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 0.97,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 999
+    }
+  ],
+  "characters": [
+    {
+      "charaId": 1001,
+      "nameJa": "スペシャルウィーク",
+      "nameEn": "Special Week",
+      "nameZh": "特别周",
+      "waves": [
+        {
+          "charaId": 1001,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1001/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1002,
+      "nameJa": "サイレンススズカ",
+      "nameEn": "Silence Suzuka",
+      "nameZh": "无声铃鹿",
+      "waves": [
+        {
+          "charaId": 1002,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1002/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1003,
+      "nameJa": "トウカイテイオー",
+      "nameEn": "Tokai Teio",
+      "nameZh": "东海帝王",
+      "waves": [
+        {
+          "charaId": 1003,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1003/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1004,
+      "nameJa": "マルゼンスキー",
+      "nameEn": "Maruzensky",
+      "nameZh": "丸善斯基",
+      "waves": [
+        {
+          "charaId": 1004,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1004/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1005,
+      "nameJa": "フジキセキ",
+      "nameEn": "Fuji Kiseki",
+      "nameZh": "富士奇石",
+      "waves": [
+        {
+          "charaId": 1005,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1005/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1006,
+      "nameJa": "オグリキャップ",
+      "nameEn": "Oguri Cap",
+      "nameZh": "小栗帽",
+      "waves": [
+        {
+          "charaId": 1006,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1006/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1007,
+      "nameJa": "ゴールドシップ",
+      "nameEn": "Gold Ship",
+      "nameZh": "黄金船",
+      "waves": [
+        {
+          "charaId": 1007,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1007/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1008,
+      "nameJa": "ウオッカ",
+      "nameEn": "Vodka",
+      "nameZh": "伏特加",
+      "waves": [
+        {
+          "charaId": 1008,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1008/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1009,
+      "nameJa": "ダイワスカーレット",
+      "nameEn": "Daiwa Scarlet",
+      "nameZh": "大和赤骥",
+      "waves": [
+        {
+          "charaId": 1009,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1009/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1010,
+      "nameJa": "タイキシャトル",
+      "nameEn": "Taiki Shuttle",
+      "nameZh": "大树快车",
+      "waves": [
+        {
+          "charaId": 1010,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1010/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1011,
+      "nameJa": "グラスワンダー",
+      "nameEn": "Grass Wonder",
+      "nameZh": "草上飞",
+      "waves": [
+        {
+          "charaId": 1011,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1011/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1012,
+      "nameJa": "ヒシアマゾン",
+      "nameEn": "Hishi Amazon",
+      "nameZh": "菱亚马逊",
+      "waves": [
+        {
+          "charaId": 1012,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1012/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1013,
+      "nameJa": "メジロマックイーン",
+      "nameEn": "Mejiro McQueen",
+      "nameZh": "目白麦昆",
+      "waves": [
+        {
+          "charaId": 1013,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1013/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1014,
+      "nameJa": "エルコンドルパサー",
+      "nameEn": "El Condor Pasa",
+      "nameZh": "神鹰",
+      "waves": [
+        {
+          "charaId": 1014,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1014/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1015,
+      "nameJa": "テイエムオペラオー",
+      "nameEn": "T.M. Opera O",
+      "nameZh": "好歌剧",
+      "waves": [
+        {
+          "charaId": 1015,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1015/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1016,
+      "nameJa": "ナリタブライアン",
+      "nameEn": "Narita Brian",
+      "nameZh": "成田白仁",
+      "waves": [
+        {
+          "charaId": 1016,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1016/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1017,
+      "nameJa": "シンボリルドルフ",
+      "nameEn": "Symboli Rudolf",
+      "nameZh": "鲁道夫象征",
+      "waves": [
+        {
+          "charaId": 1017,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1017/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1018,
+      "nameJa": "エアグルーヴ",
+      "nameEn": "Air Groove",
+      "nameZh": "气槽",
+      "waves": [
+        {
+          "charaId": 1018,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1018/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1019,
+      "nameJa": "アグネスデジタル",
+      "nameEn": "Agnes Digital",
+      "nameZh": "爱丽数码",
+      "waves": [
+        {
+          "charaId": 1019,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1019/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1020,
+      "nameJa": "セイウンスカイ",
+      "nameEn": "Seiun Sky",
+      "nameZh": "青云天空",
+      "waves": [
+        {
+          "charaId": 1020,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1020/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1021,
+      "nameJa": "タマモクロス",
+      "nameEn": "Tamamo Cross",
+      "nameZh": "玉藻十字",
+      "waves": [
+        {
+          "charaId": 1021,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1021/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1022,
+      "nameJa": "ファインモーション",
+      "nameEn": "Fine Motion",
+      "nameZh": "美妙姿势",
+      "waves": [
+        {
+          "charaId": 1022,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1022/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1023,
+      "nameJa": "ビワハヤヒデ",
+      "nameEn": "Biwa Hayahide",
+      "nameZh": "琵琶晨光",
+      "waves": [
+        {
+          "charaId": 1023,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1023/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1024,
+      "nameJa": "マヤノトップガン",
+      "nameEn": "Mayano Top Gun",
+      "nameZh": "摩耶重炮",
+      "waves": [
+        {
+          "charaId": 1024,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1024/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1025,
+      "nameJa": "マンハッタンカフェ",
+      "nameEn": "Manhattan Cafe",
+      "nameZh": "曼城茶座",
+      "waves": [
+        {
+          "charaId": 1025,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1025/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1026,
+      "nameJa": "ミホノブルボン",
+      "nameEn": "Mihono Bourbon",
+      "nameZh": "美浦波旁",
+      "waves": [
+        {
+          "charaId": 1026,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1026/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1027,
+      "nameJa": "メジロライアン",
+      "nameEn": "Mejiro Ryan",
+      "nameZh": "目白赖恩",
+      "waves": [
+        {
+          "charaId": 1027,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1027/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1028,
+      "nameJa": "ヒシアケボノ",
+      "nameEn": "Hishi Akebono",
+      "nameZh": "菱曙",
+      "waves": [
+        {
+          "charaId": 1028,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1028/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1030,
+      "nameJa": "ライスシャワー",
+      "nameEn": "Rice Shower",
+      "nameZh": "米浴",
+      "waves": [
+        {
+          "charaId": 1030,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1030/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1032,
+      "nameJa": "アグネスタキオン",
+      "nameEn": "Agnes Tachyon",
+      "nameZh": "爱丽速子",
+      "waves": [
+        {
+          "charaId": 1032,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1032/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1033,
+      "nameJa": "アドマイヤベガ",
+      "nameEn": "Admire Vega",
+      "nameZh": "爱慕织姬",
+      "waves": [
+        {
+          "charaId": 1033,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1033/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1035,
+      "nameJa": "ウイニングチケット",
+      "nameEn": "Winning Ticket",
+      "nameZh": "胜利奖券",
+      "waves": [
+        {
+          "charaId": 1035,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1035/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1037,
+      "nameJa": "エイシンフラッシュ",
+      "nameEn": "Eishin Flash",
+      "nameZh": "荣进闪耀",
+      "waves": [
+        {
+          "charaId": 1037,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1037/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1038,
+      "nameJa": "カレンチャン",
+      "nameEn": "Curren Chan",
+      "nameZh": "真机伶",
+      "waves": [
+        {
+          "charaId": 1038,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1038/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1039,
+      "nameJa": "カワカミプリンセス",
+      "nameEn": "Kawakami Princess",
+      "nameZh": "川上公主",
+      "waves": [
+        {
+          "charaId": 1039,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1039/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1040,
+      "nameJa": "ゴールドシチー",
+      "nameEn": "Gold City",
+      "nameZh": "黄金城市",
+      "waves": [
+        {
+          "charaId": 1040,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1040/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1041,
+      "nameJa": "サクラバクシンオー",
+      "nameEn": "Sakura Bakushin O",
+      "nameZh": "樱花进王",
+      "waves": [
+        {
+          "charaId": 1041,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1041/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1045,
+      "nameJa": "スーパークリーク",
+      "nameEn": "Super Creek",
+      "nameZh": "超级溪流",
+      "waves": [
+        {
+          "charaId": 1045,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1045/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1046,
+      "nameJa": "スマートファルコン",
+      "nameEn": "Smart Falcon",
+      "nameZh": "醒目飞鹰",
+      "waves": [
+        {
+          "charaId": 1046,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1046/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1048,
+      "nameJa": "トーセンジョーダン",
+      "nameEn": "Tosen Jordan",
+      "nameZh": "东瀛佐敦",
+      "waves": [
+        {
+          "charaId": 1048,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1048/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1050,
+      "nameJa": "ナリタタイシン",
+      "nameEn": "Narita Taishin",
+      "nameZh": "成田大进",
+      "waves": [
+        {
+          "charaId": 1050,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1050/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1052,
+      "nameJa": "ハルウララ",
+      "nameEn": "Haru Urara",
+      "nameZh": "春丽",
+      "waves": [
+        {
+          "charaId": 1052,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1052/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1056,
+      "nameJa": "マチカネフクキタル",
+      "nameEn": "Matikanefukukitaru",
+      "nameZh": "待兼福来",
+      "waves": [
+        {
+          "charaId": 1056,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1056/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1057,
+      "nameJa": "ミスターシービー",
+      "nameEn": "Mr. C.B.",
+      "nameZh": "千明代表",
+      "waves": [
+        {
+          "charaId": 1057,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1057/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1058,
+      "nameJa": "メイショウドトウ",
+      "nameEn": "Meisho Doto",
+      "nameZh": "名将怒涛",
+      "waves": [
+        {
+          "charaId": 1058,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1058/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1059,
+      "nameJa": "メジロドーベル",
+      "nameEn": "Mejiro Dober",
+      "nameZh": "目白多伯",
+      "waves": [
+        {
+          "charaId": 1059,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1059/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1060,
+      "nameJa": "ナイスネイチャ",
+      "nameEn": "Nice Nature",
+      "nameZh": "优秀素质",
+      "waves": [
+        {
+          "charaId": 1060,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1060/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1061,
+      "nameJa": "キングヘイロー",
+      "nameEn": "King Halo",
+      "nameZh": "圣王光环",
+      "waves": [
+        {
+          "charaId": 1061,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1061/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1062,
+      "nameJa": "マチカネタンホイザ",
+      "nameEn": "Matikanetannhauser",
+      "nameZh": "待兼诗歌剧",
+      "waves": [
+        {
+          "charaId": 1062,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1062/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1063,
+      "nameJa": "イクノディクタス",
+      "nameEn": "Ikuno Dictus",
+      "nameZh": "生野狄杜斯",
+      "waves": [
+        {
+          "charaId": 1063,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1063/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1067,
+      "nameJa": "サトノダイヤモンド",
+      "nameEn": "Satono Diamond",
+      "nameZh": "里见光钻",
+      "waves": [
+        {
+          "charaId": 1067,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1067/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1068,
+      "nameJa": "キタサンブラック",
+      "nameEn": "Kitasan Black",
+      "nameZh": "北部玄驹",
+      "waves": [
+        {
+          "charaId": 1068,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1068/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1069,
+      "nameJa": "サクラチヨノオー",
+      "nameEn": "Sakura Chiyono O",
+      "nameZh": "樱花千代王",
+      "waves": [
+        {
+          "charaId": 1069,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1069/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1070,
+      "nameJa": "シリウスシンボリ",
+      "nameEn": "Sirius Symboli",
+      "nameZh": "天狼星象征",
+      "waves": [
+        {
+          "charaId": 1070,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1070/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1071,
+      "nameJa": "メジロアルダン",
+      "nameEn": "Mejiro Ardan",
+      "nameZh": "目白阿尔丹",
+      "waves": [
+        {
+          "charaId": 1071,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1071/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1072,
+      "nameJa": "ヤエノムテキ",
+      "nameEn": "Yaeno Muteki",
+      "nameZh": "八重无敌",
+      "waves": [
+        {
+          "charaId": 1072,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1072/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1074,
+      "nameJa": "メジロブライト",
+      "nameEn": "Mejiro Bright",
+      "nameZh": "目白光明",
+      "waves": [
+        {
+          "charaId": 1074,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1074/chara_0.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1077,
+      "nameJa": "ナリタトップロード",
+      "nameEn": "Narita Top Road",
+      "nameZh": "成田路",
+      "waves": [
+        {
+          "charaId": 1077,
+          "waveIndex": 0,
+          "path": "data/live/music/1050/chara_1077/chara_0.mp3"
+        }
+      ]
+    }
+  ],
+  "permissionCharaIds": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019,
+    1020,
+    1021,
+    1022,
+    1023,
+    1024,
+    1025,
+    1026,
+    1027,
+    1028,
+    1030,
+    1032,
+    1033,
+    1035,
+    1037,
+    1038,
+    1039,
+    1040,
+    1041,
+    1045,
+    1046,
+    1048,
+    1050,
+    1052,
+    1056,
+    1057,
+    1058,
+    1059,
+    1060,
+    1061,
+    1062,
+    1063,
+    1067,
+    1068,
+    1069,
+    1070,
+    1071,
+    1072,
+    1074,
+    1077
+  ],
+  "diagnostics": {
+    "missingBgm": false,
+    "missingLyrics": false,
+    "missingPart": false,
+    "availableVoiceCharaIds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019,
+      1020,
+      1021,
+      1022,
+      1023,
+      1024,
+      1025,
+      1026,
+      1027,
+      1028,
+      1030,
+      1032,
+      1033,
+      1035,
+      1037,
+      1038,
+      1039,
+      1040,
+      1041,
+      1045,
+      1046,
+      1048,
+      1050,
+      1052,
+      1056,
+      1057,
+      1058,
+      1059,
+      1060,
+      1061,
+      1062,
+      1063,
+      1067,
+      1068,
+      1069,
+      1070,
+      1071,
+      1072,
+      1074,
+      1077
+    ]
+  }
+}

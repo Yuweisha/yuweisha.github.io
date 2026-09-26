@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UMA Offline Mixer V2.3</title>
+<style>
+:root{color-scheme:dark;--panel:#121922;--line:#2a3746;--text:#e8eef6;--muted:#91a2b6;--accent:#6ea8fe;--ok:#63d297;--err:#ff7777}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#080c11,#111a24 55%,#0a1017);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1220px;margin:auto;padding:28px 18px 50px}.title{font-size:26px;font-weight:750}.sub{color:var(--muted);margin:4px 0 20px}
+.card{background:#121922ee;border:1px solid var(--line);border-radius:14px;padding:18px;margin:12px 0;box-shadow:0 12px 35px #0004}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:800px){.grid{grid-template-columns:1fr}}
+label{display:block;color:#bac7d6;margin-bottom:6px;font-weight:650}
+input[type=url],input[type=text],textarea{width:100%;padding:11px 12px;background:#0a1017;border:1px solid #354355;border-radius:9px;color:var(--text);outline:0}
+input:focus,textarea:focus{border-color:var(--accent)}.small{font-size:12px;color:var(--muted)}
+.row{display:flex;flex-wrap:wrap;gap:9px;align-items:center}.btn{border:1px solid #3a4a5f;background:#1a2532;color:var(--text);border-radius:9px;padding:9px 14px;cursor:pointer;font-weight:650}.btn:hover{background:#233247}.btn.primary{background:#255b9d;border-color:#4079bd}.btn:disabled{opacity:.45;cursor:not-allowed}
+.check{display:flex;align-items:center;gap:7px;color:#b7c4d3;font-weight:400}.check input{accent-color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:#0c131b;border:1px solid var(--line);border-radius:10px;padding:10px}.stat span{display:block;color:var(--muted);font-size:12px}.stat b{font-size:18px}
+.time{font-variant-numeric:tabular-nums;color:#d1dce9}.seek{width:100%;accent-color:var(--accent)}
+.trackbox{max-height:390px;overflow:auto;border:1px solid var(--line);border-radius:10px}.track{display:grid;grid-template-columns:34px minmax(150px,1.2fr) minmax(190px,1.5fr) 96px 96px;gap:10px;align-items:center;padding:9px 11px;border-bottom:1px solid #202b37}.track:last-child{border-bottom:0}
+.name,.url{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.url{color:#8295ab;font-size:12px}
+.badge{font-size:11px;padding:3px 7px;border-radius:999px;background:#263241;color:#b3c2d3}.ok{color:var(--ok)}.err{color:var(--err)}
+pre{margin:0;background:#080d13;border:1px solid #202b38;border-radius:10px;padding:12px;min-height:130px;max-height:280px;overflow:auto;color:#b9c8d9;white-space:pre-wrap}
+.note{padding:10px 12px;border-radius:9px;background:#10271d;border:1px solid #24583b;color:#a4dfbb}
+.warn{padding:10px 12px;border-radius:9px;background:#30270f;border:1px solid #66521e;color:#ead48e}
+textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;min-height:80px;resize:vertical;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">UMA Offline Mixer V2.3
+    <a class="btn" href="index.html" style="float:right;font-size:13px;font-weight:600;text-decoration:none">← 回到生成器</a>
+    <a class="btn" href="../index.html" style="float:right;font-size:13px;font-weight:600;text-decoration:none;margin-right:8px">← 返回主页</a>
+  </div>
+  <div class="sub">V2.2 的修正版：支持「生成器直送工程」、按文件元数据精确裁剪编码延迟、支持 muted/solo/startOffsetMs、StereoPannerNode、并发下载与进度</div>
+
+  <div id="handoff" class="note" style="display:none"></div>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label>项目 JSON / Mixer API URL</label>
+        <input id="projectUrl" type="url" placeholder="https://uma.0xcjy.top/api/live/mixer/projects/live-1193?musicId=1193&bgm=bgm_01&slots=...&balance=1">
+      </div>
+      <div>
+        <label>媒体基址（生成的工程里 media 是 /media/... 相对路径）</label>
+        <input id="baseUrl" type="url" placeholder="https://uma.0xcjy.top/">
+      </div>
+    </div>
+
+    <textarea id="pasteJson" placeholder="（可选）直接粘贴混音工程 JSON（例如生成器下载的 .json），然后点“加载”"></textarea>
+
+    <div class="row" style="margin-top:14px">
+      <button id="load" class="btn primary">加载</button>
+      <button id="loadLocal" class="btn">载入生成器直送的工程</button>
+      <button id="stop" class="btn" disabled>停止</button>
+      <label class="check"><input id="trim" type="checkbox" checked> 裁剪编码延迟/尾填充（按 JSON 的 encoderDelay/PaddingSamples）</label>
+      <label class="check"><input id="smooth" type="checkbox"> 自动化 8ms 平滑（官方为阶跃）</label>
+      <label class="check"><input id="compress" type="checkbox" checked> Compressor</label>
+      <label class="check"><input id="localMedia" type="checkbox"> 本地媒体优先（data/media/…）</label>
+    </div>
+
+    <div style="margin-top:12px" class="small">
+      资源解析优先级：track.media 绝对 URL → 本地镜像（勾选时）→ 媒体基址（留空则取 JSON URL 的 origin）。
+      JSON 直连失败时会尝试公共 CORS 代理；音频（/media/…）本身带 <code>Access-Control-Allow-Origin: *</code>，可直接跨域。
+    </div>
+  </div>
+
+  <div id="summary" class="card" style="display:none">
+    <div class="stats">
+      <div class="stat"><span>Sample Rate</span><b id="sr">-</b></div>
+      <div class="stat"><span>Duration</span><b id="dur">-</b></div>
+      <div class="stat"><span>Tracks</span><b id="count">-</b></div>
+      <div class="stat"><span>Loaded</span><b id="loaded">0 / 0</b></div>
+      <div class="stat"><span>Balance</span><b id="balance">-</b></div>
+    </div>
+  </div>
+
+  <div id="player" class="card" style="display:none">
+    <div class="row" style="justify-content:space-between">
+      <div class="time"><span id="current">00:00.000</span> / <span id="total">00:00.000</span></div>
+      <span id="state" class="badge">ready</span>
+    </div>
+    <input id="seek" class="seek" type="range" min="0" max="1" step="0.001" value="0" style="margin:13px 0">
+    <div class="row">
+      <button id="play" class="btn primary">▶ 播放</button>
+      <button id="pause" class="btn">⏸ 暂停</button>
+      <button id="export" class="btn">导出 WAV</button>
+      <label class="check"><input id="wav16" type="checkbox"> 16-bit PCM（默认 32-bit float）</label>
+      <span id="exportStatus" class="small"></span>
+    </div>
+  </div>
+
+  <div id="tracksCard" class="card" style="display:none">
+    <div style="font-weight:700;margin-bottom:10px">Resolved Tracks</div>
+    <div id="tracks" class="trackbox"></div>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700;margin-bottom:10px">Log</div>
+    <pre id="log"></pre>
+  </div>
+</div>
+
+<script src="js/core.js"></script>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const C=window.UmaCore;
+const logEl=$("log");
+let project=null, projectUrl="", baseUrl="";
+let sampleRate=48000, durationSec=0, buffers=new Map();
+let audioCtx=null, graph=[], masterGain=null, compressor=null;
+let startedAt=0, pausedAt=0, raf=0;
+
+function log(s){const t=new Date().toLocaleTimeString();logEl.textContent+="["+t+"] "+s+"\n";logEl.scrollTop=logEl.scrollHeight}
+function fmt(x){x=Math.max(0,Number(x)||0);const m=Math.floor(x/60),s=x-m*60;return String(m).padStart(2,"0")+":"+s.toFixed(3).padStart(6,"0")}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
+
+/* ---------- JSON 加载 ---------- */
+function jsonAuto(raw){
+  const cand=["utf-8","utf-16le","utf-16be","gb18030","big5","windows-1252","iso-8859-1"];
+  if(raw[0]===0xEF&&raw[1]===0xBB&&raw[2]===0xBF)cand.unshift("utf-8");
+  if(raw[0]===0xFF&&raw[1]===0xFE)cand.unshift("utf-16le");
+  if(raw[0]===0xFE&&raw[1]===0xFF)cand.unshift("utf-16be");
+  const seen=new Set();
+  for(const enc of cand){
+    if(seen.has(enc))continue;seen.add(enc);
+    try{const t=new TextDecoder(enc,{fatal:true}).decode(raw);const o=JSON.parse(t);if(o&&typeof o==="object")return{obj:o,enc}}catch{}
+  }
+  throw new Error("JSON 无法解码或不是合法 JSON");
+}
+const CORS_PROXIES=[
+  u=>"https://api.allorigins.win/raw?url="+encodeURIComponent(u),
+  u=>"https://api.codetabs.com/v1/proxy/?quest="+encodeURIComponent(u),
+  u=>"https://corsproxy.io/?url="+encodeURIComponent(u)
+];
+async function fetchProject(url){
+  const tries=[{name:"direct",u:url},...CORS_PROXIES.map(p=>({name:"proxy",u:p(url)}))];
+  let lastErr=null;
+  for(const t of tries){
+    try{
+      const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),25000);
+      const r=await fetch(t.u,{cache:"no-store",signal:ctl.signal});clearTimeout(to);
+      if(!r.ok)throw new Error("HTTP "+r.status);
+      const x=jsonAuto(new Uint8Array(await r.arrayBuffer()));
+      if(t.name==="proxy")log("via proxy OK: "+t.u.slice(0,80)+"…");
+      return x.obj;
+    }catch(e){lastErr=e;log("fetch ["+t.name+"] 失败: "+t.u.slice(0,80)+"… → "+e.message)}
+  }
+  throw lastErr||new Error("Failed to fetch");
+}
+
+/* ---------- 媒体解析 ---------- */
+function isAbs(u){return /^(https?:|blob:|data:)/i.test(u)}
+function resolveMedia(raw){
+  if(!raw)return null;
+  raw=String(raw).trim();
+  if(isAbs(raw))return raw;
+  const p=raw.replace(/^\/+/,"");
+  if($("localMedia").checked)return "data/media/"+p;      // 与 tools/fetch_stems.py 的落地目录一致（失败会自动回落）
+  if(baseUrl)return new URL(raw,baseUrl).href;
+  try{const u=new URL(projectUrl);return new URL(raw,u.origin+"/").href}catch{return raw}
+}
+function sinkIndex(t){return t.media.replace(/^\/+/,"")}
+
+/* ---------- 校准裁剪 ---------- */
+function trimPlan(buffer,stream){
+  const delay=(stream&&stream.encoderDelaySamples)||C.ENCODER_DELAY;
+  const pad=(stream&&stream.encoderPaddingSamples)||C.ENCODER_PADDING;
+  if(!$("trim").checked)return{head:0,tail:0};
+  const durSamples=project.durationMs?project.durationMs/1000*buffer.sampleRate:null;
+  if(durSamples){
+    const untrimmed=Math.abs(buffer.length-durSamples)<=2;
+    const already=Math.abs(buffer.length-1-(durSamples-delay-pad))<=2;
+    if(already&&!untrimmed){log("  浏览器已自动去 gapless 填充，本次跳过裁剪");return{head:0,tail:0}}
+  }
+  // 官方 decoder 的 decodedSampleCount = 全部帧×1152；对拍：6643584 = 5767×1152（文件无 Xing/LAME 标签）
+  if(stream&&stream.decodedSampleCount&&Math.abs(buffer.length-stream.decodedSampleCount)>2){
+    log("  解码长度 "+buffer.length+" ≠ 官方 decodedSampleCount "+stream.decodedSampleCount+"，按比例保守裁剪");
+  }
+  return{head:delay,tail:pad};
+}
+async function decodeAudio(ctx,url,stream,retry=3){
+  let lastErr=null;
+  for(let k=0;k<retry;k++){
+    try{
+      const r=await fetch(url,{cache:"force-cache"});
+      if(!r.ok)throw new Error("HTTP "+r.status);
+      let b=await ctx.decodeAudioData(await r.arrayBuffer());
+      const p=trimPlan(b,stream);
+      if((p.head||p.tail)&&b.length>p.head+p.tail){
+        const x=ctx.createBuffer(b.numberOfChannels,b.length-p.head-p.tail,b.sampleRate);
+        for(let c=0;c<b.numberOfChannels;c++)
+          x.getChannelData(c).set(b.getChannelData(c).subarray(p.head,b.length-p.tail));
+        b=x;
+      }
+      if(b.numberOfChannels!==2){
+        const x=ctx.createBuffer(2,b.length,b.sampleRate);
+        const L=b.getChannelData(0),R=b.numberOfChannels>1?b.getChannelData(1):L;
+        x.getChannelData(0).set(L);x.getChannelData(1).set(R);b=x;
+      }
+      return b;
+    }catch(e){lastErr=e;await new Promise(r=>setTimeout(r,400*(k+1)))}
+  }
+  throw lastErr||new Error("decode failed");
+}
+async function fetchFirstOk(urls,stream,ctx){
+  let err=null;
+  for(const u of urls){
+    try{return await decodeAudio(ctx,u,stream)}catch(e){err=e;log("    "+u+" 失败："+e.message)}
+  }
+  throw err||new Error("no candidate");
+}
+
+/* ---------- 预加载 ---------- */
+async function preload(){
+  const ctx=new AudioContext({sampleRate});
+  const list=project.tracks;
+  let ok=0, done=0;
+  const concurrency=4;
+  let idx=0;
+  async function worker(){
+    while(idx<list.length){
+      const i=idx++, t=list[i];
+      const rem=resolveMedia(t.media);
+      const local="data/media/"+sinkIndex(t);
+      const urls=$("localMedia").checked?[local,rem,(baseUrl||"https://uma.0xcjy.top/")+sinkIndex(t)]:[rem,(baseUrl||"https://uma.0xcjy.top/")+sinkIndex(t)];
+      const st=$("ts-"+i), ue=$("tu-"+i);
+      ue.textContent=urls[0]||"(无 URL)";
+      try{
+        if(!rem)throw new Error("没有可识别的音频 URL");
+        st.textContent="loading";
+        const b=await fetchFirstOk(urls.filter(Boolean),t.stream,ctx);
+        buffers.set(t.id,b);ok++;
+        st.textContent=b.duration.toFixed(3)+" s"+(t.stream&&t.stream.sampleRate!==b.sampleRate?" (⚠ "+b.sampleRate+"Hz)":"");
+        st.className="small ok";
+      }catch(e){
+        st.textContent="ERROR";st.className="small err";log("Track "+t.id+"("+t.name+"): "+e.message);
+      }
+      done++;$("loaded").textContent=ok+" / "+list.length;
+    }
+  }
+  await Promise.all(Array.from({length:Math.min(concurrency,list.length)},worker));
+  // 依据实测长度校准工程时长（官方 durationMs = 各轨最长者）
+  let maxLen=0;
+  buffers.forEach(b=>{if(b.length>maxLen)maxLen=b.length});
+  const measured=maxLen/sampleRate;
+  if(measured>0&&Math.abs(measured-durationSec)>0.004){
+    log("实测最长轨 "+maxLen+" samples = "+measured.toFixed(3)+" s；工程声明 "+durationSec.toFixed(3)
+        +" s（可能是默认选角的参考值）→ 采用实测值（与官方口径一致：返回轨道的最长者）");
+    durationSec=measured;$("dur").textContent=fmt(durationSec);$("total").textContent=fmt(durationSec);$("seek").max=durationSec;
+  }
+  await ctx.close();
+  log("Audio preload: "+ok+" / "+list.length);
+}
+
+/* ---------- 加载工程 ---------- */
+function validateProject(p){
+  if(!p||typeof p!=="object")throw new Error("不是 JSON object");
+  if(!Array.isArray(p.tracks))throw new Error("没有 tracks[]");
+  const sr=Number(p.sampleRate);
+  if(!Number.isFinite(sr)||sr<=0)throw new Error("sampleRate 无效");
+  const dur=Number(p.durationMs);
+  if(!Number.isFinite(dur)||dur<=0)log("⚠ 工程 durationMs 无效（"+p.durationMs+"），将完全依赖实测音频长度");
+  return{sr,dur:Number.isFinite(dur)&&dur>0?dur:0};
+}
+function keepOrphans(p){
+  // 没有 durationMs 时用 0，preload 后会用实测值覆盖
+  return Object.assign({},p,{durationMs:p.durationMs||0});
+}
+async function loadProject(){
+  $("load").disabled=true; $("loadLocal").disabled=true;
+  $("summary").style.display=$("player").style.display=$("tracksCard").style.display="none";
+  buffers.clear(); disconnectGraph();
+  try{
+    projectUrl=$("projectUrl").value.trim();
+    baseUrl=$("baseUrl").value.trim();
+    if(baseUrl&&!baseUrl.endsWith("/"))baseUrl+="/";
+
+    const pasted=$("pasteJson").value.trim();
+    if(pasted){
+      log("使用粘贴的 JSON（跳过网络请求；粘贴框有内容时优先，清空可改用 URL/本地工程）");
+      try{project=JSON.parse(pasted)}catch(e){throw new Error("粘贴的 JSON 无法解析: "+e.message)}
+    }else if(project&&!projectUrl){
+      log("使用生成器直送的工程：" + (project.id||"?"));
+    }else{
+      if(!projectUrl)throw new Error("请输入 Mixer API URL，或先把生成器里的工程送过来 / 粘贴 JSON");
+      project=await fetchProject(projectUrl);
+    }
+    project=keepOrphans(project);
+    const meta=validateProject(project);
+    sampleRate=meta.sr; durationSec=meta.dur/1000;
+
+    $("sr").textContent=sampleRate;
+    $("dur").textContent=durationSec?fmt(durationSec):"实测";
+    $("count").textContent=project.tracks.length;
+    $("loaded").textContent="0 / "+project.tracks.length;
+    $("balance").textContent=project._uma?(project._uma.balance?"1":"0"):
+      (()=>{try{return new URL(projectUrl).searchParams.get("balance")??"-"}catch{return String(project.balance??"-")}})();
+    $("total").textContent=durationSec?fmt(durationSec):"--:--";
+    $("seek").max=durationSec||1;$("seek").value=0;
+    $("summary").style.display=$("player").style.display=$("tracksCard").style.display="";
+
+    const box=$("tracks");box.innerHTML="";
+    project.tracks.forEach((t,i)=>{
+      const el=document.createElement("div");el.className="track";
+      el.innerHTML="<div>"+(i+1)+"</div>"+
+        "<div class='name' title='"+esc(t.name||t.id)+"'>"+esc(t.name||t.id)+"</div>"+
+        "<div class='url' id='tu-"+i+"' title='"+esc(t.media||"")+"'>"+esc(t.media||"(unknown)")+"</div>"+
+        "<div class='small' id='ts-"+i+"'>waiting</div>"+
+        "<div class='small'>"+esc(t.volumeDb??0)+" dB</div>";
+      box.appendChild(el);
+    });
+
+    log("Project: "+project.tracks.length+" tracks / "+sampleRate+" Hz / "+(durationSec?durationSec.toFixed(3)+" s":"时长待实测"));
+    await preload();
+  }catch(e){log("ERROR: "+(e.stack||e));alert(e.message||String(e))}
+  finally{$("load").disabled=false;$("loadLocal").disabled=false}
+}
+
+/* ---------- 混音图 ---------- */
+function schedule(param,pts,map,maxT,smooth){
+  param.cancelScheduledValues(0);
+  if(!pts.length)return;
+  param.setValueAtTime(map(pts[0].v),0);
+  for(let i=1;i<pts.length;i++){
+    const t=Math.min(maxT,Math.max(0,pts[i].t));
+    if(smooth&&t>0)param.setTargetAtTime(map(pts[i].v),t,0.008);
+    else param.setValueAtTime(map(pts[i].v),t);
+  }
+}
+function series(arr,key,fallback){
+  const a=[{t:0,v:Number(fallback)||0}];
+  (arr||[]).forEach(f=>a.push({t:Math.max(0,Number(f.timeMs)||0)/1000,v:Number(f[key]??fallback)}));
+  a.sort((x,y)=>x.t-y.t);
+  const out=[];
+  for(const x of a){if(out.length&&Math.abs(out[out.length-1].t-x.t)<1e-12)out[out.length-1]=x;else out.push(x)}
+  return out;
+}
+function dbGain(db){return db<=-60?0:Math.pow(10,db/20)}
+function anySolo(){return project.tracks.some(t=>t.solo)}
+
+function createTrackGraph(ctx,b,t,maxT,smooth){
+  const startOffsetSec=((Number(t.startOffsetMs)||0)+(Number(t.timelineStartSample)||0)/sampleRate*1000)/1000;
+  const src=ctx.createBufferSource();src.buffer=b;
+  const tg=ctx.createGain();
+  const pan=ctx.createStereoPanner?ctx.createStereoPanner():null;
+  const user=ctx.createGain();
+  user.gain.value=(t.muted||(anySolo()&&!t.solo))?0:1;
+
+  const vp=series(t.volumeAutomation,"volumeDb",t.volumeDb??0);
+  const pp=series(t.pannerAutomation,"panner",t.panner??0);
+  schedule(tg.gain,vp,dbGain,maxT,smooth);
+
+  if(pan){ schedule(pan.pan,pp,x=>Math.max(-1,Math.min(1,x)),maxT,smooth); src.connect(tg).connect(pan).connect(user); }
+  else { src.connect(tg).connect(user); }
+  return{src,last:user,nodes:[tg,pan,user].filter(Boolean),startOffsetSec};
+}
+
+function disconnectGraph(){
+  for(const g of graph){try{g.src.stop()}catch{}for(const n of g.nodes)try{n.disconnect()}catch{}}
+  graph=[];
+}
+async function ensureRealtime(){
+  if(audioCtx)return;
+  audioCtx=new AudioContext({sampleRate});
+  masterGain=audioCtx.createGain();masterGain.gain.value=.9;
+  if($("compress").checked){
+    compressor=audioCtx.createDynamicsCompressor();
+    compressor.threshold.value=-14;compressor.knee.value=18;compressor.ratio.value=3;
+    compressor.attack.value=.01;compressor.release.value=.2;
+    masterGain.connect(compressor);compressor.connect(audioCtx.destination);
+  }else masterGain.connect(audioCtx.destination);
+}
+function position(){if(!audioCtx)return pausedAt;return Math.min(durationSec,pausedAt+(audioCtx.currentTime-startedAt))}
+function tick(){
+  const p=position();
+  $("current").textContent=fmt(p);
+  if(document.activeElement!==$("seek"))$("seek").value=p;
+  if(p>=durationSec-.002&&audioCtx?.state==="running"){pausePlayback();pausedAt=durationSec}
+  raf=requestAnimationFrame(tick);
+}
+async function playPlayback(){
+  if(!project)return alert("先加载工程");
+  if(!buffers.size)return alert("没有成功加载音频");
+  await ensureRealtime();disconnectGraph();
+  const start=Math.min(durationSec,Math.max(0,pausedAt));
+  const when=audioCtx.currentTime+.05;
+  const smooth=$("smooth").checked;
+  for(const t of project.tracks){
+    const b=buffers.get(t.id);
+    if(!b)continue;
+    const g=createTrackGraph(audioCtx,b,t,durationSec,smooth);
+    g.last.connect(masterGain);graph.push(g);
+    const off=start-g.startOffsetSec;
+    if(off<0){ try{g.src.start(when-off,0)}catch(e){log("start "+t.id+": "+e.message)} continue; }
+    if(off>=b.duration)continue;
+    try{g.src.start(when,off)}catch(e){log("start "+t.id+": "+e.message)}
+  }
+  startedAt=when;pausedAt=start;
+  await audioCtx.resume();
+  $("state").textContent="playing";$("play").disabled=true;$("stop").disabled=false;
+  cancelAnimationFrame(raf);tick();
+}
+async function pausePlayback(){
+  if(!audioCtx)return;
+  pausedAt=position();await audioCtx.suspend();disconnectGraph();
+  $("state").textContent="paused";$("play").disabled=false;
+}
+function stopPlayback(){
+  try{audioCtx?.suspend()}catch{}
+  disconnectGraph();pausedAt=0;$("seek").value=0;$("current").textContent=fmt(0);
+  $("state").textContent="stopped";$("play").disabled=false;
+}
+async function seekTo(v){
+  pausedAt=Math.max(0,Math.min(durationSec,Number(v)));
+  $("current").textContent=fmt(pausedAt);
+  if(audioCtx?.state==="running")await playPlayback();
+}
+
+/* ---------- 导出 ---------- */
+async function renderOffline(){
+  if(!project||!buffers.size)throw new Error("没有可渲染的工程");
+  if(!(durationSec>0))throw new Error("时长未知");
+  const frames=Math.ceil(durationSec*sampleRate);
+  const off=new OfflineAudioContext(2,frames,sampleRate);
+  const master=off.createGain();master.gain.value=.9;
+  if($("compress").checked){
+    const c=off.createDynamicsCompressor();
+    c.threshold.value=-14;c.knee.value=18;c.ratio.value=3;c.attack.value=.01;c.release.value=.2;
+    master.connect(c);c.connect(off.destination);
+  }else master.connect(off.destination);
+
+  const smooth=$("smooth").checked;
+  let n=0;
+  for(const t of project.tracks){
+    const b=buffers.get(t.id);
+    if(!b)continue;
+    const g=createTrackGraph(off,b,t,durationSec,smooth);
+    g.last.connect(master);
+    if(g.startOffsetSec>0)g.src.start(g.startOffsetSec,0);else g.src.start(0);
+    n++;
+  }
+  $("exportStatus").textContent="渲染 "+n+" 条轨道…";
+  const rendered=await off.startRendering();
+  $("exportStatus").textContent="编码 WAV…";
+  const sixteen=$("wav16").checked;
+  const blob=new Blob([audioBufferToWav(rendered,sixteen)],{type:"audio/wav"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=exportBaseName()+".wav";
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+  $("exportStatus").textContent="完成 "+(blob.size/1048576).toFixed(2)+" MB";
+  log("WAV exported: "+a.download+" ("+(blob.size/1048576).toFixed(2)+" MB"+(sixteen?", 16-bit":", 32-bit float")+")");
+}
+function exportBaseName(){
+  try{
+    const h=JSON.parse(localStorage.getItem("uma.handoff")||"null");
+    if(h&&h.name)return h.name;
+  }catch{}
+  if(project&&project._uma&&project._uma.musicId)return "uma-live-"+project._uma.musicId;
+  return "uma-render-"+Date.now();
+}
+function audioBufferToWav(ab,to16){
+  const ch=2,sr=ab.sampleRate,n=ab.length;
+  if(to16){
+    const data=n*ch*2,out=new ArrayBuffer(44+data),d=new DataView(out);
+    const w=(o,s)=>{for(let i=0;i<s.length;i++)d.setUint8(o+i,s.charCodeAt(i))};
+    w(0,"RIFF");d.setUint32(4,36+data,true);w(8,"WAVE");w(12,"fmt ");
+    d.setUint32(16,16,true);d.setUint16(20,1,true);d.setUint16(22,ch,true);
+    d.setUint32(24,sr,true);d.setUint32(28,sr*ch*2,true);d.setUint16(32,ch*2,true);d.setUint16(34,16,true);
+    w(36,"data");d.setUint32(40,data,true);
+    const L=ab.getChannelData(0),R=ab.getChannelData(1);let p=44;
+    const enc=v=>{const x=Math.max(-1,Math.min(1,v));return x<0?x*0x8000:x*0x7FFF};
+    for(let i=0;i<n;i++){d.setInt16(p,enc(L[i]),true);p+=2;d.setInt16(p,enc(R[i]),true);p+=2}
+    return out;
+  }
+  const data=n*ch*4,out=new ArrayBuffer(44+data),d=new DataView(out);
+  const w=(o,s)=>{for(let i=0;i<s.length;i++)d.setUint8(o+i,s.charCodeAt(i))};
+  w(0,"RIFF");d.setUint32(4,36+data,true);w(8,"WAVE");w(12,"fmt ");
+  d.setUint32(16,16,true);d.setUint16(20,3,true);d.setUint16(22,ch,true);
+  d.setUint32(24,sr,true);d.setUint32(28,sr*ch*4,true);d.setUint16(32,ch*4,true);d.setUint16(34,32,true);
+  w(36,"data");d.setUint32(40,data,true);
+  const L=ab.getChannelData(0),R=ab.getChannelData(1);let p=44;
+  for(let i=0;i<n;i++){d.setFloat32(p,L[i],true);p+=4;d.setFloat32(p,R[i],true);p+=4}
+  return out;
+}
+
+/* ---------- 事件 ---------- */
+$("load").onclick=loadProject;
+$("loadLocal").onclick=()=>{
+  try{
+    const raw=localStorage.getItem("uma.project");
+    if(!raw)return alert("localStorage 里没有工程，请先在生成器页点“送入混音器”");
+    project=JSON.parse(raw);
+    const h=JSON.parse(localStorage.getItem("uma.handoff")||"{}");
+    if(h.mediaBase&&!$("baseUrl").value)$("baseUrl").value=h.mediaBase.endsWith("/")?h.mediaBase:h.mediaBase+"/";
+    log("已载入生成器直送的工程："+(project.id||"?")+"（"+(h.name||"")+"）");
+    $("projectUrl").value="";
+    $("pasteJson").value="";   // 关键：否则粘贴框里残留的 JSON 会静默盖过本地工程
+    loadProject();
+  }catch(e){alert("载入失败："+e.message)}
+};
+$("play").onclick=playPlayback;
+$("pause").onclick=pausePlayback;
+$("stop").onclick=stopPlayback;
+$("seek").oninput=e=>{pausedAt=Number(e.target.value);$("current").textContent=fmt(pausedAt)};
+$("seek").onchange=e=>seekTo(e.target.value);
+$("export").onclick=async()=>{
+  $("export").disabled=true;
+  try{await renderOffline()}catch(e){$("exportStatus").textContent="失败";log("EXPORT ERROR: "+(e.stack||e));alert(e.message||String(e))}
+  finally{$("export").disabled=false}
+};
+
+/* ---------- 启动 ---------- */
+(function init(){
+  const params=new URLSearchParams(location.search);
+  let handoff=null;
+  try{handoff=JSON.parse(localStorage.getItem("uma.handoff")||"null")}catch{}
+  if(handoff){
+    $("handoff").style.display="";
+    $("handoff").innerHTML="已收到生成器直送的工程：<b>"+esc(handoff.name||"?")+"</b>（"+new Date(handoff.ts).toLocaleString()+"）";
+    if(!$("baseUrl").value){
+      var mb=handoff.mediaBase||"https://uma.0xcjy.top/";
+      $("baseUrl").value=mb.endsWith("/")?mb:mb+"/";
+    }
+  }
+  if(params.get("auto")==="1"&&localStorage.getItem("uma.project"))$("loadLocal").click();
+  log("UMA Offline Mixer V2.3 ready.（V2.2 的修正版：裁剪/自动化/声道/进度）");
+})();
+</script>
+</body>
+</html>

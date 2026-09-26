@@ -1,0 +1,105 @@
+{
+  "musicId": 1026,
+  "title": {
+    "ja": "ささやかな祈り",
+    "zh": null
+  },
+  "live": {
+    "sort": 101,
+    "musicType": 2,
+    "songCharaType": 2,
+    "memberCount": 1
+  },
+  "bgm": [
+    {
+      "id": "bgm_01",
+      "path": "data/live/music/1026/bgm_01_0.mp3"
+    },
+    {
+      "id": "bgm_02",
+      "path": "data/live/music/1026/bgm_02_0.mp3"
+    }
+  ],
+  "lyrics": {
+    "17320": "ねえ、三日月あなたも 迷う時があるの？\n你说，那月牙也有迷茫的时候吗？",
+    "29480": "手かざせば今夜も たおやかな光\n触手可及 今夜依旧纤柔的光芒",
+    "41250": "朧げにただ 浮かぶ明かりを\n朦朦胧胧 飘在空中的月光",
+    "47700": "追いかけて駆けだすの\n我快步想要追上",
+    "53400": "声にならずに消えた想い\n无声无息 消失的心意",
+    "59850": "詰め込んで\n填满心间",
+    "68970": "私のささやかな祈り今\n我现在将自己小小的祈愿",
+    "75050": "大空に放り投げた\n投放到无垠的天空",
+    "81120": "いつかあなたのように誰かのことを\n惟愿有一天能像你一样",
+    "88330": "照らせる人になりたいだけ\n成为照亮他人的光芒",
+    "93220": "もう 泣かないよ\n我已经不再哭泣了"
+  },
+  "parts": [
+    {
+      "timeMs": 0,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 1,
+          "pan": 999
+        }
+      ],
+      "volumeRate": null
+    }
+  ],
+  "characters": [
+    {
+      "charaId": 1030,
+      "nameJa": "ライスシャワー",
+      "nameEn": "Rice Shower",
+      "nameZh": "米浴",
+      "waves": [
+        {
+          "charaId": 1030,
+          "waveIndex": 0,
+          "path": "data/live/music/1026/chara_1030/chara_0.mp3"
+        }
+      ]
+    }
+  ],
+  "permissionCharaIds": [
+    1030
+  ],
+  "diagnostics": {
+    "missingBgm": false,
+    "missingLyrics": false,
+    "missingPart": false,
+    "availableVoiceCharaIds": [
+      1030
+    ]
+  }
+}

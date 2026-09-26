@@ -1,0 +1,390 @@
+{
+  "musicId": 1175,
+  "title": {
+    "ja": "ハロー・ポラリス",
+    "zh": null
+  },
+  "live": {
+    "sort": 204,
+    "musicType": 5,
+    "songCharaType": 2,
+    "memberCount": 2
+  },
+  "bgm": [
+    {
+      "id": "bgm_01",
+      "path": "data/live/music/1175/bgm_01_0.mp3"
+    },
+    {
+      "id": "bgm_02",
+      "path": "data/live/music/1175/bgm_02_0.mp3"
+    }
+  ],
+  "lyrics": {
+    "4917": "見慣れたグラウンド あの日から\n从那日起 这熟悉的草地",
+    "12917": "変わらないものを映していた\n就映照着未曾改变的光景",
+    "21417": "走り疲れて 見上げたSky\n奔跑至疲惫时 抬头望见天空",
+    "30083": "くたびれたシューズも愛しく想えるな\n连穿旧的跑鞋 都感到如此可爱",
+    "40683": "此処で会って この感情は\n在此相遇 这份情感",
+    "46383": "見つけたから 信じたから\n正因已经寻得 正因我深信着",
+    "53033": "このまま Fly high with you\n就这样 与你展翅高飞",
+    "60200": "So, run side by side\n所以，并肩奔跑吧",
+    "64733": "もう一度\n再一次",
+    "68417": "We'll spark from now on\n从此刻起我们将迸发光芒",
+    "72417": "Cause I made a promise on that day\n因为我在那日许下了誓言",
+    "76967": "So, run side by side\n所以，并肩奔跑吧",
+    "81500": "何度でも\n无论多少次",
+    "85167": "I'll spark from now on\n从此刻起我将闪耀光芒",
+    "89017": "Cause I promised to give you my word\n因为我答应过要信守诺言",
+    "93700": "Um あの頃のまま\nUm 就如那时一样",
+    "101717": "さあ、また笑おうか\n来吧 再度一同欢笑吧"
+  },
+  "parts": [
+    {
+      "timeMs": 0,
+      "slots": [
+        {
+          "slot": "center",
+          "trackNumber": 1,
+          "waveIndex": 0,
+          "volume": 1,
+          "pan": 0
+        },
+        {
+          "slot": "left",
+          "trackNumber": 2,
+          "waveIndex": 1,
+          "volume": 1,
+          "pan": 0
+        },
+        {
+          "slot": "right",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right2",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "left3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        },
+        {
+          "slot": "right3",
+          "trackNumber": 0,
+          "waveIndex": null,
+          "volume": 999,
+          "pan": 999
+        }
+      ],
+      "volumeRate": 1
+    }
+  ],
+  "characters": [
+    {
+      "charaId": 1004,
+      "nameJa": "マルゼンスキー",
+      "nameEn": "Maruzensky",
+      "nameZh": "丸善斯基",
+      "waves": [
+        {
+          "charaId": 1004,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1004/chara_0.mp3"
+        },
+        {
+          "charaId": 1004,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1004/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1006,
+      "nameJa": "オグリキャップ",
+      "nameEn": "Oguri Cap",
+      "nameZh": "小栗帽",
+      "waves": [
+        {
+          "charaId": 1006,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1006/chara_0.mp3"
+        },
+        {
+          "charaId": 1006,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1006/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1017,
+      "nameJa": "シンボリルドルフ",
+      "nameEn": "Symboli Rudolf",
+      "nameZh": "鲁道夫象征",
+      "waves": [
+        {
+          "charaId": 1017,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1017/chara_0.mp3"
+        },
+        {
+          "charaId": 1017,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1017/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1021,
+      "nameJa": "タマモクロス",
+      "nameEn": "Tamamo Cross",
+      "nameZh": "玉藻十字",
+      "waves": [
+        {
+          "charaId": 1021,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1021/chara_0.mp3"
+        },
+        {
+          "charaId": 1021,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1021/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1027,
+      "nameJa": "メジロライアン",
+      "nameEn": "Mejiro Ryan",
+      "nameZh": "目白赖恩",
+      "waves": [
+        {
+          "charaId": 1027,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1027/chara_0.mp3"
+        },
+        {
+          "charaId": 1027,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1027/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1034,
+      "nameJa": "イナリワン",
+      "nameEn": "Inari One",
+      "nameZh": "稻荷一",
+      "waves": [
+        {
+          "charaId": 1034,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1034/chara_0.mp3"
+        },
+        {
+          "charaId": 1034,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1034/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1040,
+      "nameJa": "ゴールドシチー",
+      "nameEn": "Gold City",
+      "nameZh": "黄金城市",
+      "waves": [
+        {
+          "charaId": 1040,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1040/chara_0.mp3"
+        },
+        {
+          "charaId": 1040,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1040/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1045,
+      "nameJa": "スーパークリーク",
+      "nameEn": "Super Creek",
+      "nameZh": "超级溪流",
+      "waves": [
+        {
+          "charaId": 1045,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1045/chara_0.mp3"
+        },
+        {
+          "charaId": 1045,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1045/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1053,
+      "nameJa": "バンブーメモリー",
+      "nameEn": "Bamboo Memory",
+      "nameZh": "青竹回忆",
+      "waves": [
+        {
+          "charaId": 1053,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1053/chara_0.mp3"
+        },
+        {
+          "charaId": 1053,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1053/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1057,
+      "nameJa": "ミスターシービー",
+      "nameEn": "Mr. C.B.",
+      "nameZh": "千明代表",
+      "waves": [
+        {
+          "charaId": 1057,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1057/chara_0.mp3"
+        },
+        {
+          "charaId": 1057,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1057/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1069,
+      "nameJa": "サクラチヨノオー",
+      "nameEn": "Sakura Chiyono O",
+      "nameZh": "樱花千代王",
+      "waves": [
+        {
+          "charaId": 1069,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1069/chara_0.mp3"
+        },
+        {
+          "charaId": 1069,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1069/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1070,
+      "nameJa": "シリウスシンボリ",
+      "nameEn": "Sirius Symboli",
+      "nameZh": "天狼星象征",
+      "waves": [
+        {
+          "charaId": 1070,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1070/chara_0.mp3"
+        },
+        {
+          "charaId": 1070,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1070/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1071,
+      "nameJa": "メジロアルダン",
+      "nameEn": "Mejiro Ardan",
+      "nameZh": "目白阿尔丹",
+      "waves": [
+        {
+          "charaId": 1071,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1071/chara_0.mp3"
+        },
+        {
+          "charaId": 1071,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1071/chara_1.mp3"
+        }
+      ]
+    },
+    {
+      "charaId": 1072,
+      "nameJa": "ヤエノムテキ",
+      "nameEn": "Yaeno Muteki",
+      "nameZh": "八重无敌",
+      "waves": [
+        {
+          "charaId": 1072,
+          "waveIndex": 0,
+          "path": "data/live/music/1175/chara_1072/chara_0.mp3"
+        },
+        {
+          "charaId": 1072,
+          "waveIndex": 1,
+          "path": "data/live/music/1175/chara_1072/chara_1.mp3"
+        }
+      ]
+    }
+  ],
+  "permissionCharaIds": [
+    1004,
+    1006,
+    1017,
+    1021,
+    1027,
+    1034,
+    1040,
+    1045,
+    1053,
+    1057,
+    1069,
+    1070,
+    1071,
+    1072
+  ],
+  "diagnostics": {
+    "missingBgm": false,
+    "missingLyrics": false,
+    "missingPart": false,
+    "availableVoiceCharaIds": [
+      1004,
+      1006,
+      1017,
+      1021,
+      1027,
+      1034,
+      1040,
+      1045,
+      1053,
+      1057,
+      1069,
+      1070,
+      1071,
+      1072
+    ]
+  }
+}
