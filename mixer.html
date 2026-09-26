@@ -211,9 +211,13 @@ function isAbs(u){return /^(https?:|blob:|data:)/i.test(u)}
 function resolveMedia(raw){
   if(!raw)return null;
   raw=String(raw).trim();
-  if(isAbs(raw))return raw;
-  if(baseUrl)return new URL(raw,baseUrl).href;
-  try{const u=new URL(projectUrl);return new URL(raw,u.origin+"/").href}catch{return raw}
+  if(isAbs(raw))return raw;                                     // ① 绝对 URL 直接用
+  if(baseUrl)return new URL(raw,baseUrl).href;                  // ② 手填的媒体基址优先
+  if(projectUrl.trim()){                                        // ③ 工程 JSON 就在媒体旁边 → 用它的源站
+    try{const u=new URL(projectUrl,location.href);if(/^https?:/.test(u.protocol))return new URL(raw,u.origin+"/").href}catch{}
+  }
+  try{return new URL(raw,C.mediaBaseDefault()).href}catch{}      // ④ 默认媒体基址（Cloudflare R2）
+  return raw;
 }
 function sinkIndex(t){return t.media.replace(/^\/+/,"")}
 

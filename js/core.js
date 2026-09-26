@@ -22,7 +22,7 @@
   /* 默认媒体基址：留空 = 走官方源站（工程 JSON 里的 /media/live/... 由它提供）。
      想把整站默认切到 Cloudflare R2（或任何自建镜像），把下面这行改成公开域名即可，例如
      var MEDIA_BASE_DEFAULT = "https://pub-xxxxxxx.r2.dev";                     */
-  var MEDIA_BASE_DEFAULT = "";
+  var MEDIA_BASE_DEFAULT = "https://pub-8f96a112941a4b019a15db00e56a37c6.r2.dev";
   var OFFICIAL_MEDIA_BASE = "https://uma.0xcjy.top/";
   function mediaBaseDefault() { return MEDIA_BASE_DEFAULT || OFFICIAL_MEDIA_BASE; }
 
