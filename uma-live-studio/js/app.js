@@ -1,5 +1,5 @@
 /*
- * web/js/app.js — UMA Live Studio 曲库浏览器 + 混音工程生成器（UI 层）
+ * web/js/app.js — UMA Live Studio 混音数据浏览器 + 混音工程生成器（UI 层）
  * 依赖 js/core.js（UmaCore）
  *
  * 槽位角色选择器 = 可搜索下拉（与站点一致）：搜索框 + 中文名 + 日文名副标题 + 当前项高亮，
@@ -66,14 +66,13 @@
       try { rates = await getJSON(DATA + "media-rates.json"); } catch (e) { rates = {}; }
     } catch (e) {
       $("boot").className = "warn";
-      $("boot").innerHTML = "读取本地曲库失败：" + esc(e.message) +
+      $("boot").innerHTML = "读取混音数据失败：" + esc(e.message) +
         "<br>本页需要通过 HTTP 打开（file:// 会被浏览器阻止 fetch）。本地预览：<code>python tools/serve.py</code>，" +
         "或直接部署到 GitHub Pages。";
       return;
     }
     $("boot").className = "note";
-    $("boot").innerHTML = "本地曲库就绪：" + catalog.songs.length + " 首（生成时间 " +
-      esc((catalog.generatedAt || "?").slice(0, 10)) + "）";
+    $("boot").innerHTML = "混音数据就绪：" + catalog.songs.length + " 首";
     $("libStat").textContent = catalog.songs.length + " 首可浏览";
     renderList("");
     $("search").addEventListener("input", function (e) { renderList(e.target.value); });
@@ -264,12 +263,8 @@
       it.className = "combo-item" + (c.charaId === cur ? " selected" : "");
       it.setAttribute("role", "option");
       it.dataset.id = c.charaId;
-      // wave 标注只在有信息量时出现：该角色在本槽不止一个 wave，或缺少本槽的某个 wave。
-      // 全部角色都一样的「wave 0」是噪音，隐藏掉（用户要求）。
-      var notable = usable.length > 1 || lack.length > 0;
+      // 列表里不显示 wave 标注（用户要求删掉）：名字块整体靠左，wave 信息在槽位卡片那行看。
       it.innerHTML =
-        (notable ? '<span class="wv">wave ' + (usable.join(",") || "—") +
-          (lack.length ? "（缺 " + lack.join(",") + "）" : "") + '</span>' : '') +
         '<span class="cname">' + esc(C.characterName(c)) + '</span>' +
         '<span class="cja">' + esc(C.characterSubName(c)) + ' ' +
           '<span class="cid">#' + c.charaId + '</span></span>';

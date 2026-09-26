@@ -5,88 +5,117 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>UMA Live Studio — 混音工程生成器</title>
 <style>
-:root{color-scheme:dark;--bg:#090d12;--panel:#121922;--panel2:#182331;--line:#2a3746;--text:#e8eef6;--muted:#91a2b6;--accent:#6ea8fe;--ok:#63d297;--err:#ff7777;--warn:#ead48e}
+  /* 页眉：与主页 style.css 同一套（sticky 深色条 + 圆头像 + 右侧导航） */
+  .site-header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,#161b22,#1d232c);border-bottom:1px solid #30363d;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+  .header-inner{width:min(1280px,calc(100% - 32px));min-height:60px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:10px 0}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#f0f6fc}
+  .brand-avatar{width:34px;height:34px;border-radius:50%;object-fit:cover;display:block;background:#0d1117;
+    box-shadow:0 0 0 1px rgba(255,255,255,.18),0 0 0 3px rgba(255,255,255,.05),0 2px 8px rgba(0,0,0,.45);
+    transition:transform .18s ease,box-shadow .18s ease}
+  .brand:hover .brand-avatar{transform:scale(1.06);box-shadow:0 0 0 1px rgba(255,255,255,.32),0 0 0 3px rgba(9,105,218,.28),0 4px 12px rgba(0,0,0,.5)}
+  .brand-name{font-weight:650;font-size:14px;letter-spacing:.2px}
+  .brand-sub{color:#8b949e;font-size:12px;font-weight:500}
+  .header-nav{margin-left:auto;display:flex;align-items:center;gap:22px}
+  .header-nav a{color:#f0f6fc;font-size:14px;font-weight:600;opacity:.9;text-decoration:none;padding:4px 0;transition:opacity .2s,color .2s}
+  .header-nav a:hover{color:#fff;opacity:1}
+  .header-nav a.on{color:#fff;opacity:1;box-shadow:inset 0 -2px 0 var(--accent)}
+  @media(max-width:700px){.header-inner{padding:9px 0}.header-nav{gap:14px}.header-nav a{font-size:13px}.brand-sub{display:none}}
+
+
+:root{color-scheme:light;--bg:#f6f8fa;--bg-soft:#eef2f6;--panel:#ffffff;--panel2:#f8fafc;--line:#d0d7de;--line-light:#e6ebf0;--text:#1f2328;--text-2:#57606a;--muted:#6e7781;--accent:#0969da;--accent-strong:#0550ae;--accent-soft:#ddf4ff;--ok:#1a7f37;--ok-soft:#dafbe1;--warn:#bc4c00;--warn-soft:#fff1e5;--err:#cf222e;--err-soft:#ffebe9;--shadow-small:0 1px 2px rgba(31,35,40,.06);--shadow:0 3px 8px rgba(31,35,40,.08);--shadow-large:0 8px 24px rgba(31,35,40,.10);--radius-small:6px;--radius:10px;--radius-large:14px}
 *{box-sizing:border-box}
-body{margin:0;background:linear-gradient(135deg,#080c11,#111a24 55%,#0a1017);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif}
 .wrap{max-width:1360px;margin:auto;padding:24px 18px 60px}
 .title{font-size:26px;font-weight:750}
 .sub{color:var(--muted);margin:4px 0 18px}
-.sub code{background:#0d151d;padding:1px 5px;border-radius:5px}
-.card{background:#121922ee;border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0;box-shadow:0 12px 35px #0004}
-.cols{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:14px;align-items:start}
+.sub code{background:var(--bg-soft);padding:1px 5px;border-radius:5px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}
+.cols{display:grid;grid-template-columns:minmax(300px,460px) 1fr;gap:14px;align-items:start}
 @media(max-width:940px){.cols{grid-template-columns:1fr}}
-label{display:block;color:#bac7d6;margin-bottom:6px;font-weight:650}
-input[type=search],input[type=text],select{width:100%;padding:9px 11px;background:#0a1017;border:1px solid #354355;border-radius:9px;color:var(--text);outline:0}
+label{display:block;color:var(--text-2);margin-bottom:6px;font-weight:650}
+input[type=search],input[type=text],select{width:100%;padding:9px 11px;background:#ffffff;border:1px solid var(--line);border-radius:8px;color:var(--text);outline:0}
 input:focus,select:focus{border-color:var(--accent)}
 .small{font-size:12px;color:var(--muted)}
 .row{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
-.btn{border:1px solid #3a4a5f;background:#1a2532;color:var(--text);border-radius:9px;padding:8px 13px;cursor:pointer;font-weight:650}
-.btn:hover{background:#233247}.btn.primary{background:#255b9d;border-color:#4079bd}
-.btn.ghost{background:#141d28}.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:9px;padding:8px 13px;cursor:pointer;font-weight:650}
+.btn:hover{background:var(--bg-soft)}.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.ghost{background:var(--panel)}.btn:disabled{opacity:.45;cursor:not-allowed}
 .songlist{max-height:560px;overflow:auto;border:1px solid var(--line);border-radius:10px;margin-top:10px}
-.song{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center;padding:8px 10px;border-bottom:1px solid #202b37;cursor:pointer}
-.song:last-child{border-bottom:0}.song:hover{background:#182331}
-.song.active{background:#1d3050}
-.song img{width:42px;height:42px;border-radius:7px;object-fit:cover;background:#0a1017}
+.song{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line-light);cursor:pointer}
+.song:last-child{border-bottom:0}.song:hover{background:var(--panel2)}
+.song.active{background:var(--accent-soft)}
+.song img{width:42px;height:42px;border-radius:7px;object-fit:cover;background:var(--bg-soft)}
 .song b{display:block;font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .song .meta{font-size:12px;color:var(--muted)}
-.badge{font-size:11px;padding:2px 7px;border-radius:999px;background:#263241;color:#b3c2d3;white-space:nowrap}
-.badge.ok{background:#173527;color:#8fe0b3}
+.badge{font-size:11px;padding:2px 7px;border-radius:999px;background:var(--bg-soft);color:var(--text-2);white-space:nowrap}
+.badge.ok{background:var(--ok-soft);color:var(--ok)}
 .head{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:start}
-.head img{width:132px;height:132px;border-radius:11px;object-fit:cover;background:#0a1017}
+.head img{width:132px;height:132px;border-radius:11px;object-fit:cover;background:var(--bg-soft)}
 .head h2{margin:2px 0 4px;font-size:20px}
-.slot{border:1px solid var(--line);border-radius:11px;padding:10px;margin:9px 0;background:#0f1620}
+.slot{border:1px solid var(--line);border-radius:11px;padding:10px;margin:9px 0;background:var(--panel2)}
 .slot .top{display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:center}
-.slotname{font-weight:700;color:#cfe0f5;font-variant-numeric:tabular-nums}
+.slotname{font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
 /* 关键：作者样式一旦给元素设了 display，就会盖掉浏览器给 hidden 属性的默认样式，
    于是 el.hidden 只改属性、不改渲染（真机上下拉面板常显、点不开也收不起）。这里显式补齐。 */
 [hidden]{display:none!important}
 .combo{position:relative}
-.combo-btn{width:100%;display:flex;gap:9px;align-items:baseline;text-align:left;padding:9px 11px;background:#0a1017;border:1px solid #354355;border-radius:9px;color:var(--text);cursor:pointer;font:inherit;font-weight:650}
-.combo-btn:hover{border-color:#4a5f7a}
+.combo-btn{width:100%;display:flex;gap:9px;align-items:baseline;text-align:left;padding:9px 11px;background:#ffffff;border:1px solid var(--line);border-radius:8px;color:var(--text);cursor:pointer;font:inherit;font-weight:650}
+.combo-btn:hover{border-color:#8c959f}
 .combo-btn:focus-visible{border-color:var(--accent);outline:none}
 .combo-btn .cja{color:var(--muted);font-weight:400;font-size:12px}
 .combo-btn .caret{margin-left:auto;color:var(--muted);font-weight:400}
-.combo-pop{position:absolute;z-index:40;left:0;right:0;top:calc(100% + 6px);background:#0d151e;border:1px solid #34455a;border-radius:11px;box-shadow:0 18px 40px #000a;padding:8px;max-height:340px;display:flex;flex-direction:column}
-.combo-search{width:100%;padding:8px 10px;background:#0a1017;border:1px solid #354355;border-radius:8px;color:var(--text);margin-bottom:6px;font:inherit}
+.combo-pop{position:absolute;z-index:40;left:0;right:0;top:calc(100% + 6px);background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-large);padding:8px;max-height:340px;display:flex;flex-direction:column}
+.combo-search{width:100%;padding:8px 10px;background:#ffffff;border:1px solid var(--line);border-radius:8px;color:var(--text);margin-bottom:6px;font:inherit}
 .combo-search:focus{border-color:var(--accent);outline:none}
 .combo-list{overflow:auto}
-/* 显式排格子：名字块固定在右列并右对齐；左侧 wave 标注缺席时该列自动收为 0 宽 */
-.combo-item{display:grid;grid-template-columns:auto 1fr;gap:1px 10px;padding:7px 9px;border-radius:8px;cursor:pointer;align-items:center}
-.combo-item .wv{grid-column:1;grid-row:1 / span 2;align-self:center;font-size:11px;color:#8fa3ba;white-space:nowrap}
-.combo-item .cname{grid-column:2;grid-row:1;text-align:right}
-.combo-item .cja{grid-column:2;grid-row:2;text-align:right;color:var(--muted);font-size:12px}
-.combo-item .cid{color:#7f8ea3;font-size:11px}
-.combo-item.active{background:#1d3050}
-.combo-item.selected{box-shadow:inset 0 0 0 1px #2a5f45}
-.combo-item.selected .cname{color:#8fe0b3}
+/* 显式排格子：名字块固定左列（左对齐）；wave 标注在右列，缺席时该列自动收为 0 宽 */
+.combo-item{display:grid;grid-template-columns:1fr auto;gap:1px 10px;padding:7px 9px;border-radius:8px;cursor:pointer;align-items:center}
+.combo-item .cname{grid-column:1;grid-row:1;text-align:left}
+.combo-item .cja{grid-column:1;grid-row:2;text-align:left;color:var(--muted);font-size:12px}
+.combo-item .cid{color:var(--muted);font-size:11px}
+.combo-item.active{background:var(--accent-soft)}
+.combo-item.selected{box-shadow:inset 0 0 0 1px var(--ok)}
+.combo-item.selected .cname{color:var(--ok)}
 .combo-empty{padding:10px;color:var(--muted);font-size:12px;text-align:center}
 .ruler{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin:10px 0 2px;font-variant-numeric:tabular-nums;padding-left:102px}
 @media(max-width:700px){.ruler{padding-left:0}}
-.tl{position:relative;height:16px;background:#0a1017;border:1px solid #243040;border-radius:5px;margin-top:8px;overflow:hidden}
-.tl i{position:absolute;top:2px;bottom:2px;background:linear-gradient(#4f8fe0,#2f6bb8);border-radius:3px;opacity:.92}
-.tl u{position:absolute;top:0;bottom:0;width:1px;background:#3b4b60;opacity:.5}
-pre{margin:0;background:#080d13;border:1px solid #202b38;border-radius:10px;padding:11px;max-height:300px;overflow:auto;color:#b9c8d9;white-space:pre-wrap;font-size:12px}
-.note{padding:9px 11px;border-radius:9px;background:#10271d;border:1px solid #24583b;color:#a4dfbb;margin:8px 0}
-.warn{padding:9px 11px;border-radius:9px;background:#30270f;border:1px solid #66521e;color:var(--warn);margin:8px 0}
+.tl{position:relative;height:16px;background:var(--bg-soft);border:1px solid var(--line-light);border-radius:5px;margin-top:8px;overflow:hidden}
+.tl i{position:absolute;top:2px;bottom:2px;background:var(--accent);border-radius:3px;opacity:.92}
+.tl u{position:absolute;top:0;bottom:0;width:1px;background:#8c959f;opacity:.5}
+pre{margin:0;background:var(--bg);border:1px solid var(--line-light);border-radius:8px;padding:11px;max-height:300px;overflow:auto;color:var(--text);white-space:pre-wrap;font-size:12px}
+.note{padding:9px 11px;border-radius:9px;background:var(--ok-soft);border:1px solid #a2d8b4;color:var(--ok);margin:8px 0}
+.warn{padding:9px 11px;border-radius:9px;background:var(--warn-soft);border:1px solid #f0b98b;color:var(--warn);margin:8px 0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(max-width:700px){.grid2{grid-template-columns:1fr}.head{grid-template-columns:1fr}}
 a{color:var(--accent)}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12px;color:var(--muted)}
-.kv b{color:#d7e3f2;font-weight:650}
+.kv b{color:var(--text);font-weight:650}
 </style>
 </head>
 <body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/Storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">混音工程生成器</span>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html" class="on">生成器</a>
+      <a href="mixer.html">混音器</a>
+      <a href="../index.html">返回主页</a>
+    </nav>
+  </div>
+</header>
+
 <div class="wrap">
   <div class="title">UMA Live Studio · 混音工程生成器
-    <a class="btn" href="../index.html" style="float:right;font-size:13px;font-weight:600;text-decoration:none">← 返回主页</a>
-  </div>
+</div>
   <div class="sub">
-    从<strong>本地曲库镜像</strong>选 Live、给每个声部槽位挑角色，直接在本地生成与官方
-    <code>/api/live/mixer/projects/live-&lt;id&gt;</code> 等价的混音 JSON —— 无需手工抓取网站 JSON。
+    根据选择的角色与<strong>本地混音数据</strong>生成混音 JSON 文件，用来产出<strong>特定角色演唱</strong>的 Live。
   </div>
 
-  <div id="boot" class="warn">正在读取本地曲库…（若长时间无响应，请通过 HTTP 打开本页：<code>python tools/serve.py</code> 或部署到 GitHub Pages）</div>
+  <div id="boot" class="warn">正在读取本地混音数据…（若长时间无响应请联系作者）</div>
 
   <div class="cols">
     <div class="card">
@@ -124,7 +153,7 @@ a{color:var(--accent)}
         </div>
 
         <div style="margin-top:14px;font-weight:700">声部槽位与角色</div>
-        <div class="small">点开任一槽位的下拉即可<strong>搜索角色</strong>（中文名 / 日文名 / id 均可），条目显示中文名、日文名与角色 id，当前选择会高亮；该角色在本槽有多种 wave 时左侧会标出。蓝色条为该槽的出场时间轴。</div>
+        <div class="small">点开任一槽位的下拉即可<strong>搜索角色</strong>（中文名 / 日文名 / id 均可），条目显示中文名、日文名与角色 id，当前选择会高亮。蓝色条为该槽的出场时间轴。</div>
         <div class="ruler" id="ruler"></div>
         <div id="slots"></div>
 
@@ -152,15 +181,6 @@ a{color:var(--accent)}
     </div>
   </div>
 
-  <div class="card">
-    <div style="font-weight:700;margin-bottom:8px">说明</div>
-    <div class="small">
-      · 索引与详情来自本站镜像（<code>web/data/live/</code>），完全离线可浏览；<br>
-      · 音频不镜像：<code>https://uma.0xcjy.top/media/live/…</code> 带 <code>Access-Control-Allow-Origin: *</code>，浏览器可直接跨域取；<br>
-      · 混音规则（增益、声像、出场切换、时长）由官方 API 实测拟合，并用真实响应逐条对拍（见 <code>test/</code> 与 <code>docs/混音规则.md</code>）；<br>
-      · 生成的 JSON 字段与官方一致，可直接喂给任意版本的 UMA 离线混音器，也可下载留档。
-    </div>
-  </div>
 </div>
 <script src="js/core.js"></script>
 <script src="js/app.js"></script>
