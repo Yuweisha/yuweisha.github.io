@@ -26,3 +26,33 @@
   from { opacity: 0.35; transform: translateY(4px); }
   to   { opacity: 1;    transform: none; }
 }
+
+/* =========================================================
+   21. 底部信息条固定 + 消除底部色阶
+   ========================================================= */
+/* 画布底色兜住整屏：body 的渐变在页面比视口短时会被重复铺一次，形成明显色阶 */
+html { background: #f6f8fa; }
+/* 渐变只画一次（顶部 320px 柔和过渡），其余交给上面的底色 */
+body {
+  min-height: 100vh;
+  padding-bottom: 64px;            /* 给固定条让位，内容不会被压住 */
+  background: linear-gradient(180deg, #eef2f6 0, #f6f8fa 320px) no-repeat;
+}
+/* 页脚：贴视口底部的固定条，左右与页眉同宽 */
+.site-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  margin: 0;
+  padding: 12px max(20px, calc((100% - var(--max-width)) / 2 + 20px));
+  background: rgba(246, 248, 250, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--border-light);
+  box-shadow: 0 -1px 3px rgba(31, 35, 40, 0.04);
+}
+@media (max-width: 650px) {
+  body { padding-bottom: 96px; }   /* 窄屏下页脚会折成两行 */
+}
