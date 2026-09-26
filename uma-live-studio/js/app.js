@@ -36,9 +36,13 @@
     var t = song.title || {};
     return t.zh || t.ja || ("Live " + song.musicId);
   }
+  // 副标题：标题有两种语言时用日文名；只有一种语言时退回 "LIVE <id>"。
+  // 调用方若没传 musicId（如详情头部的元信息行，那里已单独印了 LIVE <id>），则返回空串，
+  // 由 filter(Boolean) 丢掉——否则会拼出 "LIVE undefined"。
   function subTitleOf(song) {
     var t = song.title || {};
-    return t.zh && t.ja ? t.ja : ("LIVE " + song.musicId);
+    if (t.zh && t.ja) return t.ja;
+    return song.musicId != null ? "LIVE " + song.musicId : "";
   }
   function charaOf(id) { return detail ? C.characterById(detail, id) : null; }
 
@@ -126,9 +130,13 @@
     $("cover").src = DATA + "jackets/" + detail.musicId + ".png";
     $("songTitle").textContent = titleOf({ musicId: detail.musicId, title: detail.title });
     var live = detail.live || {};
-    $("songMeta").innerHTML = "LIVE " + detail.musicId + " · " + esc(subTitleOf({ title: detail.title })) +
-      " · 角色 " + (detail.characters || []).length + " · 时段 " + (detail.parts || []).length +
-      (live.memberCount ? " · 编成 " + live.memberCount : "");
+    $("songMeta").innerHTML = [
+      "LIVE " + detail.musicId,
+      subTitleOf({ title: detail.title }),
+      "角色 " + (detail.characters || []).length,
+      "时段 " + (detail.parts || []).length,
+      live.memberCount ? "编成 " + live.memberCount : "",
+    ].filter(Boolean).map(esc).join(" · ");
 
     var sel = $("bgmSelect");
     sel.innerHTML = "";
