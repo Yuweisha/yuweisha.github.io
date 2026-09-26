@@ -81,11 +81,16 @@ input:focus,select:focus{border-color:var(--accent)}
    于是 el.hidden 只改属性、不改渲染（真机上下拉面板常显、点不开也收不起）。这里显式补齐。 */
 [hidden]{display:none!important}
 .combo{position:relative}
-.combo-btn{width:100%;display:flex;gap:9px;align-items:baseline;text-align:left;padding:9px 11px;background:#ffffff;border:1px solid var(--line);border-radius:8px;color:var(--text);cursor:pointer;font:inherit;font-weight:650}
+.combo-btn{width:100%;display:flex;gap:10px;align-items:center;text-align:left;padding:8px 11px;background:#ffffff;border:1px solid var(--line);border-radius:8px;color:var(--text);cursor:pointer;font:inherit}
+.combo-btn .cbtn-main{display:flex;flex-direction:column;gap:2px;min-width:0;text-align:left}
+.combo-btn .cname{font-weight:650;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.combo-btn .cbtn-right{margin-left:auto;display:flex;align-items:center;gap:8px;flex:none}
+.combo-btn.on{border-color:var(--accent);background:var(--accent-soft)}
 .combo-btn:hover{border-color:#8c959f}
 .combo-btn:focus-visible{border-color:var(--accent);outline:none}
-.combo-btn .cja{color:var(--muted);font-weight:400;font-size:12px}
-.combo-btn .caret{margin-left:auto;color:var(--muted);font-weight:400}
+.combo-btn .cja{color:var(--muted);font-weight:400;font-size:12px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.combo-btn .cid{color:var(--muted);font-weight:400;font-size:12px;white-space:nowrap}
+.combo-btn .caret{color:var(--muted);font-weight:400}
 .combo-pop{position:absolute;z-index:40;left:0;right:0;top:calc(100% + 6px);background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-large);padding:8px;max-height:340px;display:flex;flex-direction:column}
 .combo-search{width:100%;padding:8px 10px;background:#ffffff;border:1px solid var(--line);border-radius:8px;color:var(--text);margin-bottom:6px;font:inherit}
 .combo-search:focus{border-color:var(--accent);outline:none}
@@ -94,7 +99,7 @@ input:focus,select:focus{border-color:var(--accent)}
 .combo-item{display:grid;grid-template-columns:1fr auto;gap:1px 10px;padding:7px 9px;border-radius:8px;cursor:pointer;align-items:center}
 .combo-item .cname{grid-column:1;grid-row:1;text-align:left}
 .combo-item .cja{grid-column:1;grid-row:2;text-align:left;color:var(--muted);font-size:12px}
-.combo-item .cid{color:var(--muted);font-size:11px}
+.combo-item .cid{grid-column:2;grid-row:1 / span 2;align-self:center;color:var(--muted);font-size:12px;white-space:nowrap}
 .combo-item.active{background:var(--accent-soft)}
 .combo-item.selected{box-shadow:inset 0 0 0 1px var(--ok)}
 .combo-item.selected .cname{color:var(--ok)}
@@ -170,15 +175,14 @@ a{color:var(--accent)}
         </div>
 
         <div style="margin-top:14px;font-weight:700">声部槽位与角色</div>
-        <div class="small">点开任一槽位的下拉即可<strong>搜索角色</strong>（中文名 / 日文名 / id 均可），条目显示中文名、日文名与角色 id，当前选择会高亮。蓝色条为该槽的出场时间轴。</div>
+        <div class="small">点开任一槽位的下拉即可<strong>搜索角色</strong>（中文名 / 日文名 / 英文名 / id 均可），条目第一行中文名、第二行「日文原名 |英文名」、右侧为角色编号，当前选择会高亮。蓝色条为该槽的出场时间轴。</div>
         <div class="ruler" id="ruler"></div>
         <div id="slots"></div>
 
-        <div class="row" style="margin-top:10px;justify-content:space-between;align-items:center">
-          <div class="row" style="gap:9px;align-items:center">
-            <label class="row" style="gap:8px;align-items:center;font-weight:700" for="sameCharSel">全曲同一角色</label>
-            <select id="sameCharSel" class="picksel"
-                    title="选一个角色，所有声部槽位都换成它：槽位数量、出场时间轴、增益与平衡规则都不变，只是每个槽位都改由这位角色演唱"></select>
+        <div class="row" style="margin-top:12px;gap:14px;align-items:flex-start">
+          <div style="width:460px;max-width:100%;min-width:0">
+            <div style="font-weight:700;margin-bottom:6px">全曲同一角色</div>
+            <div class="combo" id="sameCharCombo"></div>
           </div>
           <span class="small" id="sameCharMsg"></span>
         </div>

@@ -76,13 +76,18 @@
     return c.nameZh || c.nameJa || c.nameEn || ("chara " + c.charaId);
   }
 
-  /** 副标题（日文名优先，供下拉第二行显示） */
+  /** 副标题：日文原名 | 英文名（缺英文名时退回只显示日文原名；再缺退回英文名） */
   function characterSubName(c) {
     if (!c) return "";
-    var zh = c.nameZh;
-    if (c.nameJa && c.nameJa !== zh) return c.nameJa;
-    if (c.nameEn && c.nameEn !== zh) return c.nameEn;
-    return "";
+    var ja = c.nameJa || "", en = c.nameEn || "";
+    if (ja && en) return ja + " |" + en;
+    return ja || en || "";
+  }
+
+  /** 角色编号标签（列表右侧显示） */
+  function characterIdLabel(c) {
+    if (!c || c.charaId == null) return "";
+    return "#" + c.charaId;
   }
 
   /** 角色搜索匹配：中文名 / 日文名 / 英文名 / charaId 子串 */
@@ -369,7 +374,7 @@
     mediaUrlFromDetailPath: mediaUrlFromDetailPath,
     slotsOfSong: slotsOfSong, wavesOfSlot: wavesOfSlot, wavesForCharacter: wavesForCharacter,
     characterById: characterById, characterName: characterName, defaultCast: defaultCast,
-    characterSubName: characterSubName, matchCharacter: matchCharacter,
+    characterSubName: characterSubName, characterIdLabel: characterIdLabel, matchCharacter: matchCharacter,
     partAt: partAt, slotEntry: slotEntry, activeCount: activeCount, balanceFactor: balanceFactor,
     slotVolumeLin: slotVolumeLin, slotPan: slotPan,
     buildAutomation: buildAutomation, evalAutomation: evalAutomation,

@@ -201,7 +201,7 @@
   function setCast(slot, charaId) {
     if (sameCharId) {
       sameCharId = null; castBefore = null;
-      var sel0 = $("sameCharSel"); if (sel0) { sel0.value = ""; sel0.classList.remove("on"); }
+      syncSameCharUI();
       setSameCharMsg("手动改了某个槽位，已退出「全曲同一角色」");
     }
     cast = cast.map(function (kv) { return kv[0] === slot ? [slot, Number(charaId)] : kv; });
@@ -225,24 +225,32 @@
     return hit ? C.characterName(hit) : "chara " + id;
   }
 
-  /** 下拉选项 = 本曲可用角色；换曲后若上次那位不在阵容里则自动退出 */
+  /** 重建「全曲同一角色」下拉：条目排版与站位选角一致；换曲后上次那位不在阵容里则自动退出 */
+  var sameCharCombo = null;
+  function syncSameCharUI() {
+    var box = $("sameCharCombo");
+    if (!box) return;
+    sameCharCombo = buildCharaCombo(box, {
+      rows: (detail && detail.characters) || [],
+      currentId: sameCharId,
+      offLabel: "关闭（每个槽位单独选角）",
+      offSub: "选择后全部槽位都由同一个角色演唱",
+      emptyLabel: "关闭（每个槽位单独选角）",
+      title: "选一个角色，所有声部槽位都换成它：槽位数量、出场时间轴、增益与平衡规则都不变",
+      onPick: function (id) { if (id == null) clearSameChar(); else applySameChar(id); }
+    });
+  }
   function renderSameChar() {
-    var sel = $("sameCharSel");
-    if (!sel) return;
-    var chs = detail.characters || [];
-    sel.innerHTML = '<option value="">（关闭）每个槽位单独选角</option>' +
-      chs.map(function (c) {
-        return '<option value="' + c.charaId + '">' + esc(C.characterName(c)) + "</option>";
-      }).join("");
+    if (!$("sameCharCombo")) return;
+    var chs = (detail && detail.characters) || [];
     var ids = chs.map(function (c) { return Number(c.charaId); });
     if (sameCharId && ids.indexOf(Number(sameCharId)) < 0) {
       sameCharId = null; castBefore = null;
-      sel.value = ""; sel.classList.remove("on");
       setSameCharMsg("本曲阵容里没有上次那位角色，已退出「全曲同一角色」");
+      syncSameCharUI();
       return;
     }
-    sel.value = sameCharId ? String(sameCharId) : "";
-    sel.classList.toggle("on", !!sameCharId);
+    syncSameCharUI();
     if (sameCharId) applySameChar(sameCharId);
   }
 
@@ -250,8 +258,7 @@
     if (!sameCharId) castBefore = cast.map(function (kv) { return [kv[0], kv[1]]; });
     sameCharId = Number(id);
     cast = C.slotsOfSong(detail).map(function (slot) { return [slot, Number(id)]; });
-    var sel = $("sameCharSel");
-    if (sel) { sel.value = String(sameCharId); sel.classList.add("on"); }
+    syncSameCharUI();
     renderSlots(); build();
     var empty = cast.filter(function (kv) { return !C.wavesForCharacter(detail, kv[0], kv[1]).length; })
                     .map(function (kv) { return kv[0]; });
@@ -263,8 +270,7 @@
     sameCharId = null;
     cast = castBefore ? castBefore : C.defaultCast(detail);
     castBefore = null;
-    var sel = $("sameCharSel");
-    if (sel) { sel.value = ""; sel.classList.remove("on"); }
+    syncSameCharUI();
     renderSlots(); build();
     setSameCharMsg("已恢复逐槽位单独选角");
   }
@@ -273,8 +279,7 @@
     var box = $("slots");
     box.innerHTML = "";
     C.slotsOfSong(detail).forEach(function (slot) { box.appendChild(slotRow(slot)); });
-    var sel = $("sameCharSel");                                   // 手动下拉里同步当前状态
-    if (sel) { sel.value = sameCharId ? String(sameCharId) : ""; sel.classList.toggle("on", !!sameCharId); }
+    syncSameCharUI();
     renderRuler();
   }
 
@@ -295,50 +300,88 @@
     el.innerHTML =
       '<div class="top">' +
         '<div class="slotname">' + esc(slot) + '</div>' +
-        '<div class="combo">' +
-          '<button class="combo-btn" type="button" aria-haspopup="listbox" aria-expanded="false">' +
-            '<span class="cname">' + esc(C.characterName(curC)) + '</span>' +
-            '<span class="cja">' + esc(C.characterSubName(curC)) + '</span>' +
-            '<span class="caret">▾</span>' +
-          '</button>' +
-          '<div class="combo-pop" hidden>' +
-            '<input class="combo-search" type="search" placeholder="搜索角色" aria-label="搜索角色">' +
-            '<div class="combo-list" role="listbox"></div>' +
-            '<div class="combo-empty" hidden>没有匹配的角色</div>' +
-          '</div>' +
-        '</div>' +
+        '<div class="combo"></div>' +
       '</div>' +
       '<div class="tl" title="出场 ' + fmt(total) + '">' + bars + '</div>' +
       '<div class="small" style="margin-top:6px">本槽使用 wave ' + waves.join(" / ") +
         " · 出场 " + iv.list.length + " 段 / 合计 " + fmt(total) +
         " · 首次 " + fmt(iv.list.length ? iv.list[0][0] : 0) + "</div>";
 
-    var btn = el.querySelector(".combo-btn");
-    var pop = el.querySelector(".combo-pop");
-    var search = el.querySelector(".combo-search");
-    var list = el.querySelector(".combo-list");
-    var empty = el.querySelector(".combo-empty");
-    var items = [];
+    buildCharaCombo(el.querySelector(".combo"), {
+      rows: detail.characters || [],
+      currentId: cur,
+      onPick: function (id) { if (id != null) setCast(slot, id); }
+    });
 
-    (detail.characters || []).forEach(function (c) {
-      var usable = C.wavesForCharacter(detail, slot, c.charaId);
-      var lack = waves.filter(function (w) { return usable.indexOf(w) < 0; });
+    return el;
+  }
+
+  /* ---------------- 通用角色下拉（站位选角 + 全曲同一角色共用） ----------------
+     条目排版：第一行中文名；第二行「日文原名 |英文名」；右侧 #角色编号。 */
+  function buildCharaCombo(container, opts) {
+    if (!container) return null;
+    opts = opts || {};
+    var rows = (opts.rows || []).slice();
+    if (opts.offLabel) rows.unshift({ __off: true });
+    var curId = opts.currentId == null || opts.currentId === "" ? null : Number(opts.currentId);
+    container.innerHTML =
+      '<button class="combo-btn" type="button" aria-haspopup="listbox" aria-expanded="false"' +
+        (opts.title ? ' title="' + esc(opts.title) + '"' : '') + '>' +
+        '<span class="cbtn-main">' +
+          '<span class="cname"></span>' +
+          '<span class="cja"></span>' +
+        '</span>' +
+        '<span class="cbtn-right">' +
+          '<span class="cid"></span>' +
+          '<span class="caret">▾</span>' +
+        '</span>' +
+      '</button>' +
+      '<div class="combo-pop" hidden>' +
+        '<input class="combo-search" type="search" placeholder="搜索角色" aria-label="搜索角色">' +
+        '<div class="combo-list" role="listbox"></div>' +
+        '<div class="combo-empty" hidden>没有匹配的角色</div>' +
+      '</div>';
+
+    var btn = container.querySelector(".combo-btn");
+    var pop = container.querySelector(".combo-pop");
+    var search = container.querySelector(".combo-search");
+    var list = container.querySelector(".combo-list");
+    var empty = container.querySelector(".combo-empty");
+    var items = [], active = 0;
+
+    function labelOf(c) {
+      if (!c) return { name: opts.emptyLabel || "未选择", sub: "", id: "" };
+      if (c.__off) return { name: opts.offLabel, sub: opts.offSub || "", id: "" };
+      return { name: C.characterName(c), sub: C.characterSubName(c), id: C.characterIdLabel(c) };
+    }
+    function paintBtn() {
+      var hit = null;
+      for (var i = 0; i < rows.length; i++) if (!rows[i].__off && Number(rows[i].charaId) === curId) hit = rows[i];
+      if (!hit && opts.offLabel && !curId) hit = { __off: true };
+      var L = labelOf(hit);
+      btn.querySelector(".cname").textContent = L.name;
+      btn.querySelector(".cja").textContent = L.sub;
+      btn.querySelector(".cid").textContent = L.id;
+      btn.classList.toggle("on", !!(curId && hit));
+    }
+
+    rows.forEach(function (c) {
+      var L = labelOf(c);
       var it = document.createElement("div");
-      it.className = "combo-item" + (c.charaId === cur ? " selected" : "");
+      it.className = "combo-item" + (!c.__off && Number(c.charaId) === curId ? " selected" : "");
       it.setAttribute("role", "option");
-      it.dataset.id = c.charaId;
-      // 列表里不显示 wave 标注（用户要求删掉）：名字块整体靠左，wave 信息在槽位卡片那行看。
+      it.dataset.id = c.__off ? "" : c.charaId;
+      if (c.__off) it.dataset.off = "1";
+      it.__chara = c;
       it.innerHTML =
-        '<span class="cname">' + esc(C.characterName(c)) + '</span>' +
-        '<span class="cja">' + esc(C.characterSubName(c)) + ' ' +
-          '<span class="cid">#' + c.charaId + '</span></span>';
-      it.addEventListener("mousedown", function (e) { e.preventDefault(); pick(c.charaId); });
+        '<span class="cname">' + esc(L.name) + '</span>' +
+        '<span class="cja">' + esc(L.sub) + '</span>' +
+        '<span class="cid">' + esc(L.id) + '</span>';
+      it.addEventListener("mousedown", function (e) { e.preventDefault(); pick(c); });
       it.addEventListener("mousemove", function () { setActive(items.indexOf(it)); });
       list.appendChild(it);
       items.push(it);
     });
-
-    var active = 0;
 
     function setActive(i) {
       if (!items.length) return;
@@ -347,11 +390,15 @@
       var it = items[active];
       if (it && it.scrollIntoView) it.scrollIntoView({ block: "nearest" });
     }
-    function pick(id) { closeCombo(); setCast(slot, id); }
+    function pick(c) {
+      closeCombo();
+      if (opts.onPick) opts.onPick(c && c.__off ? null : Number(c.charaId));
+    }
     function filter(q) {
       var shown = 0, firstVisible = -1;
       items.forEach(function (it, k) {
-        var ok = C.matchCharacter(charaOf(Number(it.dataset.id)), q);
+        var c = it.__chara;
+        var ok = c.__off ? true : C.matchCharacter(c, q);
         it.style.display = ok ? "" : "none";
         if (ok) { shown++; if (firstVisible < 0) firstVisible = k; }
       });
@@ -359,6 +406,7 @@
       if (firstVisible >= 0) setActive(firstVisible);
     }
     function activeIndexFor(id) {
+      if (id == null) return 0;
       var i = items.findIndex(function (it) { return Number(it.dataset.id) === id; });
       return i < 0 ? 0 : i;
     }
@@ -373,7 +421,7 @@
       openCombo = { pop: pop, btn: btn };
       search.value = "";
       filter("");
-      setActive(activeIndexFor(cur));
+      setActive(activeIndexFor(curId));
       search.focus();
     });
     search.addEventListener("input", function () { filter(search.value); });
@@ -383,11 +431,12 @@
       else if (e.key === "Enter") {
         e.preventDefault();
         var it = items[active];
-        if (it && it.style.display !== "none") pick(Number(it.dataset.id));
+        if (it && it.style.display !== "none") pick(it.__chara);
       } else if (e.key === "Escape") { closeCombo(); btn.focus(); }
     });
 
-    return el;
+    paintBtn();
+    return { container: container, btn: btn, pop: pop, search: search, items: items, refresh: function (id) { curId = id == null || id === "" ? null : Number(id); paintBtn(); return curId; } };
   }
 
   document.addEventListener("mousedown", function (e) {
@@ -466,13 +515,10 @@
   document.addEventListener("DOMContentLoaded", function () {
     $("btnReset").onclick = function () {
       sameCharId = null; castBefore = null;
-      var sel = $("sameCharSel"); if (sel) { sel.value = ""; sel.classList.remove("on"); }
+      syncSameCharUI();
       setSameCharMsg("");
       cast = C.defaultCast(detail); renderSlots(); build();
     };
-    $("sameCharSel").addEventListener("change", function (e) {
-      if (!e.target.value) clearSameChar(); else applySameChar(Number(e.target.value));
-    });
     $("btnDownload").onclick = download;
     $("btnCopy").onclick = copyJSON;
     $("btnMixer").onclick = sendToMixer;
