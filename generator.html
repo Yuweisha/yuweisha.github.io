@@ -16,9 +16,9 @@
   .brand-name{font-weight:650;font-size:14px;letter-spacing:.2px}
   .brand-sub{color:#8b949e;font-size:12px;font-weight:500}
   .header-nav{margin-left:auto;display:flex;align-items:center;gap:22px}
-  .header-nav a{color:#f0f6fc;font-size:14px;font-weight:600;opacity:.9;text-decoration:none;padding:4px 0;transition:opacity .2s,color .2s}
+  .header-nav a{color:#f0f6fc;font-size:14px;font-weight:600;opacity:.9;text-decoration:none;padding:4px 0;transition:opacity .2s,color .2s,box-shadow .2s}
   .header-nav a:hover{color:#fff;opacity:1}
-  .header-nav a.on{color:#fff;opacity:1;box-shadow:inset 0 -2px 0 var(--accent)}
+  .header-nav a.active{color:#fff;opacity:1;box-shadow:inset 0 -2px 0 var(--accent)}
   @media(max-width:700px){.header-inner{padding:9px 0}.header-nav{gap:14px}.header-nav a{font-size:13px}.brand-sub{display:none}}
 
 
@@ -101,9 +101,9 @@ a{color:var(--accent)}
       <span class="brand-sub">混音工程生成器</span>
     </a>
     <nav class="header-nav">
-      <a href="generator.html" class="on">生成器</a>
+      <a href="index.html">主页</a>
+      <a href="generator.html" class="active" aria-current="page">生成器</a>
       <a href="mixer.html">混音器</a>
-      <a href="index.html">返回主页</a>
     </nav>
   </div>
 </header>

@@ -56,3 +56,19 @@ body {
 @media (max-width: 650px) {
   body { padding-bottom: 96px; }   /* 窄屏下页脚会折成两行 */
 }
+
+/* =========================================================
+   22. 顶栏统一：三项导航 + 当前页蓝色横条（与 generator/mixer 完全同一套）
+   ========================================================= */
+.header-nav a {
+  padding: 4px 0;                    /* 让横条只到文字宽度 */
+  transition: opacity 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.header-nav a.active {
+  color: #ffffff;
+  opacity: 1;
+  box-shadow: inset 0 -2px 0 var(--blue);
+}
+/* 站点名后的暗色说明（与 generator/mixer 的 .brand-sub 同款） */
+.brand-sub { color: #8b949e; font-size: 12px; font-weight: 500; }
+@media (max-width: 700px) { .brand-sub { display: none; } }

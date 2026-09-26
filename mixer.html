@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>UMA Offline Mixer V2.3</title>
+<title>UMA Offline Mixer · 混音工具</title>
 <style>
   /* 页眉：与主页 style.css 同一套（sticky 深色条 + 圆头像 + 右侧导航） */
   .site-header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,#161b22,#1d232c);border-bottom:1px solid #30363d;box-shadow:0 2px 8px rgba(0,0,0,.18)}
@@ -16,9 +16,9 @@
   .brand-name{font-weight:650;font-size:14px;letter-spacing:.2px}
   .brand-sub{color:#8b949e;font-size:12px;font-weight:500}
   .header-nav{margin-left:auto;display:flex;align-items:center;gap:22px}
-  .header-nav a{color:#f0f6fc;font-size:14px;font-weight:600;opacity:.9;text-decoration:none;padding:4px 0;transition:opacity .2s,color .2s}
+  .header-nav a{color:#f0f6fc;font-size:14px;font-weight:600;opacity:.9;text-decoration:none;padding:4px 0;transition:opacity .2s,color .2s,box-shadow .2s}
   .header-nav a:hover{color:#fff;opacity:1}
-  .header-nav a.on{color:#fff;opacity:1;box-shadow:inset 0 -2px 0 var(--accent)}
+  .header-nav a.active{color:#fff;opacity:1;box-shadow:inset 0 -2px 0 var(--accent)}
   @media(max-width:700px){.header-inner{padding:9px 0}.header-nav{gap:14px}.header-nav a{font-size:13px}.brand-sub{display:none}}
 
 
@@ -40,6 +40,8 @@ input:focus,textarea:focus{border-color:var(--accent)}.small{font-size:12px;colo
 .badge{font-size:11px;padding:3px 7px;border-radius:999px;background:var(--bg-soft);color:var(--text-2)}.ok{color:var(--ok)}.err{color:var(--err)}
 pre{margin:0;background:var(--bg);border:1px solid var(--line-light);border-radius:8px;padding:12px;min-height:130px;max-height:280px;overflow:auto;color:var(--text);white-space:pre-wrap}
 .note{padding:10px 12px;border-radius:9px;background:var(--ok-soft);border:1px solid #a2d8b4;color:var(--ok)}
+.note button{margin-left:10px;padding:0 6px;border:0;border-radius:6px;background:transparent;color:inherit;font-size:15px;font-weight:700;line-height:1;cursor:pointer;opacity:.55}
+.note button:hover{opacity:1;background:rgba(26,127,55,.12)}
 .warn{padding:10px 12px;border-radius:9px;background:var(--warn-soft);border:1px solid #f0b98b;color:var(--warn)}
 textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;min-height:80px;resize:vertical;margin-top:12px}
 </style>
@@ -50,18 +52,18 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
     <a class="brand" href="index.html" title="返回 Yuweisha 主页">
       <img class="brand-avatar" src="https://yuweisha.github.io/Storage/mainpageheader.svg" alt="Yuweisha">
       <span class="brand-name">UMA Live Studio</span>
-      <span class="brand-sub">离线混音器 V2.3</span>
+      <span class="brand-sub">混音工具</span>
     </a>
     <nav class="header-nav">
+      <a href="index.html">主页</a>
       <a href="generator.html">生成器</a>
-      <a href="mixer.html" class="on">混音器</a>
-      <a href="index.html">返回主页</a>
+      <a href="mixer.html" class="active" aria-current="page">混音器</a>
     </nav>
   </div>
 </header>
 
 <div class="wrap">
-  <div class="title">UMA Offline Mixer V2.3
+  <div class="title">UMA Offline Mixer · 混音工具
 </div>
   <div class="sub">V2.2 的修正版：支持「生成器直送工程」、按文件元数据精确裁剪编码延迟、支持 muted/solo/startOffsetMs、StereoPannerNode、并发下载与进度</div>
 
@@ -71,11 +73,11 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
     <div class="grid">
       <div>
         <label>项目 JSON / Mixer API URL</label>
-        <input id="projectUrl" type="url" placeholder="https://uma.0xcjy.top/api/live/mixer/projects/live-1193?musicId=1193&bgm=bgm_01&slots=...&balance=1">
+        <input id="projectUrl" type="url" placeholder="example.com">
       </div>
       <div>
-        <label>媒体基址（生成的工程里 media 是 /media/... 相对路径）</label>
-        <input id="baseUrl" type="url" placeholder="https://uma.0xcjy.top/">
+        <label>媒体基址</label>
+        <input id="baseUrl" type="url" placeholder="example.com">
       </div>
     </div>
 
@@ -548,18 +550,30 @@ $("export").onclick=async()=>{
 /* ---------- 启动 ---------- */
 (function init(){
   const params=new URLSearchParams(location.search);
+  const auto=params.get("auto")==="1";
+  const FRESH=30*60*1000;                       // 直送信息只在 30 分钟内算“新”
   let handoff=null;
   try{handoff=JSON.parse(localStorage.getItem("uma.handoff")||"null")}catch{}
-  if(handoff){
-    $("handoff").style.display="";
-    $("handoff").innerHTML="已收到生成器直送的工程：<b>"+esc(handoff.name||"?")+"</b>（"+new Date(handoff.ts).toLocaleString()+"）";
+  const fresh=!!handoff&&handoff.ts&&(Date.now()-handoff.ts)<FRESH;
+  /* 提示条只在「本次就是直送跳转（?auto=1）」或「刚直送不到 30 分钟、且用户没关过」时出现。
+     注意：uma.handoff 这条**不清掉** —— 导出 WAV 的文件名（exportBaseName）要用里面的 name。 */
+  if(handoff&&(auto||(fresh&&!handoff.ack))){
+    const el=$("handoff");
+    el.style.display="";
+    el.innerHTML="已收到生成器直送的工程：<b>"+esc(handoff.name||"?")+"</b>（"+new Date(handoff.ts).toLocaleString()+"）"
+      +'<button id="handoffX" type="button" title="关闭提示（已存下的工程与导出文件名不受影响）">×</button>';
+    $("handoffX").onclick=()=>{
+      handoff.ack=true;
+      try{localStorage.setItem("uma.handoff",JSON.stringify(handoff))}catch{}
+      el.style.display="none";
+    };
     if(!$("baseUrl").value){
       var mb=handoff.mediaBase||"https://uma.0xcjy.top/";
       $("baseUrl").value=mb.endsWith("/")?mb:mb+"/";
     }
   }
-  if(params.get("auto")==="1"&&localStorage.getItem("uma.project"))$("loadLocal").click();
-  log("UMA Offline Mixer V2.3 ready.（V2.2 的修正版：裁剪/自动化/声道/进度）");
+  if(auto&&localStorage.getItem("uma.project"))$("loadLocal").click();
+  log("混音工具 ready.（V2.2 的修正版：裁剪/自动化/声道/进度）");
 })();
 </script>
 </body>
