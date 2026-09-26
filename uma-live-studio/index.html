@@ -51,9 +51,12 @@ input:focus,select:focus{border-color:var(--accent)}
 .combo-search{width:100%;padding:8px 10px;background:#0a1017;border:1px solid #354355;border-radius:8px;color:var(--text);margin-bottom:6px;font:inherit}
 .combo-search:focus{border-color:var(--accent);outline:none}
 .combo-list{overflow:auto}
-.combo-item{display:grid;grid-template-columns:1fr auto;gap:1px 10px;padding:7px 9px;border-radius:8px;cursor:pointer}
-.combo-item .cja{color:var(--muted);font-size:12px}
-.combo-item .wv{grid-row:1 / span 2;align-self:center;font-size:11px;color:#8fa3ba;white-space:nowrap}
+/* 显式排格子：名字块固定在右列并右对齐；左侧 wave 标注缺席时该列自动收为 0 宽 */
+.combo-item{display:grid;grid-template-columns:auto 1fr;gap:1px 10px;padding:7px 9px;border-radius:8px;cursor:pointer;align-items:center}
+.combo-item .wv{grid-column:1;grid-row:1 / span 2;align-self:center;font-size:11px;color:#8fa3ba;white-space:nowrap}
+.combo-item .cname{grid-column:2;grid-row:1;text-align:right}
+.combo-item .cja{grid-column:2;grid-row:2;text-align:right;color:var(--muted);font-size:12px}
+.combo-item .cid{color:#7f8ea3;font-size:11px}
 .combo-item.active{background:#1d3050}
 .combo-item.selected{box-shadow:inset 0 0 0 1px #2a5f45}
 .combo-item.selected .cname{color:#8fe0b3}

@@ -256,10 +256,15 @@
       it.className = "combo-item" + (c.charaId === cur ? " selected" : "");
       it.setAttribute("role", "option");
       it.dataset.id = c.charaId;
+      // wave 标注只在有信息量时出现：该角色在本槽不止一个 wave，或缺少本槽的某个 wave。
+      // 全部角色都一样的「wave 0」是噪音，隐藏掉（用户要求）。
+      var notable = usable.length > 1 || lack.length > 0;
       it.innerHTML =
+        (notable ? '<span class="wv">wave ' + (usable.join(",") || "—") +
+          (lack.length ? "（缺 " + lack.join(",") + "）" : "") + '</span>' : '') +
         '<span class="cname">' + esc(C.characterName(c)) + '</span>' +
-        '<span class="wv">wave ' + (usable.join(",") || "—") + (lack.length ? "（缺 " + lack.join(",") + "）" : "") + '</span>' +
-        '<span class="cja">' + esc(C.characterSubName(c)) + '</span>';
+        '<span class="cja">' + esc(C.characterSubName(c)) + ' ' +
+          '<span class="cid">#' + c.charaId + '</span></span>';
       it.addEventListener("mousedown", function (e) { e.preventDefault(); pick(c.charaId); });
       it.addEventListener("mousemove", function () { setActive(items.indexOf(it)); });
       list.appendChild(it);
