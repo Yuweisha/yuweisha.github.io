@@ -12,11 +12,15 @@
         <!-- =========================页眉========================== -->         
         <header class="site-header"> 
             <div class="header-inner">                                   
-                <a href="index.html"><img src="https://yuweisha.github.io/Storage/mainpageheader.svg"/></a>
+                <a class="brand" href="index.html" title="Yuweisha 主页">
+                    <img class="brand-avatar" src="https://yuweisha.github.io/Storage/mainpageheader.svg" alt="Yuweisha">
+                    <span class="brand-name">Yuweisha</span>
+                </a>
                 <nav class="header-nav"> 
                     <a href="#about">关于我</a> 
                     <a href="#blog">日志</a> 
-                    <a href="uma-live-studio/index.html">混音工坊</a> 
+                    <a href="generator.html">生成器</a> 
+                    <a href="mixer.html">混音器</a> 
                 </nav>                 
             </div>             
         </header>         
@@ -60,17 +64,17 @@
           
             <section class="profile-content">               
                 <nav class="profile-tabs"> 
-                    <a class="active" href="#overview"><span>ℹ️</span>
+                    <a class="active" href="#about" data-tab="about"><span>ℹ️</span>
                 总览</a>                      
-                    <a href="#blog"><span>🗂️</span>
+                    <a href="#blog" data-tab="blog"><span>🗂️</span>
                 日志</a> 
-                    <a href="#projects"><span>🧪</span>
+                    <a href="#projects" data-tab="projects"><span>🧪</span>
                 项目</a> 
                 </nav>                 
                 <!-- =========================
              About
         ========================== -->                 
-                <section id="about" class="content-section"> 
+                <section id="about" class="content-section" data-tab="about"> 
                     <div class="section-heading"> 
                         <h2>关于我</h2> 
                     </div>                     
@@ -81,7 +85,7 @@
                         <p>这里是占位符<br><br><br><br><br><br><br><br><br><br></p> 
                     </div>                     
                 </section>                                 
-                <section id="projects" class="content-section"> 
+                <section id="projects" class="content-section" data-tab="projects"> 
                     <div class="section-heading"> 
                         <h2>项目</h2> 
                     </div>                     
@@ -89,13 +93,13 @@
                         <article class="blog-item"> 
                             <time datetime="2026-09-26">2026-09-26</time>                             
                             <div> 
-                                <a href="uma-live-studio/index.html">UMA Live 离线混音工坊</a> 
-                                <p>按选定的角色与本地混音数据生成混音 JSON，产出特定角色演唱的 Live，并可离线播放、导出 WAV。纯静态页面，运行时不调云端接口。</p> 
+                                <a href="generator.html">UMA Live 混音工坊 · 生成器</a> 
+                                <p>按选定的角色与本地混音数据生成混音 JSON，产出特定角色演唱的 Live。纯静态页面，运行时不调云端接口；配套 <a href="mixer.html">离线混音器</a> 可直接播放与导出 WAV。</p> 
                             </div>                             
                         </article>                         
                     </div>                     
                 </section>                                 
-                <section id="blog" class="content-section"> 
+                <section id="blog" class="content-section" data-tab="blog"> 
                     <div class="section-heading"> 
                         <h2>笔记和日志</h2> 
                     </div>                     
@@ -136,5 +140,57 @@
                 </footer>                 
             </section>             
         </main>         
+        <script>
+        /* 三个卡片叠放：点顶部标签只显示对应那一张（总览=关于我 / 日志 / 项目） */
+        (function () {
+            var tabs = document.querySelectorAll('.profile-tabs a[data-tab]');
+            var panes = document.querySelectorAll('.content-section[data-tab]');
+            if (!tabs.length || !panes.length) { return; }
+            var HEADER = 76;   /* sticky 页眉高度 + 间距 */
+
+            function paneOf(name) {
+                for (var i = 0; i < panes.length; i++) {
+                    if (panes[i].getAttribute('data-tab') === name) { return panes[i]; }
+                }
+                return null;
+            }
+            function show(name, scroll) {
+                var hit = paneOf(name) ? name : panes[0].getAttribute('data-tab');
+                for (var i = 0; i < panes.length; i++) {
+                    var on = panes[i].getAttribute('data-tab') === hit;
+                    panes[i].hidden = !on;
+                    panes[i].classList.toggle('pane-on', on);
+                }
+                for (var j = 0; j < tabs.length; j++) {
+                    tabs[j].classList.toggle('active', tabs[j].getAttribute('data-tab') === hit);
+                }
+                if (scroll) {
+                    var p = paneOf(hit);
+                    if (p) {
+                        window.scrollTo({ top: p.getBoundingClientRect().top + window.pageYOffset - HEADER, behavior: 'smooth' });
+                    }
+                }
+                return hit;
+            }
+            function hashName() { return (location.hash || '').replace(/^#/, ''); }
+
+            /* 标签、页眉导航里的 #about / #blog 都走同一套切换 */
+            document.addEventListener('click', function (e) {
+                var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+                if (!a) { return; }
+                var name = (a.getAttribute('href') || '').replace(/^#/, '');
+                if (!paneOf(name)) { return; }
+                e.preventDefault();
+                show(name, true);
+                if (history.pushState) { history.pushState(null, '', '#' + name); } else { location.hash = name; }
+            });
+
+            window.addEventListener('hashchange', function () { show(hashName(), true); });
+            window.addEventListener('popstate', function () { show(hashName(), true); });
+
+            /* 打开时：带 hash 就显示对应卡片，否则显示总览 */
+            show(hashName() || 'about', false);
+        })();
+        </script>
     </body>     
 </html>
