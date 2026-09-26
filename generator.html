@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>UMA Live Studio — 混音工程生成器</title>
 <style>
-  /* 页眉：与主页 style.css 同一套（sticky 深色条 + 圆头像 + 右侧导航） */
+  /* 页眉：与主页 css/style.css 同一套（sticky 深色条 + 圆头像 + 右侧导航） */
   .site-header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,#161b22,#1d232c);border-bottom:1px solid #30363d;box-shadow:0 2px 8px rgba(0,0,0,.18)}
   .header-inner{width:min(1280px,calc(100% - 32px));min-height:60px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:10px 0}
   .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#f0f6fc}
@@ -25,7 +25,7 @@
 :root{color-scheme:light;--bg:#f6f8fa;--bg-soft:#eef2f6;--panel:#ffffff;--panel2:#f8fafc;--line:#d0d7de;--line-light:#e6ebf0;--text:#1f2328;--text-2:#57606a;--muted:#6e7781;--accent:#0969da;--accent-strong:#0550ae;--accent-soft:#ddf4ff;--ok:#1a7f37;--ok-soft:#dafbe1;--warn:#bc4c00;--warn-soft:#fff1e5;--err:#cf222e;--err-soft:#ffebe9;--shadow-small:0 1px 2px rgba(31,35,40,.06);--shadow:0 3px 8px rgba(31,35,40,.08);--shadow-large:0 8px 24px rgba(31,35,40,.10);--radius-small:6px;--radius:10px;--radius-large:14px}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif}
-.wrap{max-width:1360px;margin:auto;padding:24px 18px 60px}
+.wrap{max-width:1360px;margin:auto;padding:24px 18px 84px}
 .title{font-size:26px;font-weight:750}
 .sub{color:var(--muted);margin:4px 0 18px}
 .sub code{background:var(--bg-soft);padding:1px 5px;border-radius:5px}
@@ -40,6 +40,20 @@ input:focus,select:focus{border-color:var(--accent)}
 .btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:9px;padding:8px 13px;cursor:pointer;font-weight:650}
 .btn:hover{background:var(--bg-soft)}.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
 .btn.ghost{background:var(--panel)}.btn:disabled{opacity:.45;cursor:not-allowed}
+/* 平衡补偿：与「恢复默认选角」同排的小胶囊开关 */
+.switch{display:inline-flex;align-items:center;gap:8px;padding:7px 13px 7px 11px;margin:0;border:1px solid var(--line);
+  border-radius:999px;background:var(--panel);color:var(--text);font-weight:400;cursor:pointer;
+  transition:border-color .15s,background .15s,box-shadow .15s}
+.switch:hover{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.switch input[type=checkbox]{width:15px;height:15px;margin:0;accent-color:var(--accent);cursor:pointer}
+.switch:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.switch:has(input:checked) span{color:var(--accent-strong);font-weight:650}
+/* 底栏：与主页同款（固定贴底、半透明 + 模糊，始终可见） */
+.site-footer{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:12px max(20px,calc((100% - 1360px)/2 + 18px));background:rgba(246,248,250,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--line-light);box-shadow:0 -1px 3px rgba(31,35,40,.04);color:var(--muted);font-size:12px}
+.footer-links{display:flex;gap:18px}
+.footer-links a{color:var(--text-2)}
+.footer-links a:hover{color:var(--accent)}
+@media (max-width:650px){.site-footer{flex-direction:column;gap:6px;text-align:center}}
 .songlist{max-height:560px;overflow:auto;border:1px solid var(--line);border-radius:10px;margin-top:10px}
 .song{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line-light);cursor:pointer}
 .song:last-child{border-bottom:0}.song:hover{background:var(--panel2)}
@@ -96,7 +110,7 @@ a{color:var(--accent)}
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="index.html" title="返回 Yuweisha 主页">
-      <img class="brand-avatar" src="https://yuweisha.github.io/Storage/mainpageheader.svg" alt="Yuweisha">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
       <span class="brand-name">UMA Live Studio</span>
       <span class="brand-sub">混音工程生成器</span>
     </a>
@@ -142,13 +156,8 @@ a{color:var(--accent)}
               <div>
                 <label>工程时长（留空 = 按当前选角精算）</label>
                 <input id="durInput" type="text" inputmode="numeric">
-                <div class="small" id="durHint" style="margin-top:5px"></div>
               </div>
             </div>
-            <label style="margin-top:10px;display:flex;gap:7px;align-items:center;font-weight:400;color:#1f2328">
-              <input id="balance" type="checkbox" checked style="accent-color:var(--accent)">
-              平衡补偿
-            </label>
           </div>
         </div>
 
@@ -157,8 +166,13 @@ a{color:var(--accent)}
         <div class="ruler" id="ruler"></div>
         <div id="slots"></div>
 
-        <div class="row" style="margin-top:12px">
+        <div class="row" style="margin-top:12px;justify-content:space-between">
           <button class="btn" id="btnReset">恢复默认选角</button>
+          <label class="switch" id="balanceSwitch"
+                 title="voice 增益 ×N^(-1/3)，N = 同时在场声部数；与官方 balance=1 一致">
+            <input id="balance" type="checkbox" checked>
+            <span>平衡补偿</span>
+          </label>
         </div>
       </div>
 
@@ -171,7 +185,6 @@ a{color:var(--accent)}
           <button class="btn primary" id="btnMixer">▶ 送入混音器播放/导出</button>
           <button class="btn" id="btnDownload">下载 JSON</button>
           <button class="btn" id="btnCopy">复制 JSON</button>
-          <button class="btn ghost" id="btnCalibrate">实测校准时长（下载音频）</button>
         </div>
         <div id="outMsg" class="small"></div>
         <div class="kv" id="outKv" style="margin:10px 0"></div>
@@ -183,5 +196,9 @@ a{color:var(--accent)}
 </div>
 <script src="js/core.js"></script>
 <script src="js/app.js"></script>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links"><a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a></div>
+</footer>
 </body>
 </html>

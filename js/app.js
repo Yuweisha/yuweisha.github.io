@@ -158,9 +158,10 @@
     var d = refDuration();
     durManual = false;
     $("durInput").value = d ? String(d) : "";
-    $("durHint").textContent = d
-      ? "（参考：默认选角 " + d + " ms；改了它才会覆盖下面按当前选角精算的时长）"
-      : "（本地没有参考值，将按 streams.json 精算）";
+    /* 参考值改成悬停提示（原来那行小字已按需求去掉） */
+    $("durInput").title = d
+      ? "参考：默认选角 " + d + " ms；改动它会覆盖按当前选角精算的时长"
+      : "本地没有参考值：将按 streams.json 精算时长";
   }
 
   /* ---------------- 出场时间轴 ---------------- */
@@ -397,44 +398,6 @@
     }
   }
 
-  /** 实测校准：下载所选全部音频并解码，取最长者作为工程时长（官方 durationMs 口径） */
-  async function calibrate() {
-    $("btnCalibrate").disabled = true;
-    var urls = C.mediaUrlsOfProject(current);
-    var msg = [];
-    try {
-      var ctx = new (window.AudioContext || window.webkitAudioContext)();
-      var maxLen = 0, done = 0;
-      for (var i = 0; i < urls.length; i++) {
-        var u = SITE + urls[i];
-        try {
-          var r = await fetch(u);
-          if (!r.ok) throw new Error("HTTP " + r.status);
-          var buf = await ctx.decodeAudioData(await r.arrayBuffer());
-          // 官方 decoder 的 decodedSampleCount = 全部帧×1152（文件无 LAME/Xing 标签），音乐本体 = 去 576+576
-          var trimmed = buf.length - C.ENCODER_DELAY - C.ENCODER_PADDING;
-          if (trimmed > maxLen) maxLen = trimmed;
-        } catch (e) { msg.push(u.split("/").pop() + " 失败：" + e.message); }
-        done++;
-        $("outMsg").textContent = "校准中 " + done + "/" + urls.length + "…";
-      }
-      if (maxLen > 0) {
-        var ms = Math.round(maxLen / C.SAMPLE_RATE * 1000);
-        $("durInput").value = String(ms);
-        durManual = true;                     // 实测值是显式覆盖
-        build();
-        $("outMsg").textContent = "校准完成：实测最长轨 " + maxLen + " samples → durationMs = " + ms +
-          "（已写入工程）" + (msg.length ? "；部分失败：" + msg.join("；") : "");
-      } else {
-        $("outMsg").textContent = "校准失败：" + msg.join("；");
-      }
-    } catch (e) {
-      $("outMsg").textContent = "校准失败：" + e.message;
-    } finally {
-      $("btnCalibrate").disabled = false;
-    }
-  }
-
   /* ---------------- 绑定 ---------------- */
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -442,7 +405,6 @@
     $("btnDownload").onclick = download;
     $("btnCopy").onclick = copyJSON;
     $("btnMixer").onclick = sendToMixer;
-    $("btnCalibrate").onclick = calibrate;
     $("balance").addEventListener("change", function (e) { balance = e.target.checked; build(); });
     $("durInput").addEventListener("input", function () { durManual = true; });
     $("durInput").addEventListener("change", build);
