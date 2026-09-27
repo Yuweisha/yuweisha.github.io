@@ -1,0 +1,17 @@
+{
+  "liveId": 1008,
+  "titleJa": "NEXT FRONTIER",
+  "titleZh": null,
+  "credits": "作词：うらん\n作曲・编曲：山口朗彦\n译：南千和（Bilibili）",
+  "creditLines": [
+    "作词：うらん",
+    "作曲・编曲：山口朗彦",
+    "译：南千和（Bilibili）"
+  ],
+  "intro": "只有以顶点为目标，不懈努力之人才能抵达。\nNEXT FRONTIER――这是为永盛不衰的霸者设立的舞台。",
+  "introLines": [
+    "只有以顶点为目标，不懈努力之人才能抵达。",
+    "NEXT FRONTIER――这是为永盛不衰的霸者设立的舞台。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

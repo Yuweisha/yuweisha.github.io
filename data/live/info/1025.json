@@ -1,0 +1,16 @@
+{
+  "liveId": 1025,
+  "titleJa": "はじまりのSignal",
+  "titleZh": null,
+  "credits": "作词・作曲・编曲：永井正道\n译：南千和（Bilibili）",
+  "creditLines": [
+    "作词・作曲・编曲：永井正道",
+    "译：南千和（Bilibili）"
+  ],
+  "intro": "疾驰的一等星闪耀着，充满勇气与希望的歌曲。\n心动的预感――那就是比赛开始的信号",
+  "introLines": [
+    "疾驰的一等星闪耀着，充满勇气与希望的歌曲。",
+    "心动的预感――那就是比赛开始的信号"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

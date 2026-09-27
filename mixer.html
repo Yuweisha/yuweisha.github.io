@@ -24,6 +24,8 @@
 
 :root{color-scheme:light;--bg:#f6f8fa;--bg-soft:#eef2f6;--panel:#ffffff;--panel2:#f8fafc;--line:#d0d7de;--line-light:#e6ebf0;--text:#1f2328;--text-2:#57606a;--muted:#6e7781;--accent:#0969da;--accent-strong:#0550ae;--accent-soft:#ddf4ff;--ok:#1a7f37;--ok-soft:#dafbe1;--warn:#bc4c00;--warn-soft:#fff1e5;--err:#cf222e;--err-soft:#ffebe9;--shadow-small:0 1px 2px rgba(31,35,40,.06);--shadow:0 3px 8px rgba(31,35,40,.08);--shadow-large:0 8px 24px rgba(31,35,40,.10);--radius-small:6px;--radius:10px;--radius-large:14px}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif}
+/* hidden 属性能真正生效：作者样式里的 display:grid/flex 会盖掉浏览器默认的 [hidden]{display:none} */
+[hidden]{display:none!important}
 .wrap{max-width:1220px;margin:auto;padding:28px 18px 84px}.title{font-size:26px;font-weight:750}.sub{color:var(--muted);margin:4px 0 20px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin:12px 0;box-shadow:var(--shadow)}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:800px){.grid{grid-template-columns:1fr}}
@@ -38,9 +40,11 @@ input:focus,textarea:focus{border-color:var(--accent)}.small{font-size:12px;colo
 .switch:has(input:checked) span{color:var(--accent-strong);font-weight:650}
 /* 歌词卡：逐行高亮 + 跟随滚动 */
 #lyrics{max-height:240px;overflow:auto;position:relative}
-#lyrics p{margin:0;padding:7px 10px;border-radius:8px;color:var(--muted);line-height:1.45;cursor:pointer;transition:background .15s}
+#lyrics p{margin:0;padding:7px 10px;border-radius:8px;color:var(--muted);line-height:1.45;cursor:pointer;transition:background .15s;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
 #lyrics p .ja{display:block;font-size:14px}
 #lyrics p .zh{display:block;font-size:12.5px;color:var(--muted)}
+#lyrics p .t{font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;opacity:.8;white-space:nowrap}
+#lyrics p.active .t{color:var(--accent-strong);opacity:1}
 #lyrics p:hover{background:var(--panel2)}
 #lyrics p.active{background:var(--accent-soft);color:var(--text);box-shadow:inset 3px 0 0 var(--accent)}
 #lyrics p.active .zh{color:var(--accent-strong);font-weight:600}
@@ -52,8 +56,16 @@ input:focus,textarea:focus{border-color:var(--accent)}.small{font-size:12px;colo
 .footer-links a:hover{color:var(--accent)}
 @media (max-width:650px){.site-footer{flex-direction:column;gap:6px;text-align:center}}
 .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}}
-.stat{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:10px}.stat span{display:block;color:var(--muted);font-size:12px}.stat b{font-size:18px}
+.stat{background:linear-gradient(180deg,#ffffff 0%,var(--bg-soft) 100%);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat span{display:block;color:var(--muted);font-size:12px;letter-spacing:.3px;margin-bottom:3px}
+.stat b{font-size:17px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums;letter-spacing:.2px}
 .time{font-variant-numeric:tabular-nums;color:var(--text)}.seek{width:100%;accent-color:var(--accent)}
+/* Live 信息块（封面 + 名称 + 作词作曲 + 介绍），放在播放控件上方 */
+.liveHead{display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:start;margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid var(--line-light)}
+.liveHead img{width:104px;height:104px;border-radius:11px;object-fit:cover;background:var(--bg-soft);box-shadow:var(--shadow-small)}
+.liveTitle{font-size:17px;font-weight:700;color:var(--text);margin-bottom:5px;line-height:1.3}
+.liveCredits{font-size:12.5px;color:var(--muted);line-height:1.55;white-space:pre-line}
+.liveIntro{margin-top:7px;padding:7px 11px;border-left:3px solid var(--accent-soft);background:var(--panel2);border-radius:0 8px 8px 0;font-size:12.5px;color:var(--text-2);line-height:1.6;white-space:pre-line}
 .trackbox{max-height:390px;overflow:auto;border:1px solid var(--line);border-radius:10px}
 .track-head,.track{display:grid;grid-template-columns:46px minmax(110px,1.6fr) 56px 78px 104px 84px;gap:10px;align-items:center;padding:9px 11px}
 .track-head{position:sticky;top:0;z-index:2;background:var(--panel2);border-bottom:1px solid var(--line);color:var(--muted);font-size:12px;font-weight:650}
@@ -151,15 +163,23 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
 
   <div id="summary" class="card" style="display:none">
     <div class="stats">
-      <div class="stat"><span>Sample Rate</span><b id="sr">-</b></div>
-      <div class="stat"><span>Duration</span><b id="dur">-</b></div>
-      <div class="stat"><span>Tracks</span><b id="count">-</b></div>
-      <div class="stat"><span>Loaded</span><b id="loaded">0 / 0</b></div>
-      <div class="stat"><span>Balance</span><b id="balance">-</b></div>
+      <div class="stat"><span>采样率</span><b id="sr">-</b></div>
+      <div class="stat"><span>时长</span><b id="dur">-</b></div>
+      <div class="stat"><span>音轨数</span><b id="count">-</b></div>
+      <div class="stat"><span>已载入</span><b id="loaded">0 / 0</b></div>
+      <div class="stat"><span>平衡补偿</span><b id="balance">-</b></div>
     </div>
   </div>
 
   <div id="player" class="card" style="display:none">
+    <div class="liveHead" id="liveHead" hidden>
+      <img id="liveCover" alt="">
+      <div>
+        <div class="liveTitle" id="liveTitle"></div>
+        <div class="liveCredits" id="liveCredits"></div>
+        <div class="liveIntro" id="liveIntro"></div>
+      </div>
+    </div>
     <div class="row" style="justify-content:space-between">
       <div class="time"><span id="current">00:00.000</span> / <span id="total">00:00.000</span></div>
       <span id="state" class="badge" data-s="ready">准备就绪</span>
@@ -180,17 +200,17 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
     </div>
   </div>
 
-  <div id="tracksCard" class="card" style="display:none">
-    <div style="font-weight:700;margin-bottom:10px">Resolved Tracks</div>
-    <div id="tracks" class="trackbox"></div>
-  </div>
-
   <div id="lyricsCard" class="card" style="display:none">
     <div class="row" style="justify-content:space-between">
       <div style="font-weight:700">歌词</div>
       <span id="lyricsStat" class="small"></span>
     </div>
     <div id="lyrics"></div>
+  </div>
+
+  <div id="tracksCard" class="card" style="display:none">
+    <div style="font-weight:700;margin-bottom:10px">解析后的音轨</div>
+    <div id="tracks" class="trackbox"></div>
   </div>
 
   <div class="card">
@@ -376,7 +396,7 @@ async function preload(){
         if(rowEl)rowEl.title=e.message+" · 尝试："+maskUrl(urls[0]);   // 链接不显示，错误靠悬停看
         log("轨道 "+t.id+"（"+t.name+"）："+e.message);
       }
-      done++;$("loaded").textContent=ok+" / "+list.length;
+      done++;$("loaded").textContent=ok+" / "+list.length+" 条";
     }
   }
   await Promise.all(Array.from({length:Math.min(concurrency,list.length)},worker));
@@ -410,6 +430,7 @@ async function loadProject(){
   $("load").disabled=true; $("loadLocal").disabled=true;
   $("summary").style.display=$("player").style.display=$("tracksCard").style.display="none";
     $("lyricsCard").style.display="none";
+  if($("liveHead"))$("liveHead").hidden=true;
   buffers.clear(); disconnectGraph();
   try{
     projectUrl=$("projectUrl").value.trim();
@@ -431,12 +452,17 @@ async function loadProject(){
     setState("ready","准备就绪");
     sampleRate=meta.sr; durationSec=meta.dur/1000;
 
-    $("sr").textContent=sampleRate;
+    $("sr").textContent=sampleRate+" Hz";
     $("dur").textContent=durationSec?fmt(durationSec):"实测";
-    $("count").textContent=project.tracks.length;
-    $("loaded").textContent="0 / "+project.tracks.length;
-    $("balance").textContent=project._uma?(project._uma.balance?"1":"0"):
-      (()=>{try{return new URL(projectUrl).searchParams.get("balance")??"-"}catch{return String(project.balance??"-")}})();
+    $("count").textContent=project.tracks.length+" 条";
+    $("loaded").textContent="0 / "+project.tracks.length+" 条";
+    /* 平衡补偿：工程里是 1/0，这里直接显示 开/关 */
+    $("balance").textContent=(()=>{
+      let v;
+      if(project._uma)v=project._uma.balance?"1":"0";
+      else{try{v=new URL(projectUrl).searchParams.get("balance")??""}catch{v=String(project.balance??"")}}
+      return v==="1"?"开":v==="0"?"关":"—";
+    })();
     $("total").textContent=durationSec?fmt(durationSec):"--:--";
     $("seek").max=durationSec||1;$("seek").value=0;
     $("summary").style.display=$("player").style.display=$("tracksCard").style.display="";
@@ -461,6 +487,7 @@ async function loadProject(){
     log("工程："+project.tracks.length+" 轨 / "+sampleRate+" Hz / "+(durationSec?durationSec.toFixed(3)+" 秒":"时长待实测"));
     await preload();
     $("lyricsCard").style.display="";
+    await loadLiveInfo();
     await loadLyrics();
   }catch(e){log("错误："+(e.stack||e));alert(e.message||String(e))}
   finally{$("load").disabled=false;$("loadLocal").disabled=false}
@@ -653,6 +680,27 @@ function musicIdOf(){
   try{const m=new URL(projectUrl,location.href).searchParams.get("musicId");if(m)return m}catch{}
   return null;
 }
+/* ---------- 乐曲信息：封面 / 名称 / 作词作曲 / 介绍 ---------- */
+const liveInfoCache={};
+async function loadLiveInfo(){
+  const head=$("liveHead"),img=$("liveCover"),t=$("liveTitle"),c=$("liveCredits"),it=$("liveIntro");
+  if(head)head.hidden=true;
+  if(img)img.removeAttribute("src");
+  if(t)t.textContent="";if(c)c.textContent="";if(it)it.textContent="";
+  const id=musicIdOf();
+  if(!id)return;
+  if(!Object.prototype.hasOwnProperty.call(liveInfoCache,id)){
+    try{liveInfoCache[id]=await (await fetch("data/live/info/"+id+".json",{cache:"force-cache"})).json()}
+    catch{liveInfoCache[id]=null}
+  }
+  const info=liveInfoCache[id];
+  const title=(info&&info.titleJa)||("LIVE "+id);
+  if(img){img.src="data/live/jackets/"+id+".png";img.alt=title}
+  if(t)t.textContent=title;
+  if(c)c.textContent=(info&&info.credits)||"";
+  if(it)it.textContent=(info&&info.intro)||"";
+  if(head)head.hidden=false;
+}
 async function loadLyrics(){
   lyricLines=[];lyricIdx=-1;
   const box=$("lyrics");box.innerHTML="";
@@ -671,8 +719,8 @@ async function loadLyrics(){
     const parts=String(ly[ms]).split("\n");
     return {ms:ms,ja:parts[0]||"",zh:parts[1]||""};
   });
-  box.innerHTML=lyricLines.map((l,i)=>'<p data-i="'+i+'"><span class="ja">'+esc(l.ja)+'</span>'
-    +(l.zh?'<span class="zh">'+esc(l.zh)+'</span>':"")+'</p>').join("");
+  box.innerHTML=lyricLines.map((l,i)=>'<p data-i="'+i+'"><span class="txt"><span class="ja">'+esc(l.ja)+'</span>'
+    +(l.zh?'<span class="zh">'+esc(l.zh)+'</span>':"")+'</span><span class="t">'+fmt(l.ms/1000)+'</span></p>').join("");
   box.querySelectorAll("p").forEach(el=>{
     el.onclick=()=>{const l=lyricLines[Number(el.dataset.i)];if(l&&durationSec>0)seekTo(l.ms/1000)};
   });

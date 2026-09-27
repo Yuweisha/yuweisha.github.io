@@ -1,0 +1,16 @@
+{
+  "liveId": 1177,
+  "titleJa": "UMA IN AMERICA",
+  "titleZh": null,
+  "credits": "作词・作曲・编曲：Lucas Nainemoutou (Cygames)\n译：yingyingyingqwq",
+  "creditLines": [
+    "作词・作曲・编曲：Lucas Nainemoutou (Cygames)",
+    "译：yingyingyingqwq"
+  ],
+  "intro": "在这场豪华绚丽的盛典中，证明出团队的羁绊。\n以此团结之力攀登世界之巅！拿下吧，美国梦！",
+  "introLines": [
+    "在这场豪华绚丽的盛典中，证明出团队的羁绊。",
+    "以此团结之力攀登世界之巅！拿下吧，美国梦！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

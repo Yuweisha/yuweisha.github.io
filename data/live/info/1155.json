@@ -1,0 +1,17 @@
+{
+  "liveId": 1155,
+  "titleJa": "ギフト",
+  "titleZh": null,
+  "credits": "作词：佐藤遥 (Cygames)\n作曲・編曲：長谷部翔 (Cygames)\n译：yingyingyingqwq",
+  "creditLines": [
+    "作词：佐藤遥 (Cygames)",
+    "作曲・編曲：長谷部翔 (Cygames)",
+    "译：yingyingyingqwq"
+  ],
+  "intro": "向着追寻已久的蹄印前方。\n此刻，迈出步伐——将寄托的梦想负于肩上。",
+  "introLines": [
+    "向着追寻已久的蹄印前方。",
+    "此刻，迈出步伐——将寄托的梦想负于肩上。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

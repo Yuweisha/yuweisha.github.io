@@ -1,0 +1,17 @@
+{
+  "liveId": 1026,
+  "titleJa": "ささやかな祈り",
+  "titleZh": null,
+  "credits": "作词：宮嶋淳子 (SUPA LOVE)\n作曲：成本智美 (SUPA LOVE) 编曲：賀佐泰洋 (SUPA LOVE)\n译：TV动画第二季",
+  "creditLines": [
+    "作词：宮嶋淳子 (SUPA LOVE)",
+    "作曲：成本智美 (SUPA LOVE) 编曲：賀佐泰洋 (SUPA LOVE)",
+    "译：TV动画第二季"
+  ],
+  "intro": "若我启程奔跑的话——这是一首融入了虚幻而坚强意志的歌曲。\n将的思念藏在心中，向夜空中高悬的明月祈祷。",
+  "introLines": [
+    "若我启程奔跑的话——这是一首融入了虚幻而坚强意志的歌曲。",
+    "将的思念藏在心中，向夜空中高悬的明月祈祷。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

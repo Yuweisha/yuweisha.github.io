@@ -1,0 +1,17 @@
+{
+  "liveId": 1010,
+  "titleJa": "Special Record!",
+  "titleZh": null,
+  "credits": "作词・作曲：新田目駿\n编曲：广泽优也・谷ナオキ・新田目駿\n译：雪村あおいaoi（Bilibili）",
+  "creditLines": [
+    "作词・作曲：新田目駿",
+    "编曲：广泽优也・谷ナオキ・新田目駿",
+    "译：雪村あおいaoi（Bilibili）"
+  ],
+  "intro": "照亮GⅠ胜利这一特别的瞬间，在天空绽放的歌曲。\n只要一直追寻想要实现的未来的话，梦想就一定会实现！",
+  "introLines": [
+    "照亮GⅠ胜利这一特别的瞬间，在天空绽放的歌曲。",
+    "只要一直追寻想要实现的未来的话，梦想就一定会实现！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

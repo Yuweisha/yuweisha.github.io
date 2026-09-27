@@ -1,0 +1,17 @@
+{
+  "liveId": 1035,
+  "titleJa": "WINnin’ 5 －ウイニング☆ファイヴ－",
+  "titleZh": null,
+  "credits": "作词：西田恵美 作曲：岡村諭志\n编曲：EFFY (FirstCall)\n译：南千和（Bilibili）",
+  "creditLines": [
+    "作词：西田恵美 作曲：岡村諭志",
+    "编曲：EFFY (FirstCall)",
+    "译：南千和（Bilibili）"
+  ],
+  "intro": "『因为已不是独自一人，所以才会变得更强』\n大家一起哭泣、欢笑、奔跑――这是牵绊与青春的旋律。",
+  "introLines": [
+    "『因为已不是独自一人，所以才会变得更强』",
+    "大家一起哭泣、欢笑、奔跑――这是牵绊与青春的旋律。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

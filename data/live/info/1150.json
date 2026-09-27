@@ -1,0 +1,16 @@
+{
+  "liveId": 1150,
+  "titleJa": "STARTING FORCE",
+  "titleZh": null,
+  "credits": "作词：マイクスギヤマ\n作曲・编曲：東大路憲太",
+  "creditLines": [
+    "作词：マイクスギヤマ",
+    "作曲・编曲：東大路憲太"
+  ],
+  "intro": "点缀四周年的 FORCE——那就是挑战之心！\n从这里，属于你们时代的大门将开启！",
+  "introLines": [
+    "点缀四周年的 FORCE——那就是挑战之心！",
+    "从这里，属于你们时代的大门将开启！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

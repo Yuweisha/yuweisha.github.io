@@ -1,0 +1,18 @@
+{
+  "liveId": 1060,
+  "titleJa": "DRAMATIC JOURNEY",
+  "titleZh": null,
+  "credits": "作词：真崎エリカ　作曲：内田哲也 (Cygames)・大熊淳生 (Arte Refact)\n编曲：大熊淳生 (Arte Refact)\n号角声作曲・编曲：滝澤俊輔 (TRYTONELABO)\n译：毫毛",
+  "creditLines": [
+    "作词：真崎エリカ　作曲：内田哲也 (Cygames)・大熊淳生 (Arte Refact)",
+    "编曲：大熊淳生 (Arte Refact)",
+    "号角声作曲・编曲：滝澤俊輔 (TRYTONELABO)",
+    "译：毫毛"
+  ],
+  "intro": "一首献给肩负辉煌未来的诸位英雄的歌曲。\n目标是名为梦想的财宝，向着未知的大海――启航吧！！",
+  "introLines": [
+    "一首献给肩负辉煌未来的诸位英雄的歌曲。",
+    "目标是名为梦想的财宝，向着未知的大海――启航吧！！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

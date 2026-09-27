@@ -129,11 +129,29 @@
   async function selectSong(musicId) {
     curSong = catalog.songs.find(function (s) { return s.musicId === musicId; });
     detail = await getJSON(DATA + "songs/" + musicId + ".json");
+    await loadSongInfo(musicId);
     bgmId = pickBgmId(detail);
     balance = $("balance").checked;
     cast = C.defaultCast(detail);
     renderList($("search").value);
     renderSong();
+  }
+
+  /* ---------------- 乐曲信息：作词作曲 / 介绍（data/live/info/<id>.json） ---------------- */
+
+  var infoCache = {};
+  async function loadSongInfo(musicId) {
+    var elC = $("liveCredits"), elI = $("liveIntro");
+    if (elC) { elC.hidden = true; elC.textContent = ""; }
+    if (elI) { elI.hidden = true; elI.textContent = ""; }
+    if (Object.prototype.hasOwnProperty.call(infoCache, musicId) === false) {
+      try { infoCache[musicId] = await getJSON(DATA + "info/" + musicId + ".json"); }
+      catch (e) { infoCache[musicId] = null; }   // 缺文件不影响主流程
+    }
+    var info = infoCache[musicId];
+    if (!info) return;
+    if (elC && info.credits) { elC.hidden = false; elC.textContent = info.credits; }
+    if (elI && info.intro) { elI.hidden = false; elI.textContent = info.intro; }
   }
 
   /** BGM 版本名（照官方界面的写法）：bgm_02 无演出音效、bgm_01 含演出音效 */

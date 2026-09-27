@@ -1,0 +1,17 @@
+{
+  "liveId": 1036,
+  "titleJa": "GIRLS' LEGEND U",
+  "titleZh": null,
+  "credits": "作词：五十嵐萌 (Cygames)\n作曲：本田晃弘 (Cygames) 编曲：東大路憲太\n译：毫毛",
+  "creditLines": [
+    "作词：五十嵐萌 (Cygames)",
+    "作曲：本田晃弘 (Cygames) 编曲：東大路憲太",
+    "译：毫毛"
+  ],
+  "intro": "超越春夏秋冬，只为与你共奏一曲合音。\n胸中激昂的心跳化作旋律——终于，遇见大家了。",
+  "introLines": [
+    "超越春夏秋冬，只为与你共奏一曲合音。",
+    "胸中激昂的心跳化作旋律——终于，遇见大家了。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

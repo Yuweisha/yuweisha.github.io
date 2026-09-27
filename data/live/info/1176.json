@@ -1,0 +1,16 @@
+{
+  "liveId": 1176,
+  "titleJa": "VOLTAGE",
+  "titleZh": null,
+  "credits": "作词・作曲・编曲：梯拓哉 (Cygames)\n译：yingyingyingqwq",
+  "creditLines": [
+    "作词・作曲・编曲：梯拓哉 (Cygames)",
+    "译：yingyingyingqwq"
+  ],
+  "intro": "划破风暴的，是你那举世无双的光芒——\n披挂上阵吧，在那缤纷绚烂的色彩中。鸣响吧，那革命的歌声。",
+  "introLines": [
+    "划破风暴的，是你那举世无双的光芒——",
+    "披挂上阵吧，在那缤纷绚烂的色彩中。鸣响吧，那革命的歌声。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

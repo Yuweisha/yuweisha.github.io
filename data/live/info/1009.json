@@ -1,0 +1,17 @@
+{
+  "liveId": 1009,
+  "titleJa": "UNLIMITED IMPACT",
+  "titleZh": null,
+  "credits": "作词：真崎エリカ\n作曲・编曲：佐伯高志\n译：南千和（Bilibili）",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲・编曲：佐伯高志",
+    "译：南千和（Bilibili）"
+  ],
+  "intro": "赠予即使在泥泞之中也以不屈斗志战斗下去的赛马娘的灵魂之歌。\n即使被疾风骤雨夺去视线，脚步也不会停止。",
+  "introLines": [
+    "赠予即使在泥泞之中也以不屈斗志战斗下去的赛马娘的灵魂之歌。",
+    "即使被疾风骤雨夺去视线，脚步也不会停止。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

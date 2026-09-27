@@ -1,0 +1,16 @@
+{
+  "liveId": 1028,
+  "titleJa": "winning the soul",
+  "titleZh": null,
+  "credits": "作词・作曲・编曲：宮崎誠\n译：南千和（Bilibili）",
+  "creditLines": [
+    "作词・作曲・编曲：宮崎誠",
+    "译：南千和（Bilibili）"
+  ],
+  "intro": "只有赢得经典三冠者才有资格演唱的歌曲。\n这首歌曲是所有赛马娘的『向往』。",
+  "introLines": [
+    "只有赢得经典三冠者才有资格演唱的歌曲。",
+    "这首歌曲是所有赛马娘的『向往』。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

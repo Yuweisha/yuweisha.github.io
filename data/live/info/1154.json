@@ -1,0 +1,16 @@
+{
+  "liveId": 1154,
+  "titleJa": "タッカー's スキルアップアイランド",
+  "titleZh": null,
+  "credits": "作词・作曲：池田健仁 (Cygames)\n编曲：MK",
+  "creditLines": [
+    "作词・作曲：池田健仁 (Cygames)",
+    "编曲：MK"
+  ],
+  "intro": "你踏入的是自然丰富的特雷森岛！\n这里只有大自然，这首曲子——还有肌肉！",
+  "introLines": [
+    "你踏入的是自然丰富的特雷森岛！",
+    "这里只有大自然，这首曲子——还有肌肉！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

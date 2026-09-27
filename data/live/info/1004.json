@@ -1,0 +1,17 @@
+{
+  "liveId": 1004,
+  "titleJa": "Never Looking Back",
+  "titleZh": null,
+  "credits": "作词：磯谷佳江\n作曲：ヤナガワタカオ 编曲：睦月周平\n译：SinonJZH（萌娘百科）",
+  "creditLines": [
+    "作词：磯谷佳江",
+    "作曲：ヤナガワタカオ 编曲：睦月周平",
+    "译：SinonJZH（萌娘百科）"
+  ],
+  "intro": "因为和你一同奔跑ー\n我们的旋律永远不会停止。已经，不会再回头了。",
+  "introLines": [
+    "因为和你一同奔跑ー",
+    "我们的旋律永远不会停止。已经，不会再回头了。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

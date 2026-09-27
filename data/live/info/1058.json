@@ -1,0 +1,17 @@
+{
+  "liveId": 1058,
+  "titleJa": "Everlasting BEATS",
+  "titleZh": null,
+  "credits": "作词：真崎エリカ\n作曲・编曲：伊藤和馬 (Arte Refact)\n译：Kitasanゞ卫ちゃ",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲・编曲：伊藤和馬 (Arte Refact)",
+    "译：Kitasanゞ卫ちゃ"
+  ],
+  "intro": "一首歌颂自遥远的过去延续至今的灿烂光辉的歌曲。\n那绵延不绝的光辉，还将继续奔向未来！",
+  "introLines": [
+    "一首歌颂自遥远的过去延续至今的灿烂光辉的歌曲。",
+    "那绵延不绝的光辉，还将继续奔向未来！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

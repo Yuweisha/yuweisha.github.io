@@ -1,0 +1,17 @@
+{
+  "liveId": 1034,
+  "titleJa": "ぴょいっと♪はれるや！",
+  "titleZh": null,
+  "credits": "作词：corochi\n作曲・编曲：内田哲也 (Cygames)\n译：南千和（Bilibili）",
+  "creditLines": [
+    "作词：corochi",
+    "作曲・编曲：内田哲也 (Cygames)",
+    "译：南千和（Bilibili）"
+  ],
+  "intro": "有欢笑也有泪水！将赛马娘们的悠闲时光\n咻♪的一下塞进去的学园生活之歌☆",
+  "introLines": [
+    "有欢笑也有泪水！将赛马娘们的悠闲时光",
+    "咻♪的一下塞进去的学园生活之歌☆"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

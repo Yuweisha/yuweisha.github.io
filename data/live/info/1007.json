@@ -1,0 +1,17 @@
+{
+  "liveId": 1007,
+  "titleJa": "ENDLESS DREAM!!",
+  "titleZh": null,
+  "credits": "作词：矶谷佳江 作曲：内田哲也 (Cygames)\n编曲：内田哲也 (Cygames)・滝泽俊辅 (TRYTONELABO)\n译：南千和（Bilibili）",
+  "creditLines": [
+    "作词：矶谷佳江 作曲：内田哲也 (Cygames)",
+    "编曲：内田哲也 (Cygames)・滝泽俊辅 (TRYTONELABO)",
+    "译：南千和（Bilibili）"
+  ],
+  "intro": "在新马级比赛中表现出色的希望之星们展现的清爽乐曲。\n赛马娘们疾驰着，她们的梦想闪耀着七色的光芒。",
+  "introLines": [
+    "在新马级比赛中表现出色的希望之星们展现的清爽乐曲。",
+    "赛马娘们疾驰着，她们的梦想闪耀着七色的光芒。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

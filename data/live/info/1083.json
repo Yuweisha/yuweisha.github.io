@@ -1,0 +1,18 @@
+{
+  "liveId": 1083,
+  "titleJa": "トレセン音頭",
+  "titleZh": null,
+  "credits": "作词：丹下めえな\n作曲：本田晃弘 (Cygames)\n编曲：加藤慶久 (Cygames)・本田晃弘 (Cygames)\n译：Kitasanゞ卫ちゃ",
+  "creditLines": [
+    "作词：丹下めえな",
+    "作曲：本田晃弘 (Cygames)",
+    "编曲：加藤慶久 (Cygames)・本田晃弘 (Cygames)",
+    "译：Kitasanゞ卫ちゃ"
+  ],
+  "intro": "夏天ー！祭典ー！！特雷森音头ーーー！！！\n随时都可以参与其中哦！来吧来吧，你的意愿如何ーー？？",
+  "introLines": [
+    "夏天ー！祭典ー！！特雷森音头ーーー！！！",
+    "随时都可以参与其中哦！来吧来吧，你的意愿如何ーー？？"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

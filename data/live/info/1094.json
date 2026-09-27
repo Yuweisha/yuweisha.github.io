@@ -1,0 +1,17 @@
+{
+  "liveId": 1094,
+  "titleJa": "O - ロライズ",
+  "titleZh": null,
+  "credits": "作词・作曲：池田健仁 (Cygames)\n编曲：MK\n译：Kitasanゞ卫ちゃ",
+  "creditLines": [
+    "作词・作曲：池田健仁 (Cygames)",
+    "编曲：MK",
+    "译：Kitasanゞ卫ちゃ"
+  ],
+  "intro": "结束阶段。输入最后的代码吧。\nU+3042U+308AU+304CU+3068U+3046",
+  "introLines": [
+    "结束阶段。输入最后的代码吧。",
+    "U+3042U+308AU+304CU+3068U+3046"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

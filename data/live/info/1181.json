@@ -1,0 +1,17 @@
+{
+  "liveId": 1181,
+  "titleJa": "トレセンラーメン列伝",
+  "titleZh": null,
+  "credits": "作词・作曲：池田健仁 (Cygames)\n编曲：加藤庆久 (Cygames)・池田健仁 (Cygames)\n译：yingyingyingqwq",
+  "creditLines": [
+    "作词・作曲：池田健仁 (Cygames)",
+    "编曲：加藤庆久 (Cygames)・池田健仁 (Cygames)",
+    "译：yingyingyingqwq"
+  ],
+  "intro": "赠予你的这一碗。面条、配菜与热情，\n盛满平日里满满的感谢——嘿，让您久等啦！！",
+  "introLines": [
+    "赠予你的这一碗。面条、配菜与热情，",
+    "盛满平日里满满的感谢——嘿，让您久等啦！！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

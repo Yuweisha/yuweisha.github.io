@@ -1,0 +1,17 @@
+{
+  "liveId": 1059,
+  "titleJa": "Overrunner!",
+  "titleZh": null,
+  "credits": "作词・作曲・编曲 : Motokiyo\n译：Kitasanゞ卫ちゃ",
+  "creditLines": [
+    "作词・作曲・编曲 : Motokiyo",
+    "译：Kitasanゞ卫ちゃ"
+  ],
+  "intro": "在闪电战般的赛场上展开激烈竞争的同伴们，与她们所演唱的歌曲。\n无论何时都想要保持微笑――\n因此才要拼尽全力，奔向胜利的彼岸！",
+  "introLines": [
+    "在闪电战般的赛场上展开激烈竞争的同伴们，与她们所演唱的歌曲。",
+    "无论何时都想要保持微笑――",
+    "因此才要拼尽全力，奔向胜利的彼岸！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

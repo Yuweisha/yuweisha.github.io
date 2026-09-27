@@ -1,0 +1,17 @@
+{
+  "liveId": 1027,
+  "titleJa": "本能スピード",
+  "titleZh": null,
+  "credits": "作词：うらん\n作曲：濱田幹浩 编曲：AJURIKA\n译：南千和（Bilibili）",
+  "creditLines": [
+    "作词：うらん",
+    "作曲：濱田幹浩 编曲：AJURIKA",
+    "译：南千和（Bilibili）"
+  ],
+  "intro": "心中所起誓的是『最快』二字！　直到极限的尽头\n疾驰的赛马娘们遵循本能地呼喊！！",
+  "introLines": [
+    "心中所起誓的是『最快』二字！　直到极限的尽头",
+    "疾驰的赛马娘们遵循本能地呼喊！！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

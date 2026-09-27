@@ -1,0 +1,16 @@
+{
+  "liveId": 1001,
+  "titleJa": "うまぴょい伝説",
+  "titleZh": null,
+  "credits": "作词・作曲・编曲：本田晃弘 (Cygames)\n译：TV动画第二季第13集、南千和（Bilibili）",
+  "creditLines": [
+    "作词・作曲・编曲：本田晃弘 (Cygames)",
+    "译：TV动画第二季第13集、南千和（Bilibili）"
+  ],
+  "intro": "粉饰URA总决赛的欢快歌曲。\n马儿跳♪马儿跳♪绝对能带起现场的气氛！",
+  "introLines": [
+    "粉饰URA总决赛的欢快歌曲。",
+    "马儿跳♪马儿跳♪绝对能带起现场的气氛！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

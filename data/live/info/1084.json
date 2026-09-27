@@ -1,0 +1,19 @@
+{
+  "liveId": 1084,
+  "titleJa": "ソシテミンナノ",
+  "titleZh": null,
+  "credits": "作词：椎名宇伊 (Cygames)・本田晃弘 (Cygames)　\n作曲：本田晃弘 (Cygames)・\nLucas Nainemoutou (Cygames)・千葉梓 (Cygames)\n编曲：東大路憲太・下智子・伊禮完 (Cygames)\n译：Kitasanゞ卫ちゃ",
+  "creditLines": [
+    "作词：椎名宇伊 (Cygames)・本田晃弘 (Cygames)　",
+    "作曲：本田晃弘 (Cygames)・",
+    "Lucas Nainemoutou (Cygames)・千葉梓 (Cygames)",
+    "编曲：東大路憲太・下智子・伊禮完 (Cygames)",
+    "译：Kitasanゞ卫ちゃ"
+  ],
+  "intro": "永不放弃，直至触及梦想――！\n怀着满腔热情，奔向胜利之路吧！",
+  "introLines": [
+    "永不放弃，直至触及梦想――！",
+    "怀着满腔热情，奔向胜利之路吧！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

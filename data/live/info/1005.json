@@ -1,0 +1,17 @@
+{
+  "liveId": 1005,
+  "titleJa": "彩 Phantasia",
+  "titleZh": null,
+  "credits": "作词：五十岚萌 (Cygames)\n作曲：本田晃弘 (Cygames) 编曲：秋田真典 (INSPION)\n译：南千和（Bilibili）",
+  "creditLines": [
+    "作词：五十岚萌 (Cygames)",
+    "作曲：本田晃弘 (Cygames) 编曲：秋田真典 (INSPION)",
+    "译：南千和（Bilibili）"
+  ],
+  "intro": "仅赠予荣获三后冠的女王们的歌曲。\n华丽的同时，也有着顽强追梦的美。",
+  "introLines": [
+    "仅赠予荣获三后冠的女王们的歌曲。",
+    "华丽的同时，也有着顽强追梦的美。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

@@ -80,6 +80,9 @@ input:focus,select:focus{border-color:var(--accent)}
 .head{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:start}
 .head img{width:132px;height:132px;border-radius:11px;object-fit:cover;background:var(--bg-soft)}
 .head h2{margin:2px 0 4px;font-size:20px}
+.head .liveInfo{margin-top:8px}
+.liveInfo .liveCredits{font-size:12.5px;color:var(--muted);line-height:1.55;white-space:pre-line}
+.liveInfo .liveIntro{margin-top:7px;padding:7px 10px;border-left:3px solid var(--accent-soft);background:var(--panel2);border-radius:0 var(--radius-small) var(--radius-small) 0;font-size:12.5px;color:var(--text-2);line-height:1.6;white-space:pre-line}
 .slot{border:1px solid var(--line);border-radius:11px;padding:10px;margin:9px 0;background:var(--panel2)}
 .slot .top{display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:center}
 .slotname{font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
@@ -190,16 +193,21 @@ a{color:var(--accent)}
           <div>
             <h2 id="songTitle">—</h2>
             <div class="small" id="songMeta">—</div>
-            <div class="grid2" style="margin-top:10px">
-              <div>
-                <label for="bgmSelect">BGM</label>
-                <select id="bgmSelect"></select>
-              </div>
-              <div>
-                <label>工程时长（留空 = 按当前选角精算）</label>
-                <input id="durInput" type="text" inputmode="numeric">
-              </div>
+            <div class="liveInfo">
+              <div class="liveCredits" id="liveCredits" hidden></div>
+              <div class="liveIntro" id="liveIntro" hidden></div>
             </div>
+          </div>
+        </div>
+
+        <div class="grid2" style="margin-top:14px">
+          <div>
+            <label for="bgmSelect">BGM</label>
+            <select id="bgmSelect"></select>
+          </div>
+          <div>
+            <label>工程时长（留空 = 按当前选角精算）</label>
+            <input id="durInput" type="text" inputmode="numeric">
           </div>
         </div>
 
@@ -251,7 +259,7 @@ a{color:var(--accent)}
 
 </div>
 <script src="js/core.js?v=26646e8a"></script>
-<script src="js/app.js?v=d227444c"></script>
+<script src="js/app.js?v=c52e829a"></script>
 <footer class="site-footer">
   <div>© 2026 Yuweisha</div>
   <div class="footer-links"><a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a></div>

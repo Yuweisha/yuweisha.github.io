@@ -1,0 +1,17 @@
+{
+  "liveId": 1037,
+  "titleJa": "transforming",
+  "titleZh": null,
+  "credits": "作词：森由里子\n作曲・编曲：田中秀和 (MONACA)\n译：凉月crella（Bilibili）",
+  "creditLines": [
+    "作词：森由里子",
+    "作曲・编曲：田中秀和 (MONACA)",
+    "译：凉月crella（Bilibili）"
+  ],
+  "intro": "向着未知的终点，未曾见过的景色――\n神秘而又温暖的旋律，推动着你，轻语道：『奔跑起来吧』。",
+  "introLines": [
+    "向着未知的终点，未曾见过的景色――",
+    "神秘而又温暖的旋律，推动着你，轻语道：『奔跑起来吧』。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

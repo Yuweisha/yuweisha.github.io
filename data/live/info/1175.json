@@ -1,0 +1,18 @@
+{
+  "liveId": 1175,
+  "titleJa": "ハロー・ポラリス",
+  "titleZh": null,
+  "credits": "作词・作曲：池田健仁 (Cygames)\n编曲：塚田耕平\n弦乐编曲：市桥卓也 (Cygames)\n译：yingyingyingqwq",
+  "creditLines": [
+    "作词・作曲：池田健仁 (Cygames)",
+    "编曲：塚田耕平",
+    "弦乐编曲：市桥卓也 (Cygames)",
+    "译：yingyingyingqwq"
+  ],
+  "intro": "一起奔跑的日子。不知不觉已经来到了这么远的地方。\n并肩奔跑的两人的牵绊，将一直延续到梦想的尽头——",
+  "introLines": [
+    "一起奔跑的日子。不知不觉已经来到了这么远的地方。",
+    "并肩奔跑的两人的牵绊，将一直延续到梦想的尽头——"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

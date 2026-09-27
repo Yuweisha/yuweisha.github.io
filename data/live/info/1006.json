@@ -1,0 +1,17 @@
+{
+  "liveId": 1006,
+  "titleJa": "Make debut!",
+  "titleZh": null,
+  "credits": "作词・作曲：新田目骏\n编曲：新田目骏・广泽优也\n译：南千和（Bilibili）",
+  "creditLines": [
+    "作词・作曲：新田目骏",
+    "编曲：新田目骏・广泽优也",
+    "译：南千和（Bilibili）"
+  ],
+  "intro": "献给刚出道赛马娘的首支歌曲。\n吹响那开场号！响彻至终点吧！！",
+  "introLines": [
+    "献给刚出道赛马娘的首支歌曲。",
+    "吹响那开场号！响彻至终点吧！！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

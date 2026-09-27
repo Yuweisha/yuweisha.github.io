@@ -1,0 +1,17 @@
+{
+  "liveId": 1157,
+  "titleJa": "ゆこまロマン純情派",
+  "titleZh": null,
+  "credits": "作词：丹下めえな・岩井彩夏 (Cygames)\n作曲：本田晃弘 (Cygames)\n编曲：本田晃弘 (Cygames)・加藤慶久 (Cygames)",
+  "creditLines": [
+    "作词：丹下めえな・岩井彩夏 (Cygames)",
+    "作曲：本田晃弘 (Cygames)",
+    "编曲：本田晃弘 (Cygames)・加藤慶久 (Cygames)"
+  ],
+  "intro": "那日的记忆在蒸汽般飘荡，令人难忘，但又模糊不清……\n请听「汤驹浪漫纯情派」。",
+  "introLines": [
+    "那日的记忆在蒸汽般飘荡，令人难忘，但又模糊不清……",
+    "请听「汤驹浪漫纯情派」。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

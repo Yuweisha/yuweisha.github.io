@@ -1,0 +1,17 @@
+{
+  "liveId": 1033,
+  "titleJa": "KIRARI MAGIC SHOW",
+  "titleZh": null,
+  "credits": "作词：真崎エリカ\n作曲・编曲：河合泰志 (Arte Refact)\n译：Kitasanゞ卫ちゃ",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲・编曲：河合泰志 (Arte Refact)",
+    "译：Kitasanゞ卫ちゃ"
+  ],
+  "intro": "这首乐曲中寄托着大家对未来的憧憬，即便是满天繁星也不及\n这份心意那般耀眼。你也应是观众之一——梦幻灯光秀，开幕！",
+  "introLines": [
+    "这首乐曲中寄托着大家对未来的憧憬，即便是满天繁星也不及",
+    "这份心意那般耀眼。你也应是观众之一——梦幻灯光秀，开幕！"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}
