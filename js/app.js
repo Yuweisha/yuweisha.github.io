@@ -20,6 +20,17 @@
   var durManual = false;                         // 时长输入框是否被用户手动改过（否则按 streams 精算）
   var openCombo = null;
 
+  /** 时长查表：优先指定 bgm，其次 bgm_01，最后退回该曲剩下的任一值。
+      别再写死 bgm_01 —— 例如 1151 只有 bgm_02，写死就会查不到时长。 */
+  function songDuration(musicId, bgmHint) {
+    var e = durations[musicId] || {};
+    if (bgmHint && e[bgmHint]) return e[bgmHint];
+    if (e.bgm_01) return e.bgm_01;
+    var best = null;
+    Object.keys(e).forEach(function (k) { if (e[k] && (!best || e[k] > best)) best = e[k]; });
+    return best;
+  }
+
   function fmt(ms) {
     if (!ms && ms !== 0) return "—";
     var s = ms / 1000, m = Math.floor(s / 60);
@@ -101,7 +112,7 @@
       hit++;
       var el = document.createElement("div");
       el.className = "song" + (curSong && curSong.musicId === song.musicId ? " active" : "");
-      var dur = (durations[song.musicId] || {}).bgm_01;
+      var dur = songDuration(song.musicId, (song.bgm || [])[0]);
       el.innerHTML =
         '<img loading="lazy" src="' + esc(DATA + "jackets/" + song.musicId + ".png") + '" alt="">' +
         '<div><b>' + esc(titleOf(song)) + '</b><div class="meta">' + esc(subTitleOf(song)) +
@@ -155,7 +166,7 @@
     build();
   }
 
-  function refDuration() { return (durations[detail.musicId] || {})[bgmId] || null; }
+  function refDuration() { return songDuration(detail.musicId, bgmId); }
   /** 把「默认选角的官方时长」填进输入框作为参考；只有用户手动改过才会当成覆盖值。 */
   function syncDuration() {
     var d = refDuration();
