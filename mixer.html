@@ -37,7 +37,7 @@ input:focus,textarea:focus{border-color:var(--accent)}.small{font-size:12px;colo
 .switch:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
 .switch:has(input:checked) span{color:var(--accent-strong);font-weight:650}
 /* 歌词卡：逐行高亮 + 跟随滚动 */
-#lyrics{max-height:240px;overflow:auto}
+#lyrics{max-height:240px;overflow:auto;position:relative}
 #lyrics p{margin:0;padding:7px 10px;border-radius:8px;color:var(--muted);line-height:1.45;cursor:pointer;transition:background .15s}
 #lyrics p .ja{display:block;font-size:14px}
 #lyrics p .zh{display:block;font-size:12.5px;color:var(--muted)}
@@ -54,15 +54,53 @@ input:focus,textarea:focus{border-color:var(--accent)}.small{font-size:12px;colo
 .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}}
 .stat{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:10px}.stat span{display:block;color:var(--muted);font-size:12px}.stat b{font-size:18px}
 .time{font-variant-numeric:tabular-nums;color:var(--text)}.seek{width:100%;accent-color:var(--accent)}
-.trackbox{max-height:390px;overflow:auto;border:1px solid var(--line);border-radius:10px}.track{display:grid;grid-template-columns:34px minmax(150px,1.2fr) minmax(190px,1.5fr) 96px 96px;gap:10px;align-items:center;padding:9px 11px;border-bottom:1px solid var(--line-light)}.track:last-child{border-bottom:0}
+.trackbox{max-height:390px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+.track-head,.track{display:grid;grid-template-columns:46px minmax(110px,1.6fr) 56px 78px 104px 84px;gap:10px;align-items:center;padding:9px 11px}
+.track-head{position:sticky;top:0;z-index:2;background:var(--panel2);border-bottom:1px solid var(--line);color:var(--muted);font-size:12px;font-weight:650}
+.track-head>:nth-child(6){text-align:right}
+.track{border-bottom:1px solid var(--line-light)}
+.track:last-child{border-bottom:0}
+.track .role{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:650}
+.track .wave,.track .slot{color:var(--text-2);font-variant-numeric:tabular-nums}
+.track .db{text-align:right;font-variant-numeric:tabular-nums;color:var(--text-2)}
+.track .dur{font-variant-numeric:tabular-nums}
 .name,.url{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.url{color:var(--muted);font-size:12px}
 .badge{font-size:11px;padding:3px 7px;border-radius:999px;background:var(--bg-soft);color:var(--text-2)}.ok{color:var(--ok)}.err{color:var(--err)}
+#state{font-weight:650}
+#state[data-s="ready"]{background:var(--bg-soft);color:var(--text-2)}
+#state[data-s="playing"]{background:var(--ok-soft);color:var(--ok)}
+#state[data-s="paused"]{background:var(--warn-soft);color:var(--warn)}
+#state[data-s="stopped"]{background:var(--err-soft);color:var(--err)}
+/* 音量条（只作用于试听；导出走独立的离线图） */
+.vol{display:flex;align-items:center;gap:8px;margin:0;padding:4px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--text-2);font-weight:400}
+.vol input[type=range]{width:132px;accent-color:var(--accent)}
 pre{margin:0;background:var(--bg);border:1px solid var(--line-light);border-radius:8px;padding:12px;min-height:130px;max-height:280px;overflow:auto;color:var(--text);white-space:pre-wrap}
 .note{padding:10px 12px;border-radius:9px;background:var(--ok-soft);border:1px solid #a2d8b4;color:var(--ok)}
 .note button{margin-left:10px;padding:0 6px;border:0;border-radius:6px;background:transparent;color:inherit;font-size:15px;font-weight:700;line-height:1;cursor:pointer;opacity:.55}
 .note button:hover{opacity:1;background:rgba(26,127,55,.12)}
 .warn{padding:10px 12px;border-radius:9px;background:var(--warn-soft);border:1px solid #f0b98b;color:var(--warn)}
 textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;min-height:80px;resize:vertical;margin-top:12px}
+/* 移动端（窄屏）：轨道行改三段式、按钮换行、收边距 */
+@media (max-width:700px){
+  .wrap{padding:16px 12px 76px}
+  .title{font-size:21px}
+  .sub{font-size:13px;margin:4px 0 12px}
+  .card{padding:13px;border-radius:12px}
+  .stats{gap:8px}
+  .stat{padding:8px 9px}
+  .stat b{font-size:16px}
+  .track-head{display:none}
+  .track{grid-template-columns:24px 1fr auto;gap:5px 8px;padding:8px 9px}
+  .track>:nth-child(1){grid-area:1/1}
+  .track>:nth-child(2){grid-area:1/2}
+  .track>:nth-child(6){grid-area:1/3;white-space:nowrap}
+  .track>:nth-child(3){grid-area:2/1}
+  .track>:nth-child(4){grid-area:2/2/3/4}
+  .track>:nth-child(5){grid-area:3/1/4/4}
+  .trackbox{max-height:50vh}
+  #lyrics{max-height:42vh}   /* 保留内部滚动：窄屏也跟随高亮行 */
+  pre{font-size:11px;max-height:240px}
+}
 </style>
 </head>
 <body>
@@ -124,7 +162,7 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
   <div id="player" class="card" style="display:none">
     <div class="row" style="justify-content:space-between">
       <div class="time"><span id="current">00:00.000</span> / <span id="total">00:00.000</span></div>
-      <span id="state" class="badge">ready</span>
+      <span id="state" class="badge" data-s="ready">准备就绪</span>
     </div>
     <input id="seek" class="seek" type="range" min="0" max="1" step="0.001" value="0" style="margin:13px 0">
     <div class="row">
@@ -132,6 +170,11 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
       <button id="pause" class="btn">⏸ 暂停</button>
       <button id="export" class="btn">导出 WAV</button>
       <button id="exportMp3" class="btn">导出 MP3 · 320k</button>
+      <label class="vol" title="只影响试听音量；导出音频仍按工程的增益与压缩器渲染">
+        <span>音量</span>
+        <input id="vol" type="range" min="0" max="100" step="1" value="100">
+        <span id="volVal" class="small">100%</span>
+      </label>
       <label class="switch"><input id="wav16" type="checkbox"><span>16-bit PCM（默认 32-bit float）</span></label>
       <span id="exportStatus" class="small"></span>
     </div>
@@ -156,8 +199,8 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
   </div>
 </div>
 
-<script src="js/core.js"></script>
-<script src="js/lame.min.js"></script>
+<script src="js/core.js?v=26646e8a"></script>
+<script src="js/lame.min.js?v=00d43c06"></script>
 <script>
 "use strict";
 const $=id=>document.getElementById(id);
@@ -166,6 +209,30 @@ const logEl=$("log");
 let project=null, projectUrl="", baseUrl="";
 let sampleRate=48000, durationSec=0, buffers=new Map();
 let audioCtx=null, graph=[], masterGain=null, compressor=null;
+const BASE_GAIN=0.9;                     // 与工程渲染同基准（导出仍用这个值，音量条只影响试听）
+// 注意 Number(null)===0：没存过音量时若照算会变成 0%（静音）
+let volPct=(()=>{const raw=localStorage.getItem("uma.volume");const v=raw===null?NaN:Number(raw);return Number.isFinite(v)&&v>=0&&v<=100?v:100})();
+function applyVolume(){
+  if(masterGain)masterGain.gain.value=BASE_GAIN*volPct/100;
+  const t=$("volVal");if(t)t.textContent=volPct+"%";
+  const sl=$("vol");if(sl&&Number(sl.value)!==volPct)sl.value=String(volPct);
+}
+// 调试/测试钩子：真机探针读它验证音量条真的写进了 masterGain（let 不会挂到 window 上）
+window.__umaMixer={getGain:()=>masterGain?masterGain.gain.value:null,getVol:()=>volPct};
+/** 播放状态胶囊：状态存 data-s（着色用），文案用中文 */
+function setState(key,label){const el=$("state");if(!el)return;el.dataset.s=key;el.textContent=label}
+/** dB 显示：小数最多 2 位、四舍五入（工程 JSON 里仍保留原值） */
+function fmtDb(v){const n=Number(v);const r=Math.round((Number.isFinite(n)?n:0)*100)/100;return (Object.is(r,-0)?0:r)+" dB"}
+/** 从轨道名 "center 特别周 wave 0" 解析出站位/角色/音轨号；BGM 行没有这些 */
+function parseTrack(t){
+  const name=String(t.name||t.id||"");
+  const m=/^(\S+)\s+(.+?)\s+wave\s+(\d+)$/.exec(name);
+  if(m)return{slot:m[1],role:m[2],wave:m[3]};
+  const mm=/chara_(\d+)\/chara_(\d+)\.mp3/.exec(String(t.media||""));
+  if(mm)return{slot:"—",role:"chara "+mm[1],wave:mm[2]};
+  if(t.id==="bgm"||/^bgm/i.test(name))return{slot:"—",role:"伴奏",wave:"—"};
+  return{slot:"—",role:name||"—",wave:"—"};
+}
 let startedAt=0, pausedAt=0, raf=0;
 
 function log(s){const t=new Date().toLocaleTimeString();logEl.textContent+="["+t+"] "+s+"\n";logEl.scrollTop=logEl.scrollHeight}
@@ -208,6 +275,15 @@ async function fetchProject(url){
 
 /* ---------- 媒体解析 ---------- */
 function isAbs(u){return /^(https?:|blob:|data:)/i.test(u)}
+/** 展示用：不把外链地址原样摆出来（日志/悬停都走它）。真实请求仍用解码后的地址。 */
+function maskUrl(u){
+  if(!u)return "";
+  try{
+    const x=new URL(u,location.href);
+    const rel=x.pathname.replace(/^\/+/,"");
+    return x.origin===location.origin?rel:(rel+"  ←  默认媒体源");
+  }catch{return "（不可解析的地址）"}
+}
 function resolveMedia(raw){
   if(!raw)return null;
   raw=String(raw).trim();
@@ -219,7 +295,13 @@ function resolveMedia(raw){
   try{return new URL(raw,C.mediaBaseDefault()).href}catch{}      // ④ 默认媒体基址（Cloudflare R2）
   return raw;
 }
-function sinkIndex(t){return t.media.replace(/^\/+/,"")}
+/** 备用候选：把工程里的媒体路径挂到默认/手填基址上取一次同样的文件。
+ *  t.media 可能是绝对地址，必须先取 pathname，否则拼出 base+https://… 这种垃圾 URL。 */
+function sinkIndex(t){
+  var m=String(t.media||"");
+  try{ if(/^[a-z][a-z0-9+.-]*:\/\//i.test(m)) m=new URL(m).pathname; }catch(e){}
+  return m.replace(/^\/+/,"");
+}
 
 /* ---------- 校准裁剪 ---------- */
 function trimPlan(buffer,stream){
@@ -263,7 +345,7 @@ async function decodeAudio(ctx,url,stream,retry=3){
 async function fetchFirstOk(urls,stream,ctx){
   let err=null;
   for(const u of urls){
-    try{return await decodeAudio(ctx,u,stream)}catch(e){err=e;log("    "+u+" 失败："+e.message)}
+    try{return await decodeAudio(ctx,u,stream)}catch(e){err=e;log("    "+maskUrl(u)+" 失败："+e.message)}
   }
   throw err||new Error("no candidate");
 }
@@ -280,17 +362,19 @@ async function preload(){
       const i=idx++, t=list[i];
       const rem=resolveMedia(t.media);
       const urls=[rem,(baseUrl||C.mediaBaseDefault())+sinkIndex(t)];
-      const st=$("ts-"+i), ue=$("tu-"+i);
-      ue.textContent=urls[0]||"(无 URL)";
+      const st=$("ts-"+i), rowEl=st?st.parentNode:null;
+      if(rowEl)rowEl.title=maskUrl(urls[0])||t.media||"(无 URL)";
       try{
         if(!rem)throw new Error("没有可识别的音频 URL");
         st.textContent="载入中";
         const b=await fetchFirstOk(urls.filter(Boolean),t.stream,ctx);
         buffers.set(t.id,b);ok++;
         st.textContent=b.duration.toFixed(3)+" s"+(t.stream&&t.stream.sampleRate!==b.sampleRate?" (⚠ "+b.sampleRate+"Hz)":"");
-        st.className="small ok";
+        st.className="small ok dur";
       }catch(e){
-        st.textContent="失败";st.className="small err";log("轨道 "+t.id+"（"+t.name+"）："+e.message);
+        st.textContent="失败";st.className="small err dur";
+        if(rowEl)rowEl.title=e.message+" · 尝试："+maskUrl(urls[0]);   // 链接不显示，错误靠悬停看
+        log("轨道 "+t.id+"（"+t.name+"）："+e.message);
       }
       done++;$("loaded").textContent=ok+" / "+list.length;
     }
@@ -344,6 +428,7 @@ async function loadProject(){
     }
     project=keepOrphans(project);
     const meta=validateProject(project);
+    setState("ready","准备就绪");
     sampleRate=meta.sr; durationSec=meta.dur/1000;
 
     $("sr").textContent=sampleRate;
@@ -357,13 +442,19 @@ async function loadProject(){
     $("summary").style.display=$("player").style.display=$("tracksCard").style.display="";
 
     const box=$("tracks");box.innerHTML="";
+    const head=document.createElement("div");head.className="track-head";
+    head.innerHTML="<div>序号</div><div>角色</div><div>音轨</div><div>站位</div><div>时长</div><div>增益</div>";
+    box.appendChild(head);
     project.tracks.forEach((t,i)=>{
       const el=document.createElement("div");el.className="track";
-      el.innerHTML="<div>"+(i+1)+"</div>"+
-        "<div class='name' title='"+esc(t.name||t.id)+"'>"+esc(t.name||t.id)+"</div>"+
-        "<div class='url' id='tu-"+i+"' title='"+esc(t.media||"")+"'>"+esc(t.media||"(unknown)")+"</div>"+
-        "<div class='small' id='ts-"+i+"'>waiting</div>"+
-        "<div class='small'>"+esc(t.volumeDb??0)+" dB</div>";
+      const pt=parseTrack(t);
+      el.innerHTML="<div class='idx'>"+(i+1)+"</div>"+
+        "<div class='role' title='"+esc(t.name||t.id||"")+"'>"+esc(pt.role)+"</div>"+
+        "<div class='wave'>"+esc(pt.wave)+"</div>"+
+        "<div class='slot'>"+esc(pt.slot)+"</div>"+
+        "<div class='dur small' id='ts-"+i+"'>载入中</div>"+
+        "<div class='db'>"+esc(fmtDb(t.volumeDb??0))+"</div>";
+      el.title=t.media||"";   // 链接不显示在表格里，鼠标悬停可见
       box.appendChild(el);
     });
 
@@ -421,7 +512,7 @@ function disconnectGraph(){
 async function ensureRealtime(){
   if(audioCtx)return;
   audioCtx=new AudioContext({sampleRate});
-  masterGain=audioCtx.createGain();masterGain.gain.value=.9;
+  masterGain=audioCtx.createGain();masterGain.gain.value=BASE_GAIN*volPct/100;
   if($("compress").checked){
     compressor=audioCtx.createDynamicsCompressor();
     compressor.threshold.value=-14;compressor.knee.value=18;compressor.ratio.value=3;
@@ -457,18 +548,18 @@ async function playPlayback(){
   }
   startedAt=when;pausedAt=start;
   await audioCtx.resume();
-  $("state").textContent="playing";$("play").disabled=true;$("stop").disabled=false;
+  setState("playing","播放中");$("play").disabled=true;$("stop").disabled=false;
   cancelAnimationFrame(raf);tick();
 }
 async function pausePlayback(){
   if(!audioCtx)return;
   pausedAt=position();await audioCtx.suspend();disconnectGraph();
-  $("state").textContent="paused";$("play").disabled=false;
+  setState("paused","已暂停");$("play").disabled=false;
 }
 function stopPlayback(){
   try{audioCtx?.suspend()}catch{}
   disconnectGraph();pausedAt=0;$("seek").value=0;$("current").textContent=fmt(0);
-  $("state").textContent="stopped";$("play").disabled=false;
+  setState("stopped","已停止");$("play").disabled=false;
 }
 async function seekTo(v){
   pausedAt=Math.max(0,Math.min(durationSec,Number(v)));
@@ -598,8 +689,14 @@ function syncLyrics(p){
   lyricIdx=idx;
   if(idx>=0&&ps[idx]){
     ps[idx].classList.add("active");
-    const box=$("lyrics");
-    box.scrollTop=ps[idx].offsetTop-box.clientHeight/2+ps[idx].offsetHeight/2;
+    const box=$("lyrics"),el=ps[idx];
+    // offsetTop 是相对「定位祖先」而非这个滚动容器（曾经因此整块跳到最底），
+    // 所以用两者 rect 之差换算成容器内坐标。
+    const top=el.getBoundingClientRect().top-box.getBoundingClientRect().top+box.scrollTop;
+    const h=el.offsetHeight;
+    if(top<box.scrollTop||top+h>box.scrollTop+box.clientHeight){
+      box.scrollTop=Math.max(0,Math.min(top-box.clientHeight/2+h/2,box.scrollHeight-box.clientHeight));
+    }
   }
   $("lyricsStat").textContent=idx>=0?(idx+1)+" / "+lyricLines.length:"—";
 }
@@ -655,6 +752,8 @@ $("loadLocal").onclick=()=>{
 $("play").onclick=playPlayback;
 $("pause").onclick=pausePlayback;
 $("stop").onclick=stopPlayback;
+$("vol").oninput=e=>{volPct=Math.max(0,Math.min(100,Number(e.target.value)||0));localStorage.setItem("uma.volume",String(volPct));applyVolume()};
+applyVolume();
 $("seek").oninput=e=>{pausedAt=Number(e.target.value);$("current").textContent=fmt(pausedAt)};
 $("seek").onchange=e=>seekTo(e.target.value);
 $("exportMp3").onclick=async()=>{

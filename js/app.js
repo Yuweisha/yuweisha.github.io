@@ -129,11 +129,24 @@
   async function selectSong(musicId) {
     curSong = catalog.songs.find(function (s) { return s.musicId === musicId; });
     detail = await getJSON(DATA + "songs/" + musicId + ".json");
-    bgmId = (detail.bgm[0] || {}).id;
+    bgmId = pickBgmId(detail);
     balance = $("balance").checked;
     cast = C.defaultCast(detail);
     renderList($("search").value);
     renderSong();
+  }
+
+  /** BGM 版本名（照官方界面的写法）：bgm_02 无演出音效、bgm_01 含演出音效 */
+  function bgmLabel(id) {
+    if (id === "bgm_02") return "伴奏（无演出音效）";
+    if (id === "bgm_01") return "伴奏（含演出音效）";
+    return id || "伴奏";
+  }
+  /** 默认 BGM：官方前端取 bgm_02（无演出音效），没有才退回第一个 */
+  function pickBgmId(d) {
+    var list = (d && d.bgm) || [];
+    var hit = list.find(function (b) { return b.id === "bgm_02"; });
+    return ((hit || list[0] || {}).id) || null;
   }
 
   function renderSong() {
@@ -154,16 +167,30 @@
     sel.innerHTML = "";
     (detail.bgm || []).forEach(function (b) {
       var o = document.createElement("option");
-      o.value = b.id; o.textContent = b.id;
+      o.value = b.id; o.textContent = bgmLabel(b.id);
       sel.appendChild(o);
     });
     sel.value = bgmId;
     sel.onchange = function () { bgmId = sel.value; syncDuration(); build(); };
 
+    renderEggHint();
     syncDuration();
     renderSameChar();
     renderSlots();
     build();
+  }
+
+  /** 彩蛋提示：本曲有迷人景致的音轨时，默认选角就是她 */
+  function renderEggHint() {
+    var el = $("eggHint");
+    if (!el) return;
+    // 特性探测：万一浏览器把旧 core.js 和新 app.js 混着用，也只是没有提示，不会中断渲染
+    var egg = (typeof C.easterEggSlots === "function") ? C.easterEggSlots(detail) : [];
+    if (!egg.length) { el.hidden = true; el.textContent = ""; return; }
+    var c = C.characterById(detail, C.EASTER_CHARA);
+    el.hidden = false;
+    el.textContent = "\u266a 彩蛋：本曲有" + C.characterName(c) + "的音轨，默认就由她演唱（"
+      + egg.length + " 个槽位：" + egg.join(" / ") + "）";
   }
 
   function refDuration() { return songDuration(detail.musicId, bgmId); }
@@ -284,6 +311,35 @@
     syncSameCharUI();
     renderSlots(); build();
     setSameCharMsg("已恢复逐槽位单独选角");
+  }
+
+  /** 随机挑 3 个角色（不足 3 个就全用），随机分配到各站位再用它们循环填满 */
+  function randomCast() {
+    var pool = (detail.characters || []).map(function (c) { return Number(c.charaId); });
+    if (!pool.length) return;
+    var n = Math.min(3, pool.length);
+    var picked = shuffle(pool.slice()).slice(0, n);
+    var slots = C.slotsOfSong(detail);
+    var order = [];
+    for (var i = 0; i < slots.length; i++) order.push(picked[i % n]);
+    shuffle(order);
+    sameCharId = null; castBefore = null;
+    cast = slots.map(function (slot, i) { return [slot, order[i]]; });
+    syncSameCharUI();
+    renderSlots(); build();
+    var empty = cast.filter(function (kv) { return !C.wavesForCharacter(detail, kv[0], kv[1]).length; })
+                    .map(function (kv) { return kv[0]; });
+    setSameCharMsg("随机 " + n + " 位：" + picked.map(nameOfChara).join(" / ")
+      + (empty.length ? "（" + empty.join(" / ") + " 槽该角色无音源，会静音）" : ""));
+  }
+
+  /** Fisher–Yates（原地洗牌，返回同一个数组） */
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
   }
 
   function renderSlots() {
@@ -475,7 +531,7 @@
     $("outStat").textContent = current.tracks.length + " 轨 · " + (durMs ? fmt(durMs) : "时长未知");
     $("outKv").innerHTML =
       "<b>曲目</b><span>" + esc(titleOf({ musicId: detail.musicId, title: detail.title })) + "</span>" +
-      "<b>BGM</b><span>" + esc(bgmId || "-") + "</span>" +
+      "<b>BGM</b><span>" + esc(bgmId ? bgmId + " · " + bgmLabel(bgmId) : "-") + "</span>" +
       "<b>声部轨</b><span>" + voices + " 条（" + cast.map(function (kv) {
         var c = charaOf(kv[1]);
         return kv[0] + "=" + (c ? C.characterName(c) : kv[1]);
@@ -524,6 +580,7 @@
   /* ---------------- 绑定 ---------------- */
 
   document.addEventListener("DOMContentLoaded", function () {
+    $("btnRandomCast").onclick = randomCast;
     $("btnReset").onclick = function () {
       sameCharId = null; castBefore = null;
       syncSameCharUI();

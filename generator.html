@@ -56,6 +56,12 @@ input:focus,select:focus{border-color:var(--accent)}
 .picksel:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .picksel.on{border-color:var(--accent);background-color:var(--accent-soft);color:var(--accent-strong);font-weight:650}
 
+/* 「全曲同一角色 + 随机角色」一行：窄屏自动换行 */
+.samechar-row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin-top:12px}
+.samechar-col{width:100%;max-width:460px;min-width:0}
+.samechar-row .btn{flex:none}
+.samechar-row .small{flex:1 1 240px;min-width:0;align-self:center}
+
 /* 底栏：与主页同款（固定贴底、半透明 + 模糊，始终可见） */
 .site-footer{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:12px max(20px,calc((100% - 1360px)/2 + 18px));background:rgba(246,248,250,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--line-light);box-shadow:0 -1px 3px rgba(31,35,40,.04);color:var(--muted);font-size:12px}
 .footer-links{display:flex;gap:18px}
@@ -111,12 +117,35 @@ input:focus,select:focus{border-color:var(--accent)}
 .tl u{position:absolute;top:0;bottom:0;width:1px;background:#8c959f;opacity:.5}
 pre{margin:0;background:var(--bg);border:1px solid var(--line-light);border-radius:8px;padding:11px;max-height:300px;overflow:auto;color:var(--text);white-space:pre-wrap;font-size:12px}
 .note{padding:9px 11px;border-radius:9px;background:var(--ok-soft);border:1px solid #a2d8b4;color:var(--ok);margin:8px 0}
+/* 彩蛋提示：低调一点，别抢主流程 */
+.note.egg{background:var(--accent-soft);border-color:#b6e3ff;color:var(--accent-strong);font-size:12.5px}
 .warn{padding:9px 11px;border-radius:9px;background:var(--warn-soft);border:1px solid #f0b98b;color:var(--warn);margin:8px 0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(max-width:700px){.grid2{grid-template-columns:1fr}.head{grid-template-columns:1fr}}
 a{color:var(--accent)}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12px;color:var(--muted)}
 .kv b{color:var(--text);font-weight:650}
+/* 移动端（窄屏）：单列堆叠、收边距、声部卡改为上下布局 */
+@media (max-width:560px){
+  .wrap{padding:16px 12px 76px}
+  .title{font-size:21px}
+  .sub{font-size:13px;margin:4px 0 12px}
+  .card{padding:13px;border-radius:12px}
+  .head{grid-template-columns:84px 1fr;gap:10px}
+  .head img{width:84px;height:84px}
+  .head h2{font-size:17px}
+  .song{grid-template-columns:32px 1fr auto;gap:8px;padding:7px 8px}
+  .song img{width:32px;height:32px;border-radius:6px}
+  .songlist{max-height:46vh}
+  .slot{padding:9px;margin:8px 0}
+  .slot .top{grid-template-columns:1fr;gap:6px}
+  .ruler{padding-left:0}
+  .combo-pop{max-height:58vh;padding:7px}
+  .picksel{max-width:none}
+  pre{font-size:11px;max-height:240px}
+  .samechar-col{max-width:none}
+}
+
 </style>
 </head>
 <body>
@@ -179,8 +208,10 @@ a{color:var(--accent)}
         <div class="ruler" id="ruler"></div>
         <div id="slots"></div>
 
-        <div class="row" style="margin-top:12px;gap:14px;align-items:flex-start">
-          <div style="width:460px;max-width:100%;min-width:0">
+        <div id="eggHint" class="note egg" hidden></div>
+
+        <div class="samechar-row">
+          <div class="samechar-col">
             <div style="font-weight:700;margin-bottom:6px">全曲同一角色</div>
             <div class="combo" id="sameCharCombo"></div>
           </div>
@@ -188,7 +219,11 @@ a{color:var(--accent)}
         </div>
 
         <div class="row" style="margin-top:12px;justify-content:space-between">
-          <button class="btn" id="btnReset">恢复默认选角</button>
+          <div class="row" style="gap:9px">
+            <button class="btn" id="btnRandomCast"
+                    title="随机挑 3 位角色（本曲阵容内、互不重复）分配到各站位，每次点击都不一样">我想听随机角色</button>
+            <button class="btn" id="btnReset">恢复默认选角</button>
+          </div>
           <label class="switch" id="balanceSwitch"
                  title="voice 增益 ×N^(-1/3)，N = 同时在场声部数；与官方 balance=1 一致">
             <input id="balance" type="checkbox" checked>
@@ -215,8 +250,8 @@ a{color:var(--accent)}
   </div>
 
 </div>
-<script src="js/core.js"></script>
-<script src="js/app.js"></script>
+<script src="js/core.js?v=26646e8a"></script>
+<script src="js/app.js?v=d227444c"></script>
 <footer class="site-footer">
   <div>© 2026 Yuweisha</div>
   <div class="footer-links"><a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a></div>

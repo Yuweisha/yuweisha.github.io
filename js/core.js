@@ -20,11 +20,30 @@
   var ENCODER_DELAY = 576;      // 官方 stream.encoderDelaySamples（文件无 LAME/Xing 标签，服务端固定假定 576/576）
   var ENCODER_PADDING = 576;
   /* 默认媒体基址：留空 = 走官方源站（工程 JSON 里的 /media/live/... 由它提供）。
-     想把整站默认切到 Cloudflare R2（或任何自建镜像），把下面这行改成公开域名即可，例如
-     var MEDIA_BASE_DEFAULT = "https://pub-xxxxxxx.r2.dev";                     */
-  var MEDIA_BASE_DEFAULT = "https://pub-8f96a112941a4b019a15db00e56a37c6.r2.dev";
+     想换源站就改下面的码表（或直接把 MEDIA_BASE_CODES 置空，回到官方源站）。
+
+     注意：这里只是把 URL 拆成数字码、运行时再拼回来，防的是「查看源码顺手复制」——
+     任何人按 F12 看 Network 都能看到真实请求地址，所以**不要**把它当作访问控制。
+     真正的防护在 Cloudflare 一侧（自定义域名 + WAF/限速 + Worker 令牌门），见
+     docs/媒体链接保护.md。 */
+  var MEDIA_BASE_XOR = 0x5b;
+  var MEDIA_BASE_CODES = [
+    51, 47, 47, 43, 40, 97, 116, 116, 54, 62, 63, 50,
+    58, 117, 57, 46, 62, 53, 58, 45, 50, 40, 47, 58,
+    117, 61, 58, 53, 40,
+  ];
   var OFFICIAL_MEDIA_BASE = "https://uma.0xcjy.top/";
-  function mediaBaseDefault() { return MEDIA_BASE_DEFAULT || OFFICIAL_MEDIA_BASE; }
+  var MEDIA_BASE_DEFAULT = null;                       // 首次用到时才解码
+  function mediaBaseDefault() {
+    if (MEDIA_BASE_DEFAULT === null) {
+      try {
+        MEDIA_BASE_DEFAULT = MEDIA_BASE_CODES.map(function (c) {
+          return String.fromCharCode(c ^ MEDIA_BASE_XOR);
+        }).join("");
+      } catch (e) { MEDIA_BASE_DEFAULT = ""; }
+    }
+    return MEDIA_BASE_DEFAULT || OFFICIAL_MEDIA_BASE;
+  }
 
   var MEDIA_DETAIL_PREFIX = "data/live/music/";   // 详情里的路径 → 媒体 URL 的映射前缀
   var MEDIA_URL_PREFIX = "/media/live/";
@@ -118,12 +137,31 @@
     return used.filter(function (w) { return have.indexOf(w) >= 0; });
   }
 
-  /** 默认选角：站点规则 —— 第 i 个槽位用 characters[i % characters.length] */
+  /** 彩蛋角色：迷人景致（ブエナビスタ）。阵容里有她的曲子，默认就让她唱。 */
+  var EASTER_CHARA = 1114;
+
+  /**
+   * 默认选角：站点规则 —— 第 i 个槽位用 characters[i % characters.length]。
+   * 彩蛋：若本曲阵容里有 1114（迷人景致）且该槽位有她的音轨，就换成她；
+   * 没有她音轨的槽位仍保留站点默认，不改变槽位数量与规则。
+   */
   function defaultCast(detail) {
     var ch = detail.characters || [];
     if (!ch.length) return [];
-    return slotsOfSong(detail).map(function (slot, i) {
+    var base = slotsOfSong(detail).map(function (slot, i) {
       return [slot, ch[i % ch.length].charaId];
+    });
+    if (!characterById(detail, EASTER_CHARA)) return base;
+    return base.map(function (kv) {
+      return wavesForCharacter(detail, kv[0], EASTER_CHARA).length ? [kv[0], EASTER_CHARA] : kv;
+    });
+  }
+
+  /** 彩蛋实际生效的槽位（空数组 = 没触发），供界面提示用 */
+  function easterEggSlots(detail) {
+    if (!detail || !characterById(detail, EASTER_CHARA)) return [];
+    return slotsOfSong(detail).filter(function (slot) {
+      return wavesForCharacter(detail, slot, EASTER_CHARA).length > 0;
     });
   }
 
@@ -374,6 +412,7 @@
     mediaUrlFromDetailPath: mediaUrlFromDetailPath,
     slotsOfSong: slotsOfSong, wavesOfSlot: wavesOfSlot, wavesForCharacter: wavesForCharacter,
     characterById: characterById, characterName: characterName, defaultCast: defaultCast,
+    EASTER_CHARA: EASTER_CHARA, easterEggSlots: easterEggSlots,
     characterSubName: characterSubName, characterIdLabel: characterIdLabel, matchCharacter: matchCharacter,
     partAt: partAt, slotEntry: slotEntry, activeCount: activeCount, balanceFactor: balanceFactor,
     slotVolumeLin: slotVolumeLin, slotPan: slotPan,
@@ -381,6 +420,6 @@
     buildProject: buildProject, mediaUrlsOfProject: mediaUrlsOfProject,
     projectQueryUrl: projectQueryUrl, exportBaseName: exportBaseName,
     linToDb: linToDb, dbToLin: dbToLin,
-    mediaBaseDefault: mediaBaseDefault, MEDIA_BASE_DEFAULT: MEDIA_BASE_DEFAULT
+    mediaBaseDefault: mediaBaseDefault
   };
 });
