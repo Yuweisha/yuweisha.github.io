@@ -222,7 +222,7 @@ textarea#pasteJson{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1
   </div>
 </div>
 
-<script src="js/core.js?v=26646e8a"></script>
+<script src="js/core.js?v=fc7005a8"></script>
 <script src="js/lame.min.js?v=00d43c06"></script>
 <script>
 "use strict";
@@ -256,6 +256,8 @@ function parseTrack(t){
   if(t.id==="bgm"||/^bgm/i.test(name))return{slot:"—",role:"伴奏",wave:"—"};
   return{slot:"—",role:name||"—",wave:"—"};
 }
+/** 站位中文名（与生成器口径一致；解析仍按英文 id，只有显示走这里） */
+const SLOT_ZH={center:"主唱角色",left:"左侧伴唱",right:"右侧伴唱",left2:"左副伴唱",right2:"右副伴唱",left3:"左副伴唱2",right3:"右副伴唱2"};
 let startedAt=0, pausedAt=0, raf=0;
 
 function log(s){const t=new Date().toLocaleTimeString();logEl.textContent+="["+t+"] "+s+"\n";logEl.scrollTop=logEl.scrollHeight}
@@ -480,7 +482,7 @@ async function loadProject(){
       el.innerHTML="<div class='idx'>"+(i+1)+"</div>"+
         "<div class='role' title='"+esc(t.name||t.id||"")+"'>"+esc(pt.role)+"</div>"+
         "<div class='wave'>"+esc(pt.wave)+"</div>"+
-        "<div class='slot'>"+esc(pt.slot)+"</div>"+
+        "<div class='slot'>"+esc(SLOT_ZH[pt.slot]||pt.slot)+"</div>"+
         "<div class='dur small' id='ts-"+i+"'>载入中</div>"+
         "<div class='db'>"+esc(fmtDb(t.volumeDb??0))+"</div>";
       el.title=t.media||"";   // 链接不显示在表格里，鼠标悬停可见

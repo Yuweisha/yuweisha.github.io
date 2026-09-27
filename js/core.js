@@ -49,6 +49,16 @@
   var MEDIA_URL_PREFIX = "/media/live/";
   var SLOT_ORDER = ["center", "left", "left2", "left3", "right", "right2", "right3"];
 
+  /* 站位中文名（界面显示用）。工程 JSON 里 track.name 仍保持官方口径
+     "center 东海帝王 wave 0"，只有 UI 显示走这里，避免破坏与官方响应的对拍。 */
+  var SLOT_LABELS = {
+    center: "主唱角色",
+    left: "左侧伴唱", right: "右侧伴唱",
+    left2: "左副伴唱", right2: "右副伴唱",
+    left3: "左副伴唱2", right3: "右副伴唱2"
+  };
+  function slotLabel(slot) { return SLOT_LABELS[slot] || slot; }
+
   function clamp(x, a, b) { return x < a ? a : (x > b ? b : x); }
   function linToDb(x) { return x <= 0 ? SILENT_DB : 20 * Math.log10(x); }
   function dbToLin(db) { return db <= SILENT_DB ? 0 : Math.pow(10, db / 20); }
@@ -84,6 +94,46 @@
       });
     });
     return Object.keys(w).map(Number).sort(function (a, b) { return a - b; });
+  }
+
+  /* ---------------- 特殊演出 ----------------
+     detail.specialCut = {startMs, decodedSampleCount, pathTemplate, defaultId, charaIds:[...],
+                          voices?: [{id:"01",label:"男声"}, {id:"02",label:"女声"}]}
+     语义：间奏起点换成「主唱角色对应的 vo 轨」；界面勾选「播放默认间奏」时用 defaultId（0000）。
+     带 voices 的曲子（如 1151）同一角色有男声/女声两条 vo，路径模板里多一个 {voice}。 */
+  function specialCutOf(detail) {
+    var sc = detail && detail.specialCut;
+    if (!sc || !sc.pathTemplate) return null;
+    return sc;
+  }
+  /** 该曲是否有男声/女声（或多版本）可选 */
+  function specialCutVoices(sc) {
+    var v = (sc && sc.voices) || [];
+    return v.length ? v : null;
+  }
+  function specialCutVoiceId(sc, want) {
+    var vs = specialCutVoices(sc);
+    if (!vs) return null;
+    var hit = vs.find(function (v) { return String(v.id) === String(want); });
+    return hit ? String(hit.id) : String(vs[0].id);
+  }
+  function specialCutVoiceLabel(sc, id) {
+    var vs = specialCutVoices(sc);
+    if (!vs) return "";
+    var hit = vs.find(function (v) { return String(v.id) === String(id); });
+    return hit ? (hit.label || hit.id) : String(id);
+  }
+  function specialCutPath(sc, charaId, voiceId) {
+    // 角色编号补足 4 位：0 → 0000、1003 → 1003
+    var id = String(charaId);
+    while (id.length < 4) id = "0" + id;
+    var out = String(sc.pathTemplate).replace("{id}", id);
+    if (specialCutVoices(sc)) out = out.replace("{voice}", specialCutVoiceId(sc, voiceId));
+    return out;
+  }
+  function specialCutHas(sc, charaId) {
+    var id = Number(charaId);
+    return ((sc && sc.charaIds) || []).some(function (x) { return Number(x) === id; });
   }
 
   function characterById(detail, charaId) {
@@ -363,6 +413,34 @@
       });
     });
 
+    // 特殊演出：间奏起点播对应角色的 vo（opt-in；只有带 specialCut 数据的曲子才有）
+    if (opts.specialCut && specialCutOf(detail)) {
+      var sc = specialCutOf(detail);
+      var centerId = null;
+      cast.forEach(function (kv) { if (kv[0] === "center" && centerId === null) centerId = Number(kv[1]); });
+      var useDefault = !!opts.specialCutDefault || !specialCutHas(sc, centerId);
+      var useId = useDefault ? Number(sc.defaultId || 0) : centerId;
+      var useVoice = specialCutVoiceId(sc, opts.specialCutVoice);
+      var voiceLabel = useVoice ? "（" + specialCutVoiceLabel(sc, useVoice) + "）" : "";
+      var sMedia = mediaUrlFromDetailPath(specialCutPath(sc, useId, useVoice));
+      var sCount = num(sc.decodedSampleCount);
+      var sStart = Math.round(Number(sc.startMs || 0) / 1000 * sr);
+      tracks.push({
+        id: "special",
+        name: "特殊演出 " + (useDefault ? "默认间奏" : characterName(characterById(detail, useId))) + voiceLabel,
+        media: sMedia,
+        stream: {
+          codec: "mp3", container: "mp3", sampleRate: sr, channels: 2,
+          decodedSampleCount: sCount,
+          encoderDelaySamples: ENCODER_DELAY, encoderPaddingSamples: ENCODER_PADDING,
+          seekIndex: null
+        },
+        timelineStartSample: sStart, volumeDb: 0, panner: 0,
+        muted: false, solo: false, startOffsetMs: 0, dynamics: null,
+        volumeAutomation: [], pannerAutomation: []
+      });
+    }
+
     // 时长：优先显式值；否则若各轨样本数已知，按官方规则取「返回轨道的最长者」
     var durMs = explicitDur;
     if (durMs === null && tracks.length && tracks.every(function (t) { return countOf(t) !== null; })) {
@@ -376,7 +454,18 @@
       sampleRate: sr,
       tracks: tracks,
       // 非官方字段：便于工具链回溯本次选择（官方客户端会忽略未知字段）
-      _uma: { source: "uma-live-studio", musicId: musicId, bgm: bgm ? bgm.id : null, slots: cast, balance: balance }
+      _uma: (function () {
+        var u = { source: "uma-live-studio", musicId: musicId, bgm: bgm ? bgm.id : null, slots: cast, balance: balance };
+        if (opts.specialCut && specialCutOf(detail)) {
+          var sc2 = specialCutOf(detail);
+          var c2 = null;
+          cast.forEach(function (kv) { if (kv[0] === "center" && c2 === null) c2 = Number(kv[1]); });
+          var d2 = !!opts.specialCutDefault || !specialCutHas(sc2, c2);
+          u.specialCut = { charaId: d2 ? Number(sc2.defaultId || 0) : c2, default: d2,
+                           voice: specialCutVoiceId(sc2, opts.specialCutVoice) };
+        }
+        return u;
+      })()
     };
   }
 
@@ -418,6 +507,10 @@
     slotVolumeLin: slotVolumeLin, slotPan: slotPan,
     buildAutomation: buildAutomation, evalAutomation: evalAutomation,
     buildProject: buildProject, mediaUrlsOfProject: mediaUrlsOfProject,
+    SLOT_LABELS: SLOT_LABELS, slotLabel: slotLabel,
+    specialCutOf: specialCutOf, specialCutPath: specialCutPath, specialCutHas: specialCutHas,
+    specialCutVoices: specialCutVoices, specialCutVoiceId: specialCutVoiceId,
+    specialCutVoiceLabel: specialCutVoiceLabel,
     projectQueryUrl: projectQueryUrl, exportBaseName: exportBaseName,
     linToDb: linToDb, dbToLin: dbToLin,
     mediaBaseDefault: mediaBaseDefault

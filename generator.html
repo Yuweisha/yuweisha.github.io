@@ -116,7 +116,12 @@ input:focus,select:focus{border-color:var(--accent)}
 .combo-item.selected{box-shadow:inset 0 0 0 1px var(--ok)}
 .combo-item.selected .cname{color:var(--ok)}
 .combo-empty{padding:10px;color:var(--muted);font-size:12px;text-align:center}
-.ruler{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin:10px 0 2px;font-variant-numeric:tabular-nums;padding-left:102px}
+.ruler{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin:0 0 3px;font-variant-numeric:tabular-nums}
+.switch.seg{padding:4px 5px;gap:4px}
+.switch.seg label{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:13px;color:var(--muted);cursor:pointer;margin:0}
+.switch.seg label:hover{background:var(--accent-soft)}
+.switch.seg input[type=radio]{width:13px;height:13px;accent-color:var(--accent);cursor:pointer;margin:0}
+.switch.seg label:has(input:checked){background:var(--accent-soft);color:var(--accent-strong);font-weight:650}
 @media(max-width:700px){.ruler{padding-left:0}}
 .tl{position:relative;height:16px;background:var(--bg-soft);border:1px solid var(--line-light);border-radius:5px;margin-top:8px;overflow:hidden}
 .tl i{position:absolute;top:2px;bottom:2px;background:var(--accent);border-radius:3px;opacity:.92}
@@ -216,7 +221,6 @@ a{color:var(--accent)}
 
         <div style="margin-top:14px;font-weight:700">声部槽位与角色</div>
         <div class="small">点开任一槽位的下拉即可<strong>搜索角色</strong>（中文名 / 日文名 / 英文名 / id 均可），条目第一行中文名、第二行「日文原名 |英文名」、右侧为角色编号，当前选择会高亮。蓝色条为该槽的出场时间轴。</div>
-        <div class="ruler" id="ruler"></div>
         <div id="slots"></div>
 
         <div id="eggHint" class="note egg" hidden></div>
@@ -235,6 +239,12 @@ a{color:var(--accent)}
                     title="随机挑 3 位角色（本曲阵容内、互不重复）分配到各站位，每次点击都不一样">我想听随机角色</button>
             <button class="btn" id="btnReset">恢复默认选角</button>
           </div>
+          <label class="switch" id="interludeSwitch" hidden
+                 title="勾上后间奏播放默认版本（vo_0000）；不勾则播放主唱角色对应的特殊演出">
+            <input id="defaultInterlude" type="checkbox">
+            <span>播放默认间奏</span>
+          </label>
+          <div class="switch seg" id="voiceSwitch" hidden title="特殊演出的声部版本"></div>
           <label class="switch" id="balanceSwitch"
                  title="voice 增益 ×N^(-1/3)，N = 同时在场声部数；与官方 balance=1 一致">
             <input id="balance" type="checkbox" checked>
@@ -261,8 +271,8 @@ a{color:var(--accent)}
   </div>
 
 </div>
-<script src="js/core.js?v=26646e8a"></script>
-<script src="js/app.js?v=c52e829a"></script>
+<script src="js/core.js?v=fc7005a8"></script>
+<script src="js/app.js?v=dcda2804"></script>
 <footer class="site-footer">
   <div>© 2026 Yuweisha</div>
   <div class="footer-links"><a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a></div>

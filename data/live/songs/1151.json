@@ -1791,6 +1791,41 @@
     1129,
     1135
   ],
+  "specialCut": {
+    "startMs": 90000,
+    "decodedSampleCount": 995282,
+    "pathTemplate": "data/live/music/1151/vo_{id}_{voice}.mp3",
+    "defaultId": 0,
+    "voices": [
+      {
+        "id": "01",
+        "label": "男声"
+      },
+      {
+        "id": "02",
+        "label": "女声"
+      }
+    ],
+    "charaIds": [
+      1006,
+      1014,
+      1016,
+      1017,
+      1042,
+      1046,
+      1057,
+      1068,
+      1070,
+      1086,
+      1097,
+      1099,
+      1110,
+      1115,
+      1116,
+      1129,
+      1135
+    ]
+  },
   "diagnostics": {
     "missingBgm": false,
     "missingLyrics": false,

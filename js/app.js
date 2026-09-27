@@ -15,6 +15,8 @@
 
   var catalog = null, durations = {}, streams = {}, samples = {}, rates = {}, detail = null, curSong = null;
   var bgmId = null, balance = true, cast = [];   // cast = [[slot, charaId], ...]
+  var defaultInterlude = false;                  // 「播放默认间奏」：勾上则特殊演出换播默认间奏（vo_0000）
+  var scVoice = null;                            // 特殊演出的声部版本（带 voices 的曲子，如 1151 的男声/女声）
   /* 全曲同一角色：开启后所有槽位改用同一个角色；castBefore 记录开启前的逐槽选角以便还原 */
   var sameCharId = null, castBefore = null;
   var durManual = false;                         // 时长输入框是否被用户手动改过（否则按 streams 精算）
@@ -193,9 +195,43 @@
 
     renderEggHint();
     syncDuration();
+    syncSpecialCutUI();
     renderSameChar();
     renderSlots();
     build();
+  }
+
+  /** 「播放默认间奏」只在带特殊演出数据的曲子（目前 1157）出现 */
+  function syncSpecialCutUI() {
+    var sc = C.specialCutOf(detail);
+    var box = $("interludeSwitch");
+    var on = !!sc;
+    if (box) box.hidden = !on;
+    if (!on) { defaultInterlude = false; if ($("defaultInterlude")) $("defaultInterlude").checked = false; }
+    // 男声/女声（只有带 voices 的曲子才有）
+    var vbox = $("voiceSwitch");
+    var voices = on ? C.specialCutVoices(sc) : null;
+    if (vbox) {
+      vbox.hidden = !voices;
+      if (voices) {
+        scVoice = C.specialCutVoiceId(sc, scVoice);
+        var sig = voices.map(function (v) { return String(v.id) + "|" + (v.label || ""); }).join(",");
+        if (vbox.dataset.sig !== sig) {
+          vbox.dataset.sig = sig;
+          vbox.innerHTML = voices.map(function (v) {
+            return '<label><input type="radio" name="scvoice" value="' + esc(String(v.id)) + '"' +
+              (String(v.id) === scVoice ? " checked" : "") + "><span>" + esc(v.label || v.id) + "</span></label>";
+          }).join("");
+          Array.prototype.forEach.call(vbox.querySelectorAll("input"), function (inp) {
+            inp.addEventListener("change", function (e) { scVoice = e.target.value; build(); });
+          });
+        } else {
+          Array.prototype.forEach.call(vbox.querySelectorAll("input"), function (inp) {
+            inp.checked = String(inp.value) === scVoice;
+          });
+        }
+      } else scVoice = null;
+    }
   }
 
   /** 彩蛋提示：本曲有迷人景致的音轨时，默认选角就是她 */
@@ -239,13 +275,12 @@
     return { list: iv, dur: dur };
   }
 
-  function renderRuler() {
-    var el = $("ruler");
-    if (!el) return;
+  /** 时间轴标尺：每个声部格子里各渲染一条，紧贴在音轨条上方（宽度与音轨条一致） */
+  function rulerHtml() {
     var dur = refDuration() || (detail.parts[detail.parts.length - 1] || {}).timeMs || 0;
     var out = [];
     for (var i = 0; i <= 4; i++) out.push("<span>" + fmtShort(dur * i / 4) + "</span>");
-    el.innerHTML = out.join("");
+    return out.join("");
   }
 
   /* ---------------- 槽位 + 可搜索下拉 ---------------- */
@@ -365,7 +400,6 @@
     box.innerHTML = "";
     C.slotsOfSong(detail).forEach(function (slot) { box.appendChild(slotRow(slot)); });
     syncSameCharUI();
-    renderRuler();
   }
 
   function slotRow(slot) {
@@ -384,9 +418,10 @@
     el.className = "slot";
     el.innerHTML =
       '<div class="top">' +
-        '<div class="slotname">' + esc(slot) + '</div>' +
+        '<div class="slotname" data-slot="' + esc(slot) + '">' + esc(C.slotLabel(slot)) + '</div>' +
         '<div class="combo"></div>' +
       '</div>' +
+      '<div class="ruler" data-slot="' + esc(slot) + '">' + rulerHtml() + '</div>' +
       '<div class="tl" title="出场 ' + fmt(total) + '">' + bars + '</div>' +
       '<div class="small" style="margin-top:6px">本槽使用 wave ' + waves.join(" / ") +
         " · 出场 " + iv.list.length + " 段 / 合计 " + fmt(total) +
@@ -542,6 +577,7 @@
     // 时长规则（官方：返回轨道的最长者）：有 streams 就按当前选角精算，否则退回参考时长
     current = C.buildProject({
       detail: detail, bgmId: bgmId, cast: cast, balance: balance,
+      specialCut: !!C.specialCutOf(detail), specialCutDefault: defaultInterlude, specialCutVoice: scVoice,
       durationMs: manual, streams: songStreams, samples: songSamples, rates: songRates
     });
     var durMs = current.durationMs;
@@ -552,15 +588,31 @@
       "<b>BGM</b><span>" + esc(bgmId ? bgmId + " · " + bgmLabel(bgmId) : "-") + "</span>" +
       "<b>声部轨</b><span>" + voices + " 条（" + cast.map(function (kv) {
         var c = charaOf(kv[1]);
-        return kv[0] + "=" + (c ? C.characterName(c) : kv[1]);
+        return C.slotLabel(kv[0]) + "=" + (c ? C.characterName(c) : kv[1]);
       }).join("、") + "）</span>" +
-      "<b>平衡补偿</b><span>" + (balance ? "开（×N^(-1/3)）" : "关") + "</span>" +
+      "平衡补偿</b><span>" + (balance ? "开（×N^(-1/3)）" : "关") + "</span>" +
+      (C.specialCutOf(detail) ? "<b>特殊演出</b><span>" + esc(specialCutSummary()) + "</span>" : "") +
       "<b>时长</b><span>" + (durMs ? (durMs / 1000).toFixed(3) + " 秒" : "未设置") + "</span>";
     var json = JSON.stringify(current, null, 1);
     $("jsonPreview").textContent = json.length > 12000 ? json.slice(0, 12000) + "\n… （预览截断，下载得到完整 JSON）" : json;
   }
 
   /* ---------------- 动作 ---------------- */
+
+  /** 特殊演出摘要：间奏起点 + 播哪条轨 */
+  function specialCutSummary() {
+    var sc = C.specialCutOf(detail);
+    if (!sc) return "";
+    var hit = cast.find(function (kv) { return kv[0] === "center"; });
+    var cid = hit ? Number(hit[1]) : null;
+    var isDefault = defaultInterlude || !C.specialCutHas(sc, cid);
+    var use = isDefault ? Number(sc.defaultId || 0) : cid;
+    var c = isDefault ? null : charaOf(use);
+    var vLabel = scVoice ? " " + C.specialCutVoiceLabel(sc, scVoice) : "";
+    var file = String(C.specialCutPath(sc, use, scVoice)).split("/").pop();
+    return (Number(sc.startMs || 0) / 1000).toFixed(3) + " 秒起 播 " +
+      (c ? C.characterName(c) : "默认间奏") + vLabel + "（" + file + "）";
+  }
 
   function exportName() { return C.exportBaseName(detail, cast, bgmId); }
 
@@ -609,6 +661,7 @@
     $("btnCopy").onclick = copyJSON;
     $("btnMixer").onclick = sendToMixer;
     $("balance").addEventListener("change", function (e) { balance = e.target.checked; build(); });
+    $("defaultInterlude").addEventListener("change", function (e) { defaultInterlude = e.target.checked; build(); });
     $("durInput").addEventListener("input", function () { durManual = true; });
     $("durInput").addEventListener("change", build);
     boot();
