@@ -116,14 +116,18 @@ input:focus,select:focus{border-color:var(--accent)}
 .combo-item.selected{box-shadow:inset 0 0 0 1px var(--ok)}
 .combo-item.selected .cname{color:var(--ok)}
 .combo-empty{padding:10px;color:var(--muted);font-size:12px;text-align:center}
-.ruler{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin:0 0 3px;font-variant-numeric:tabular-nums}
+.ruler{display:flex;justify-content:space-between;color:var(--muted);font-size:10.5px;line-height:1.15;margin:0 0 1px;font-variant-numeric:tabular-nums}
 .switch.seg{padding:4px 5px;gap:4px}
 .switch.seg label{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:13px;color:var(--muted);cursor:pointer;margin:0}
 .switch.seg label:hover{background:var(--accent-soft)}
 .switch.seg input[type=radio]{width:13px;height:13px;accent-color:var(--accent);cursor:pointer;margin:0}
 .switch.seg label:has(input:checked){background:var(--accent-soft);color:var(--accent-strong);font-weight:650}
 @media(max-width:700px){.ruler{padding-left:0}}
-.tl{position:relative;height:16px;background:var(--bg-soft);border:1px solid var(--line-light);border-radius:5px;margin-top:8px;overflow:hidden}
+.tl{position:relative;height:16px;background:var(--bg-soft);border:1px solid var(--line-light);border-radius:5px;margin-top:1px;overflow:hidden}
+/* 刻度线直接画进音轨条：与上方时间轴对齐，看上去是一体的 */
+.tl::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(to right,rgba(15,23,42,.13) 0 1px,transparent 1px 25%),
+             linear-gradient(to left,rgba(15,23,42,.13) 0 1px,transparent 1px)}
 .tl i{position:absolute;top:2px;bottom:2px;background:var(--accent);border-radius:3px;opacity:.92}
 .tl u{position:absolute;top:0;bottom:0;width:1px;background:#8c959f;opacity:.5}
 pre{margin:0;background:var(--bg);border:1px solid var(--line-light);border-radius:8px;padding:11px;max-height:300px;overflow:auto;color:var(--text);white-space:pre-wrap;font-size:12px}
@@ -271,8 +275,8 @@ a{color:var(--accent)}
   </div>
 
 </div>
-<script src="js/core.js?v=fc7005a8"></script>
-<script src="js/app.js?v=dcda2804"></script>
+<script src="js/core.js?v=315b31a0"></script>
+<script src="js/app.js?v=584fffa1"></script>
 <footer class="site-footer">
   <div>© 2026 Yuweisha</div>
   <div class="footer-links"><a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a></div>

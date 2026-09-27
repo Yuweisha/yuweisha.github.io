@@ -398,7 +398,7 @@
   function renderSlots() {
     var box = $("slots");
     box.innerHTML = "";
-    C.slotsOfSong(detail).forEach(function (slot) { box.appendChild(slotRow(slot)); });
+    C.displaySlots(detail).forEach(function (slot) { box.appendChild(slotRow(slot)); });
     syncSameCharUI();
   }
 
@@ -586,7 +586,7 @@
     $("outKv").innerHTML =
       "<b>曲目</b><span>" + esc(titleOf({ musicId: detail.musicId, title: detail.title })) + "</span>" +
       "<b>BGM</b><span>" + esc(bgmId ? bgmId + " · " + bgmLabel(bgmId) : "-") + "</span>" +
-      "<b>声部轨</b><span>" + voices + " 条（" + cast.map(function (kv) {
+      "<b>声部轨</b><span>" + voices + " 条（" + displayCast().map(function (kv) {
         var c = charaOf(kv[1]);
         return C.slotLabel(kv[0]) + "=" + (c ? C.characterName(c) : kv[1]);
       }).join("、") + "）</span>" +
@@ -612,6 +612,16 @@
     var file = String(C.specialCutPath(sc, use, scVoice)).split("/").pop();
     return (Number(sc.startMs || 0) / 1000).toFixed(3) + " 秒起 播 " +
       (c ? C.characterName(c) : "默认间奏") + vLabel + "（" + file + "）";
+  }
+
+  /** 摘要里的角色顺序：与界面一致，主唱排第一 */
+  function displayCast() {
+    var bySlot = {};
+    cast.forEach(function (kv) { bySlot[kv[0]] = kv; });
+    var out = C.displaySlots(detail).map(function (s) { return bySlot[s]; }).filter(Boolean);
+    // 兜底：有任何没被 displaySlots 覆盖的槽位也带上
+    cast.forEach(function (kv) { if (out.indexOf(kv) < 0) out.push(kv); });
+    return out;
   }
 
   function exportName() { return C.exportBaseName(detail, cast, bgmId); }

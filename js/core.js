@@ -85,6 +85,15 @@
     return out;
   }
 
+  /** 界面显示用的槽位顺序：主唱（center）排第一个，其余保持官方出现顺序。
+      只影响生成器界面的排列；工程 JSON 里的轨道顺序仍是官方口径。 */
+  function displaySlots(detail) {
+    var all = slotsOfSong(detail);
+    var i = all.indexOf("center");
+    if (i <= 0) return all;
+    return ["center"].concat(all.filter(function (s) { return s !== "center"; }));
+  }
+
   /** 某槽在该曲中用到的声部（waveIndex，升序） */
   function wavesOfSlot(detail, slot) {
     var w = {};
@@ -499,7 +508,8 @@
     ENCODER_DELAY: ENCODER_DELAY, ENCODER_PADDING: ENCODER_PADDING,
     DEFAULT_GAIN: DEFAULT_GAIN, SLOT_ORDER: SLOT_ORDER,
     mediaUrlFromDetailPath: mediaUrlFromDetailPath,
-    slotsOfSong: slotsOfSong, wavesOfSlot: wavesOfSlot, wavesForCharacter: wavesForCharacter,
+    slotsOfSong: slotsOfSong, displaySlots: displaySlots,
+    wavesOfSlot: wavesOfSlot, wavesForCharacter: wavesForCharacter,
     characterById: characterById, characterName: characterName, defaultCast: defaultCast,
     EASTER_CHARA: EASTER_CHARA, easterEggSlots: easterEggSlots,
     characterSubName: characterSubName, characterIdLabel: characterIdLabel, matchCharacter: matchCharacter,
