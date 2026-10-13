@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>欢迎 · Hachimi-BV Docs</title>
+<meta name="description" content="Hachimi Edge 文档镜像：欢迎">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/docs/docs.css?v=ec524aa6">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">Hachimi-BV Docs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">主页</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/generator.html">生成器</a>
+          <a href="/mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="/docs/" class="active" aria-current="page">Hachimi-BV Docs</a>
+    </nav>
+  </div>
+</header>
+<div class="doc-shell">
+  <aside class="doc-side">
+      <div class="doc-side-title">Hachimi-BV Docs</div>
+      <div class="doc-group"><div class="doc-group-name">总览</div>
+      <a href="/docs/">文档首页</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">Hachimi</div>
+      <a href="/docs/hachimi/about.html">关于 Hachimi</a>
+      <a href="/docs/hachimi/getting-started.html">入门指南</a>
+      <a href="/docs/hachimi/getting-started-jp.html">安装指南（日服）</a>
+      <a href="/docs/hachimi/getting-started-other.html">安装指南（国际服 / 繁体中文服 / 简体中文服）</a>
+      <a href="/docs/hachimi/config.html">配置页面</a>
+      <a href="/docs/hachimi/built-in-gui.html">内置 GUI</a>
+      <a href="/docs/hachimi/auto-translation.html">自动翻译</a>
+      <a href="/docs/hachimi/troubleshooting.html">故障排除</a>
+      <a href="/docs/hachimi/faqs.html">常见问题解答</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">插件</div>
+      <a href="/docs/plugins/about.html">关于插件</a>
+      <a href="/docs/plugins/installation.html">安装插件</a>
+      <a href="/docs/plugins/development.html">插件开发指南</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">翻译指南</div>
+      <a href="/docs/translation-guide/welcome.html" class="active" aria-current="page">欢迎</a>
+      <a href="/docs/translation-guide/translation-system.html">翻译系统</a>
+      <a href="/docs/translation-guide/using-zokuzoku.html">使用 ZokuZoku</a>
+      </div>
+  </aside>
+  <main class="doc-main">
+    <article class="doc-body">
+<div><h1 id="欢迎" tabindex="-1">欢迎 </h1><p>欢迎来到 Hachimi 翻译指南！这篇文章将为您介绍 Hachimi 的翻译系统、其工作原理以及如何使用 ZokuZoku 翻译工具。</p><h2 id="词汇表" tabindex="-1">词汇表 </h2><p>在阅读本指南之前，请务必熟悉文章中将用到的一些术语。</p><ul><li><strong>Dict（字典）：</strong> 用于指代翻译文件，其使用方式类似于词典，翻译系统将在这些文件中查找条目以检索合适的翻译。</li><li><strong>Repo（仓库）：</strong> 如果您以前从未在<a href="https://zh.m.wikipedia.org/wiki/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6" target="_blank" rel="noreferrer">版本控制</a>的语境中听说过这个术语，您可以简单地将其理解为 “存储翻译的地方” 。当使用这个术语时，它通常指两种类型的仓库之一：Git 仓库（用于版本控制/协作）或 TL 仓库（Hachimi 用于翻译更新）。通常提到的是前者，后者主要涉及仓库维护者，后续的文章将会深入讲解。</li><li><strong>Meta（元数据）：</strong> 某些内容的补充信息。在 Hachimi 翻译字典的语境中，这通常指字典中用于指定资源文件捆绑哈希值的特殊条目。</li><li><strong>ZokuZoku：</strong> Hachimi 翻译工具的主要称呼，<em>也是创升的口头禅</em>。</li></ul></div>
+    </article>
+  </main>
+</div>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links">
+    <span class="footer-src">源网页: hachimi.noccu.art</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a>
+  </div>
+</footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

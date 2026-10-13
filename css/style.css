@@ -74,3 +74,19 @@ body {
 /* 站点名后的暗色说明（与 generator/mixer 的 .brand-sub 同款） */
 .brand-sub { color: #8b949e; font-size: 12px; font-weight: 500; }
 @media (max-width: 700px) { .brand-sub { display: none; } }
+
+
+/* ---------- 顶栏下拉：UMA Live Studio ---------- */
+.nav-drop{position:relative;display:flex;align-items:center}
+.nav-drop-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;color:#f0f6fc;font:inherit;font-size:14px;font-weight:600;opacity:.9;padding:4px 0;transition:opacity .2s,color .2s}
+.nav-drop-btn:hover,.nav-drop:hover .nav-drop-btn,.nav-drop.open .nav-drop-btn,.nav-drop-btn.is-active{color:#fff;opacity:1}
+.nav-drop-btn.is-active{box-shadow:inset 0 -2px 0 var(--accent,#0969da)}
+.nav-caret{transition:transform .18s ease}
+.nav-drop:hover .nav-caret,.nav-drop.open .nav-caret,.nav-drop:focus-within .nav-caret{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 8px);left:50%;min-width:158px;padding:6px;border-radius:10px;background:#1b2129;border:1px solid #30363d;box-shadow:0 10px 24px rgba(0,0,0,.38);display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-4px);transition:opacity .16s ease,transform .16s ease;z-index:120}
+.nav-drop-menu::before{content:"";position:absolute;top:-9px;left:0;right:0;height:9px}
+.nav-drop:hover .nav-drop-menu,.nav-drop.open .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-drop-menu a{display:block;padding:8px 12px;border-radius:7px;color:#f0f6fc;font-size:13.5px;font-weight:600;opacity:.9;text-decoration:none;box-shadow:none!important;white-space:nowrap}
+.nav-drop-menu a:hover{background:rgba(9,105,218,.22);opacity:1}
+.nav-drop-menu a.active{background:rgba(9,105,218,.3);opacity:1}
+@media(max-width:700px){.nav-drop-menu{left:auto;right:0;transform:translateY(-4px)}.nav-drop:hover .nav-drop-menu,.nav-drop.open .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{transform:translateY(0)}}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>入门指南 · Hachimi-BV Docs</title>
+<meta name="description" content="Hachimi Edge 文档镜像：入门指南">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/docs/docs.css?v=ec524aa6">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">Hachimi-BV Docs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">主页</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/generator.html">生成器</a>
+          <a href="/mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="/docs/" class="active" aria-current="page">Hachimi-BV Docs</a>
+    </nav>
+  </div>
+</header>
+<div class="doc-shell">
+  <aside class="doc-side">
+      <div class="doc-side-title">Hachimi-BV Docs</div>
+      <div class="doc-group"><div class="doc-group-name">总览</div>
+      <a href="/docs/">文档首页</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">Hachimi</div>
+      <a href="/docs/hachimi/about.html">关于 Hachimi</a>
+      <a href="/docs/hachimi/getting-started.html" class="active" aria-current="page">入门指南</a>
+      <a href="/docs/hachimi/getting-started-jp.html">安装指南（日服）</a>
+      <a href="/docs/hachimi/getting-started-other.html">安装指南（国际服 / 繁体中文服 / 简体中文服）</a>
+      <a href="/docs/hachimi/config.html">配置页面</a>
+      <a href="/docs/hachimi/built-in-gui.html">内置 GUI</a>
+      <a href="/docs/hachimi/auto-translation.html">自动翻译</a>
+      <a href="/docs/hachimi/troubleshooting.html">故障排除</a>
+      <a href="/docs/hachimi/faqs.html">常见问题解答</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">插件</div>
+      <a href="/docs/plugins/about.html">关于插件</a>
+      <a href="/docs/plugins/installation.html">安装插件</a>
+      <a href="/docs/plugins/development.html">插件开发指南</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">翻译指南</div>
+      <a href="/docs/translation-guide/welcome.html">欢迎</a>
+      <a href="/docs/translation-guide/translation-system.html">翻译系统</a>
+      <a href="/docs/translation-guide/using-zokuzoku.html">使用 ZokuZoku</a>
+      </div>
+  </aside>
+  <main class="doc-main">
+    <article class="doc-body">
+<div><h1 id="入门指南" tabindex="-1">入门指南 </h1><h2 id="-请不要分享这个网站与-github-仓库的相关链接" tabindex="-1">⚠️ 请不要分享这个网站与 GitHub 仓库的相关链接 </h2><p>我们非常理解您希望帮助别人安装 Hachimi 来与其获得更好的游戏体验。但是，此项目本质上违反了游戏的服务条款，如果被游戏的开发商得知，他们肯定会希望这个项目灰飞烟灭。</p><p>您可以私下与别人分享，这完全没有问题，但是我们请求您不要在公开的网站上分享此项目的相关链接，也不要分享任何相关工具的链接。</p><p>如果进行分享宣传，这可能会破坏很多 Hachimi 用户的体验，请三思而后行。</p><h3 id="如果您执意要分享" tabindex="-1">如果您执意要分享 </h3><p>我们无法改变您的想法，但我们建议您在提及游戏本体时，使用 “UM:PD” 或 “某赛马拟人化游戏” 等隐语去代替游戏名字，这样能避免被搜索引擎剖析到。</p><h2 id="兼容性" tabindex="-1">兼容性 </h2><p>请在安装前检查兼容性。</p><h3 id="windows" tabindex="-1">Windows </h3><table tabindex="0"><thead><tr><th>游戏版本</th><th style="text-align:center;">支持情况</th></tr></thead><tbody><tr><td>日服 DMM 版</td><td style="text-align:center;">✅</td></tr><tr><td>日服 Steam 版</td><td style="text-align:center;">✅</td></tr><tr><td>韩服</td><td style="text-align:center;">❌</td></tr><tr><td>国际服</td><td style="text-align:center;">✅</td></tr><tr><td>模拟器（仅日服 GPG 版）</td><td style="text-align:center;">✅</td></tr><tr><td>模拟器（其他版本）</td><td style="text-align:center;">❌</td></tr></tbody></table><h3 id="android" tabindex="-1">Android </h3><table tabindex="0"><thead><tr><th>游戏版本</th><th style="text-align:center;">普通安装</th><th style="text-align:center;">直接安装</th><th style="text-align:center;">Zygisk</th></tr></thead><tbody><tr><td>日服 Android 版</td><td style="text-align:center;">✅</td><td style="text-align:center;">✅</td><td style="text-align:center;">✅</td></tr><tr><td>日服 GPG 版</td><td style="text-align:center;">✅</td><td style="text-align:center;">✅</td><td style="text-align:center;">✅</td></tr><tr><td>韩服</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td></tr><tr><td>繁体中文服 Google Play 版</td><td style="text-align:center;">⚠️</td><td style="text-align:center;">⚠️</td><td style="text-align:center;">✅</td></tr><tr><td>繁体中文 Mycard 版</td><td style="text-align:center;">⚠️</td><td style="text-align:center;">⚠️</td><td style="text-align:center;">✅</td></tr><tr><td>简体中文版</td><td style="text-align:center;">⚠️</td><td style="text-align:center;">⚠️</td><td style="text-align:center;">✅</td></tr><tr><td>国际版</td><td style="text-align:center;">⚠️</td><td style="text-align:center;">⚠️</td><td style="text-align:center;">❔</td></tr></tbody></table><ul><li>✅ - 完全支持。</li><li>⚠️ - 可能支持，但游戏可能因为外部因素导致无法正常运行（例如：反作弊）。</li><li>❔ - 未经测试。理论上支持，但并不保证。</li><li>❌ - 不支持。 *上述的日语 GPG 版指日服 Google Play Games（Beta）版</li></ul><h2 id="安装" tabindex="-1">安装 </h2><p>安装过程根据游戏版本而有所不同。请点击其中一个进行查看。</p><h4 id="日服" tabindex="-1"><a href="./getting-started-jp.html">日服</a> </h4><h4 id="国际服-繁体中文服-简体中文服" tabindex="-1"><a href="./getting-started-other.html">国际服 / 繁体中文服 / 简体中文服</a> </h4></div>
+    </article>
+  </main>
+</div>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links">
+    <span class="footer-src">源网页: hachimi.noccu.art</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a>
+  </div>
+</footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

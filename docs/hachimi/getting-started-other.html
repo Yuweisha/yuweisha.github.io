@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>安装指南（国际服 / 繁体中文服 / 简体中文服） · Hachimi-BV Docs</title>
+<meta name="description" content="Hachimi Edge 文档镜像：安装指南（国际服 / 繁体中文服 / 简体中文服）">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/docs/docs.css?v=ec524aa6">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">Hachimi-BV Docs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">主页</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/generator.html">生成器</a>
+          <a href="/mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="/docs/" class="active" aria-current="page">Hachimi-BV Docs</a>
+    </nav>
+  </div>
+</header>
+<div class="doc-shell">
+  <aside class="doc-side">
+      <div class="doc-side-title">Hachimi-BV Docs</div>
+      <div class="doc-group"><div class="doc-group-name">总览</div>
+      <a href="/docs/">文档首页</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">Hachimi</div>
+      <a href="/docs/hachimi/about.html">关于 Hachimi</a>
+      <a href="/docs/hachimi/getting-started.html">入门指南</a>
+      <a href="/docs/hachimi/getting-started-jp.html">安装指南（日服）</a>
+      <a href="/docs/hachimi/getting-started-other.html" class="active" aria-current="page">安装指南（国际服 / 繁体中文服 / 简体中文服）</a>
+      <a href="/docs/hachimi/config.html">配置页面</a>
+      <a href="/docs/hachimi/built-in-gui.html">内置 GUI</a>
+      <a href="/docs/hachimi/auto-translation.html">自动翻译</a>
+      <a href="/docs/hachimi/troubleshooting.html">故障排除</a>
+      <a href="/docs/hachimi/faqs.html">常见问题解答</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">插件</div>
+      <a href="/docs/plugins/about.html">关于插件</a>
+      <a href="/docs/plugins/installation.html">安装插件</a>
+      <a href="/docs/plugins/development.html">插件开发指南</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">翻译指南</div>
+      <a href="/docs/translation-guide/welcome.html">欢迎</a>
+      <a href="/docs/translation-guide/translation-system.html">翻译系统</a>
+      <a href="/docs/translation-guide/using-zokuzoku.html">使用 ZokuZoku</a>
+      </div>
+  </aside>
+  <main class="doc-main">
+    <article class="doc-body">
+<div><h1 id="安装指南国际服-繁体中文服-简体中文服" tabindex="-1">安装指南（国际服 / 繁体中文服 / 简体中文服） </h1><p>请根据您的平台遵循下方的指南，然后继续进行 <a href="#初始化设置">初始化设置</a>。</p><h2 id="windows" tabindex="-1">Windows </h2><p>自 2025/11/11 起，所有版本的游戏都使用同一个 Hachimi Edge 发行版。</p><ol><li>如果你安装了特殊的旧版 <code>Hachimi 2020</code> 版本，请先将其卸载。 <ul><li>你可以使用原始安装程序进行卸载。<a href="https://github.com/Hachimi-Hachimi/Hachimi-Unity2020/releases/download/v0.14.0-2deadd3/hachimi_installer.exe" target="_blank" rel="noreferrer">点击此处重新下载</a>。</li></ul></li><li>按照 <a href="./getting-started-jp.html#windows">日服指南</a> 进行操作，并做出以下调整： <ul><li>在下拉菜单中选择 <strong>Steam版</strong>。</li><li>将安装位置指向国际服的游戏目录（默认路径：<code>C:\Program Files (x86)\Steam\steamapps\common\UmamusumePrettyDerby</code>）。</li></ul></li></ol><p>手动安装同样简单，如果你遇到问题时不妨尝试手动安装。</p><details><summary class="collapsible-header-sub">手动安装</summary><div class="tip custom-block"><p class="custom-block-title">提示</p><p>只有在原始文件名中能看到 <code>.dll</code> 后缀时，才在重命名时添加它。如果你看不到后缀，说明 Windows 设置了隐藏扩展名，此时手动添加会导致文件名变为 <code>.dll.dll</code>，从而导致游戏无法运行。</p></div><ol><li>从 <a href="https://github.com/Yuweisha/Hachimi-Edge-BV/releases" target="_blank" rel="noreferrer">Release 页面</a> 下载最新的 <code>hachimi.dll</code>。</li><li>将其放入游戏的安装目录中。</li><li>将该文件重命名为 <code>cri_mana_vpx.dll</code>。</li></ol></details><details><summary class="collapsible-header-sub">旧版安装方法</summary><div class="warning custom-block"><p class="custom-block-title">警告</p><p>本章节仅供参考。除非你的游戏版本尚未更新，或者你有特殊需求，否则不建议使用。</p></div><ol><li>从 <a href="https://github.com/Hachimi-Hachimi/Hachimi-Unity2020/releases" target="_blank" rel="noreferrer">旧版发布页面</a> 下载最新的 <code>hachimi_installer.exe</code>。</li><li>运行它并点击安装。如果你不清楚各项选项的含义，无需进行任何修改。</li></ol><details><summary class="collapsible-header-sub">旧版手动安装</summary><div class="tip custom-block"><p class="custom-block-title">提示</p><p>只有在原始文件名中能看到 <code>.dll</code> 后缀时，才在重命名时添加它。如果你看不到后缀，说明 Windows 设置了隐藏扩展名，此时手动添加会导致文件名变为 <code>.dll.dll</code>，从而导致游戏无法运行。</p></div><ol><li>从 <a href="https://github.com/Hachimi-Hachimi/Hachimi-Unity2020/releases" target="_blank" rel="noreferrer">旧版发布页面</a> 下载最新的 <code>hachimi.dll</code>。</li><li>将其放入游戏的安装目录中。</li><li>将其重命名为 <code>winhttp.dll</code>、<code>version.dll</code> 或 <code>opengl32.dll</code>。</li></ol></details></details><h2 id="android" tabindex="-1">Android </h2><div class="warning custom-block"><p class="custom-block-title">警告</p><p>在这些版本中，如果您的手机未 Root ，将无法使用 Hachimi。 请注意，目前不支持安卓国际服。</p></div><div class="danger custom-block"><p class="custom-block-title">危险</p><p>自 2025/11/11 起，下方链接中的 Hachimi 版本可能会失效。请改用 <a href="https://github.com/Yuweisha/Hachimi-Edge-BV/releases/latest" target="_blank" rel="noreferrer">最新 Edge 发行版</a> 中的文件。目前的维护支持状态尚不确定。</p></div><h3 id="zygisk" tabindex="-1">Zygisk </h3><p>从 <a href="https://github.com/Hachimi-Hachimi/Hachimi-Unity2020/releases" target="_blank" rel="noreferrer">Releases 页面</a>下载最新的 Zygisk zip 压缩包，并通过 Magisk 或 KernelSU（需搭配 Zygisk Next）进行安装。</p><h2 id="初始化设置" tabindex="-1">初始化设置 </h2><p>安装 Hachimi 后首次启动游戏时，您应该会看到这个对话框：</p><p><img src="/docs/assets/first-time-setup.BrMRGq_Y.jpg" alt="初始化设置"></p><div class="info custom-block"><p class="custom-block-title">INFO</p><p>如果您没有看到此对话框，则表示 Hachimi 未正确安装。请仔细阅读安装指南并重试，或查阅 <a href="./troubleshooting.html">故障排除</a>。</p></div><p>只需按照指南操作，然后点击“完成”保存配置。如果你选择了翻译功能，系统还会开始更新检查，并提示你下载任何新的翻译内容。</p><p>你稍后可以通过 Hachimi 菜单返回此对话框，以更改翻译源。</p><div class="tip custom-block"><p class="custom-block-title">建议</p><p>如果翻译出现任何问题，你可以在“配置编辑器 &gt; 通用”中将其禁用，然后重启游戏。</p></div></div>
+    </article>
+  </main>
+</div>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links">
+    <span class="footer-src">源网页: hachimi.noccu.art</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a>
+  </div>
+</footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>安装指南（日服） · Hachimi-BV Docs</title>
+<meta name="description" content="Hachimi Edge 文档镜像：安装指南（日服）">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/docs/docs.css?v=ec524aa6">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">Hachimi-BV Docs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">主页</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/generator.html">生成器</a>
+          <a href="/mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="/docs/" class="active" aria-current="page">Hachimi-BV Docs</a>
+    </nav>
+  </div>
+</header>
+<div class="doc-shell">
+  <aside class="doc-side">
+      <div class="doc-side-title">Hachimi-BV Docs</div>
+      <div class="doc-group"><div class="doc-group-name">总览</div>
+      <a href="/docs/">文档首页</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">Hachimi</div>
+      <a href="/docs/hachimi/about.html">关于 Hachimi</a>
+      <a href="/docs/hachimi/getting-started.html">入门指南</a>
+      <a href="/docs/hachimi/getting-started-jp.html" class="active" aria-current="page">安装指南（日服）</a>
+      <a href="/docs/hachimi/getting-started-other.html">安装指南（国际服 / 繁体中文服 / 简体中文服）</a>
+      <a href="/docs/hachimi/config.html">配置页面</a>
+      <a href="/docs/hachimi/built-in-gui.html">内置 GUI</a>
+      <a href="/docs/hachimi/auto-translation.html">自动翻译</a>
+      <a href="/docs/hachimi/troubleshooting.html">故障排除</a>
+      <a href="/docs/hachimi/faqs.html">常见问题解答</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">插件</div>
+      <a href="/docs/plugins/about.html">关于插件</a>
+      <a href="/docs/plugins/installation.html">安装插件</a>
+      <a href="/docs/plugins/development.html">插件开发指南</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">翻译指南</div>
+      <a href="/docs/translation-guide/welcome.html">欢迎</a>
+      <a href="/docs/translation-guide/translation-system.html">翻译系统</a>
+      <a href="/docs/translation-guide/using-zokuzoku.html">使用 ZokuZoku</a>
+      </div>
+  </aside>
+  <main class="doc-main">
+    <article class="doc-body">
+<div><h1 id="安装指南日服" tabindex="-1">安装指南（日服） </h1><p>请根据您的平台遵循下方的指南，然后继续进行 <a href="#初始化设置">初始化设置</a>。 如果遇到问题，请查阅<a href="./troubleshooting.html">故障排除</a>。</p><h2 id="windows" tabindex="-1">Windows </h2><p>由于游戏的某次大版本更新，自 2025/09/24 起，您需要使用 Hachimi v0.14.2 或更新版本。</p><ol><li>下载最新的<a href="https://github.com/Yuweisha/Hachimi-Edge-BV/releases/latest/download/hachimi_installer.exe" target="_blank" rel="noreferrer">安装程序</a>并运行它。</li><li>如果您之前使用过 Hachimi v0.14.2 及更早版本的 Hachimi，请先点击“卸载”。</li><li>检查安装目录是否正确，如果需要请进行更改。</li><li>选择您的游戏版本，然后点击“安装” 。</li><li>安装完成后，请右键游戏的exe文件，选择属性，转到兼容性选项卡，并勾选“禁用全屏优化”。（不勾选会导致游戏无法启动）</li></ol><p>首次安装时，安装程序可能会请求您启用 DotLocal DLL 重定向。点击“确定” ，它会自动为您启用。<strong>启用后，您必须重启（不是关机再开机）您的电脑。</strong></p><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>某些反作弊程序（例如 英雄联盟/无畏契约 中使用的 Vanguard）不喜欢系统上启用 DLL 重定向。每次您想玩受影响的游戏时，都需要禁用它。<a href="https://github.com/LeadRDRK/DotLocalToggle/releases" target="_blank" rel="noreferrer">这里</a>有一个小程序可以快速切换该功能。运行它直到提示 DLL 重定向已禁用，然后重启您的电脑。</p></div><div class="info custom-block"><p class="custom-block-title">INFO</p><p>DotLocal 目前仅用于 DMM 版本。在 Steam 平台上玩请在安装程序中选择带 Steam 一项的安装方法。</p></div><p>如果您在 Steam 端上使用 Hachimi，您可能需要在游戏更新后重新使用安装程序安装 Hachimi。</p><details><summary class="collapsible-header-sub">手动安装</summary><div class="tip custom-block"><p class="custom-block-title">TIP</p><p>仅当您在原始文件名中看到文件扩展名（<code>.exe</code>, <code>.dll</code>）时，才在重命名时添加它们。如果您看不到，这意味着 Windows 设置为隐藏扩展名，您的重命名将以 <code>.exe.exe</code> 结尾，导致游戏无法运行。此条不适用于文件夹。</p></div><h3 id="steam" tabindex="-1">Steam </h3><ol><li>从 <a href="https://github.com/Yuweisha/Hachimi-Edge-BV/releases" target="_blank" rel="noreferrer">Releases 页面</a>下载最新版本的 <code>hachimi.dll</code>。</li><li>将该文件重命名为 <code>cri_mana_vpx.dll</code>，并将其放入<a href="./faqs.html#如何找到游戏的安装目录">游戏安装目录</a>中。</li><li>下载 Ferns 开发的 <a href="https://gitlab.com/LeadRDRK/FunnyHoney" target="_blank" rel="noreferrer"><code>FunnyHoney.exe</code></a>。</li><li>将其重命名为 <code>UmamusumePrettyDerby_Jpn.exe</code> 并放入游戏安装目录中，<strong>覆盖</strong>原始同名文件。</li></ol><h3 id="dmm" tabindex="-1">DMM </h3><ol><li>参阅<a href="https://learn.microsoft.com/zh-cn/windows/win32/dlls/dynamic-link-library-redirection#optional-configure-the-registry" target="_blank" rel="noreferrer">这篇文章</a>中的“配置注册表”部分来启用 DLL 重定向。完成后重启您的电脑。</li><li>从 <a href="https://github.com/Yuweisha/Hachimi-Edge-BV/releases" target="_blank" rel="noreferrer">Releases 页面</a>下载最新的 <code>hachimi.dll</code>。</li><li>在游戏安装文件夹中，创建一个名为 <code>umamusume.exe.local</code> 的新文件夹，并将下载的 DLL 文件移动到其中。将其重命名为 <code>UnityPlayer.dll</code>。</li><li>从 <a href="https://github.com/Hachimi-Hachimi/Cellar/releases" target="_blank" rel="noreferrer">Cellar Releases 页面</a>下载最新的 <code>cellar.dll</code>。</li><li>将其移动到 <code>umamusume.exe.local</code> 文件夹中并重命名为 <code>apphelp.dll</code>。</li></ol></details><details><summary class="collapsible-header-sub">从已弃用的插件注入方法迁移</summary><p>您需要先彻底卸载 Shinmy；请确保在删除它时它没有在运行，因为它在 DMM 关闭后最多能存活 30 秒并可能自我恢复。<strong>最简单的方法就是使用安装程序</strong>（同时它也是一个卸载程序），它会为您妥善清理一切。</p><p>之后，您可以像往常一样卸载 Hachimi。</p></details><h2 id="android" tabindex="-1">Android </h2><div class="warning custom-block"><p class="custom-block-title">安装前须知</p><p>安装 Hachimi 后无法使用 Google Play 商店内购。请改用官方网页充值渠道。 安装前必须绑定 Cygames ID 或设置引承码。补丁版无法通过 Google 账号登录。</p><p>全新安装 Hachimi 需要先卸载原版游戏。 请从 <a href="https://qoopy.leadrdrk.com/" target="_blank" rel="noreferrer">Qoopy</a> 获取游戏APK，使用 ID 6172。</p><p>若常规安装失败，请使用 Shizuku 模式安装。 MIUI/HyperOS 用户在安装前请先于 <code>开发者设置</code> 中关闭 <code>系统优化</code>，在安装完成后再重新打开。</p></div><h3 id="1准备工作" tabindex="-1">1.准备工作 </h3><p>在开始之前，请根据您的具体情况执行以下操作：</p><ul><li><strong>旧版Umapathcer用户：</strong> 如果您曾使用过旧版 UmaPatcher，请在旧版 UmaPatcher 的 <code>设置</code> 页面 <strong>导出签名密钥</strong>，并保存到安全的位置。</li><li><strong>首次安装：</strong> 如果您从未给游戏打过补丁，请先 <strong>卸载原版游戏</strong>。</li><li><strong>软件下载：</strong> 下载并安装最新版的 <a href="https://github.com/kairusds/UmaPatcher-Edge/releases/latest/download/app-release.apk" target="_blank" rel="noreferrer">UmaPatcher Edge</a>。</li></ul><hr><h3 id="2准备游戏安装包" tabindex="-1">2.准备游戏安装包 </h3><p>您需要准备好以下任意一种格式的游戏安装包：</p><p><strong>Split APKs (分割包)</strong>： 一个基础 APK + 一个对应您架构的配置包（通常为 <code>config.arm64_v8a</code>）。 <strong>XAPK 文件</strong>： 本质是包含分割包的压缩包，确保后缀名为 <code>.xapk</code>。</p><hr><h3 id="3开始补丁安装" tabindex="-1">3.开始补丁安装 </h3><ol><li>打开 UmaPatcher Edge，如果导出了旧版 UmaPatcher 的签名密钥，请先在设置中导入之前备份的密钥。</li><li>选择 <strong>普通安装</strong>。</li><li>选择您准备好的 拆分APK 或 XAPK 文件。</li><li>点击 <strong>开始补丁</strong>，等待补丁完成并自动触发安装。</li></ol><hr><p>::: tips ⚠️ 当游戏发布新版本时，您只需从第 2 步开始重复流程即可。 更新过程中无需卸载现有的已补丁游戏。 :::</p><details><summary class="collapsible-header-sub">通过 Shizuku 安装</summary> ### 1.准备工作 在开始之前，请根据您的具体情况执行以下操作： <ul><li><strong>旧版Umapathcer用户：</strong> 如果您曾使用过旧版 UmaPatcher，请在旧版 UmaPatcher 的 <code>设置</code> 页面 <strong>导出签名密钥</strong>，并保存到安全的位置。</li><li><strong>首次安装：</strong> 如果您从未给游戏打过补丁，请先 <strong>卸载原版游戏</strong>。</li><li><strong>软件下载：</strong> 下载并安装最新版的 <a href="https://github.com/kairusds/UmaPatcher-Edge/releases/latest/download/app-release.apk" target="_blank" rel="noreferrer">UmaPatcher Edge</a> 和 <a href="https://github.com/RikkaApps/Shizuku/releases/" target="_blank" rel="noreferrer">Shizuku</a>。</li><li>并通过 <a href="https://shizuku.rikka.app/zh-hans/guide/setup/" target="_blank" rel="noreferrer">此教程</a> 配置好 Shizuku。</li></ul><p>当成功配置 Shizuku 后，在 Umapatcher 中，“通过 Shizuku 安装”的右侧应当会显示为“可用”。</p><hr><h3 id="2准备游戏安装包-1" tabindex="-1">2.准备游戏安装包 </h3><p>您需要准备好以下任意一种格式的游戏安装包：</p><p><strong>Split APKs (分割包)</strong>： 一个基础 APK + 一个对应您架构的配置包（通常为 <code>config.arm64_v8a</code>）。 <strong>XAPK 文件</strong>： 本质是包含分割包的压缩包，确保后缀名为 <code>.xapk</code>。</p><hr><h3 id="3开始补丁安装-1" tabindex="-1">3.开始补丁安装 </h3><ol><li>打开 UmaPatcher Edge，如果导出了旧版 UmaPatcher 的签名密钥，请先在设置中导入之前备份的密钥。</li><li>选择 <strong>通过 Shizuku 安装</strong>。</li><li>选择您准备好的 拆分APK 或 XAPK 文件。</li><li>点击 <strong>开始补丁</strong>，等待补丁完成并自动触发安装。</li></ol><hr><div class="tip custom-block"><p class="custom-block-title">TIP</p><p>⚠️ 当游戏发布新版本时，您只需从第 2 步开始重复流程即可。 更新过程中无需卸载现有的已补丁游戏。</p></div></details><details><summary class="collapsible-header-sub">免卸载更新 + 商店更新（需要 root）</summary><p>UmaPatcher 提供了一个 root 安装选项，它不需要您卸载游戏或处理 APK，让您可以从任何应用商店正常更新。</p><p>在已安装游戏的情况下，点击补丁器主屏幕顶部的卡片，选择您想补丁的应用（如果需要）。然后选择“直接安装”作为安装方式，并点击“补丁”。此方式不需要任何输入文件。</p><p>每当游戏更新时，您都需要再次使用 UmaPatcher 来补丁游戏。</p></details><details><summary class="collapsible-header-sub">通过 Zygisk 安装（需要 root）</summary><p>使用 Zygisk 安装也可以允许您不卸载游戏或处理 APK 就能安装并且可以从应用商店正常更新，但是需要您的设备拥有 Magisk 或 KernelSU 的 root 环境，并且您必须每次在 Hachimi 更新时重启您的设备。</p><p>从 <a href="https://github.com/Yuweisha/Hachimi-Edge-BV/releases" target="_blank" rel="noreferrer">Releases 页面</a>下载最新的 Zygisk zip 模块压缩包，并通过 Magisk 或 KernelSU（需搭配 Zygisk Next）进行安装。</p><p>安装后重启设备即可享受 Hachimi。</p></details><details><summary class="collapsible-header-sub">手动安装（不推荐）</summary><ol><li>从 <a href="https://github.com/Yuweisha/Hachimi-Edge-BV/releases" target="_blank" rel="noreferrer">Releases 页面</a>构建或下载预构建的库文件。</li><li>解压游戏的 APK 文件。您可能需要使用 <a href="https://apktool.org/" target="_blank" rel="noreferrer">apktool</a>。</li><li>将 <code>lib</code> 目录下的每个文件夹中的 <code>libmain.so</code> 文件重命名为 <code>libmain_orig.so</code>。</li><li>将代理库文件复制到它们对应的文件夹中（例如 <code>libmain-arm64-v8a.so</code> 放入 <code>lib/arm64-v8a</code>）。将它们重命名为 <code>libmain.so</code>。</li><li>构建 APK 文件并安装它。</li></ol></details><h2 id="初始化设置" tabindex="-1">初始化设置 </h2><p>安装 Hachimi 后首次启动游戏时，您应该会看到这个对话框：</p><p><img src="/docs/assets/first-time-setup.BrMRGq_Y.jpg" alt="初始化设置"></p><div class="info custom-block"><p class="custom-block-title">INFO</p><p>如果在其他情况下没有看到此对话框，则表示 Hachimi 未正确安装。请仔细阅读安装指南并重试，或查阅 <a href="./troubleshooting.html">故障排除</a>。</p></div><p>点击“下一步”并选择您偏好的翻译源，然后点击“完成”以保存您的配置并开始检查更新。</p><p>Hachimi 现在会提示您下载新的翻译更新，点击“是”开始下载翻译文件。</p><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>“大陆加速镜像”只对部分地区有加速效果，如果它真的下得很慢……那还是使用非大陆加速镜像吧。</p></div><p>您可以稍后通过 Hachimi 菜单返回此对话框来更改您的翻译源。</p></div>
+    </article>
+  </main>
+</div>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links">
+    <span class="footer-src">源网页: hachimi.noccu.art</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a>
+  </div>
+</footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

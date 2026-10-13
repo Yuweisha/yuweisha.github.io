@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>内置 GUI · Hachimi-BV Docs</title>
+<meta name="description" content="Hachimi Edge 文档镜像：内置 GUI">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/docs/docs.css?v=ec524aa6">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">Hachimi-BV Docs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">主页</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/generator.html">生成器</a>
+          <a href="/mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="/docs/" class="active" aria-current="page">Hachimi-BV Docs</a>
+    </nav>
+  </div>
+</header>
+<div class="doc-shell">
+  <aside class="doc-side">
+      <div class="doc-side-title">Hachimi-BV Docs</div>
+      <div class="doc-group"><div class="doc-group-name">总览</div>
+      <a href="/docs/">文档首页</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">Hachimi</div>
+      <a href="/docs/hachimi/about.html">关于 Hachimi</a>
+      <a href="/docs/hachimi/getting-started.html">入门指南</a>
+      <a href="/docs/hachimi/getting-started-jp.html">安装指南（日服）</a>
+      <a href="/docs/hachimi/getting-started-other.html">安装指南（国际服 / 繁体中文服 / 简体中文服）</a>
+      <a href="/docs/hachimi/config.html">配置页面</a>
+      <a href="/docs/hachimi/built-in-gui.html" class="active" aria-current="page">内置 GUI</a>
+      <a href="/docs/hachimi/auto-translation.html">自动翻译</a>
+      <a href="/docs/hachimi/troubleshooting.html">故障排除</a>
+      <a href="/docs/hachimi/faqs.html">常见问题解答</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">插件</div>
+      <a href="/docs/plugins/about.html">关于插件</a>
+      <a href="/docs/plugins/installation.html">安装插件</a>
+      <a href="/docs/plugins/development.html">插件开发指南</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">翻译指南</div>
+      <a href="/docs/translation-guide/welcome.html">欢迎</a>
+      <a href="/docs/translation-guide/translation-system.html">翻译系统</a>
+      <a href="/docs/translation-guide/using-zokuzoku.html">使用 ZokuZoku</a>
+      </div>
+  </aside>
+  <main class="doc-main">
+    <article class="doc-body">
+<div><h1 id="内置-gui" tabindex="-1">内置 GUI </h1><p>使用内置 GUI 可以激活一些游戏内的功能或修改设置。</p><p><em>从 v0.14.0 版本开始，Hachimi 内置 GUI 语言将支持<strong>简体中文</strong>，你可以在 First Time Setup（初始化设置）对话框首页或 Config Editor（配置编辑器）窗口点击 “Language” 进行切换，以下内容介绍将以简体中文为准。</em></p><p><img src="/docs/assets/built-in-gui.3YBdVivp.jpg" alt="GUI screenshot"></p><h2 id="打开" tabindex="-1">打开 </h2><p>可以通过按下按键或组合键来打开菜单，不同的平台打开方式不同：</p><ul><li><strong>Android：</strong> 「音量+」键 + 「音量-」键 或 三击屏幕左上角</li><li><strong>Windows：</strong> 右方向键（*）</li></ul><p><strong>注意：</strong> 当 Hachimi 的菜单或对话框打开时，将拦截所有系统对于游戏的输入，你必须将其关闭后，才能重新控制游戏。</p><p>（*）此按键可以被重新绑定，请参阅<a href="./config.html">配置页面</a>中的 <code>menu_open_key</code> 。</p><h2 id="配置" tabindex="-1">配置 </h2><ul><li><strong>打开配置编辑器：</strong> 您可以在游戏中编辑配置文件。请参阅配置页面，了解每个选项的详细信息。</li><li><strong>重新加载配置：</strong> 从磁盘重新加载配置文件，此操作会在配置编辑器保存时自动完成。</li><li><strong>打开初始化设置：</strong> 打开初始化设置对话框。你可以在此处更改你的翻译仓库。</li></ul><h2 id="图形设置" tabindex="-1">图形设置 </h2><p>您可以在此处实时更改图形设置。</p><p>请注意，这些选项并非永久生效，下次启动时将会被重置。若要永久应用这些选项，请在配置编辑器中对其进行设置。</p><h2 id="翻译" tabindex="-1">翻译 </h2><ul><li><strong>重新加载本地化数据：</strong> 供翻译人员使用。从磁盘重新加载翻译文件。</li><li><strong>检查更新：</strong> 进行更新检查。</li></ul><h2 id="危险操作" tabindex="-1">危险操作 </h2><p>如果正确使用，这些选项实际上并不危险；但这正是列出它们的原因。<strong>除非您了解其风险，否则请勿随意使用它们。</strong></p><p>听起来是不是很可怕，如果你仍然感兴趣，以下是它们的作用以及使用它们时的注意事项：</p><ul><li><strong>软重启：</strong> 触发游戏错误并强制用户重启，重启后游戏将重置为标题画面。这是一种快速应用某些图形设置的方法，这些设置通常需要您关闭游戏并重新打开后才能生效。<strong>当然，请勿在游戏过程中使用此功能，因为您无法取消它。</strong></li><li><strong>打开游戏内浏览器：</strong> （仅限 Android）这个选项其实比较安全，它只会打开游戏自带的浏览器，无需离开游戏即可浏览网页（<s>甚至可以玩毁灭战士</s>）。默认会打开 Google，支持自定义。之所以列在这里，是因为它可能会干扰游戏的对话系统。只要不在游戏跳出提示什么的时候打开就好。</li><li><strong>切换游戏界面显示：</strong> 启用/禁用所有当前活动的游戏 UI 对象。在启用后才创建的对象不受影响。可能会错误地恢复 UI 活动状态（例如，启用不应启用的对象），但大多数情况下不会造成严重问题。</li></ul></div>
+    </article>
+  </main>
+</div>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links">
+    <span class="footer-src">源网页: hachimi.noccu.art</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a>
+  </div>
+</footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

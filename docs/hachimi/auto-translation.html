@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自动翻译 · Hachimi-BV Docs</title>
+<meta name="description" content="Hachimi Edge 文档镜像：自动翻译">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/docs/docs.css?v=ec524aa6">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">Hachimi-BV Docs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">主页</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/generator.html">生成器</a>
+          <a href="/mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="/docs/" class="active" aria-current="page">Hachimi-BV Docs</a>
+    </nav>
+  </div>
+</header>
+<div class="doc-shell">
+  <aside class="doc-side">
+      <div class="doc-side-title">Hachimi-BV Docs</div>
+      <div class="doc-group"><div class="doc-group-name">总览</div>
+      <a href="/docs/">文档首页</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">Hachimi</div>
+      <a href="/docs/hachimi/about.html">关于 Hachimi</a>
+      <a href="/docs/hachimi/getting-started.html">入门指南</a>
+      <a href="/docs/hachimi/getting-started-jp.html">安装指南（日服）</a>
+      <a href="/docs/hachimi/getting-started-other.html">安装指南（国际服 / 繁体中文服 / 简体中文服）</a>
+      <a href="/docs/hachimi/config.html">配置页面</a>
+      <a href="/docs/hachimi/built-in-gui.html">内置 GUI</a>
+      <a href="/docs/hachimi/auto-translation.html" class="active" aria-current="page">自动翻译</a>
+      <a href="/docs/hachimi/troubleshooting.html">故障排除</a>
+      <a href="/docs/hachimi/faqs.html">常见问题解答</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">插件</div>
+      <a href="/docs/plugins/about.html">关于插件</a>
+      <a href="/docs/plugins/installation.html">安装插件</a>
+      <a href="/docs/plugins/development.html">插件开发指南</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">翻译指南</div>
+      <a href="/docs/translation-guide/welcome.html">欢迎</a>
+      <a href="/docs/translation-guide/translation-system.html">翻译系统</a>
+      <a href="/docs/translation-guide/using-zokuzoku.html">使用 ZokuZoku</a>
+      </div>
+  </aside>
+  <main class="doc-main">
+    <article class="doc-body">
+<div><h1 id="自动翻译" tabindex="-1">自动翻译 </h1><p>Hachimi 能够通过 Sugoi Offline Translator 或任何实现类似 API 的兼容翻译服务器（例如 <a href="https://github.com/gdiaz384/py3translationServer" target="_blank" rel="noreferrer">py3translationServer</a>）来自动翻译游戏的部分内容。</p><h3 id="意味着什么" tabindex="-1">意味着什么？ </h3><ul><li>对于尚未翻译的内容，系统将会给出机器翻译。</li><li>一旦翻译仓库中有对应的人工翻译，那么机器翻译就会被自动替换。</li></ul><h3 id="注意事项" tabindex="-1">注意事项 </h3><ul><li>翻译的过程是同步的；在等待翻译完成的过程中，游戏可能会卡住。随着翻译数量的增多，并且 Hachimi 能够重新加载已翻译的数据，这种情况会逐渐减少。</li></ul><h2 id="如何使用" tabindex="-1">如何使用 </h2><p>打开配置编辑器，并且启用其中一项自动翻译功能（自动翻译剧情或游戏界面）。</p><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>一般情况下不建议启用 “自动翻译游戏界面”，尤其是缺乏内部缓存的翻译器。</p></div><p>您还需要在游戏的同时运行翻译程序。</p><h3 id="对于-sugoi-offline-translator" tabindex="-1">对于 Sugoi Offline Translator </h3><p>启动 Sugoi Toolkit 中的 “Offline Translator” .bat 文件。保持翻译程序/命令提示符处于打开状态，以便 Hachimi 能够调用翻译器（但是它不会通过这些窗口显示任何内容）。</p><p><strong>不建议在使用此翻译器的情况下打开 “自动翻译游戏界面”。</strong></p><h3 id="对于-py3translationserver" tabindex="-1">对于 py3translationServer </h3><p>假设您已经正确设置了模型，则无需进行其他配置。只需启动服务器即可运行。</p><h2 id="自定义-url" tabindex="-1">自定义 URL </h2><p>如果您的翻译服务器在不同的端口或不同的机器上运行，您可能希望让 Hachimi 连接到不同的地址。</p><p>为此，请在配置文件中手动设定 <code>sugoi_url</code> 选项。例如：</p><div class="language-json vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">json</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;sugoi_url&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;http://127.0.0.1:14366&quot;</span></span></code></pre></div><p>默认情况下，这个值会缺失或在配置文件中被设置为 <code>null</code> 。这是正常现象，即使没有手动设置，Hachimi 仍会尝试连接到 <code>http://127.0.0.1:14366</code></p></div>
+    </article>
+  </main>
+</div>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links">
+    <span class="footer-src">源网页: hachimi.noccu.art</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a>
+  </div>
+</footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

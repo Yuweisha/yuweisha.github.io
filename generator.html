@@ -161,6 +161,21 @@ a{color:var(--accent)}
   .samechar-col{max-width:none}
 }
 
+
+/* ---------- 顶栏下拉：UMA Live Studio ---------- */
+.nav-drop{position:relative;display:flex;align-items:center}
+.nav-drop-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;color:#f0f6fc;font:inherit;font-size:14px;font-weight:600;opacity:.9;padding:4px 0;transition:opacity .2s,color .2s}
+.nav-drop-btn:hover,.nav-drop:hover .nav-drop-btn,.nav-drop.open .nav-drop-btn,.nav-drop-btn.is-active{color:#fff;opacity:1}
+.nav-drop-btn.is-active{box-shadow:inset 0 -2px 0 var(--accent,#0969da)}
+.nav-caret{transition:transform .18s ease}
+.nav-drop:hover .nav-caret,.nav-drop.open .nav-caret,.nav-drop:focus-within .nav-caret{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 8px);left:50%;min-width:158px;padding:6px;border-radius:10px;background:#1b2129;border:1px solid #30363d;box-shadow:0 10px 24px rgba(0,0,0,.38);display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-4px);transition:opacity .16s ease,transform .16s ease;z-index:120}
+.nav-drop-menu::before{content:"";position:absolute;top:-9px;left:0;right:0;height:9px}
+.nav-drop:hover .nav-drop-menu,.nav-drop.open .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-drop-menu a{display:block;padding:8px 12px;border-radius:7px;color:#f0f6fc;font-size:13.5px;font-weight:600;opacity:.9;text-decoration:none;box-shadow:none!important;white-space:nowrap}
+.nav-drop-menu a:hover{background:rgba(9,105,218,.22);opacity:1}
+.nav-drop-menu a.active{background:rgba(9,105,218,.3);opacity:1}
+@media(max-width:700px){.nav-drop-menu{left:auto;right:0;transform:translateY(-4px)}.nav-drop:hover .nav-drop-menu,.nav-drop.open .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{transform:translateY(0)}}
 </style>
 </head>
 <body>
@@ -171,10 +186,16 @@ a{color:var(--accent)}
       <span class="brand-name">UMA Live Studio</span>
       <span class="brand-sub">混音工程生成器</span>
     </a>
-    <nav class="header-nav">
+        <nav class="header-nav">
       <a href="index.html">主页</a>
-      <a href="generator.html" class="active" aria-current="page">生成器</a>
-      <a href="mixer.html">混音器</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn is-active" type="button" aria-haspopup="true" aria-expanded="false" aria-current="page">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="generator.html" class="active" aria-current="page">生成器</a>
+          <a href="mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="docs/">Hachimi-BV Docs</a>
     </nav>
   </div>
 </header>
@@ -281,5 +302,19 @@ a{color:var(--accent)}
   <div>© 2026 Yuweisha</div>
   <div class="footer-links"><a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a></div>
 </footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
 </body>
 </html>

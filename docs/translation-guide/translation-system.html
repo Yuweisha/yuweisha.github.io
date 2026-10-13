@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>翻译系统 · Hachimi-BV Docs</title>
+<meta name="description" content="Hachimi Edge 文档镜像：翻译系统">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/docs/docs.css?v=ec524aa6">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">Hachimi-BV Docs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">主页</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/generator.html">生成器</a>
+          <a href="/mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="/docs/" class="active" aria-current="page">Hachimi-BV Docs</a>
+    </nav>
+  </div>
+</header>
+<div class="doc-shell">
+  <aside class="doc-side">
+      <div class="doc-side-title">Hachimi-BV Docs</div>
+      <div class="doc-group"><div class="doc-group-name">总览</div>
+      <a href="/docs/">文档首页</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">Hachimi</div>
+      <a href="/docs/hachimi/about.html">关于 Hachimi</a>
+      <a href="/docs/hachimi/getting-started.html">入门指南</a>
+      <a href="/docs/hachimi/getting-started-jp.html">安装指南（日服）</a>
+      <a href="/docs/hachimi/getting-started-other.html">安装指南（国际服 / 繁体中文服 / 简体中文服）</a>
+      <a href="/docs/hachimi/config.html">配置页面</a>
+      <a href="/docs/hachimi/built-in-gui.html">内置 GUI</a>
+      <a href="/docs/hachimi/auto-translation.html">自动翻译</a>
+      <a href="/docs/hachimi/troubleshooting.html">故障排除</a>
+      <a href="/docs/hachimi/faqs.html">常见问题解答</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">插件</div>
+      <a href="/docs/plugins/about.html">关于插件</a>
+      <a href="/docs/plugins/installation.html">安装插件</a>
+      <a href="/docs/plugins/development.html">插件开发指南</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">翻译指南</div>
+      <a href="/docs/translation-guide/welcome.html">欢迎</a>
+      <a href="/docs/translation-guide/translation-system.html" class="active" aria-current="page">翻译系统</a>
+      <a href="/docs/translation-guide/using-zokuzoku.html">使用 ZokuZoku</a>
+      </div>
+  </aside>
+  <main class="doc-main">
+    <article class="doc-body">
+<div><h1 id="翻译系统" tabindex="-1">翻译系统 </h1><p>在开始翻译过程之前，我们先来看看 Hachimi 是如何进行翻译的。你不需要完全理解这里说明的所有内容，但最好先简单了解一下它的工作原理，这样你在翻译时就不会感到困惑。</p><div class="info custom-block"><p class="custom-block-title">INFO</p><p>如果你还想了解翻译词典的格式/组织方式，你可以在阅读本文的同时浏览 <code>localized_data</code> 目录进行参考。&quot;可以通过浏览本地副本来查看，或者你也可以浏览 GitHub 上的tl-en仓库。如果你已经安装了 Hachimi，可以通过浏览 <code>[游戏安装文件夹]/hachimi/localized_data</code> 来查看，或者你也可以浏览 GitHub 上的 <a href="https://github.com/Hachimi-Hachimi/zh-cn" target="_blank" rel="noreferrer">简体中文</a> 仓库。&quot;</p><p>此外，本文中的文件路径仅涵盖官方翻译仓库如何操作；Hachimi 的翻译系统具有高度可配置性，可以配置到任何其他地方。</p></div><h2 id="本地化字典哈希字典" tabindex="-1">本地化字典/哈希字典 </h2><p>在 <code>localized_data</code> 文件夹的根目录中，你会发现两个名为 <code>localize_dict.json</code> 和 <code>hashed_dict.json</code>的文件，这两个文件分别用于两个不同的系统，但目的相同：UI 翻译。</p><p>本地化字典是 Hachimi 中引入的一种新的、更受欢迎的 UI 翻译方式。该系统直接修​改了游戏内部的本地化系统（因此得名），这将确保翻译内容准确无误，包括语境。每个翻译条目都映射到游戏内的一个内部 ID，该 ID 也大致指定了它们所使用的语境（然而，在某些情况下，同一个 ID 会在多个语境中被不恰当地使用，这要怪 Cy 开发者）。</p><p>哈希字典是从之前的翻译项目中继承下来的遗留系统。它本质上是一个单词查找表；UI 中任何与该表中哈希值匹配的内容都将被替换为指定的翻译内容。之前的翻译项目中，它表现得非常具有<em>侵入性</em>，效率低下，并且经常导致翻译质量低下，因为它们可能出现在错误的位置（例如剧情和对话）。尽管如此，它仍然有用，但是用途有限，当有时翻译目标在本地化字典或任何其他易于访问的翻译方法中不可用时，它的作用就体现出来了。<em>ZokuZoku不支持此字典。</em></p><p>如果你想为官方翻译仓库做出贡献，请参阅<a href="#">贡献</a>文章以了解更多信息，这里有关于何时使用以及何时不使用它的规则。</p><h2 id="mdb-字典" tabindex="-1">MDB 字典 </h2><p>MDB 指的是 <code>master.mdb</code>，这是游戏使用的数据库文件，其中包含大量不同类型的数据。Hachimi 的翻译系统仅涉及该数据库中用于文本内容的 4 个表： <code>text_data</code>, <code>character_system_text</code>, <code>race_jikkyo_comment</code> 和 <code>race_jikkyo_message</code>。每个表都有自己相关的字典，其名称在 <code>localized_data</code> 的根目录中。</p><ul><li><p><code>text_data</code> 包含游戏内所有实体的文本信息，包括但不限于：角色名称/个人资料、支援卡名称/描述、剧情名称、卡池名称/描述、任务名称等。</p></li><li><p><code>character_system_text</code> 包含在游戏各个画面上（例如游戏主屏幕）的角色对话。</p></li><li><p><code>race_jikkyo_comment</code> 与 <code>race_jikkyo_message</code> 包含比赛实况与解说的用语。</p></li></ul><h2 id="资源字典" tabindex="-1">资源字典 </h2><p>有 5 种资源字典类型：</p><ul><li>剧情字典（用于主线剧情、训练事件和主屏幕交互）： <code>assets/story/data/??/????/storytimeline_*.json</code> 和 <code>assets/home/data/?????/??/hometimeline_*.json</code>;</li><li>比赛剧情字典（用于主线剧情中的比赛过场动画）： <code>assets/race/storyrace/text/storyrace_*.json</code></li><li>歌词字典： <code>assets/lyrics/m????_lyrics.json</code></li><li><code>atlas</code> 元数据字典： <code>assets/atlas/*/*.json</code></li><li><code>uianimation</code> 字典： <code>assets/uianimation/*</code></li></ul><p>除了歌词字典之外，所有这些字典都允许为每个平台指定资源包的哈希值。此资源包哈希值用于检查资源包是否已更新，若检测到更新，则说明翻译内容可能与资源中当前的翻译内容不匹配，从而防止加载错误的数据。</p><h2 id="纹理替换" tabindex="-1">纹理替换 </h2><p>纹理替换根据加载纹理的根资源类型进行分类。对于大多数纹理类型，将使用 <code>.png</code> 文件进行替换。它们被划分到各自的目录中：</p><ul><li><code>atlas</code>: 包含 UI 精灵的图集纹理。元数据由图集元数据字典提供，该字典与替换纹理同名，但以 <code>.json</code> 文件形式存在。路径：<code>assets/atlas/*/*.png</code>。</li><li><code>an_texture_sets</code>: 包含动画 UI 图集纹理，包含在 <code>uianimation</code> 资源包中。<code>uianimation</code> 可以使用资源字典来提供这些纹理的元数据。路径：<code>assets/an_texture_sets/as_uMeshParam_fl_*/tx_uTex_fl_*.png</code>。</li><li><code>textures</code>: 包含通用纹理。游戏中的 UI 和 3D 模型都会使用它们。与其他类型不同，这些替换纹理的文件格式取决于资源包中指定的原始文件名。对于 UI 纹理，通常为 <code>.png</code>，对于 3D 纹理，通常为 <code>.tga</code>。路径：<code>assets/textures/*</code>。</li></ul><p>所有纹理都可以使用 <code>.diff.png</code> 文件替换，而无需使用其原始格式。这是一种基于 PNG 的特殊格式，仅包含原始图像和替换图像之间的差异数据，从而避免了版权问题。</p><p>可以在 [<a href="https://github.com/noccu/hachimi-tools" target="_blank" rel="noreferrer">noccu/hachimi-tools</a>] 仓库中找到处理这些纹理的完整工具集，包括 PNG 差异。</p><h2 id="影片视频fmv-过场动画" tabindex="-1">影片（视频/FMV 过场动画） </h2><p>它们是 USM 格式的视频文件。只需让游戏加载替换掉的同名文件即可。</p><p>路径： <code>assets/movies/*</code></p><h2 id="翻译加载流程" tabindex="-1">翻译加载流程 </h2><p>配置文件、本地化字典、哈希字典和 MDB 字典都会在游戏启动时立即加载；当你选择重新加载本地化数据时，也只会重新加载这些内容。所有其他与游戏资源相关的内容，每次游戏尝试加载相应的资源时，都会（重新）加载。</p><p>资源字典在应用之前会检查资源包的哈希值。如果资源包的哈希值与字典中指定的哈希值不匹配，则会忽略该文件。如果资源字典中未指定资源包的哈希值，则会跳过此检查。</p><p>纹理替换有一个特殊的加载过程。加载资源时，它会首先查找对应的 <code>.diff.png</code> 文件作为 diff 文件，否则会尝试加载 <code>.png</code> 文件。如果找到可用的 diff 文件，它会检查相应 <code>.png</code> 文件的修改时间。如果修改时间晚于 diff 文件，则直接加载 <code>.png</code> 文件。如果文件不存在或修改时间早于 diff 文件，则它会将 diff 文件应用于原始纹理，并将其保存为 <code>.png</code> 文件中以供后续使用。</p></div>
+    </article>
+  </main>
+</div>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links">
+    <span class="footer-src">源网页: hachimi.noccu.art</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a>
+  </div>
+</footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

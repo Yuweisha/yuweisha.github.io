@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>关于插件 · Hachimi-BV Docs</title>
+<meta name="description" content="Hachimi Edge 文档镜像：关于插件">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/docs/docs.css?v=ec524aa6">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">Hachimi-BV Docs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">主页</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/generator.html">生成器</a>
+          <a href="/mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="/docs/" class="active" aria-current="page">Hachimi-BV Docs</a>
+    </nav>
+  </div>
+</header>
+<div class="doc-shell">
+  <aside class="doc-side">
+      <div class="doc-side-title">Hachimi-BV Docs</div>
+      <div class="doc-group"><div class="doc-group-name">总览</div>
+      <a href="/docs/">文档首页</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">Hachimi</div>
+      <a href="/docs/hachimi/about.html">关于 Hachimi</a>
+      <a href="/docs/hachimi/getting-started.html">入门指南</a>
+      <a href="/docs/hachimi/getting-started-jp.html">安装指南（日服）</a>
+      <a href="/docs/hachimi/getting-started-other.html">安装指南（国际服 / 繁体中文服 / 简体中文服）</a>
+      <a href="/docs/hachimi/config.html">配置页面</a>
+      <a href="/docs/hachimi/built-in-gui.html">内置 GUI</a>
+      <a href="/docs/hachimi/auto-translation.html">自动翻译</a>
+      <a href="/docs/hachimi/troubleshooting.html">故障排除</a>
+      <a href="/docs/hachimi/faqs.html">常见问题解答</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">插件</div>
+      <a href="/docs/plugins/about.html" class="active" aria-current="page">关于插件</a>
+      <a href="/docs/plugins/installation.html">安装插件</a>
+      <a href="/docs/plugins/development.html">插件开发指南</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">翻译指南</div>
+      <a href="/docs/translation-guide/welcome.html">欢迎</a>
+      <a href="/docs/translation-guide/translation-system.html">翻译系统</a>
+      <a href="/docs/translation-guide/using-zokuzoku.html">使用 ZokuZoku</a>
+      </div>
+  </aside>
+  <main class="doc-main">
+    <article class="doc-body">
+<div><h1 id="插件" tabindex="-1">插件 </h1><p>Hachimi 支持插件系统，允许开发者通过动态库扩展其功能。插件可以 Hook 游戏、修改行为、添加 GUI 元素等。</p><h2 id="什么是插件" tabindex="-1">什么是插件？ </h2><p>插件是与 Hachimi Edge 通过预定义 API 集成的动态库（Android 上为 <code>.so</code> 文件，Windows 上为 <code>.dll</code> 文件）。它们与游戏在同一进程中运行，并拥有修改游戏行为的强大功能。</p><h2 id="插件能做什么" tabindex="-1">插件能做什么？ </h2><p>插件可以访问全面的 API，从而实现：</p><ul><li><strong>Hook 并检查 IL2CPP</strong>：拦截函数并访问 Unity IL2CPP 的类、方法和字段。</li><li><strong>添加 GUI 元素</strong>：在 Hachimi 内置 GUI 中注册菜单项、板块并显示通知。</li><li><strong>Android DEX 加载</strong>：在 Android（API v2+）上加载并执行 Java/Kotlin 代码。</li><li><strong>……以及更多功能。</strong></li></ul><h2 id="安全注意事项-" tabindex="-1">安全注意事项 ⚠️ </h2><p>切勿安装来自未知来源或不受信任开发者的插件。 插件在运行时拥有游戏进程的完整访问权限。恶意插件可能会：</p><ul><li>窃取您的游戏账号凭据和会话令牌。</li><li>修改游戏数据，可能导致账号被封禁。</li><li>导致游戏崩溃或数据损坏。</li><li>将您的游戏数据发送到外部服务器。</li><li>在游戏的权限范围内执行任意代码。</li></ul><div class="danger custom-block"><p class="custom-block-title">⚠️ 重要安全警告</p><p><strong>在 Windows 平台上，由于游戏以管理员权限运行，插件拥有对您整个系统的“完全管理员访问权限”。它们可以安装恶意软件、修改系统文件、访问您的所有数据等。</strong></p></div><p>在安装插件之前，请考虑：</p><ul><li><strong>来源信任</strong>：仅使用来自您信任的开发者的插件。</li><li><strong>社区验证</strong>：检查该插件是否经过社区审核。</li><li><strong>更新风险</strong>：曾经信任的插件可能会随着时间推移而变得具有恶意。</li></ul><p>Hachimi Edge 的开发者无法验证第三方插件，且不对您因使用插件而导致的任何问题或损失负责。</p><h2 id="可用插件" tabindex="-1">可用插件 </h2><h2 id="下一步" tabindex="-1">下一步 </h2><ul><li><strong>针对用户</strong>：<a href="./installation.html">了解如何安装插件</a>。</li><li><strong>针对开发者</strong>：<a href="./development.html">了解如何开发插件</a>。</li></ul></div>
+    </article>
+  </main>
+</div>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links">
+    <span class="footer-src">源网页: hachimi.noccu.art</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a>
+  </div>
+</footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>安装插件 · Hachimi-BV Docs</title>
+<meta name="description" content="Hachimi Edge 文档镜像：安装插件">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/docs/docs.css?v=ec524aa6">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">Hachimi-BV Docs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">主页</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/generator.html">生成器</a>
+          <a href="/mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="/docs/" class="active" aria-current="page">Hachimi-BV Docs</a>
+    </nav>
+  </div>
+</header>
+<div class="doc-shell">
+  <aside class="doc-side">
+      <div class="doc-side-title">Hachimi-BV Docs</div>
+      <div class="doc-group"><div class="doc-group-name">总览</div>
+      <a href="/docs/">文档首页</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">Hachimi</div>
+      <a href="/docs/hachimi/about.html">关于 Hachimi</a>
+      <a href="/docs/hachimi/getting-started.html">入门指南</a>
+      <a href="/docs/hachimi/getting-started-jp.html">安装指南（日服）</a>
+      <a href="/docs/hachimi/getting-started-other.html">安装指南（国际服 / 繁体中文服 / 简体中文服）</a>
+      <a href="/docs/hachimi/config.html">配置页面</a>
+      <a href="/docs/hachimi/built-in-gui.html">内置 GUI</a>
+      <a href="/docs/hachimi/auto-translation.html">自动翻译</a>
+      <a href="/docs/hachimi/troubleshooting.html">故障排除</a>
+      <a href="/docs/hachimi/faqs.html">常见问题解答</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">插件</div>
+      <a href="/docs/plugins/about.html">关于插件</a>
+      <a href="/docs/plugins/installation.html" class="active" aria-current="page">安装插件</a>
+      <a href="/docs/plugins/development.html">插件开发指南</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">翻译指南</div>
+      <a href="/docs/translation-guide/welcome.html">欢迎</a>
+      <a href="/docs/translation-guide/translation-system.html">翻译系统</a>
+      <a href="/docs/translation-guide/using-zokuzoku.html">使用 ZokuZoku</a>
+      </div>
+  </aside>
+  <main class="doc-main">
+    <article class="doc-body">
+<div><h1 id="安装插件" tabindex="-1">安装插件 </h1><p>本指南将说明如何为 Hachimi Edge 安装及配置插件。</p><div class="danger custom-block"><p class="custom-block-title">⚠️ 安全警告</p><p>请仅安装来自你信任的来源和开发者的插件！Hachimi Edge 开发人员不对第三方插件造成的任何问题或损害负责。</p><p>恶意插件可能会窃取游戏账号凭据、导致封号、以游戏名义执行任意代码等。</p><p>🚨 <strong>在 Windows 系统上，插件拥有访问你整个系统的“完全管理员权限”。它们可以安装恶意软件、修改系统文件、访问你的所有数据等。</strong></p></div><h2 id="windows-安装步骤" tabindex="-1">Windows 安装步骤 </h2><p>在 Windows 上，插件必须在配置文件中进行显式配置。</p><ol><li><p><strong>定位插件文件</strong>：你应该拥有一个 <code>.dll</code> 文件（例如 <code>hachimi_myplugin.dll</code>）。</p></li><li><p><strong>将插件放入 hachimi 文件夹</strong>：将插件文件放入 <a href="/docs/hachimi/faqs.html"><code>hachimi</code> 文件夹</a>内。</p></li><li><p><strong>编辑配置</strong>：打开 <code>hachimi</code> 文件夹中的 <code>config.json</code>，并添加插件文件名：</p><div class="language-json vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">json</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">  &quot;windows&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: {</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    &quot;load_libraries&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: [</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">      &quot;hachimi</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">\\</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">hachimi_myplugin.dll&quot;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    ]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre></div></li><li><p><strong>保存并重启</strong>：保存配置文件并重新启动游戏。</p></li></ol><h2 id="android-安装步骤" tabindex="-1">Android 安装步骤 </h2><p>在 Android 上，插件必须在补丁游戏之前通过 UmaPatcher Edge 添加。</p><ol><li><strong>准备插件文件</strong>：你应该拥有一个 <code>.so</code> 文件（例如 <code>libmyplugin.so</code>）。</li><li><strong>打开 UmaPatcher Edge</strong>：启动 UmaPatcher Edge 应用。</li><li><strong>添加插件</strong>： <ul><li>在主界面，向下滚动到“插件”部分。</li><li>点击“添加插件”按钮。</li><li>从设备中选择你的插件 <code>.so</code> 文件。</li><li>插件将被添加到列表中并默认启用。</li></ul></li><li><strong>管理插件</strong>（可选）： <ul><li>你可以使用每个插件旁边的复选框来启用/禁用插件。</li><li>点击“移除”从列表中删除插件。</li></ul></li><li><strong>补丁游戏</strong>：按照常规的 <a href="/docs/hachimi/getting-started-jp.html#android">UmaPatcher Edge 安装指南</a> 进行游戏的补丁和安装。</li><li><strong>验证</strong>：启动游戏。如果插件加载成功，你应该能在 Hachimi 的内置 GUI 中看到其效果或菜单项。</li></ol><div class="tip custom-block"><p class="custom-block-title">提示</p><p>更新游戏时，你的插件会保留在 UmaPatcher Edge 中。只需补丁新版本，它们就会自动包含在内。</p></div><h2 id="禁用插件" tabindex="-1">禁用插件 </h2><h3 id="windows" tabindex="-1">Windows </h3><ul><li>从 <code>config.json</code> 的 <code>load_libraries</code> 数组中移除该插件路径。</li></ul><h3 id="android" tabindex="-1">Android </h3><ul><li>打开 UmaPatcher Edge。</li><li>在“插件”部分取消勾选该插件。</li><li>重新补丁游戏。</li></ul><h2 id="插件故障排查" tabindex="-1">插件故障排查 </h2><h3 id="插件未加载" tabindex="-1">插件未加载 </h3><p>Windows 端：</p><ul><li>检查 <code>config.json</code> 中的路径是否正确。</li><li>确认插件与你的 Hachimi 版本兼容。</li></ul><p>Android 端：</p><ul><li>确保在补丁之前已在 UmaPatcher Edge 中添加了插件。</li><li>检查插件是否与你的 Hachimi 版本兼容。</li><li>尝试在启用插件的情况下重新补丁游戏。</li></ul><h3 id="插件崩溃或无法运行" tabindex="-1">插件崩溃或无法运行 </h3><p>如果插件导致崩溃或功能异常：</p><ul><li><strong>联系插件作者</strong>：特定插件的问题应向该插件的开发者反馈。</li></ul><h2 id="下一步" tabindex="-1">下一步 </h2><ul><li>了解如何<a href="./development.html">开发你自己的插件</a>。</li></ul></div>
+    </article>
+  </main>
+</div>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links">
+    <span class="footer-src">源网页: hachimi.noccu.art</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a>
+  </div>
+</footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

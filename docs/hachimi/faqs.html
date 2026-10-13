@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>常见问题解答 · Hachimi-BV Docs</title>
+<meta name="description" content="Hachimi Edge 文档镜像：常见问题解答">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/docs/docs.css?v=ec524aa6">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">Hachimi-BV Docs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">主页</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/generator.html">生成器</a>
+          <a href="/mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="/docs/" class="active" aria-current="page">Hachimi-BV Docs</a>
+    </nav>
+  </div>
+</header>
+<div class="doc-shell">
+  <aside class="doc-side">
+      <div class="doc-side-title">Hachimi-BV Docs</div>
+      <div class="doc-group"><div class="doc-group-name">总览</div>
+      <a href="/docs/">文档首页</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">Hachimi</div>
+      <a href="/docs/hachimi/about.html">关于 Hachimi</a>
+      <a href="/docs/hachimi/getting-started.html">入门指南</a>
+      <a href="/docs/hachimi/getting-started-jp.html">安装指南（日服）</a>
+      <a href="/docs/hachimi/getting-started-other.html">安装指南（国际服 / 繁体中文服 / 简体中文服）</a>
+      <a href="/docs/hachimi/config.html">配置页面</a>
+      <a href="/docs/hachimi/built-in-gui.html">内置 GUI</a>
+      <a href="/docs/hachimi/auto-translation.html">自动翻译</a>
+      <a href="/docs/hachimi/troubleshooting.html">故障排除</a>
+      <a href="/docs/hachimi/faqs.html" class="active" aria-current="page">常见问题解答</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">插件</div>
+      <a href="/docs/plugins/about.html">关于插件</a>
+      <a href="/docs/plugins/installation.html">安装插件</a>
+      <a href="/docs/plugins/development.html">插件开发指南</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">翻译指南</div>
+      <a href="/docs/translation-guide/welcome.html">欢迎</a>
+      <a href="/docs/translation-guide/translation-system.html">翻译系统</a>
+      <a href="/docs/translation-guide/using-zokuzoku.html">使用 ZokuZoku</a>
+      </div>
+  </aside>
+  <main class="doc-main">
+    <article class="doc-body">
+<div><h1 id="常见问题解答" tabindex="-1">常见问题解答 </h1><h2 id="我怎么样才能让别的模组与-hachimi-一起使用" tabindex="-1">我怎么样才能让别的模组与 Hachimi 一起使用？ </h2><p>请参阅<a href="./config.html">配置页面</a>中的 <code>load_libraries</code> 选项。请注意，某些模块在使用此方法的情况下可能无法正常运行；因为它们实际上并非设计用于搭配使用。</p><h2 id="更新才刚刚安装完成但所有内容仍未翻译为什么" tabindex="-1">更新才刚刚安装完成，但所有内容仍未翻译。为什么？ </h2><p>翻译可能已安装，但游戏尚未尝试加载。只需导航到另一个画面（触发加载程序），就能看到翻译出现了。</p><h2 id="我能在正在进行更新的过程中继续玩游戏吗" tabindex="-1">我能在正在进行更新的过程中继续玩游戏吗？ </h2><p>可以，在翻译数据更新期间继续玩游戏完全没问题，但请注意，更新期间翻译会被禁用，离开当前游戏界面后翻译也会消失。安装完成后，游戏重新加载翻译后就会恢复（见上文）。</p><h2 id="我在安装过程中不小心关掉了游戏完蛋我是不是废了" tabindex="-1">我在安装过程中不小心关掉了游戏，完蛋，我是不是废了？ </h2><p>当然不是，只需要重新打开游戏，它就会要求你重新开始下载。</p><h2 id="hachimi-文件夹里的-tlrepocache-是什么可以吃吗" tabindex="-1">Hachimi 文件夹里的 <code>.tl_repo_cache</code> 是什么？可以吃吗？ </h2><p>你在想什么hhh。这个东西用于跟踪翻译文件的当前状态，以便以后进行增量更新；请勿手动修改或删除它，当然，也不能吃。</p><h2 id="苹果手机可以用吗" tabindex="-1">苹果手机可以用吗？ </h2><p>不行。苹果设备的系统管控非常严格，使得创建或安装任何此类性质的插件都极为困难。</p><h2 id="如何卸载-hachimi" tabindex="-1">如何卸载 Hachimi？ </h2><p>安装程序中带有卸载选项。如果您已经删除了它，可以下载最新的安装程序来执行卸载。</p><h2 id="使用-hachimi-会被封号吗以前有人被封过吗" tabindex="-1">使用 Hachimi 会被封号吗？以前有人被封过吗？ </h2><p><s>用别怕怕别用</s></p><p>Hachimi 及类似工具实际上确实违反了服务条款 (TOS)。您需要承担使用的风险。 但这种情况发生的可能性不大，自 2022 年以来，没有出现过与 Hachimi 或其他翻译工具有关的封号报告。</p><h2 id="我可以同时玩日服和国际服吗" tabindex="-1">我可以同时玩日服和国际服吗？ </h2><p>可以，但如果您使用的是 DMM 版本，则需要采取一个变通方法。请查阅<a href="./troubleshooting.html#错误-501">这些步骤</a>。</p><h2 id="这些个物理更新模式有什么区别" tabindex="-1">这些个物理更新模式有什么区别？ </h2><p>这些是游戏本身定义的模式，并非由 Hachimi 实现。目前对它们的了解尚浅：</p><ul><li><code>ModeNormal</code>：默认模式。</li><li><code>Mode60FPS</code>：在提高帧率时似乎能恢复部分物理动态，但有时仍会出现小问题。</li><li>两种 <code>SkipFrame</code> 模式：用途不明，且目前似乎处于不可用状态。</li></ul><h2 id="如何在-android-端更新" tabindex="-1">如何在 Android 端更新？ </h2><div class="info custom-block"><p class="custom-block-title">INFO</p><p>只有在首次安装时才需要卸载游戏，后续任何形式的更新均无需卸载。</p></div><h3 id="游戏更新" tabindex="-1">游戏更新 </h3><p>如果游戏内弹出提示要求前往 Play 商店更新，这意味着你需要通过下载最新的安装包来更新游戏主体。接着，你必须通过 UmaPatcher 进行安装，它会自动应用最新版本的 Hachimi Edge。</p><p>请从<a href="./getting-started-jp.html#android">安装指南</a>的<strong>第 4 步</strong>开始操作。</p><h3 id="hachimi-更新" tabindex="-1">Hachimi 更新 </h3><p>当 Hachimi Edge 发布新版本时，你可以选择安装它以获取新功能或修复补丁。你<strong>不一定</strong>要立即更新，但更新需要重新进行补丁处理。</p><p>请从<a href="./getting-started-jp.html#android">安装指南</a>的<strong>第 5 步</strong>开始操作（仅重新安装当前游戏版本）；如果你已删除安装包，请从<strong>第 4 步</strong>开始。</p><h3 id="umapatcher-更新" tabindex="-1">UmaPatcher 更新 </h3><p>仅在特定情况下（如遇到安装问题）才需要更新 UmaPatcher。更新它不会带来任何游戏内的性能提升。</p><ol><li>如果你之前没更新过，请点击“设置”-&gt;“导出签名密钥”。</li><li>卸载 UmaPatcher。</li><li>根据你的具体情况，从<a href="./getting-started-jp.html#android">安装指南</a>的<strong>第 3 步</strong>开始操作。</li></ol><h2 id="我关闭了-hachimi-的-gui菜单该如何重新打开" tabindex="-1">我关闭了 Hachimi 的 GUI/菜单，该如何重新打开？ </h2><p>首先，你之前关闭它可能是因为之前游戏更新导致的问题。该问题自 v0.15.1 版本起已修复，请先确认你已更新到最新的 Hachimi Edge。</p><p>使用文本编辑器打开 Hachimi Edge 的配置文件（<code>config.json</code>），将 <code>disable_gui</code> 的值从 <code>true</code> 改为 <code>false</code>，然后重启游戏。该配置文件位于<a href="#如何找到游戏的安装目录">游戏安装目录</a>下的 <code>hachimi</code> 文件夹内。 如果你觉得操作不便或遇到问题，直接删除该配置文件也是安全的，Hachimi 会自动重新生成一个默认文件。</p><h2 id="如何找到游戏的安装目录" tabindex="-1">如何找到游戏的安装目录？ </h2><ul><li><strong>Steam</strong>: 在 Steam 中右键点击游戏 -&gt; 管理 -&gt; 浏览本地文件。</li><li><strong>DMM</strong>: 点击 DMM 中游戏名称旁的“···”图标 -&gt; 🛈 图标 -&gt; 📁 图标。</li><li><strong>Android</strong>: 无法直接访问完整目录，但部分数据存储在 <code>Android/media/jp.co.cygames.umamusume</code>（路径可能因手机品牌而异）。</li></ul></div>
+    </article>
+  </main>
+</div>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links">
+    <span class="footer-src">源网页: hachimi.noccu.art</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a>
+  </div>
+</footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

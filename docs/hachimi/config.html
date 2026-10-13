@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>配置页面 · Hachimi-BV Docs</title>
+<meta name="description" content="Hachimi Edge 文档镜像：配置页面">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/docs/docs.css?v=ec524aa6">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html" title="返回 Yuweisha 主页">
+      <img class="brand-avatar" src="https://yuweisha.github.io/storage/mainpageheader.svg" alt="Yuweisha">
+      <span class="brand-name">UMA Live Studio</span>
+      <span class="brand-sub">Hachimi-BV Docs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">主页</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/generator.html">生成器</a>
+          <a href="/mixer.html">混音器</a>
+        </div>
+      </div>
+      <a href="/docs/" class="active" aria-current="page">Hachimi-BV Docs</a>
+    </nav>
+  </div>
+</header>
+<div class="doc-shell">
+  <aside class="doc-side">
+      <div class="doc-side-title">Hachimi-BV Docs</div>
+      <div class="doc-group"><div class="doc-group-name">总览</div>
+      <a href="/docs/">文档首页</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">Hachimi</div>
+      <a href="/docs/hachimi/about.html">关于 Hachimi</a>
+      <a href="/docs/hachimi/getting-started.html">入门指南</a>
+      <a href="/docs/hachimi/getting-started-jp.html">安装指南（日服）</a>
+      <a href="/docs/hachimi/getting-started-other.html">安装指南（国际服 / 繁体中文服 / 简体中文服）</a>
+      <a href="/docs/hachimi/config.html" class="active" aria-current="page">配置页面</a>
+      <a href="/docs/hachimi/built-in-gui.html">内置 GUI</a>
+      <a href="/docs/hachimi/auto-translation.html">自动翻译</a>
+      <a href="/docs/hachimi/troubleshooting.html">故障排除</a>
+      <a href="/docs/hachimi/faqs.html">常见问题解答</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">插件</div>
+      <a href="/docs/plugins/about.html">关于插件</a>
+      <a href="/docs/plugins/installation.html">安装插件</a>
+      <a href="/docs/plugins/development.html">插件开发指南</a>
+      </div>
+      <div class="doc-group"><div class="doc-group-name">翻译指南</div>
+      <a href="/docs/translation-guide/welcome.html">欢迎</a>
+      <a href="/docs/translation-guide/translation-system.html">翻译系统</a>
+      <a href="/docs/translation-guide/using-zokuzoku.html">使用 ZokuZoku</a>
+      </div>
+  </aside>
+  <main class="doc-main">
+    <article class="doc-body">
+<div><h1 id="配置页面" tabindex="-1">配置页面 </h1><p>此页面列出了所有配置选项并描述了它们的用途。</p><p>配置文件可以在下列位置找到：</p><ul><li>Windows：<code>[游戏安装文件夹]\hachimi\config.json</code></li><li>Android：<code>/sdcard/Android/media/jp.co.cygames.umamusume/hachimi/config.json</code></li></ul><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>使用自带的文本编辑器修改此文件可能会导致文件损坏。请务必使用专业的文本编辑器，例如 Android 端的 MT 管理器，或 Windows 端的 VSCode(<a href="https://vscode.dev/" target="_blank" rel="noreferrer">网页版</a>)。</p></div><p><strong>注意：</strong> 其中一些选项在配置编辑器中不可用，必须手动添加。</p><ul><li><code>debug_mode</code>: 是否启用调试模式。目前，此选项仅启用/禁用调试日志记录。</li><li><code>translator_mode</code>: 专为翻译者设计。将未翻译的 UI 字符串记录到控制台，并启用一些其他对翻译者有用的功能。</li><li><code>disable_gui</code>: 禁用内置 GUI。请注意，此操作也会禁用翻译更新程序。</li><li><code>localized_data_dir</code>: 包含本地化数据的目录。此目录必须包含本地化数据配置文件。</li><li><code>target_fps</code>: 游戏的目标帧率。未设置时，Hachimi 将不会尝试覆盖游戏的帧率。当 <code>vsync_count</code> 设置时无效。</li><li><code>open_browser_url</code>: 从 GUI 启动游戏内浏览器时打开的 URL。默认值：<code>https://www.google.com/</code></li><li><code>virtual_res_mult</code>: 虚拟分辨率缩放倍数。如果您的设备支持，1.5（1080p） 或 2（2K） 是比较合适的值；高于此值可能就太夸张了。无需关闭游戏，只需 “软重启” 即可应用。</li><li><code>translation_repo_index</code>: 翻译仓库的索引 URL。由翻译更新程序使用。</li><li><code>skip_first_time_setup</code>: 启动时是否跳过初始化设置。当初始化设置窗口时会自动设置为 <code>true</code> 。</li><li><code>disable_auto_update_check</code>: 禁用启动时的自动更新检查。</li><li><code>disable_translations</code>: 禁用翻译功能。</li><li><code>ui_scale</code>: UI 缩放比例。默认值：<code>1.0</code>（无缩放）</li><li><code>graphics_quality</code>: 画质设置。可用的值：<code>Default</code>, <code>Toon1280</code>, <code>Toon1280x2</code>, <code>Toon1280x4</code>, <code>ToonFull</code>, <code>Max</code>。</li><li><code>story_choice_auto_select_delay</code>: 在剧情模式时使用自动选项的延迟秒数，默认值：<code>0.75</code> 秒。</li><li><code>story_tcps_multiplier</code>: 故事文本速度（每秒显示的字数）倍率。默认值：<code>1.0</code>。</li><li><code>enable_ipc</code>: 启用 HTTP IPC（进程间通信）服务器，允许其他程序控制游戏。旨在与翻译工具配合使用。</li><li><code>ipc_listen_all</code>: 接受来自网络上任何设备的 IPC 命令。<strong>如无必要，请勿启用此选项。</strong></li><li><code>force_allow_dynamic_camera</code>: 强制游戏让您在任何类型的比赛中选择动态镜头（又名 POV 镜头、骑手视角等）。</li><li><code>live_theater_allow_same_chara</code>: 强制游戏允许您在 LIVE 剧场中多次选择同一角色。同时禁用编组自动保存功能。<strong>请勿尝试手动保存编组。</strong></li><li><code>sugoi_url</code>: 用于自动翻译的 Sugoi Offline Translator或兼容翻译服务器的 URL。如果您使用的是典型的 Sugoi 配置，则无需设置此选项。默认值：<code>http://127.0.0.1:14366</code></li><li><code>auto_translate_stories</code>: 允许通过自动翻译器翻译剧情。</li><li><code>auto_translate_localize</code>: 允许通过自动翻译器翻译 UI 文本。通常不建议这样做，因为大多数翻译器无法正确保留换行符或格式标签。</li><li><code>disable_skill_name_translation</code>: 禁用技能名称的翻译。</li><li><code>ui_animation_scale</code>: UI 动画速度倍率，这会调整游戏内的 UI 动画速度，建议不要调整至<code>10.0</code> 以上，可能会导致游戏卡死等问题。默认值：<code>1.0</code>。</li><li><code>physics_update_mode</code>: 更改游戏的物理引擎，可用的值：<code>Default</code>, <code>ModeNormal</code>, <code>Mofe60FPS</code>, <code>SkipFrame</code>, <code>SkipFramePostAlways</code>。 如果您设置了游戏的帧率在 60 及以上时，推荐设置为<code>Mofe60FPS</code>，其他情况不推荐修改。</li><li><code>disabled_hooks</code>：手动禁用钩子（Hooks）。<strong>请勿随意改动此选项</strong>，它仅作为排查兼容性问题时的调试工具使用。</li><li><code>enable_file_logging</code>：开启后将在游戏目录下生成日志文件 <code>hachimi.log</code>。如果禁用或无法创建该文件，日志将回退至仅调试输出模式。默认值：<code>false</code>。</li><li><code>lazy_translation_updates</code>：开启后将跳过重新下载仓库中未变动的翻译文件，即使本地文件已损坏或版本过旧。这能加快更新速度，但可能会残留受损文件。默认值：<code>false</code>。</li><li><code>shadow_resolution</code>：控制阴影分辨率质量。较高的数值可以提升阴影细节，但可能会降低游戏性能。</li><li><code>skill_info_dialog</code>：开启扩展技能信息对话框。在游戏内查看技能时，会显示更详细的技能数据信息。</li><li><code>hide_ingame_ui_hotkey</code>: 启用隐藏游戏 UI 界面的快捷键。在安卓设备上启用此项时，轻点三次右上角即可隐藏游戏 UI 界面。</li></ul><h3 id="仅限-windows" tabindex="-1">仅限 Windows </h3><ul><li><code>vsync_count</code>: 垂直同步。设置为 1，即可让游戏帧率匹配显示器的刷新率。更多信息请参阅 <a href="https://docs.unity3d.com/ScriptReference/QualitySettings-vSyncCount.html" target="_blank" rel="noreferrer">Unity 文档</a>。</li><li><code>load_libraries</code>: 启动时加载的 DLL 列表。可用于加载其他模组。例如：<code>[&quot;applejuicer.dll&quot;, &quot;banana.dll&quot;]</code></li><li><code>menu_open_key</code>: 打开菜单的按键的虚拟键码。默认值：<code>39</code>（右方向键）。查看<a href="https://cherrytree.at/misc/vk.htm" target="_blank" rel="noreferrer">此页面</a>以获取所有键码的列表。</li><li><code>auto_full_screen</code>: 当游戏方向与屏幕方向一致时，游戏将自动进入全屏模式。目前，Hachimi 不支持其他画面比例，并且始终会将全屏分辨率缩放至 16:9。在使用该选项时请正确设置 <code>full_screen_mode</code> 和 <code>resolution_scaling</code>的值。</li><li><code>full_screen_mode</code>: 全屏模式。可用的值：<code>ExclusiveFullScreen</code>, <code>FullScreenWindow</code> （无边框窗口）。如果您的屏幕画面比例不是 16:9，请使用 <code>ExclusiveFullScreen</code>，否则游戏画面将无法正确缩放。</li><li><code>resolution_scaling</code>: 分辨率缩放模式，可用的值：<code>Default</code>, <code>ScaleToScreenSize</code>, <code>ScaleToWindowSize</code>。若在分辨率高于 1080p 的屏幕上并打开了 <code>auto_full_screen</code> ，请使用 <code>ScaleToScreenSize</code>（推荐）或 <code>ScaleToWindowSize</code> ，否则游戏画面将无法正确缩放。</li><li><code>block_minimize_in_full_screen</code>: 全屏模式下阻止最小化。仅适用于 <code>FullScreenWindow</code>。</li><li><code>window_always_on_top</code>: 使游戏窗口始终位于其他窗口的上方。</li><li><code>disable_gui_once</code>：仅在<strong>下一次启动</strong>时禁用内置 GUI。启动后该项会自动重置为 <code>false</code>，并强制执行一次 <code>disable_gui: true</code>。这可以让你顺利在 Steam 商店内进行内购。</li><li><code>discord_rpc</code>：在原生不支持该功能的平台（如 DMM）上启用 <strong>Discord Rich Presence</strong> 状态显示。开启后，你的 Discord 个人资料中将显示你当前正在游玩《赛马娘》的状态。</li></ul></div>
+    </article>
+  </main>
+</div>
+<footer class="site-footer">
+  <div>© 2026 Yuweisha</div>
+  <div class="footer-links">
+    <span class="footer-src">源网页: hachimi.noccu.art</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a>
+  </div>
+</footer>
+<script>
+/* 触屏/键盘也能开下拉：点按钮切换，点别处或按 Esc 收起 */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.nav-drop-btn');
+  document.querySelectorAll('.nav-drop').forEach(function (d) {
+    var b = d.querySelector('.nav-drop-btn');
+    if (btn && d.contains(btn)) { d.classList.toggle('open'); b.setAttribute('aria-expanded', d.classList.contains('open')); }
+    else { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop').forEach(function (d) { d.classList.remove('open'); });
+});
+</script>
+</body>
+</html>
