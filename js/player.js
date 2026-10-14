@@ -294,6 +294,58 @@ async function ensureRealtime(){
     masterGain.connect(compressor);compressor.connect(audioCtx.destination);
   }else masterGain.connect(audioCtx.destination);
 }
+/* ---------- 歌词 / WAV 编码（从原混音器脚本搬过来） ---------- */
+async function loadLyrics(){
+  lyricLines=[];lyricIdx=-1;
+  const box=$("lyrics");box.innerHTML="";
+  const id=musicIdOf();
+  if(!id){box.innerHTML='<div class="small">这份工程里没有曲目 id，无法匹配歌词</div>';return}
+  let data=null;
+  for(const url of ["data/live/songs/"+id+".json","https://uma.0xcjy.top/data/live/songs/"+id+".json"]){
+    try{const r=await fetch(url,{cache:"force-cache"});if(r.ok){data=await r.json();break}}catch{}
+  }
+  const ly=data&&data.lyrics;
+  if(!ly||!Object.keys(ly).length){
+    box.innerHTML='<div class="small">曲目 '+esc(id)+' 没有歌词资料</div>';
+    log("歌词：曲目 "+id+" 无资料");return;
+  }
+  lyricLines=Object.keys(ly).map(Number).filter(n=>Number.isFinite(n)).sort((a,b)=>a-b).map(ms=>{
+    const parts=String(ly[ms]).split("\n");
+    return {ms:ms,ja:parts[0]||"",zh:parts[1]||""};
+  });
+  box.innerHTML=lyricLines.map((l,i)=>'<p data-i="'+i+'"><span class="txt"><span class="ja">'+esc(l.ja)+'</span>'
+    +(l.zh?'<span class="zh">'+esc(l.zh)+'</span>':"")+'</span><span class="t">'+fmt(l.ms/1000)+'</span></p>').join("");
+  box.querySelectorAll("p").forEach(el=>{
+    el.onclick=()=>{const l=lyricLines[Number(el.dataset.i)];if(l&&durationSec>0)seekTo(l.ms/1000)};
+  });
+  $("lyricsStat").textContent="—";
+  log("歌词已载入："+lyricLines.length+" 行（点击任一行可跳到该句）");
+}
+function audioBufferToWav(ab,to16){
+  const ch=2,sr=ab.sampleRate,n=ab.length;
+  if(to16){
+    const data=n*ch*2,out=new ArrayBuffer(44+data),d=new DataView(out);
+    const w=(o,s)=>{for(let i=0;i<s.length;i++)d.setUint8(o+i,s.charCodeAt(i))};
+    w(0,"RIFF");d.setUint32(4,36+data,true);w(8,"WAVE");w(12,"fmt ");
+    d.setUint32(16,16,true);d.setUint16(20,1,true);d.setUint16(22,ch,true);
+    d.setUint32(24,sr,true);d.setUint32(28,sr*ch*2,true);d.setUint16(32,ch*2,true);d.setUint16(34,16,true);
+    w(36,"data");d.setUint32(40,data,true);
+    const L=ab.getChannelData(0),R=ab.getChannelData(1);let p=44;
+    const enc=v=>{const x=Math.max(-1,Math.min(1,v));return x<0?x*0x8000:x*0x7FFF};
+    for(let i=0;i<n;i++){d.setInt16(p,enc(L[i]),true);p+=2;d.setInt16(p,enc(R[i]),true);p+=2}
+    return out;
+  }
+  const data=n*ch*4,out=new ArrayBuffer(44+data),d=new DataView(out);
+  const w=(o,s)=>{for(let i=0;i<s.length;i++)d.setUint8(o+i,s.charCodeAt(i))};
+  w(0,"RIFF");d.setUint32(4,36+data,true);w(8,"WAVE");w(12,"fmt ");
+  d.setUint32(16,16,true);d.setUint16(20,3,true);d.setUint16(22,ch,true);
+  d.setUint32(24,sr,true);d.setUint32(28,sr*ch*4,true);d.setUint16(32,ch*4,true);d.setUint16(34,32,true);
+  w(36,"data");d.setUint32(40,data,true);
+  const L=ab.getChannelData(0),R=ab.getChannelData(1);let p=44;
+  for(let i=0;i<n;i++){d.setFloat32(p,L[i],true);p+=4;d.setFloat32(p,R[i],true);p+=4}
+  return out;
+}
+
 function position(){if(!audioCtx)return pausedAt;return Math.min(durationSec,pausedAt+(audioCtx.currentTime-startedAt))}
 function tick(){
   const p=position();
@@ -420,6 +472,36 @@ async function exportMp3(){
 
 /* ---------- 歌词 ---------- */
 let lyricLines=[],lyricIdx=-1;
+function syncLyrics(p){
+  if(!lyricLines.length)return;
+  let idx=-1;
+  for(let i=0;i<lyricLines.length;i++){if(lyricLines[i].ms/1000<=p+0.02)idx=i;else break}
+  if(idx===lyricIdx)return;
+  const ps=$("lyrics").querySelectorAll("p");
+  if(lyricIdx>=0&&ps[lyricIdx])ps[lyricIdx].classList.remove("active");
+  lyricIdx=idx;
+  if(idx>=0&&ps[idx]){
+    ps[idx].classList.add("active");
+    const box=$("lyrics"),el=ps[idx];
+    // offsetTop 是相对「定位祖先」而非这个滚动容器（曾经因此整块跳到最底），
+    // 所以用两者 rect 之差换算成容器内坐标。
+    const top=el.getBoundingClientRect().top-box.getBoundingClientRect().top+box.scrollTop;
+    const h=el.offsetHeight;
+    if(top<box.scrollTop||top+h>box.scrollTop+box.clientHeight){
+      box.scrollTop=Math.max(0,Math.min(top-box.clientHeight/2+h/2,box.scrollHeight-box.clientHeight));
+    }
+  }
+  $("lyricsStat").textContent=idx>=0?(idx+1)+" / "+lyricLines.length:"—";
+}
+function exportBaseName(){
+  try{
+    const h=JSON.parse(localStorage.getItem("uma.handoff")||"null");
+    if(h&&h.name)return h.name;
+  }catch{}
+  if(project&&project._uma&&project._uma.musicId)return "uma-live-"+project._uma.musicId;
+  return "uma-render-"+Date.now();
+}
+
 function musicIdOf(){
   if(project&&project._uma&&project._uma.musicId)return project._uma.musicId;   // 生成器直送的工程
   if(project&&project.musicId)return project.musicId;
@@ -430,22 +512,10 @@ function musicIdOf(){
   return null;
 }
 /* ---------- 事件 ---------- */
-$("play").onclick=playPlayback;
-$("pause").onclick=pausePlayback;
 $("vol").oninput=e=>{volPct=Math.max(0,Math.min(100,Number(e.target.value)||0));localStorage.setItem("uma.volume",String(volPct));applyVolume()};
 applyVolume();
 $("seek").oninput=e=>{pausedAt=Number(e.target.value);$("current").textContent=fmt(pausedAt)};
 $("seek").onchange=e=>seekTo(e.target.value);
-$("exportMp3").onclick=async()=>{
-  $("exportMp3").disabled=true;
-  try{await exportMp3()}catch(e){$("exportStatus").textContent="失败";log("导出失败："+(e.stack||e));alert(e.message||String(e))}
-  finally{$("exportMp3").disabled=false}
-};
-$("export").onclick=async()=>{
-  $("export").disabled=true;
-  try{await renderOffline()}catch(e){$("exportStatus").textContent="失败";log("导出失败："+(e.stack||e));alert(e.message||String(e))}
-  finally{$("export").disabled=false}
-};
 
 /* ---------- 事件与启动 ---------- */
 let loadedProject=null;
