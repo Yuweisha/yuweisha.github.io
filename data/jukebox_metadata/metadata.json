@@ -1,0 +1,1562 @@
+[
+  {
+    "music_id": 1001,
+    "title": "うまぴょい伝説",
+    "cover": "covers\\1001.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1001.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1003,
+    "title": "RUN×RUN！",
+    "cover": "covers\\1003.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1004,
+    "title": "Never Looking Back",
+    "cover": "covers\\1004.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1004.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1005,
+    "title": "彩 Phantasia",
+    "cover": "covers\\1005.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1005.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1006,
+    "title": "Make debut!",
+    "cover": "covers\\1006.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1006.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1007,
+    "title": "ENDLESS DREAM!!",
+    "cover": "covers\\1007.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1007.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1008,
+    "title": "NEXT FRONTIER",
+    "cover": "covers\\1008.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1008.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1009,
+    "title": "UNLIMITED IMPACT",
+    "cover": "covers\\1009.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1009.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1010,
+    "title": "Special Record!",
+    "cover": "covers\\1010.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1010.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1012,
+    "title": "グロウアップ・シャイン！",
+    "cover": "covers\\1012.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1012.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1013,
+    "title": "Find My Only Way",
+    "cover": "covers\\1013.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1021,
+    "title": "世界は僕らの言いなりさ",
+    "cover": "covers\\1021.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1023,
+    "title": "ぼくらのブルーバードデイズ",
+    "cover": "covers\\1023.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1024,
+    "title": "大好きのタカラバコ",
+    "cover": "covers\\1024.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1025,
+    "title": "はじまりのSignal",
+    "cover": "covers\\1025.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1025.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1026,
+    "title": "ささやかな祈り",
+    "cover": "covers\\1026.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1026.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1027,
+    "title": "本能スピード",
+    "cover": "covers\\1027.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1027.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1028,
+    "title": "winning the soul",
+    "cover": "covers\\1028.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1028.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1030,
+    "title": "涙ひかって明日になれ！",
+    "cover": "covers\\1030.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1030.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1031,
+    "title": "BLAZE",
+    "cover": "covers\\1031.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1031.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1032,
+    "title": "ユメヲカケル！",
+    "cover": "covers\\1032.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1032.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1033,
+    "title": "KIRARI MAGIC SHOW",
+    "cover": "covers\\1033.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1033.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1034,
+    "title": "ぴょいっと♪はれるや！",
+    "cover": "covers\\1034.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1034.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1035,
+    "title": "WINnin’ 5 －ウイニング☆ファイヴ－",
+    "cover": "covers\\1035.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1035.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1036,
+    "title": "GIRLS' LEGEND U",
+    "cover": "covers\\1036.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1036.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1037,
+    "title": "transforming",
+    "cover": "covers\\1037.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1037.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1040,
+    "title": "青春が待ってる",
+    "cover": "covers\\1040.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1041,
+    "title": "ユメゾラ",
+    "cover": "covers\\1041.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1042,
+    "title": "Go This Way",
+    "cover": "covers\\1042.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1043,
+    "title": "木漏れ日のエール",
+    "cover": "covers\\1043.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1044,
+    "title": "全速！前進！ウマドルパワー☆",
+    "cover": "covers\\1044.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1046,
+    "title": "逃げ切りっ！Fallin' Love",
+    "cover": "covers\\1046.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1047,
+    "title": "Ring Ring ダイアリー　",
+    "cover": "covers\\1047.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1048,
+    "title": "BLOW my GALE",
+    "cover": "covers\\1048.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1048.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1049,
+    "title": "バクシンバクシンバクシンシン",
+    "cover": "covers\\1049.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1050,
+    "title": "We are DREAMERS!!",
+    "cover": "covers\\1050.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1050.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1051,
+    "title": "笑顔の宝物 -Beyond The Future!-",
+    "cover": "covers\\1051.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1051.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1053,
+    "title": "Gaze on Me!",
+    "cover": "covers\\1053.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1053.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1054,
+    "title": "Ms. VICTORIA",
+    "cover": "covers\\1054.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1054.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1055,
+    "title": "ゴルシンゴルシンゴルシンシン",
+    "cover": "covers\\1055.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1056,
+    "title": "メジロ讃歌",
+    "cover": "covers\\1056.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1057,
+    "title": "立ち位置ゼロ番！順位は一番！",
+    "cover": "covers\\1057.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1058,
+    "title": "Everlasting BEATS",
+    "cover": "covers\\1058.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1058.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1059,
+    "title": "Overrunner!",
+    "cover": "covers\\1059.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1059.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1060,
+    "title": "DRAMATIC JOURNEY",
+    "cover": "covers\\1060.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1060.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1061,
+    "title": "ゆるパカHAPPY DAYS！",
+    "cover": "covers\\1061.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1062,
+    "title": "わたしの印は大本命◎",
+    "cover": "covers\\1062.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1063,
+    "title": "unbreakable",
+    "cover": "covers\\1063.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1064,
+    "title": "SEVEN",
+    "cover": "covers\\1064.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1065,
+    "title": "ふんわりSlowly",
+    "cover": "covers\\1065.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1066,
+    "title": "My Against Fight",
+    "cover": "covers\\1066.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1067,
+    "title": "アウト・オブ・トライアングル",
+    "cover": "covers\\1067.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1068,
+    "title": "願いのカタチ",
+    "cover": "covers\\1068.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1069,
+    "title": "硝子のエトワール",
+    "cover": "covers\\1069.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1070,
+    "title": "LIKE THE WIND",
+    "cover": "covers\\1070.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1071,
+    "title": "ときめきスクランブル",
+    "cover": "covers\\1071.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1072,
+    "title": "ユースフルアイズ",
+    "cover": "covers\\1072.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1073,
+    "title": "笑っちゃお！",
+    "cover": "covers\\1073.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1074,
+    "title": "忘却にて",
+    "cover": "covers\\1074.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1075,
+    "title": "ゴルシでラップ -It's むりむり-",
+    "cover": "covers\\1075.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1076,
+    "title": "Precious Star Dreamer",
+    "cover": "covers\\1076.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1077,
+    "title": "ミッドナイト・エピローグ",
+    "cover": "covers\\1077.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1078,
+    "title": "Ambitious World",
+    "cover": "covers\\1078.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1079,
+    "title": "winning the soul (PandaBoY Remix)",
+    "cover": "covers\\1079.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1081,
+    "title": "Glorious Moment！",
+    "cover": "covers\\1081.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1081.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1082,
+    "title": "L'Arc de gloire",
+    "cover": "covers\\1082.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1082.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1083,
+    "title": "トレセン音頭",
+    "cover": "covers\\1083.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1083.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1084,
+    "title": "ソシテミンナノ",
+    "cover": "covers\\1084.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1084.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1085,
+    "title": "どどっと優勝！大感謝祭！！！",
+    "cover": "covers\\1085.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1086,
+    "title": "Hat on your Head！",
+    "cover": "covers\\1086.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1087,
+    "title": "GSK☆",
+    "cover": "covers\\1087.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1088,
+    "title": "爆熱マイソウル",
+    "cover": "covers\\1088.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1088.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1089,
+    "title": "U.M.A. NEW WORLD!!",
+    "cover": "covers\\1089.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1089.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1092,
+    "title": "ウマすぎ！グルメパレード",
+    "cover": "covers\\1092.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1092.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1093,
+    "title": "UMA Summer",
+    "cover": "covers\\1093.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1093.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1094,
+    "title": "O - ロライズ",
+    "cover": "covers\\1094.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1094.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1096,
+    "title": "Dance 2 Endless Beat",
+    "cover": "covers\\1096.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1097,
+    "title": "Bright Melody",
+    "cover": "covers\\1097.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1098,
+    "title": "永遠の色彩",
+    "cover": "covers\\1098.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1099,
+    "title": "イチバン星が駆ける空",
+    "cover": "covers\\1099.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1100,
+    "title": "Make debut! (モリシー (Awesome City Club) Remix)",
+    "cover": "covers\\1100.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1101,
+    "title": "Never Looking Back (PandaBoY Remix)",
+    "cover": "covers\\1101.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1102,
+    "title": "けっぱれ！輝きストレート",
+    "cover": "covers\\1102.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1103,
+    "title": "悠々閑々",
+    "cover": "covers\\1103.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1104,
+    "title": "手綱と絆",
+    "cover": "covers\\1104.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1105,
+    "title": "Air Race",
+    "cover": "covers\\1105.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1106,
+    "title": "THE SUPER STRONG S",
+    "cover": "covers\\1106.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1107,
+    "title": "Play Again",
+    "cover": "covers\\1107.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1108,
+    "title": "ラキハピファンタスティック",
+    "cover": "covers\\1108.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1109,
+    "title": "Destroy for Dasein",
+    "cover": "covers\\1109.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1110,
+    "title": "ライトレス",
+    "cover": "covers\\1110.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1111,
+    "title": "ゼッタイトナリ…！",
+    "cover": "covers\\1111.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1112,
+    "title": "Forever gold",
+    "cover": "covers\\1112.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1113,
+    "title": "Like a Shooting Star",
+    "cover": "covers\\1113.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1114,
+    "title": "ONCE MORE, I CAN",
+    "cover": "covers\\1114.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1115,
+    "title": "DANCE！DANCE！“ROMAN”",
+    "cover": "covers\\1115.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1116,
+    "title": "TAILWIND",
+    "cover": "covers\\1116.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1117,
+    "title": "Excellent Condition",
+    "cover": "covers\\1117.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1118,
+    "title": "▷▷▷▶ぶっとび かっとび 全開エンジン！",
+    "cover": "covers\\1118.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1119,
+    "title": "Secret GRADUATION",
+    "cover": "covers\\1119.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1120,
+    "title": "今日もウララかケセラセラ！",
+    "cover": "covers\\1120.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1121,
+    "title": "素顔のココロ",
+    "cover": "covers\\1121.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1122,
+    "title": "GALACTIC PLAYER",
+    "cover": "covers\\1122.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1123,
+    "title": "You know me",
+    "cover": "covers\\1123.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1124,
+    "title": "Comeback Story V",
+    "cover": "covers\\1124.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1125,
+    "title": "アコガレChallenge Dash!!",
+    "cover": "covers\\1125.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1126,
+    "title": "Ready!! Steady!! Derby!!",
+    "cover": "covers\\1126.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1126.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1127,
+    "title": "ピスピス☆スピスピ ゴルシちゃんのうた",
+    "cover": "covers\\1127.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1128,
+    "title": "ロストシャイン",
+    "cover": "covers\\1128.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1129,
+    "title": "夢のこたえ",
+    "cover": "covers\\1129.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1130,
+    "title": "Confident",
+    "cover": "covers\\1130.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1131,
+    "title": "光の後ろ姿",
+    "cover": "covers\\1131.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1132,
+    "title": "空のほほえみ方",
+    "cover": "covers\\1132.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1133,
+    "title": "帝笑歌劇〜讃えよ永久に〜",
+    "cover": "covers\\1133.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1134,
+    "title": "EXCEED",
+    "cover": "covers\\1134.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1135,
+    "title": "CATCH THE VICTORY!",
+    "cover": "covers\\1135.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1136,
+    "title": "WINNING MELODY",
+    "cover": "covers\\1136.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1137,
+    "title": "Lucky Comes True!",
+    "cover": "covers\\1137.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1138,
+    "title": "Unite!!",
+    "cover": "covers\\1138.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1139,
+    "title": "平凡、時にミラクル",
+    "cover": "covers\\1139.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1140,
+    "title": "一撃入魂☆ペガサスパンチ",
+    "cover": "covers\\1140.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1141,
+    "title": "楽園",
+    "cover": "covers\\1141.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1142,
+    "title": "シャドーロールの誓い (The Solid Revision)",
+    "cover": "covers\\1142.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1143,
+    "title": "僕が憧れた青",
+    "cover": "covers\\1143.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1144,
+    "title": "朝露は大河の夢を見る",
+    "cover": "covers\\1144.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1145,
+    "title": "十帰りの花",
+    "cover": "covers\\1145.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1146,
+    "title": "QueenBee",
+    "cover": "covers\\1146.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1147,
+    "title": "Over a Tiara",
+    "cover": "covers\\1147.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1148,
+    "title": "宇宙走娘＜コスモピュエラ＞　銀河冒険譚",
+    "cover": "covers\\1148.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1149,
+    "title": "GOCHISO様",
+    "cover": "covers\\1149.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1150,
+    "title": "STARTING FORCE",
+    "cover": "covers\\1150.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1150.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1151,
+    "title": "Legend-Changer",
+    "cover": "covers\\1151.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1151.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1152,
+    "title": "SHAKEROCK",
+    "cover": "covers\\1152.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1152.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1154,
+    "title": "タッカー's スキルアップアイランド",
+    "cover": "covers\\1154.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1154.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1155,
+    "title": "ギフト",
+    "cover": "covers\\1155.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1155.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1156,
+    "title": "めにしゅき♡ラッシュっしゅ！",
+    "cover": "covers\\1156.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1156.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1157,
+    "title": "ゆこまロマン純情派",
+    "cover": "covers\\1157.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1157.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1158,
+    "title": "BoC-izm",
+    "cover": "covers\\1158.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1159,
+    "title": "灰のmemoire",
+    "cover": "covers\\1159.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1160,
+    "title": "ピヨっピヨにしてやんよッ！",
+    "cover": "covers\\1160.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1161,
+    "title": "ZOKZOK",
+    "cover": "covers\\1161.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1162,
+    "title": "Dear My Dream",
+    "cover": "covers\\1162.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1163,
+    "title": "Love Will Come Through",
+    "cover": "covers\\1163.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1164,
+    "title": "愛舞い、喰らい。",
+    "cover": "covers\\1164.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1165,
+    "title": "LADY G DONNA",
+    "cover": "covers\\1165.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1166,
+    "title": "夢疾風",
+    "cover": "covers\\1166.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1167,
+    "title": "どこまで走れば",
+    "cover": "covers\\1167.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1168,
+    "title": "以下、勅命",
+    "cover": "covers\\1168.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1169,
+    "title": "Stay on Course",
+    "cover": "covers\\1169.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1170,
+    "title": "Glory Eyes",
+    "cover": "covers\\1170.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1171,
+    "title": "黎明に咲く華",
+    "cover": "covers\\1171.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1172,
+    "title": "AmpReFire",
+    "cover": "covers\\1172.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1173,
+    "title": "Shake The World!!",
+    "cover": "covers\\1173.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1174,
+    "title": "僕らの帰り道",
+    "cover": "covers\\1174.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1174.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1175,
+    "title": "ハロー・ポラリス",
+    "cover": "covers\\1175.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1175.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1176,
+    "title": "VOLTAGE",
+    "cover": "covers\\1176.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1176.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1177,
+    "title": "UMA IN AMERICA",
+    "cover": "covers\\1177.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1177.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1178,
+    "title": "BRIGHTEST HEART",
+    "cover": "covers\\1178.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1179,
+    "title": "∞",
+    "cover": "covers\\1179.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1181,
+    "title": "トレセンラーメン列伝",
+    "cover": "covers\\1181.png",
+    "cover_kind": "dedicated",
+    "lyrics": "lyrics\\1181.lrc",
+    "has_lyrics": true
+  },
+  {
+    "music_id": 1182,
+    "title": "#カワイイって言って？",
+    "cover": "covers\\1182.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1183,
+    "title": "私が主役じゃダメですか？",
+    "cover": "covers\\1183.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1184,
+    "title": "I Can't Choose to Give Up!",
+    "cover": "covers\\1184.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1185,
+    "title": "マリンブルー・マジック♡",
+    "cover": "covers\\1185.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1186,
+    "title": "魔法がなくちゃはじまらないでしょ？",
+    "cover": "covers\\1186.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1187,
+    "title": "豪快突破☆プリンセス！",
+    "cover": "covers\\1187.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1188,
+    "title": "パラ・シエンプレ",
+    "cover": "covers\\1188.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1189,
+    "title": "Logue",
+    "cover": "covers\\1189.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1190,
+    "title": "限界までPom Pon！！",
+    "cover": "covers\\1190.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1191,
+    "title": "Close my eyes",
+    "cover": "covers\\1191.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1192,
+    "title": "ふたり",
+    "cover": "covers\\1192.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1193,
+    "title": "Beyond",
+    "cover": "covers\\1193.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1194,
+    "title": "Gold-Triumph",
+    "cover": "covers\\1194.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1200,
+    "title": "【おやすみ配信】みんなとラヴ補充した～い",
+    "cover": "covers\\1200.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1201,
+    "title": "ちょっとだけの勇気。",
+    "cover": "covers\\1201.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1202,
+    "title": "仰げば尊Mission!",
+    "cover": "covers\\1202.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1203,
+    "title": "希望よ永遠に",
+    "cover": "covers\\1203.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1204,
+    "title": "Mile×Rule Star",
+    "cover": "covers\\1204.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1205,
+    "title": "You! Aim! A!!",
+    "cover": "covers\\1205.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1206,
+    "title": "恋する世界",
+    "cover": "covers\\1206.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1207,
+    "title": "ゆーてネタだかんね♡",
+    "cover": "covers\\1207.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1208,
+    "title": "Gold-Recollection",
+    "cover": "covers\\1208.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1209,
+    "title": "最強ROARING",
+    "cover": "covers\\1209.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1210,
+    "title": "Beyond the Finale",
+    "cover": "covers\\1210.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 1211,
+    "title": "楽曲 1211",
+    "cover": "covers\\1211.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 8501,
+    "title": "スタホTV",
+    "cover": "covers\\8501.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 8502,
+    "title": "条件戦",
+    "cover": "covers\\8502.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 8503,
+    "title": "怪物誕生",
+    "cover": "covers\\8503.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 8504,
+    "title": "親馬選択",
+    "cover": "covers\\8504.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 8505,
+    "title": "新馬生産",
+    "cover": "covers\\8505.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 8506,
+    "title": "春の憧憬",
+    "cover": "covers\\8506.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 8507,
+    "title": "夏の情景",
+    "cover": "covers\\8507.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 8508,
+    "title": "秋の風韻",
+    "cover": "covers\\8508.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 8509,
+    "title": "冬の雪景",
+    "cover": "covers\\8509.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  },
+  {
+    "music_id": 8510,
+    "title": "闘いの輪舞",
+    "cover": "covers\\8510.png",
+    "cover_kind": "dedicated",
+    "lyrics": null,
+    "has_lyrics": false
+  }
+]
