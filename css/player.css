@@ -1,0 +1,81 @@
+/* UMA Live Studio · 播放器样式（从原混音器页面移植；只保留播放 / 统计 / 歌词 / 音轨 / 日志）
+   生成器页原有样式不受影响，这里不重定义 .card / .row / .btn / .switch / :root。 */
+
+/* 统计卡 */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.stat{background:linear-gradient(180deg,#ffffff 0%,var(--bg-soft) 100%);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat span{display:block;color:var(--muted);font-size:12px;letter-spacing:.3px;margin-bottom:3px}
+.stat b{font-size:17px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums;letter-spacing:.2px}
+
+/* 进度条与时间 */
+/* 时间 + 状态 + 进度条：整块做成一个浅色面板 */
+.transport{background:var(--panel2);border:1px solid var(--line-light);border-radius:12px;padding:12px 14px 6px;margin-top:14px}
+.time{font-variant-numeric:tabular-nums;color:var(--muted);display:flex;align-items:baseline;gap:8px;font-size:12.5px}
+#current{font-size:16px;font-weight:650;color:var(--text);letter-spacing:.2px}
+#total{font-size:13px}
+.time-sep{color:var(--line);font-size:13px}
+/* 进度条：自绘轨道（蓝色已播放段 + 圆形滑块），整行撑满 */
+#seek.seek{-webkit-appearance:none;appearance:none;display:block;width:100%;min-width:0;height:20px;margin:14px 0 10px;background:transparent;cursor:pointer}
+#seek.seek::-webkit-slider-runnable-track{height:6px;border-radius:999px;
+  background:linear-gradient(90deg,var(--accent) 0%,var(--accent) var(--seekPct,0%),var(--line) var(--seekPct,0%),var(--line) 100%)}
+#seek.seek::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;margin-top:-5px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 1px 4px rgba(31,35,40,.3);transition:transform .12s ease}
+#seek.seek:hover::-webkit-slider-thumb{transform:scale(1.12)}
+#seek.seek::-moz-range-track{height:6px;border-radius:999px;background:var(--line)}
+#seek.seek::-moz-range-progress{height:6px;border-radius:999px;background:var(--accent)}
+#seek.seek::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 1px 4px rgba(31,35,40,.3)}
+
+/* 控件行：挤成一行，与上方进度面板留出间隔 */
+.controls{flex-wrap:nowrap;gap:7px;margin-top:16px;align-items:center}
+.controls .btn{padding:6px 11px;font-size:12.5px;white-space:nowrap}
+.controls .switch{padding:6px 10px;font-size:12.5px;white-space:nowrap;gap:6px}
+.controls .switch input[type=checkbox]{width:14px;height:14px}
+.controls .vol{padding:4px 11px;gap:7px}
+.controls .vol input[type=range]{width:70px}
+#exportStatus{margin-left:auto;white-space:nowrap}
+@media (max-width:900px){.controls{flex-wrap:wrap}}
+
+/* 音量胶囊（滑块自绘：轨道带已填充进度、圆形滑块） */
+.vol{display:flex;align-items:center;gap:10px;margin:0;padding:5px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);cursor:default;box-shadow:var(--shadow-small)}
+.vol>span:first-child{color:var(--text-2);font-size:12.5px}
+.vol>span:last-child{color:var(--text-2);font-size:12px;min-width:34px;text-align:right;font-variant-numeric:tabular-nums}
+.vol input[type=range]{-webkit-appearance:none;appearance:none;width:150px;height:5px;border-radius:999px;outline:none;cursor:pointer;
+  background:linear-gradient(90deg,var(--accent) 0%,var(--accent) var(--volPct,100%),var(--line) var(--volPct,100%),var(--line) 100%)}
+.vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 1px 3px rgba(31,35,40,.28);cursor:pointer;transition:transform .12s ease}
+.vol input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.12)}
+.vol input[type=range]::-moz-range-thumb{width:13px;height:13px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 1px 3px rgba(31,35,40,.28);cursor:pointer}
+.vol input[type=range]::-moz-range-track{height:5px;border-radius:999px;background:var(--line)}
+
+/* 解析后的音轨 */
+.trackbox{max-height:390px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+.track-head,.track{display:grid;grid-template-columns:46px minmax(110px,1.6fr) 56px 78px 104px 84px;gap:10px;align-items:center;padding:8px 12px}
+.track-head{position:sticky;top:0;z-index:2;background:var(--panel2);border-bottom:1px solid var(--line);color:var(--muted);font-size:12px;letter-spacing:.3px}
+.track-head>:nth-child(6){text-align:right}
+.track{border-bottom:1px solid var(--line-light);font-size:13px}
+.track:last-child{border-bottom:0}
+.track .role{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:650}
+.track .wave,.track .slot{color:var(--text-2);font-variant-numeric:tabular-nums}
+.track .db{text-align:right;font-variant-numeric:tabular-nums;color:var(--text-2)}
+.track .dur{font-variant-numeric:tabular-nums}
+
+/* 歌词 */
+#lyrics{max-height:240px;overflow:auto;position:relative}
+#lyrics p{margin:0;padding:7px 10px;border-radius:8px;color:var(--muted);line-height:1.45;cursor:pointer;transition:background .15s}
+#lyrics p .ja{display:block;font-size:14px}
+#lyrics p .zh{display:block;font-size:12.5px;color:var(--muted)}
+#lyrics p .t{font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;opacity:.8;white-space:nowrap}
+#lyrics p:hover{background:var(--panel2)}
+#lyrics p.active{background:var(--accent-soft);color:var(--text);box-shadow:inset 3px 0 0 var(--accent)}
+#lyrics p.active .zh{color:var(--accent-strong);font-weight:600}
+#lyrics p.active .t{color:var(--accent-strong);opacity:1}
+
+/* 日志 */
+pre#log{margin:0;background:var(--bg);border:1px solid var(--line-light);border-radius:8px;padding:12px;min-height:110px;max-height:240px;overflow:auto;font-size:12px;line-height:1.5;white-space:pre-wrap}
+
+/* 窄屏 */
+@media (max-width:800px){
+  .stats{gap:8px;grid-template-columns:repeat(2,1fr)}
+  .stat{padding:8px 9px}
+  .stat b{font-size:16px}
+  .track-head{display:none}
+  .track{grid-template-columns:1fr auto;gap:6px}
+}
