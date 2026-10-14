@@ -15,6 +15,7 @@
 
   var catalog = null, durations = {}, streams = {}, samples = {}, rates = {}, detail = null, curSong = null;
   var bgmId = null, balance = true, cast = [];   // cast = [[slot, charaId], ...]
+  var libMode = "live", jbIndex = null, curJb = null;   // 曲目列表：Live / 唱片机 两个标签
   var defaultInterlude = false;                  // 「播放默认间奏」：勾上则特殊演出换播默认间奏（vo_0000）
   var scVoice = null;                            // 特殊演出的声部版本（带 voices 的曲子，如 1151 的男声/女声）
   /* 全曲同一角色：开启后所有槽位改用同一个角色；castBefore 记录开启前的逐槽选角以便还原 */
@@ -91,6 +92,9 @@
     $("libStat").textContent = catalog.songs.length + " 首可浏览";
     renderList("");
     $("search").addEventListener("input", function (e) { renderList(e.target.value); });
+    Array.prototype.forEach.call(document.querySelectorAll(".lib-tab"), function (b) {
+      b.addEventListener("click", function () { switchLibMode(b.dataset.mode); });
+    });
   }
 
   /* ---------------- 曲目列表 ---------------- */
@@ -106,6 +110,7 @@
   }
 
   function renderList(q) {
+    if (libMode === "jukebox") return renderJukeboxList(q);
     var list = $("songlist");
     list.innerHTML = "";
     var hit = 0;
@@ -124,6 +129,98 @@
       list.appendChild(el);
     });
     $("libStat").textContent = hit + " / " + catalog.songs.length + " 首";
+  }
+
+  /* ---------------- 唱片机（点唱机）标签 ---------------- */
+
+  /** 封面与音频都在 R2：<媒体基址>/media/jukebox/… */
+  function jbCoverUrl(id) { return C.mediaBaseDefault() + "/media/jukebox/covers/" + id + ".png"; }
+  function jbAudioUrl(id) { return C.mediaBaseDefault() + "/media/jukebox/" + id + ".mp3"; }
+
+  async function ensureJukeboxIndex() {
+    if (jbIndex) return jbIndex;
+    try {
+      var d = await getJSON(DATA + "../jukebox/index.json");
+      jbIndex = (d && d.items) || [];
+    } catch (e) {
+      jbIndex = [];
+      $("outMsg").textContent = "点唱机索引读取失败：" + e.message;
+    }
+    return jbIndex;
+  }
+
+  function jbMatches(jb, q) {
+    var s = String(q || "").trim().toLowerCase();
+    if (!s) return true;
+    return String(jb.musicId).indexOf(s) >= 0 || String(jb.title || "").toLowerCase().indexOf(s) >= 0;
+  }
+
+  function renderJukeboxList(q) {
+    var list = $("songlist");
+    list.innerHTML = "";
+    var hit = 0;
+    (jbIndex || []).forEach(function (jb) {
+      if (!jbMatches(jb, q)) return;
+      hit++;
+      var el = document.createElement("div");
+      el.className = "song" + (curJb && curJb.musicId === jb.musicId ? " active" : "");
+      el.innerHTML =
+        '<img loading="lazy" src="' + esc(jbCoverUrl(jb.musicId)) + '" alt="">' +
+        '<div><b>' + esc(jb.title) + '</b><div class="meta">JUKEBOX ' + jb.musicId +
+        (jb.chara ? " · " + esc(jb.chara) + "角色曲" : "") + (jb.hasLyrics ? " · 含歌词" : "") +
+        '</div></div>' +
+        '<div class="badge">' + jb.musicId + (jb.durationMs ? " · " + fmtShort(jb.durationMs) : "") + '</div>';
+      el.addEventListener("click", function () { selectJukebox(jb.musicId); });
+      list.appendChild(el);
+    });
+    $("libStat").textContent = hit + " / " + (jbIndex || []).length + " 首";
+  }
+
+  async function switchLibMode(mode) {
+    if (mode === libMode) return;
+    libMode = mode;
+    Array.prototype.forEach.call(document.querySelectorAll(".lib-tab"), function (b) {
+      b.classList.toggle("active", b.dataset.mode === mode);
+    });
+    document.body.classList.toggle("jb-mode", mode === "jukebox");
+    if (mode === "jukebox") await ensureJukeboxIndex();
+    renderList($("search").value);
+  }
+
+  /** 点一首唱片机曲目：做成「单轨工程」直接交给内嵌播放器（音频与封面走 R2，歌词读镜像的 .lrc） */
+  async function selectJukebox(id) {
+    if (!jbIndex) await ensureJukeboxIndex();
+    var jb = (jbIndex || []).find(function (x) { return x.musicId === Number(id); });
+    if (!jb) return;
+    if (window.__umaPlayer && typeof window.__umaPlayer.reset === "function") {
+      try { window.__umaPlayer.reset(); } catch (e) {}
+    }
+    curSong = null; curJb = jb; detail = null;
+    current = {
+      id: "jb-" + id, name: "Jukebox " + id, durationMs: jb.durationMs || 0, sampleRate: 48000,
+      tracks: [{
+        id: "bgm", name: "JUKEBOX " + jb.title, media: jbAudioUrl(id),
+        stream: {
+          codec: "mp3", container: "mp3", sampleRate: 48000, channels: 2,
+          decodedSampleCount: jb.sampleCount || null,
+          encoderDelaySamples: 576, encoderPaddingSamples: 576, seekIndex: null
+        },
+        timelineStartSample: 0, volumeDb: 0, panner: 0, muted: false, solo: false,
+        startOffsetMs: 0, dynamics: null, volumeAutomation: [], pannerAutomation: []
+      }],
+      _uma: {
+        source: "uma-live-studio", jukebox: true, musicId: Number(id),
+        lyrics: "data/jukebox_metadata/lyrics/" + id + ".lrc"
+      }
+    };
+    $("songCard").style.display = "";
+    $("cover").src = jbCoverUrl(id);
+    $("songTitle").textContent = jb.title;
+    $("songMeta").textContent = "JUKEBOX " + id + (jb.durationMs ? " · " + fmtShort(jb.durationMs) : "");
+    $("liveCredits").hidden = true; $("liveIntro").hidden = true;
+    renderList($("search").value);
+    if (window.__umaPlayer) window.__umaPlayer.load(current);
+    $("outMsg").textContent = "已载入点唱机曲目「" + jb.title + "」，点播放开始" + (jb.hasLyrics ? "（含歌词）" : "");
   }
 
   /* ---------------- 选中曲目 ---------------- */

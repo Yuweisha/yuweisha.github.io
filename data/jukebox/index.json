@@ -1,0 +1,1760 @@
+{
+ "generatedAt": "2026-10-15",
+ "items": [
+  {
+   "musicId": 1001,
+   "title": "うまぴょい伝説",
+   "cover": "1001.png",
+   "hasLyrics": true,
+   "durationMs": 114377,
+   "sampleCount": 5490112,
+   "chara": null
+  },
+  {
+   "musicId": 1003,
+   "title": "RUN×RUN！",
+   "cover": "1003.png",
+   "hasLyrics": false,
+   "durationMs": 104337,
+   "sampleCount": 5008160,
+   "chara": null
+  },
+  {
+   "musicId": 1004,
+   "title": "Never Looking Back",
+   "cover": "1004.png",
+   "hasLyrics": true,
+   "durationMs": 102542,
+   "sampleCount": 4921999,
+   "chara": null
+  },
+  {
+   "musicId": 1005,
+   "title": "彩 Phantasia",
+   "cover": "1005.png",
+   "hasLyrics": true,
+   "durationMs": 130953,
+   "sampleCount": 6285742,
+   "chara": null
+  },
+  {
+   "musicId": 1006,
+   "title": "Make debut!",
+   "cover": "1006.png",
+   "hasLyrics": true,
+   "durationMs": 126677,
+   "sampleCount": 6080481,
+   "chara": null
+  },
+  {
+   "musicId": 1007,
+   "title": "ENDLESS DREAM!!",
+   "cover": "1007.png",
+   "hasLyrics": true,
+   "durationMs": 82659,
+   "sampleCount": 3967609,
+   "chara": null
+  },
+  {
+   "musicId": 1008,
+   "title": "NEXT FRONTIER",
+   "cover": "1008.png",
+   "hasLyrics": true,
+   "durationMs": 137468,
+   "sampleCount": 6598469,
+   "chara": null
+  },
+  {
+   "musicId": 1009,
+   "title": "UNLIMITED IMPACT",
+   "cover": "1009.png",
+   "hasLyrics": true,
+   "durationMs": 114701,
+   "sampleCount": 5505652,
+   "chara": null
+  },
+  {
+   "musicId": 1010,
+   "title": "Special Record!",
+   "cover": "1010.png",
+   "hasLyrics": true,
+   "durationMs": 96878,
+   "sampleCount": 4650146,
+   "chara": null
+  },
+  {
+   "musicId": 1012,
+   "title": "グロウアップ・シャイン！",
+   "cover": "1012.png",
+   "hasLyrics": true,
+   "durationMs": 115322,
+   "sampleCount": 5535475,
+   "chara": null
+  },
+  {
+   "musicId": 1013,
+   "title": "Find My Only Way",
+   "cover": "1013.png",
+   "hasLyrics": false,
+   "durationMs": 132826,
+   "sampleCount": 6375656,
+   "chara": null
+  },
+  {
+   "musicId": 1021,
+   "title": "世界は僕らの言いなりさ",
+   "cover": "1021.png",
+   "hasLyrics": false,
+   "durationMs": 95693,
+   "sampleCount": 4593280,
+   "chara": null
+  },
+  {
+   "musicId": 1023,
+   "title": "ぼくらのブルーバードデイズ",
+   "cover": "1023.png",
+   "hasLyrics": false,
+   "durationMs": 108113,
+   "sampleCount": 5189434,
+   "chara": null
+  },
+  {
+   "musicId": 1024,
+   "title": "大好きのタカラバコ",
+   "cover": "1024.png",
+   "hasLyrics": false,
+   "durationMs": 117530,
+   "sampleCount": 5641427,
+   "chara": null
+  },
+  {
+   "musicId": 1025,
+   "title": "はじまりのSignal",
+   "cover": "1025.png",
+   "hasLyrics": true,
+   "durationMs": 109138,
+   "sampleCount": 5238632,
+   "chara": "目白麦昆"
+  },
+  {
+   "musicId": 1026,
+   "title": "ささやかな祈り",
+   "cover": "1026.png",
+   "hasLyrics": true,
+   "durationMs": 118849,
+   "sampleCount": 5704751,
+   "chara": "米浴"
+  },
+  {
+   "musicId": 1027,
+   "title": "本能スピード",
+   "cover": "1027.png",
+   "hasLyrics": true,
+   "durationMs": 135493,
+   "sampleCount": 6503644,
+   "chara": null
+  },
+  {
+   "musicId": 1028,
+   "title": "winning the soul",
+   "cover": "1028.png",
+   "hasLyrics": true,
+   "durationMs": 136680,
+   "sampleCount": 6560630,
+   "chara": null
+  },
+  {
+   "musicId": 1030,
+   "title": "涙ひかって明日になれ！",
+   "cover": "1030.png",
+   "hasLyrics": true,
+   "durationMs": 139498,
+   "sampleCount": 6695909,
+   "chara": null
+  },
+  {
+   "musicId": 1031,
+   "title": "BLAZE",
+   "cover": "1031.png",
+   "hasLyrics": true,
+   "durationMs": 129880,
+   "sampleCount": 6234232,
+   "chara": "成田白仁"
+  },
+  {
+   "musicId": 1032,
+   "title": "ユメヲカケル！",
+   "cover": "1032.png",
+   "hasLyrics": true,
+   "durationMs": 157010,
+   "sampleCount": 7536484,
+   "chara": null
+  },
+  {
+   "musicId": 1033,
+   "title": "KIRARI MAGIC SHOW",
+   "cover": "1033.png",
+   "hasLyrics": true,
+   "durationMs": 142598,
+   "sampleCount": 6844710,
+   "chara": null
+  },
+  {
+   "musicId": 1034,
+   "title": "ぴょいっと♪はれるや！",
+   "cover": "1034.png",
+   "hasLyrics": true,
+   "durationMs": 138794,
+   "sampleCount": 6662119,
+   "chara": null
+  },
+  {
+   "musicId": 1035,
+   "title": "WINnin’ 5 －ウイニング☆ファイヴ－",
+   "cover": "1035.png",
+   "hasLyrics": true,
+   "durationMs": 146888,
+   "sampleCount": 7050614,
+   "chara": null
+  },
+  {
+   "musicId": 1036,
+   "title": "GIRLS' LEGEND U",
+   "cover": "1036.png",
+   "hasLyrics": true,
+   "durationMs": 103727,
+   "sampleCount": 4978879,
+   "chara": null
+  },
+  {
+   "musicId": 1037,
+   "title": "transforming",
+   "cover": "1037.png",
+   "hasLyrics": true,
+   "durationMs": 172245,
+   "sampleCount": 8267750,
+   "chara": null
+  },
+  {
+   "musicId": 1040,
+   "title": "青春が待ってる",
+   "cover": "1040.png",
+   "hasLyrics": false,
+   "durationMs": 95824,
+   "sampleCount": 4599533,
+   "chara": null
+  },
+  {
+   "musicId": 1041,
+   "title": "ユメゾラ",
+   "cover": "1041.png",
+   "hasLyrics": false,
+   "durationMs": 91768,
+   "sampleCount": 4404868,
+   "chara": null
+  },
+  {
+   "musicId": 1042,
+   "title": "Go This Way",
+   "cover": "1042.png",
+   "hasLyrics": false,
+   "durationMs": 134323,
+   "sampleCount": 6447502,
+   "chara": null
+  },
+  {
+   "musicId": 1043,
+   "title": "木漏れ日のエール",
+   "cover": "1043.png",
+   "hasLyrics": false,
+   "durationMs": 101936,
+   "sampleCount": 4892927,
+   "chara": null
+  },
+  {
+   "musicId": 1044,
+   "title": "全速！前進！ウマドルパワー☆",
+   "cover": "1044.png",
+   "hasLyrics": false,
+   "durationMs": 95586,
+   "sampleCount": 4588107,
+   "chara": "醒目飞鹰"
+  },
+  {
+   "musicId": 1046,
+   "title": "逃げ切りっ！Fallin' Love",
+   "cover": "1046.png",
+   "hasLyrics": false,
+   "durationMs": 82371,
+   "sampleCount": 3953820,
+   "chara": null
+  },
+  {
+   "musicId": 1047,
+   "title": "Ring Ring ダイアリー　",
+   "cover": "1047.png",
+   "hasLyrics": false,
+   "durationMs": 98847,
+   "sampleCount": 4744636,
+   "chara": null
+  },
+  {
+   "musicId": 1048,
+   "title": "BLOW my GALE",
+   "cover": "1048.png",
+   "hasLyrics": true,
+   "durationMs": 118714,
+   "sampleCount": 5698274,
+   "chara": null
+  },
+  {
+   "musicId": 1049,
+   "title": "バクシンバクシンバクシンシン",
+   "cover": "1049.png",
+   "hasLyrics": false,
+   "durationMs": 0,
+   "sampleCount": null,
+   "chara": null
+  },
+  {
+   "musicId": 1050,
+   "title": "We are DREAMERS!!",
+   "cover": "1050.png",
+   "hasLyrics": true,
+   "durationMs": 146772,
+   "sampleCount": 7045059,
+   "chara": null
+  },
+  {
+   "musicId": 1051,
+   "title": "笑顔の宝物 -Beyond The Future!-",
+   "cover": "1051.png",
+   "hasLyrics": true,
+   "durationMs": 149144,
+   "sampleCount": 7158921,
+   "chara": null
+  },
+  {
+   "musicId": 1053,
+   "title": "Gaze on Me!",
+   "cover": "1053.png",
+   "hasLyrics": true,
+   "durationMs": 144070,
+   "sampleCount": 6915336,
+   "chara": null
+  },
+  {
+   "musicId": 1054,
+   "title": "Ms. VICTORIA",
+   "cover": "1054.png",
+   "hasLyrics": true,
+   "durationMs": 120384,
+   "sampleCount": 5778432,
+   "chara": null
+  },
+  {
+   "musicId": 1055,
+   "title": "ゴルシンゴルシンゴルシンシン",
+   "cover": "1055.png",
+   "hasLyrics": false,
+   "durationMs": 0,
+   "sampleCount": null,
+   "chara": null
+  },
+  {
+   "musicId": 1056,
+   "title": "メジロ讃歌",
+   "cover": "1056.png",
+   "hasLyrics": false,
+   "durationMs": 119832,
+   "sampleCount": 5751936,
+   "chara": null
+  },
+  {
+   "musicId": 1057,
+   "title": "立ち位置ゼロ番！順位は一番！",
+   "cover": "1057.png",
+   "hasLyrics": false,
+   "durationMs": 100039,
+   "sampleCount": 4801866,
+   "chara": null
+  },
+  {
+   "musicId": 1058,
+   "title": "Everlasting BEATS",
+   "cover": "1058.png",
+   "hasLyrics": true,
+   "durationMs": 139696,
+   "sampleCount": 6705427,
+   "chara": null
+  },
+  {
+   "musicId": 1059,
+   "title": "Overrunner!",
+   "cover": "1059.png",
+   "hasLyrics": true,
+   "durationMs": 148929,
+   "sampleCount": 7148587,
+   "chara": null
+  },
+  {
+   "musicId": 1060,
+   "title": "DRAMATIC JOURNEY",
+   "cover": "1060.png",
+   "hasLyrics": true,
+   "durationMs": 155369,
+   "sampleCount": 7457698,
+   "chara": null
+  },
+  {
+   "musicId": 1061,
+   "title": "ゆるパカHAPPY DAYS！",
+   "cover": "1061.png",
+   "hasLyrics": false,
+   "durationMs": 81187,
+   "sampleCount": 3896984,
+   "chara": null
+  },
+  {
+   "musicId": 1062,
+   "title": "わたしの印は大本命◎",
+   "cover": "1062.png",
+   "hasLyrics": false,
+   "durationMs": 75333,
+   "sampleCount": 3615997,
+   "chara": "特别周"
+  },
+  {
+   "musicId": 1063,
+   "title": "unbreakable",
+   "cover": "1063.png",
+   "hasLyrics": false,
+   "durationMs": 96673,
+   "sampleCount": 4640312,
+   "chara": "小栗帽"
+  },
+  {
+   "musicId": 1064,
+   "title": "SEVEN",
+   "cover": "1064.png",
+   "hasLyrics": false,
+   "durationMs": 85702,
+   "sampleCount": 4113716,
+   "chara": "鲁道夫象征"
+  },
+  {
+   "musicId": 1065,
+   "title": "ふんわりSlowly",
+   "cover": "1065.png",
+   "hasLyrics": false,
+   "durationMs": 128103,
+   "sampleCount": 6148956,
+   "chara": "超级溪流"
+  },
+  {
+   "musicId": 1066,
+   "title": "My Against Fight",
+   "cover": "1066.png",
+   "hasLyrics": false,
+   "durationMs": 98280,
+   "sampleCount": 4717421,
+   "chara": "玉藻十字"
+  },
+  {
+   "musicId": 1067,
+   "title": "アウト・オブ・トライアングル",
+   "cover": "1067.png",
+   "hasLyrics": false,
+   "durationMs": 105373,
+   "sampleCount": 5057920,
+   "chara": "优秀素质"
+  },
+  {
+   "musicId": 1068,
+   "title": "願いのカタチ",
+   "cover": "1068.png",
+   "hasLyrics": false,
+   "durationMs": 142249,
+   "sampleCount": 6827951,
+   "chara": null
+  },
+  {
+   "musicId": 1069,
+   "title": "硝子のエトワール",
+   "cover": "1069.png",
+   "hasLyrics": false,
+   "durationMs": 129352,
+   "sampleCount": 6208896,
+   "chara": "目白阿尔丹"
+  },
+  {
+   "musicId": 1070,
+   "title": "LIKE THE WIND",
+   "cover": "1070.png",
+   "hasLyrics": false,
+   "durationMs": 91392,
+   "sampleCount": 4386816,
+   "chara": "也文摄辉"
+  },
+  {
+   "musicId": 1071,
+   "title": "ときめきスクランブル",
+   "cover": "1071.png",
+   "hasLyrics": false,
+   "durationMs": 107597,
+   "sampleCount": 5164672,
+   "chara": null
+  },
+  {
+   "musicId": 1072,
+   "title": "ユースフルアイズ",
+   "cover": "1072.png",
+   "hasLyrics": false,
+   "durationMs": 90797,
+   "sampleCount": 4358272,
+   "chara": "樱花桂冠"
+  },
+  {
+   "musicId": 1073,
+   "title": "笑っちゃお！",
+   "cover": "1073.png",
+   "hasLyrics": false,
+   "durationMs": 115147,
+   "sampleCount": 5527040,
+   "chara": "大拓太阳神"
+  },
+  {
+   "musicId": 1074,
+   "title": "忘却にて",
+   "cover": "1074.png",
+   "hasLyrics": false,
+   "durationMs": 111841,
+   "sampleCount": 5368367,
+   "chara": "真弓快车"
+  },
+  {
+   "musicId": 1075,
+   "title": "ゴルシでラップ -It's むりむり-",
+   "cover": "1075.png",
+   "hasLyrics": false,
+   "durationMs": 126438,
+   "sampleCount": 6069039,
+   "chara": null
+  },
+  {
+   "musicId": 1076,
+   "title": "Precious Star Dreamer",
+   "cover": "1076.png",
+   "hasLyrics": false,
+   "durationMs": 84195,
+   "sampleCount": 4041344,
+   "chara": null
+  },
+  {
+   "musicId": 1077,
+   "title": "ミッドナイト・エピローグ",
+   "cover": "1077.png",
+   "hasLyrics": false,
+   "durationMs": 92310,
+   "sampleCount": 4430881,
+   "chara": null
+  },
+  {
+   "musicId": 1078,
+   "title": "Ambitious World",
+   "cover": "1078.png",
+   "hasLyrics": false,
+   "durationMs": 86075,
+   "sampleCount": 4131584,
+   "chara": null
+  },
+  {
+   "musicId": 1079,
+   "title": "winning the soul (PandaBoY Remix)",
+   "cover": "1079.png",
+   "hasLyrics": false,
+   "durationMs": 106794,
+   "sampleCount": 5126101,
+   "chara": null
+  },
+  {
+   "musicId": 1081,
+   "title": "Glorious Moment！",
+   "cover": "1081.png",
+   "hasLyrics": true,
+   "durationMs": 94975,
+   "sampleCount": 4558796,
+   "chara": null
+  },
+  {
+   "musicId": 1082,
+   "title": "L'Arc de gloire",
+   "cover": "1082.png",
+   "hasLyrics": true,
+   "durationMs": 145440,
+   "sampleCount": 6981120,
+   "chara": null
+  },
+  {
+   "musicId": 1083,
+   "title": "トレセン音頭",
+   "cover": "1083.png",
+   "hasLyrics": true,
+   "durationMs": 143613,
+   "sampleCount": 6893440,
+   "chara": null
+  },
+  {
+   "musicId": 1084,
+   "title": "ソシテミンナノ",
+   "cover": "1084.png",
+   "hasLyrics": true,
+   "durationMs": 139968,
+   "sampleCount": 6718462,
+   "chara": null
+  },
+  {
+   "musicId": 1085,
+   "title": "どどっと優勝！大感謝祭！！！",
+   "cover": "1085.png",
+   "hasLyrics": false,
+   "durationMs": 91408,
+   "sampleCount": 4387584,
+   "chara": null
+  },
+  {
+   "musicId": 1086,
+   "title": "Hat on your Head！",
+   "cover": "1086.png",
+   "hasLyrics": false,
+   "durationMs": 103307,
+   "sampleCount": 4958749,
+   "chara": null
+  },
+  {
+   "musicId": 1087,
+   "title": "GSK☆",
+   "cover": "1087.png",
+   "hasLyrics": false,
+   "durationMs": 69472,
+   "sampleCount": 3334648,
+   "chara": null
+  },
+  {
+   "musicId": 1088,
+   "title": "爆熱マイソウル",
+   "cover": "1088.png",
+   "hasLyrics": true,
+   "durationMs": 117056,
+   "sampleCount": 5618688,
+   "chara": null
+  },
+  {
+   "musicId": 1089,
+   "title": "U.M.A. NEW WORLD!!",
+   "cover": "1089.png",
+   "hasLyrics": true,
+   "durationMs": 146141,
+   "sampleCount": 7014784,
+   "chara": null
+  },
+  {
+   "musicId": 1092,
+   "title": "ウマすぎ！グルメパレード",
+   "cover": "1092.png",
+   "hasLyrics": true,
+   "durationMs": 116356,
+   "sampleCount": 5585068,
+   "chara": null
+  },
+  {
+   "musicId": 1093,
+   "title": "UMA Summer",
+   "cover": "1093.png",
+   "hasLyrics": true,
+   "durationMs": 124778,
+   "sampleCount": 5989322,
+   "chara": null
+  },
+  {
+   "musicId": 1094,
+   "title": "O - ロライズ",
+   "cover": "1094.png",
+   "hasLyrics": true,
+   "durationMs": 104506,
+   "sampleCount": 5016290,
+   "chara": null
+  },
+  {
+   "musicId": 1096,
+   "title": "Dance 2 Endless Beat",
+   "cover": "1096.png",
+   "hasLyrics": false,
+   "durationMs": 82376,
+   "sampleCount": 3954048,
+   "chara": null
+  },
+  {
+   "musicId": 1097,
+   "title": "Bright Melody",
+   "cover": "1097.png",
+   "hasLyrics": false,
+   "durationMs": 108453,
+   "sampleCount": 5205760,
+   "chara": null
+  },
+  {
+   "musicId": 1098,
+   "title": "永遠の色彩",
+   "cover": "1098.png",
+   "hasLyrics": false,
+   "durationMs": 124216,
+   "sampleCount": 5962368,
+   "chara": null
+  },
+  {
+   "musicId": 1099,
+   "title": "イチバン星が駆ける空",
+   "cover": "1099.png",
+   "hasLyrics": false,
+   "durationMs": 95933,
+   "sampleCount": 4604800,
+   "chara": null
+  },
+  {
+   "musicId": 1100,
+   "title": "Make debut! (モリシー (Awesome City Club) Remix)",
+   "cover": "1100.png",
+   "hasLyrics": false,
+   "durationMs": 89195,
+   "sampleCount": 4281344,
+   "chara": null
+  },
+  {
+   "musicId": 1101,
+   "title": "Never Looking Back (PandaBoY Remix)",
+   "cover": "1101.png",
+   "hasLyrics": false,
+   "durationMs": 135536,
+   "sampleCount": 6505728,
+   "chara": null
+  },
+  {
+   "musicId": 1102,
+   "title": "けっぱれ！輝きストレート",
+   "cover": "1102.png",
+   "hasLyrics": false,
+   "durationMs": 91243,
+   "sampleCount": 4379648,
+   "chara": null
+  },
+  {
+   "musicId": 1103,
+   "title": "悠々閑々",
+   "cover": "1103.png",
+   "hasLyrics": false,
+   "durationMs": 123621,
+   "sampleCount": 5933824,
+   "chara": "奇锐骏"
+  },
+  {
+   "musicId": 1104,
+   "title": "手綱と絆",
+   "cover": "1104.png",
+   "hasLyrics": false,
+   "durationMs": 94315,
+   "sampleCount": 4527104,
+   "chara": "琵琶晨光"
+  },
+  {
+   "musicId": 1105,
+   "title": "Air Race",
+   "cover": "1105.png",
+   "hasLyrics": false,
+   "durationMs": 110731,
+   "sampleCount": 5315072,
+   "chara": "空中神宫"
+  },
+  {
+   "musicId": 1106,
+   "title": "THE SUPER STRONG S",
+   "cover": "1106.png",
+   "hasLyrics": false,
+   "durationMs": 84845,
+   "sampleCount": 4072576,
+   "chara": "吉兆"
+  },
+  {
+   "musicId": 1107,
+   "title": "Play Again",
+   "cover": "1107.png",
+   "hasLyrics": false,
+   "durationMs": 69125,
+   "sampleCount": 3318016,
+   "chara": "鹤丸刚志"
+  },
+  {
+   "musicId": 1108,
+   "title": "ラキハピファンタスティック",
+   "cover": "1108.png",
+   "hasLyrics": false,
+   "durationMs": 64395,
+   "sampleCount": 3090944,
+   "chara": "小林历奇"
+  },
+  {
+   "musicId": 1109,
+   "title": "Destroy for Dasein",
+   "cover": "1109.png",
+   "hasLyrics": false,
+   "durationMs": 95203,
+   "sampleCount": 4569728,
+   "chara": "谷野美酒"
+  },
+  {
+   "musicId": 1110,
+   "title": "ライトレス",
+   "cover": "1110.png",
+   "hasLyrics": false,
+   "durationMs": 93371,
+   "sampleCount": 4481792,
+   "chara": "爱丽速子"
+  },
+  {
+   "musicId": 1111,
+   "title": "ゼッタイトナリ…！",
+   "cover": "1111.png",
+   "hasLyrics": false,
+   "durationMs": 73587,
+   "sampleCount": 3532160,
+   "chara": null
+  },
+  {
+   "musicId": 1112,
+   "title": "Forever gold",
+   "cover": "1112.png",
+   "hasLyrics": false,
+   "durationMs": 108008,
+   "sampleCount": 5184384,
+   "chara": "好歌剧"
+  },
+  {
+   "musicId": 1113,
+   "title": "Like a Shooting Star",
+   "cover": "1113.png",
+   "hasLyrics": false,
+   "durationMs": 88907,
+   "sampleCount": 4267520,
+   "chara": "爱慕织姬"
+  },
+  {
+   "musicId": 1114,
+   "title": "ONCE MORE, I CAN",
+   "cover": "1114.png",
+   "hasLyrics": false,
+   "durationMs": 93827,
+   "sampleCount": 4503680,
+   "chara": "成田路"
+  },
+  {
+   "musicId": 1115,
+   "title": "DANCE！DANCE！“ROMAN”",
+   "cover": "1115.png",
+   "hasLyrics": false,
+   "durationMs": 90203,
+   "sampleCount": 4329728,
+   "chara": "跳舞城"
+  },
+  {
+   "musicId": 1116,
+   "title": "TAILWIND",
+   "cover": "1116.png",
+   "hasLyrics": false,
+   "durationMs": 85973,
+   "sampleCount": 4126720,
+   "chara": "待兼诗歌剧"
+  },
+  {
+   "musicId": 1117,
+   "title": "Excellent Condition",
+   "cover": "1117.png",
+   "hasLyrics": false,
+   "durationMs": 91064,
+   "sampleCount": 4371072,
+   "chara": "生野狄杜斯"
+  },
+  {
+   "musicId": 1118,
+   "title": "▷▷▷▶ぶっとび かっとび 全開エンジン！",
+   "cover": "1118.png",
+   "hasLyrics": false,
+   "durationMs": 66467,
+   "sampleCount": 3190400,
+   "chara": null
+  },
+  {
+   "musicId": 1119,
+   "title": "Secret GRADUATION",
+   "cover": "1119.png",
+   "hasLyrics": false,
+   "durationMs": 125056,
+   "sampleCount": 6002688,
+   "chara": "草上飞"
+  },
+  {
+   "musicId": 1120,
+   "title": "今日もウララかケセラセラ！",
+   "cover": "1120.png",
+   "hasLyrics": false,
+   "durationMs": 100315,
+   "sampleCount": 4815104,
+   "chara": "春丽"
+  },
+  {
+   "musicId": 1121,
+   "title": "素顔のココロ",
+   "cover": "1121.png",
+   "hasLyrics": false,
+   "durationMs": 89576,
+   "sampleCount": 4299648,
+   "chara": "黄金城市"
+  },
+  {
+   "musicId": 1122,
+   "title": "GALACTIC PLAYER",
+   "cover": "1122.png",
+   "hasLyrics": false,
+   "durationMs": 85072,
+   "sampleCount": 4083456,
+   "chara": "天狼星象征"
+  },
+  {
+   "musicId": 1123,
+   "title": "You know me",
+   "cover": "1123.png",
+   "hasLyrics": false,
+   "durationMs": 81072,
+   "sampleCount": 3891456,
+   "chara": "中山庆典"
+  },
+  {
+   "musicId": 1124,
+   "title": "Comeback Story V",
+   "cover": "1124.png",
+   "hasLyrics": false,
+   "durationMs": 108013,
+   "sampleCount": 5184640,
+   "chara": null
+  },
+  {
+   "musicId": 1125,
+   "title": "アコガレChallenge Dash!!",
+   "cover": "1125.png",
+   "hasLyrics": false,
+   "durationMs": 97532,
+   "sampleCount": 4681540,
+   "chara": null
+  },
+  {
+   "musicId": 1126,
+   "title": "Ready!! Steady!! Derby!!",
+   "cover": "1126.png",
+   "hasLyrics": true,
+   "durationMs": 84237,
+   "sampleCount": 4043392,
+   "chara": null
+  },
+  {
+   "musicId": 1127,
+   "title": "ピスピス☆スピスピ ゴルシちゃんのうた",
+   "cover": "1127.png",
+   "hasLyrics": false,
+   "durationMs": 88592,
+   "sampleCount": 4252416,
+   "chara": null
+  },
+  {
+   "musicId": 1128,
+   "title": "ロストシャイン",
+   "cover": "1128.png",
+   "hasLyrics": false,
+   "durationMs": 94411,
+   "sampleCount": 4531712,
+   "chara": null
+  },
+  {
+   "musicId": 1129,
+   "title": "夢のこたえ",
+   "cover": "1129.png",
+   "hasLyrics": false,
+   "durationMs": 95011,
+   "sampleCount": 4560512,
+   "chara": null
+  },
+  {
+   "musicId": 1130,
+   "title": "Confident",
+   "cover": "1130.png",
+   "hasLyrics": false,
+   "durationMs": 102864,
+   "sampleCount": 4937472,
+   "chara": "里见皇冠"
+  },
+  {
+   "musicId": 1131,
+   "title": "光の後ろ姿",
+   "cover": "1131.png",
+   "hasLyrics": false,
+   "durationMs": 93184,
+   "sampleCount": 4472832,
+   "chara": null
+  },
+  {
+   "musicId": 1132,
+   "title": "空のほほえみ方",
+   "cover": "1132.png",
+   "hasLyrics": false,
+   "durationMs": 123059,
+   "sampleCount": 5906816,
+   "chara": null
+  },
+  {
+   "musicId": 1133,
+   "title": "帝笑歌劇〜讃えよ永久に〜",
+   "cover": "1133.png",
+   "hasLyrics": false,
+   "durationMs": 97131,
+   "sampleCount": 4662272,
+   "chara": "好歌剧"
+  },
+  {
+   "musicId": 1134,
+   "title": "EXCEED",
+   "cover": "1134.png",
+   "hasLyrics": false,
+   "durationMs": 69656,
+   "sampleCount": 3343488,
+   "chara": "大鸣大放"
+  },
+  {
+   "musicId": 1135,
+   "title": "CATCH THE VICTORY!",
+   "cover": "1135.png",
+   "hasLyrics": false,
+   "durationMs": 86960,
+   "sampleCount": 4174080,
+   "chara": "伏特加"
+  },
+  {
+   "musicId": 1136,
+   "title": "WINNING MELODY",
+   "cover": "1136.png",
+   "hasLyrics": false,
+   "durationMs": 91027,
+   "sampleCount": 4369280,
+   "chara": "胜利奖券"
+  },
+  {
+   "musicId": 1137,
+   "title": "Lucky Comes True!",
+   "cover": "1137.png",
+   "hasLyrics": false,
+   "durationMs": 88968,
+   "sampleCount": 4270464,
+   "chara": "待兼福来"
+  },
+  {
+   "musicId": 1138,
+   "title": "Unite!!",
+   "cover": "1138.png",
+   "hasLyrics": false,
+   "durationMs": 105341,
+   "sampleCount": 5056384,
+   "chara": null
+  },
+  {
+   "musicId": 1139,
+   "title": "平凡、時にミラクル",
+   "cover": "1139.png",
+   "hasLyrics": false,
+   "durationMs": 85376,
+   "sampleCount": 4098048,
+   "chara": "菱钻奇宝"
+  },
+  {
+   "musicId": 1140,
+   "title": "一撃入魂☆ペガサスパンチ",
+   "cover": "1140.png",
+   "hasLyrics": false,
+   "durationMs": 85429,
+   "sampleCount": 4100608,
+   "chara": "微光飞驹"
+  },
+  {
+   "musicId": 1141,
+   "title": "楽園",
+   "cover": "1141.png",
+   "hasLyrics": false,
+   "durationMs": 88357,
+   "sampleCount": 4241152,
+   "chara": "曼城茶座"
+  },
+  {
+   "musicId": 1142,
+   "title": "シャドーロールの誓い (The Solid Revision)",
+   "cover": "1142.png",
+   "hasLyrics": false,
+   "durationMs": 94968,
+   "sampleCount": 4558464,
+   "chara": null
+  },
+  {
+   "musicId": 1143,
+   "title": "僕が憧れた青",
+   "cover": "1143.png",
+   "hasLyrics": false,
+   "durationMs": 109989,
+   "sampleCount": 5279488,
+   "chara": "高尚骏逸"
+  },
+  {
+   "musicId": 1144,
+   "title": "朝露は大河の夢を見る",
+   "cover": "1144.png",
+   "hasLyrics": false,
+   "durationMs": 128347,
+   "sampleCount": 6160640,
+   "chara": "西沙里奥"
+  },
+  {
+   "musicId": 1145,
+   "title": "十帰りの花",
+   "cover": "1145.png",
+   "hasLyrics": false,
+   "durationMs": 109696,
+   "sampleCount": 5265408,
+   "chara": "空中救世主"
+  },
+  {
+   "musicId": 1146,
+   "title": "QueenBee",
+   "cover": "1146.png",
+   "hasLyrics": false,
+   "durationMs": 87328,
+   "sampleCount": 4191744,
+   "chara": "勇敢之心"
+  },
+  {
+   "musicId": 1147,
+   "title": "Over a Tiara",
+   "cover": "1147.png",
+   "hasLyrics": false,
+   "durationMs": 85987,
+   "sampleCount": 4127360,
+   "chara": "莱茵力量"
+  },
+  {
+   "musicId": 1148,
+   "title": "宇宙走娘＜コスモピュエラ＞　銀河冒険譚",
+   "cover": "1148.png",
+   "hasLyrics": false,
+   "durationMs": 147235,
+   "sampleCount": 7067264,
+   "chara": null
+  },
+  {
+   "musicId": 1149,
+   "title": "GOCHISO様",
+   "cover": "1149.png",
+   "hasLyrics": false,
+   "durationMs": 101749,
+   "sampleCount": 4883968,
+   "chara": null
+  },
+  {
+   "musicId": 1150,
+   "title": "STARTING FORCE",
+   "cover": "1150.png",
+   "hasLyrics": true,
+   "durationMs": 116649,
+   "sampleCount": 5599146,
+   "chara": null
+  },
+  {
+   "musicId": 1151,
+   "title": "Legend-Changer",
+   "cover": "1151.png",
+   "hasLyrics": true,
+   "durationMs": 142388,
+   "sampleCount": 6834630,
+   "chara": null
+  },
+  {
+   "musicId": 1152,
+   "title": "SHAKEROCK",
+   "cover": "1152.png",
+   "hasLyrics": true,
+   "durationMs": 77427,
+   "sampleCount": 3716492,
+   "chara": null
+  },
+  {
+   "musicId": 1154,
+   "title": "タッカー's スキルアップアイランド",
+   "cover": "1154.png",
+   "hasLyrics": true,
+   "durationMs": 122820,
+   "sampleCount": 5895338,
+   "chara": null
+  },
+  {
+   "musicId": 1155,
+   "title": "ギフト",
+   "cover": "1155.png",
+   "hasLyrics": true,
+   "durationMs": 163280,
+   "sampleCount": 7837446,
+   "chara": null
+  },
+  {
+   "musicId": 1156,
+   "title": "めにしゅき♡ラッシュっしゅ！",
+   "cover": "1156.png",
+   "hasLyrics": true,
+   "durationMs": 152189,
+   "sampleCount": 7305086,
+   "chara": null
+  },
+  {
+   "musicId": 1157,
+   "title": "ゆこまロマン純情派",
+   "cover": "1157.png",
+   "hasLyrics": true,
+   "durationMs": 145667,
+   "sampleCount": 6992033,
+   "chara": null
+  },
+  {
+   "musicId": 1158,
+   "title": "BoC-izm",
+   "cover": "1158.png",
+   "hasLyrics": false,
+   "durationMs": 168500,
+   "sampleCount": 8088000,
+   "chara": null
+  },
+  {
+   "musicId": 1159,
+   "title": "灰のmemoire",
+   "cover": "1159.png",
+   "hasLyrics": false,
+   "durationMs": 95593,
+   "sampleCount": 4588463,
+   "chara": null
+  },
+  {
+   "musicId": 1160,
+   "title": "ピヨっピヨにしてやんよッ！",
+   "cover": "1160.png",
+   "hasLyrics": false,
+   "durationMs": 52567,
+   "sampleCount": 2523206,
+   "chara": "希望之城"
+  },
+  {
+   "musicId": 1161,
+   "title": "ZOKZOK",
+   "cover": "1161.png",
+   "hasLyrics": false,
+   "durationMs": 83935,
+   "sampleCount": 4028874,
+   "chara": "创升"
+  },
+  {
+   "musicId": 1162,
+   "title": "Dear My Dream",
+   "cover": "1162.png",
+   "hasLyrics": false,
+   "durationMs": 134602,
+   "sampleCount": 6460876,
+   "chara": "狂怒乐章"
+  },
+  {
+   "musicId": 1163,
+   "title": "Love Will Come Through",
+   "cover": "1163.png",
+   "hasLyrics": false,
+   "durationMs": 146970,
+   "sampleCount": 7054554,
+   "chara": "目白高峰"
+  },
+  {
+   "musicId": 1164,
+   "title": "愛舞い、喰らい。",
+   "cover": "1164.png",
+   "hasLyrics": false,
+   "durationMs": 115490,
+   "sampleCount": 5543514,
+   "chara": "爱如往昔"
+  },
+  {
+   "musicId": 1165,
+   "title": "LADY G DONNA",
+   "cover": "1165.png",
+   "hasLyrics": false,
+   "durationMs": 102174,
+   "sampleCount": 4904370,
+   "chara": "贵妇人"
+  },
+  {
+   "musicId": 1166,
+   "title": "夢疾風",
+   "cover": "1166.png",
+   "hasLyrics": false,
+   "durationMs": 109312,
+   "sampleCount": 5246982,
+   "chara": "千明代表"
+  },
+  {
+   "musicId": 1167,
+   "title": "どこまで走れば",
+   "cover": "1167.png",
+   "hasLyrics": false,
+   "durationMs": 71497,
+   "sampleCount": 3431866,
+   "chara": "凯旋芭蕾"
+  },
+  {
+   "musicId": 1168,
+   "title": "以下、勅命",
+   "cover": "1168.png",
+   "hasLyrics": false,
+   "durationMs": 89443,
+   "sampleCount": 4293248,
+   "chara": "黄金巨匠"
+  },
+  {
+   "musicId": 1169,
+   "title": "Stay on Course",
+   "cover": "1169.png",
+   "hasLyrics": false,
+   "durationMs": 83185,
+   "sampleCount": 3992879,
+   "chara": "梦之旅"
+  },
+  {
+   "musicId": 1170,
+   "title": "Glory Eyes",
+   "cover": "1170.png",
+   "hasLyrics": false,
+   "durationMs": 101067,
+   "sampleCount": 4851202,
+   "chara": "杏目"
+  },
+  {
+   "musicId": 1171,
+   "title": "黎明に咲く華",
+   "cover": "1171.png",
+   "hasLyrics": false,
+   "durationMs": 95024,
+   "sampleCount": 4561150,
+   "chara": null
+  },
+  {
+   "musicId": 1172,
+   "title": "AmpReFire",
+   "cover": "1172.png",
+   "hasLyrics": false,
+   "durationMs": 91202,
+   "sampleCount": 4377690,
+   "chara": null
+  },
+  {
+   "musicId": 1173,
+   "title": "Shake The World!!",
+   "cover": "1173.png",
+   "hasLyrics": false,
+   "durationMs": 98131,
+   "sampleCount": 4710310,
+   "chara": null
+  },
+  {
+   "musicId": 1174,
+   "title": "僕らの帰り道",
+   "cover": "1174.png",
+   "hasLyrics": true,
+   "durationMs": 80531,
+   "sampleCount": 3865506,
+   "chara": null
+  },
+  {
+   "musicId": 1175,
+   "title": "ハロー・ポラリス",
+   "cover": "1175.png",
+   "hasLyrics": true,
+   "durationMs": 108431,
+   "sampleCount": 5204686,
+   "chara": null
+  },
+  {
+   "musicId": 1176,
+   "title": "VOLTAGE",
+   "cover": "1176.png",
+   "hasLyrics": true,
+   "durationMs": 145426,
+   "sampleCount": 6980462,
+   "chara": null
+  },
+  {
+   "musicId": 1177,
+   "title": "UMA IN AMERICA",
+   "cover": "1177.png",
+   "hasLyrics": true,
+   "durationMs": 122340,
+   "sampleCount": 5872310,
+   "chara": null
+  },
+  {
+   "musicId": 1178,
+   "title": "BRIGHTEST HEART",
+   "cover": "1178.png",
+   "hasLyrics": false,
+   "durationMs": 105824,
+   "sampleCount": 5079546,
+   "chara": null
+  },
+  {
+   "musicId": 1179,
+   "title": "∞",
+   "cover": "1179.png",
+   "hasLyrics": false,
+   "durationMs": 109053,
+   "sampleCount": 5234566,
+   "chara": null
+  },
+  {
+   "musicId": 1181,
+   "title": "トレセンラーメン列伝",
+   "cover": "1181.png",
+   "hasLyrics": true,
+   "durationMs": 103710,
+   "sampleCount": 4978068,
+   "chara": null
+  },
+  {
+   "musicId": 1182,
+   "title": "#カワイイって言って？",
+   "cover": "1182.png",
+   "hasLyrics": false,
+   "durationMs": 96729,
+   "sampleCount": 4642978,
+   "chara": null
+  },
+  {
+   "musicId": 1183,
+   "title": "私が主役じゃダメですか？",
+   "cover": "1183.png",
+   "hasLyrics": false,
+   "durationMs": 74847,
+   "sampleCount": 3592634,
+   "chara": "烈焰快驹"
+  },
+  {
+   "musicId": 1184,
+   "title": "I Can't Choose to Give Up!",
+   "cover": "1184.png",
+   "hasLyrics": false,
+   "durationMs": 92327,
+   "sampleCount": 4431698,
+   "chara": null
+  },
+  {
+   "musicId": 1185,
+   "title": "マリンブルー・マジック♡",
+   "cover": "1185.png",
+   "hasLyrics": false,
+   "durationMs": 95103,
+   "sampleCount": 4564934,
+   "chara": "强击"
+  },
+  {
+   "musicId": 1186,
+   "title": "魔法がなくちゃはじまらないでしょ？",
+   "cover": "1186.png",
+   "hasLyrics": false,
+   "durationMs": 78484,
+   "sampleCount": 3767208,
+   "chara": null
+  },
+  {
+   "musicId": 1187,
+   "title": "豪快突破☆プリンセス！",
+   "cover": "1187.png",
+   "hasLyrics": false,
+   "durationMs": 80658,
+   "sampleCount": 3871574,
+   "chara": null
+  },
+  {
+   "musicId": 1188,
+   "title": "パラ・シエンプレ",
+   "cover": "1188.png",
+   "hasLyrics": false,
+   "durationMs": 90631,
+   "sampleCount": 4350286,
+   "chara": null
+  },
+  {
+   "musicId": 1189,
+   "title": "Logue",
+   "cover": "1189.png",
+   "hasLyrics": false,
+   "durationMs": 73625,
+   "sampleCount": 3533994,
+   "chara": null
+  },
+  {
+   "musicId": 1190,
+   "title": "限界までPom Pon！！",
+   "cover": "1190.png",
+   "hasLyrics": false,
+   "durationMs": 104099,
+   "sampleCount": 4996738,
+   "chara": null
+  },
+  {
+   "musicId": 1191,
+   "title": "Close my eyes",
+   "cover": "1191.png",
+   "hasLyrics": false,
+   "durationMs": 102668,
+   "sampleCount": 4928046,
+   "chara": null
+  },
+  {
+   "musicId": 1192,
+   "title": "ふたり",
+   "cover": "1192.png",
+   "hasLyrics": false,
+   "durationMs": 102584,
+   "sampleCount": 4924038,
+   "chara": null
+  },
+  {
+   "musicId": 1193,
+   "title": "Beyond",
+   "cover": "1193.png",
+   "hasLyrics": false,
+   "durationMs": 153507,
+   "sampleCount": 7368322,
+   "chara": null
+  },
+  {
+   "musicId": 1194,
+   "title": "Gold-Triumph",
+   "cover": "1194.png",
+   "hasLyrics": false,
+   "durationMs": 91002,
+   "sampleCount": 4368074,
+   "chara": null
+  },
+  {
+   "musicId": 1200,
+   "title": "【おやすみ配信】みんなとラヴ補充した～い",
+   "cover": "1200.png",
+   "hasLyrics": false,
+   "durationMs": 94559,
+   "sampleCount": 4538854,
+   "chara": null
+  },
+  {
+   "musicId": 1201,
+   "title": "ちょっとだけの勇気。",
+   "cover": "1201.png",
+   "hasLyrics": false,
+   "durationMs": 108405,
+   "sampleCount": 5203442,
+   "chara": null
+  },
+  {
+   "musicId": 1202,
+   "title": "仰げば尊Mission!",
+   "cover": "1202.png",
+   "hasLyrics": false,
+   "durationMs": 83462,
+   "sampleCount": 4006190,
+   "chara": null
+  },
+  {
+   "musicId": 1203,
+   "title": "希望よ永遠に",
+   "cover": "1203.png",
+   "hasLyrics": false,
+   "durationMs": 116117,
+   "sampleCount": 5573616,
+   "chara": null
+  },
+  {
+   "musicId": 1204,
+   "title": "Mile×Rule Star",
+   "cover": "1204.png",
+   "hasLyrics": false,
+   "durationMs": 82238,
+   "sampleCount": 3947410,
+   "chara": null
+  },
+  {
+   "musicId": 1205,
+   "title": "You! Aim! A!!",
+   "cover": "1205.png",
+   "hasLyrics": false,
+   "durationMs": 100230,
+   "sampleCount": 4811022,
+   "chara": null
+  },
+  {
+   "musicId": 1206,
+   "title": "恋する世界",
+   "cover": "1206.png",
+   "hasLyrics": false,
+   "durationMs": 110659,
+   "sampleCount": 5311629,
+   "chara": "美妙姿势"
+  },
+  {
+   "musicId": 1207,
+   "title": "ゆーてネタだかんね♡",
+   "cover": "1207.png",
+   "hasLyrics": false,
+   "durationMs": 84522,
+   "sampleCount": 4057074,
+   "chara": "东瀛佐敦"
+  },
+  {
+   "musicId": 1208,
+   "title": "Gold-Recollection",
+   "cover": "1208.png",
+   "hasLyrics": false,
+   "durationMs": 115319,
+   "sampleCount": 5535330,
+   "chara": null
+  },
+  {
+   "musicId": 1209,
+   "title": "最強ROARING",
+   "cover": "1209.png",
+   "hasLyrics": false,
+   "durationMs": 86922,
+   "sampleCount": 4172242,
+   "chara": "森林宝穴"
+  },
+  {
+   "musicId": 1210,
+   "title": "Beyond the Finale",
+   "cover": "1210.png",
+   "hasLyrics": false,
+   "durationMs": 100614,
+   "sampleCount": 4829490,
+   "chara": null
+  },
+  {
+   "musicId": 1211,
+   "title": "楽曲 1211",
+   "cover": "1211.png",
+   "hasLyrics": false,
+   "durationMs": 105478,
+   "sampleCount": 5062958,
+   "chara": null
+  },
+  {
+   "musicId": 8501,
+   "title": "スタホTV",
+   "cover": "8501.png",
+   "hasLyrics": false,
+   "durationMs": 92221,
+   "sampleCount": 4426605,
+   "chara": null
+  },
+  {
+   "musicId": 8502,
+   "title": "条件戦",
+   "cover": "8502.png",
+   "hasLyrics": false,
+   "durationMs": 62306,
+   "sampleCount": 2990679,
+   "chara": null
+  },
+  {
+   "musicId": 8503,
+   "title": "怪物誕生",
+   "cover": "8503.png",
+   "hasLyrics": false,
+   "durationMs": 65678,
+   "sampleCount": 3152552,
+   "chara": null
+  },
+  {
+   "musicId": 8504,
+   "title": "親馬選択",
+   "cover": "8504.png",
+   "hasLyrics": false,
+   "durationMs": 123617,
+   "sampleCount": 5933610,
+   "chara": null
+  },
+  {
+   "musicId": 8505,
+   "title": "新馬生産",
+   "cover": "8505.png",
+   "hasLyrics": false,
+   "durationMs": 84970,
+   "sampleCount": 4078542,
+   "chara": null
+  },
+  {
+   "musicId": 8506,
+   "title": "春の憧憬",
+   "cover": "8506.png",
+   "hasLyrics": false,
+   "durationMs": 85594,
+   "sampleCount": 3774685,
+   "chara": null
+  },
+  {
+   "musicId": 8507,
+   "title": "夏の情景",
+   "cover": "8507.png",
+   "hasLyrics": false,
+   "durationMs": 92804,
+   "sampleCount": 4092653,
+   "chara": null
+  },
+  {
+   "musicId": 8508,
+   "title": "秋の風韻",
+   "cover": "8508.png",
+   "hasLyrics": false,
+   "durationMs": 102857,
+   "sampleCount": 4937142,
+   "chara": null
+  },
+  {
+   "musicId": 8509,
+   "title": "冬の雪景",
+   "cover": "8509.png",
+   "hasLyrics": false,
+   "durationMs": 98671,
+   "sampleCount": 4351402,
+   "chara": null
+  },
+  {
+   "musicId": 8510,
+   "title": "闘いの輪舞",
+   "cover": "8510.png",
+   "hasLyrics": false,
+   "durationMs": 106581,
+   "sampleCount": 4700207,
+   "chara": null
+  }
+ ]
+}

@@ -214,14 +214,16 @@ async function loadProject(p){
       return v==="1"?"开":v==="0"?"关":"—";
     })();
     $("total").textContent=durationSec?fmt(durationSec):"--:--";
-    $("seek").max=durationSec||1;$("seek").value=0;
+    $("seek").max=durationSec||1;$("seek").value=0;paintSeek(0);
+    const cur=$("current");if(cur)cur.textContent="00:00.000";
     $("summary").style.display=$("player").style.display="";
 
     /* 解析后的音轨卡已按需求移除：跳过表格构建 */
     log("工程："+project.tracks.length+" 轨 / "+sampleRate+" Hz / "+(durationSec?durationSec.toFixed(3)+" 秒":"时长待实测"));
-    await preload();
+    /* 歌词只依赖工程本身，先出歌词再等音频预载（本地取不到 R2 时也能看到歌词） */
     $("lyricsCard").style.display="";
     await loadLyrics();
+    await preload();
   }catch(e){log("错误："+(e.stack||e));alert(e.message||String(e))}
   finally{}
 }
@@ -281,7 +283,27 @@ async function ensureRealtime(){
   }else masterGain.connect(audioCtx.destination);
 }
 /* ---------- 歌词 / WAV 编码（从原混音器脚本搬过来） ---------- */
+/** 点唱机曲目的歌词：镜像的 .lrc 是「日文一行 + 中文一行 + 空行」的分段文本，没有时间轴 */
+async function loadJukeboxLyrics(){
+  const box=$("lyrics");if(!box)return;
+  box.innerHTML="";lyricLines=[];lyricIdx=-1;
+  const path=(project&&project._uma&&project._uma.lyrics)||"";
+  let txt="";
+  try{const r=await fetch(path,{cache:"force-cache"});if(r.ok)txt=await r.text()}catch(e){}
+  const stat=$("lyricsStat");
+  if(!txt){box.innerHTML='<div class="small">这首没有歌词资料</div>';if(stat)stat.textContent="";return}
+  const parts=txt.replace(/\r/g,"").split(/\n{2,}/)
+    .map(function(x){return x.split("\n").map(function(y){return y.trim()}).filter(Boolean)})
+    .filter(function(x){return x.length});
+  box.innerHTML=parts.map(function(p){
+    const ja=p[0],zh=p[1]||"";
+    return '<p><span class="txt"><span class="ja">'+esc(ja)+'</span>'+(zh?'<span class="zh">'+esc(zh)+'</span>':'')+'</span></p>';
+  }).join("");
+  if(stat)stat.textContent=parts.length+" 段（点唱机无时间轴）";
+  log("歌词已载入："+parts.length+" 段（点唱机）");
+}
 async function loadLyrics(){
+  if(project&&project._uma&&project._uma.jukebox)return loadJukeboxLyrics();
   lyricLines=[];lyricIdx=-1;
   const box=$("lyrics");box.innerHTML="";
   const id=musicIdOf();
@@ -334,6 +356,7 @@ function audioBufferToWav(ab,to16){
 
 function position(){if(!audioCtx)return pausedAt;return Math.min(durationSec,pausedAt+(audioCtx.currentTime-startedAt))}
 function tick(){
+  if(!project){raf=0;return}          // 工程已卸载（换曲/重置）→ 停掉推进循环，别再写进度条
   const p=position();
   $("current").textContent=fmt(p);
   if(document.activeElement!==$("seek"))$("seek").value=p;
@@ -537,6 +560,9 @@ bind("export",async()=>{
 /** 切换 Live 时用：停播 + 清缓冲 + 进度条归零，避免上一首的状态残留（播放键变黑、进度停在半路） */
 function resetPlayer(){
   try{pausePlayback()}catch(e){}
+  /* 关键：停掉推进循环（不然换曲后它还会拿旧时钟继续写 #current / 进度条） */
+  if(raf){cancelAnimationFrame(raf);raf=0}
+  startedAt=0;
   try{disconnectGraph()}catch(e){}
   buffers.clear();
   project=null; loadedProject=null; pausedAt=0; durationSec=0;
