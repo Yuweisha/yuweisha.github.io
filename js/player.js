@@ -283,14 +283,38 @@ async function ensureRealtime(){
   }else masterGain.connect(audioCtx.destination);
 }
 /* ---------- 歌词 / WAV 编码（从原混音器脚本搬过来） ---------- */
-/** 点唱机曲目的歌词：镜像的 .lrc 是「日文一行 + 中文一行 + 空行」的分段文本，没有时间轴 */
+/** 点唱机曲目的歌词：优先读 data/jukebox_metadata/lyrics/<id>.json（带时间轴，结构与 live 的 lyrics 一致），
+ *  没有 json 时回退旧的 .lrc（「日文一行 + 中文一行 + 空行」分段，无时间轴） */
 async function loadJukeboxLyrics(){
   const box=$("lyrics");if(!box)return;
   box.innerHTML="";lyricLines=[];lyricIdx=-1;
+  const stat=$("lyricsStat");
+  const id=(project&&project._uma&&project._uma.musicId)||musicIdOf();
+  /* 1) 带时间轴：与 live 曲目同一套渲染 + 逐句高亮/点击跳转 */
+  if(id){
+    let data=null;
+    try{const r=await fetch("data/jukebox_metadata/lyrics/"+id+".json",{cache:"force-cache"});if(r.ok)data=await r.json()}catch(e){}
+    const ly=data&&data.lyrics;
+    if(ly&&Object.keys(ly).length){
+      lyricLines=Object.keys(ly).map(Number).filter(n=>Number.isFinite(n)).sort((a,b)=>a-b).map(ms=>{
+        const parts=String(ly[ms]).split("\n");
+        return {ms:ms,ja:parts[0]||"",zh:parts[1]||""};
+      });
+      box.innerHTML=lyricLines.map((l,i)=>'<p data-i="'+i+'"><span class="txt"><span class="ja">'+esc(l.ja)+'</span>'
+        +(l.zh?'<span class="zh">'+esc(l.zh)+'</span>':"")+'</span><span class="t">'+fmt(l.ms/1000)+'</span></p>').join("");
+      box.querySelectorAll("p").forEach(el=>{
+        el.onclick=()=>{const l=lyricLines[Number(el.dataset.i)];if(l&&durationSec>0)seekTo(l.ms/1000)};
+      });
+      if(stat)stat.textContent="—";
+      syncLyrics(position());
+      log("歌词已载入："+lyricLines.length+" 行（点唱机，含时间轴，点击任一行可跳到该句）");
+      return;
+    }
+  }
+  /* 2) 回退：旧的 .lrc（无时间轴） */
   const path=(project&&project._uma&&project._uma.lyrics)||"";
   let txt="";
   try{const r=await fetch(path,{cache:"force-cache"});if(r.ok)txt=await r.text()}catch(e){}
-  const stat=$("lyricsStat");
   if(!txt){box.innerHTML='<div class="small">这首没有歌词资料</div>';if(stat)stat.textContent="";return}
   const parts=txt.replace(/\r/g,"").split(/\n{2,}/)
     .map(function(x){return x.split("\n").map(function(y){return y.trim()}).filter(Boolean)})
