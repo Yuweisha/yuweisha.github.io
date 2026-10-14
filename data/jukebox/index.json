@@ -308,6 +308,15 @@
    "chara": null
   },
   {
+   "musicId": 1049,
+   "title": "バクシンバクシンバクシンシン",
+   "cover": "1049.png",
+   "hasLyrics": false,
+   "durationMs": 62859,
+   "sampleCount": 3017230,
+   "chara": null
+  },
+  {
    "musicId": 1050,
    "title": "We are DREAMERS!!",
    "cover": "1050.png",
@@ -341,6 +350,15 @@
    "hasLyrics": true,
    "durationMs": 287800,
    "sampleCount": 12691980,
+   "chara": null
+  },
+  {
+   "musicId": 1055,
+   "title": "ゴルシンゴルシンゴルシンシン",
+   "cover": "1055.png",
+   "hasLyrics": false,
+   "durationMs": 64414,
+   "sampleCount": 3091888,
    "chara": null
   },
   {
