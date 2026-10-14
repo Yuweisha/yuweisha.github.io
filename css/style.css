@@ -90,3 +90,13 @@ body {
 .nav-drop-menu a:hover{background:rgba(9,105,218,.22);opacity:1}
 .nav-drop-menu a.active{background:rgba(9,105,218,.3);opacity:1}
 @media(max-width:700px){.nav-drop-menu{left:auto;right:0;transform:translateY(-4px)}.nav-drop:hover .nav-drop-menu,.nav-drop.open .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{transform:translateY(0)}}
+
+/* 窄屏顶栏：压成一行（与生成器/文档页一致） */
+@media (max-width: 700px) {
+  .header-inner { padding: 8px 0 !important; gap: 10px; min-height: 52px; flex-direction: row !important; flex-wrap: wrap !important; align-items: center !important; }
+  .brand { gap: 8px; }
+  .brand-avatar { width: 28px; height: 28px; }
+  .brand-name { display: none; }
+  .header-nav { gap: 10px; width: auto !important; margin-left: auto !important; justify-content: flex-end; padding-top: 0; }
+  .header-nav a { font-size: 12px; padding: 3px 0; white-space: nowrap; }
+}

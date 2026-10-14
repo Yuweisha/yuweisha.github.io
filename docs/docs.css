@@ -86,6 +86,8 @@ a{color:var(--accent)}
   .doc-side{position:static;max-height:none}
   .doc-main{padding:20px 16px 24px}
   .doc-body h1{font-size:23px}
-  .header-nav{gap:13px}.header-nav > a,.nav-drop-btn{font-size:13px}.brand-sub{display:none}
+  .header-inner{padding:8px 0;gap:10px;min-height:52px}
+  .brand{gap:8px}.brand-avatar{width:28px;height:28px}.brand-name,.brand-sub{display:none}
+  .header-nav{gap:10px}.header-nav > a,.nav-drop-btn{font-size:12px;padding:3px 0;white-space:nowrap}
   .site-footer{flex-direction:column;gap:6px;text-align:center}
 }

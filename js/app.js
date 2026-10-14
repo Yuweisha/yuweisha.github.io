@@ -19,7 +19,7 @@
   var scVoice = null;                            // 特殊演出的声部版本（带 voices 的曲子，如 1151 的男声/女声）
   /* 全曲同一角色：开启后所有槽位改用同一个角色；castBefore 记录开启前的逐槽选角以便还原 */
   var sameCharId = null, castBefore = null;
-  var durManual = false;                         // 时长输入框是否被用户手动改过（否则按 streams 精算）
+  var sfx = false;                               // 「演出音效」复选框：勾上用含演出音效的那版伴奏（bgm_01）
   var openCombo = null;
 
   /** 时长查表：优先指定 bgm，其次 bgm_01，最后退回该曲剩下的任一值。
@@ -168,10 +168,24 @@
     var hit = list.find(function (b) { return b.id === "bgm_02"; });
     return ((hit || list[0] || {}).id) || null;
   }
+  /** 另一版伴奏（含演出音效，id 不是 bgm_02）；没有就返回 null（该曲不显示「演出音效」复选框） */
+  function bgmSfxId(d) {
+    var hit = ((d && d.bgm) || []).find(function (b) { return b.id && b.id !== "bgm_02"; });
+    return (hit && hit.id) || null;
+  }
+  function applyBgm() { bgmId = (sfx && bgmSfxId(detail)) || pickBgmId(detail); }
+  /** 「演出音效」复选框：只有两版伴奏的曲子才出现 */
+  function syncBgmUI() {
+    var box = $("sfxSwitch");
+    var has = !!bgmSfxId(detail);
+    if (box) box.hidden = !has;
+    if (!has) { sfx = false; if ($("bgmSfx")) $("bgmSfx").checked = false; }
+    applyBgm();
+  }
 
   function renderSong() {
     $("songCard").style.display = "";
-    $("outCard").style.display = "";
+    /* 输出卡已并入播放器（摘要/音轨/日志由 player.js 控制显示） */
     $("cover").src = DATA + "jackets/" + detail.musicId + ".png";
     $("songTitle").textContent = titleOf({ musicId: detail.musicId, title: detail.title });
     var live = detail.live || {};
@@ -183,18 +197,7 @@
       live.memberCount ? "编成 " + live.memberCount : "",
     ].filter(Boolean).map(esc).join(" · ");
 
-    var sel = $("bgmSelect");
-    sel.innerHTML = "";
-    (detail.bgm || []).forEach(function (b) {
-      var o = document.createElement("option");
-      o.value = b.id; o.textContent = bgmLabel(b.id);
-      sel.appendChild(o);
-    });
-    sel.value = bgmId;
-    sel.onchange = function () { bgmId = sel.value; syncDuration(); build(); };
-
-    renderEggHint();
-    syncDuration();
+    syncBgmUI();
     syncSpecialCutUI();
     renderSameChar();
     renderSlots();
@@ -234,30 +237,7 @@
     }
   }
 
-  /** 彩蛋提示：本曲有迷人景致的音轨时，默认选角就是她 */
-  function renderEggHint() {
-    var el = $("eggHint");
-    if (!el) return;
-    // 特性探测：万一浏览器把旧 core.js 和新 app.js 混着用，也只是没有提示，不会中断渲染
-    var egg = (typeof C.easterEggSlots === "function") ? C.easterEggSlots(detail) : [];
-    if (!egg.length) { el.hidden = true; el.textContent = ""; return; }
-    var c = C.characterById(detail, C.EASTER_CHARA);
-    el.hidden = false;
-    el.textContent = "\u266a 彩蛋：本曲有" + C.characterName(c) + "的音轨，默认就由她演唱（"
-      + egg.length + " 个槽位：" + egg.join(" / ") + "）";
-  }
-
   function refDuration() { return songDuration(detail.musicId, bgmId); }
-  /** 把「默认选角的官方时长」填进输入框作为参考；只有用户手动改过才会当成覆盖值。 */
-  function syncDuration() {
-    var d = refDuration();
-    durManual = false;
-    $("durInput").value = d ? String(d) : "";
-    /* 参考值改成悬停提示（原来那行小字已按需求去掉） */
-    $("durInput").title = d
-      ? "参考：默认选角 " + d + " ms；改动它会覆盖按当前选角精算的时长"
-      : "本地没有参考值：将按 streams.json 精算时长";
-  }
 
   /* ---------------- 出场时间轴 ---------------- */
 
@@ -569,8 +549,6 @@
   var current = null;
 
   function build() {
-    var durInput = parseInt($("durInput").value, 10);
-    var manual = (durManual && isFinite(durInput) && durInput > 0) ? durInput : null;
     var songStreams = streams[String(detail.musicId)] || null;
     var songSamples = samples[String(detail.musicId)] || null;
     var songRates = rates[String(detail.musicId)] || null;
@@ -578,23 +556,9 @@
     current = C.buildProject({
       detail: detail, bgmId: bgmId, cast: cast, balance: balance,
       specialCut: !!C.specialCutOf(detail), specialCutDefault: defaultInterlude, specialCutVoice: scVoice,
-      durationMs: manual, streams: songStreams, samples: songSamples, rates: songRates
+      durationMs: null, streams: songStreams, samples: songSamples, rates: songRates
     });
-    var durMs = current.durationMs;
-    var voices = current.tracks.filter(function (t) { return t.id !== "bgm"; }).length;
-    $("outStat").textContent = current.tracks.length + " 轨 · " + (durMs ? fmt(durMs) : "时长未知");
-    $("outKv").innerHTML =
-      "<b>曲目</b><span>" + esc(titleOf({ musicId: detail.musicId, title: detail.title })) + "</span>" +
-      "<b>BGM</b><span>" + esc(bgmId ? bgmId + " · " + bgmLabel(bgmId) : "-") + "</span>" +
-      "<b>声部轨</b><span>" + voices + " 条（" + displayCast().map(function (kv) {
-        var c = charaOf(kv[1]);
-        return C.slotLabel(kv[0]) + "=" + (c ? C.characterName(c) : kv[1]);
-      }).join("、") + "）</span>" +
-      "平衡补偿</b><span>" + (balance ? "开（×N^(-1/3)）" : "关") + "</span>" +
-      (C.specialCutOf(detail) ? "<b>特殊演出</b><span>" + esc(specialCutSummary()) + "</span>" : "") +
-      "<b>时长</b><span>" + (durMs ? (durMs / 1000).toFixed(3) + " 秒" : "未设置") + "</span>";
-    var json = JSON.stringify(current, null, 1);
-    $("jsonPreview").textContent = json.length > 12000 ? json.slice(0, 12000) + "\n… （预览截断，下载得到完整 JSON）" : json;
+    /* 摘要与 JSON 预览已按需求移除：这里只保留 current（送入混音器要用） */
   }
 
   /* ---------------- 动作 ---------------- */
@@ -626,36 +590,8 @@
 
   function exportName() { return C.exportBaseName(detail, cast, bgmId); }
 
-  function download() {
-    var blob = new Blob([JSON.stringify(current, null, 1)], { type: "application/json" });
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = exportName() + ".json";
-    a.click();
-    setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
-    $("outMsg").textContent = "已下载 " + a.download;
-  }
-
-  async function copyJSON() {
-    try {
-      await navigator.clipboard.writeText(JSON.stringify(current));
-      $("outMsg").textContent = "已复制完整 JSON 到剪贴板（" + JSON.stringify(current).length + " 字符）";
-    } catch (e) {
-      $("outMsg").textContent = "复制失败（浏览器限制）：" + e.message;
-    }
-  }
-
-  function sendToMixer() {
-    try {
-      localStorage.setItem("uma.project", JSON.stringify(current));
-      localStorage.setItem("uma.handoff", JSON.stringify({
-        mediaBase: SITE, name: exportName(), ts: Date.now()
-      }));
-      location.href = "mixer.html?auto=1";
-    } catch (e) {
-      $("outMsg").textContent = "写入 localStorage 失败：" + e.message;
-    }
-  }
+  /** 给内嵌播放器用：播放键按下时取当前选角生成好的工程 */
+  window.__umaBuildProject = function () { return current; };
 
   /* ---------------- 绑定 ---------------- */
 
@@ -667,13 +603,9 @@
       setSameCharMsg("");
       cast = C.defaultCast(detail); renderSlots(); build();
     };
-    $("btnDownload").onclick = download;
-    $("btnCopy").onclick = copyJSON;
-    $("btnMixer").onclick = sendToMixer;
     $("balance").addEventListener("change", function (e) { balance = e.target.checked; build(); });
     $("defaultInterlude").addEventListener("change", function (e) { defaultInterlude = e.target.checked; build(); });
-    $("durInput").addEventListener("input", function () { durManual = true; });
-    $("durInput").addEventListener("change", build);
+    $("bgmSfx").addEventListener("change", function (e) { sfx = e.target.checked; applyBgm(); build(); });
     boot();
   });
 })();

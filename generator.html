@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/player.css?v=6dfdb41b">
 <title>UMA Live Studio — 混音工程生成器</title>
 <link rel="icon" href="icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
@@ -22,7 +23,15 @@
   .header-nav a{color:#f0f6fc;font-size:14px;font-weight:600;opacity:.9;text-decoration:none;padding:4px 0;transition:opacity .2s,color .2s,box-shadow .2s}
   .header-nav a:hover{color:#fff;opacity:1}
   .header-nav a.active{color:#fff;opacity:1;box-shadow:inset 0 -2px 0 var(--accent)}
-  @media(max-width:700px){.header-inner{padding:9px 0}.header-nav{gap:14px}.header-nav a{font-size:13px}.brand-sub{display:none}}
+  @media(max-width:700px){
+  .header-inner{padding:8px 0;gap:10px;min-height:52px;flex-wrap:wrap}
+  .brand{gap:8px}.brand-avatar{width:28px;height:28px}
+  .brand-name{display:none}.brand-sub{display:none}
+  .header-nav{gap:10px;margin-left:auto}
+  .header-nav > a,.nav-drop-btn{font-size:12px;padding:3px 0;white-space:nowrap}
+  .brand,.header-nav{flex:0 0 auto}
+}
+
 
 
 :root{color-scheme:light;--bg:#f6f8fa;--bg-soft:#eef2f6;--panel:#ffffff;--panel2:#f8fafc;--line:#d0d7de;--line-light:#e6ebf0;--text:#1f2328;--text-2:#57606a;--muted:#6e7781;--accent:#0969da;--accent-strong:#0550ae;--accent-soft:#ddf4ff;--ok:#1a7f37;--ok-soft:#dafbe1;--warn:#bc4c00;--warn-soft:#fff1e5;--err:#cf222e;--err-soft:#ffebe9;--shadow-small:0 1px 2px rgba(31,35,40,.06);--shadow:0 3px 8px rgba(31,35,40,.08);--shadow-large:0 8px 24px rgba(31,35,40,.10);--radius-small:6px;--radius:10px;--radius-large:14px}
@@ -51,6 +60,8 @@ input:focus,select:focus{border-color:var(--accent)}
 .switch input[type=checkbox]{width:15px;height:15px;margin:0;accent-color:var(--accent);cursor:pointer}
 .switch:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
 .switch:has(input:checked) span{color:var(--accent-strong);font-weight:650}
+  /* 开关组靠右收拢：条目数随曲子变化（有特殊演出时多出「播放默认间奏 / 男声女声」，往左生长） */
+  .switch-group{margin-left:auto;gap:9px;justify-content:flex-end;flex-wrap:wrap}
 /* 全曲同一角色：圆角胶囊风格的下拉，与站点其它控件一致 */
 .picksel{appearance:none;-webkit-appearance:none;padding:7px 30px 7px 13px;border:1px solid var(--line);border-radius:999px;
   background:var(--panel) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%2357606a'/></svg>") no-repeat right 12px center;
@@ -83,9 +94,12 @@ input:focus,select:focus{border-color:var(--accent)}
 .head{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:start}
 .head img{width:132px;height:132px;border-radius:11px;object-fit:cover;background:var(--bg-soft)}
 .head h2{margin:2px 0 4px;font-size:20px}
+.head-main{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:20px;align-items:start}
+.head .head-left{min-width:0}
+.head .head-right{min-width:0}
 .head .liveInfo{margin-top:8px}
 .liveInfo .liveCredits{font-size:12.5px;color:var(--muted);line-height:1.55;white-space:pre-line}
-.liveInfo .liveIntro{margin-top:7px;padding:7px 10px;border-left:3px solid var(--accent-soft);background:var(--panel2);border-radius:0 var(--radius-small) var(--radius-small) 0;font-size:12.5px;color:var(--text-2);line-height:1.6;white-space:pre-line}
+.liveInfo .liveIntro,.liveIntro{margin-top:7px;padding:8px 12px;border-left:3px solid #b6e3ff;background:var(--accent-soft);border-radius:0 var(--radius-small) var(--radius-small) 0;font-size:12.5px;color:var(--text-2);line-height:1.6;white-space:pre-line}
 .slot{border:1px solid var(--line);border-radius:11px;padding:10px;margin:9px 0;background:var(--panel2)}
 .slot .top{display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:center}
 .slotname{font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
@@ -136,7 +150,7 @@ pre{margin:0;background:var(--bg);border:1px solid var(--line-light);border-radi
 .note.egg{background:var(--accent-soft);border-color:#b6e3ff;color:var(--accent-strong);font-size:12.5px}
 .warn{padding:9px 11px;border-radius:9px;background:var(--warn-soft);border:1px solid #f0b98b;color:var(--warn);margin:8px 0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:700px){.grid2{grid-template-columns:1fr}.head{grid-template-columns:1fr}}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}.head{grid-template-columns:1fr}.head-main{grid-template-columns:1fr;gap:10px}}
 a{color:var(--accent)}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12px;color:var(--muted)}
 .kv b{color:var(--text);font-weight:650}
@@ -188,15 +202,9 @@ a{color:var(--accent)}
     </a>
         <nav class="header-nav">
       <a href="index.html">主页</a>
-      <div class="nav-drop">
-        <button class="nav-drop-btn is-active" type="button" aria-haspopup="true" aria-expanded="false" aria-current="page">UMA Live Studio<svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
-        <div class="nav-drop-menu">
-          <a href="generator.html" class="active" aria-current="page">生成器</a>
-          <a href="mixer.html">混音器</a>
-        </div>
-      </div>
+      <a href="generator.html" class="active" aria-current="page">UMA Live Studio</a>
       <a href="docs/">Hachimi-BV Docs</a>
-    </nav>
+  </nav>
   </div>
 </header>
 
@@ -223,32 +231,44 @@ a{color:var(--accent)}
       <div class="card" id="songCard" style="display:none">
         <div class="head">
           <img id="cover" alt="">
-          <div>
-            <h2 id="songTitle">—</h2>
-            <div class="small" id="songMeta">—</div>
-            <div class="liveInfo">
-              <div class="liveCredits" id="liveCredits" hidden></div>
-              <div class="liveIntro" id="liveIntro" hidden></div>
+          <div class="head-main">
+            <div class="head-left">
+              <h2 id="songTitle">—</h2>
+              <div class="small" id="songMeta">—</div>
+              <div class="liveInfo"><div class="liveCredits" id="liveCredits" hidden></div></div>
             </div>
+            <!-- 乐曲介绍：放到标题右侧的空白区（作词作曲/翻译仍留在标题下方） -->
+            <div class="head-right"><div class="liveIntro" id="liveIntro" hidden></div></div>
           </div>
         </div>
 
-        <div class="grid2" style="margin-top:14px">
-          <div>
-            <label for="bgmSelect">BGM</label>
-            <select id="bgmSelect"></select>
+        <!-- 播放器（原混音器页面的控件搬到这里；裁剪编码延迟/尾填充与压缩器常开，无开关） -->
+        <div id="player">
+          <div class="transport">
+            <div class="row" style="justify-content:space-between">
+              <div class="time"><span id="current">00:00.000</span><span class="time-sep">/</span><span id="total">00:00.000</span></div>
+              <span id="state" class="badge" data-s="ready">准备就绪</span>
+            </div>
+            <input id="seek" class="seek" type="range" min="0" max="1" step="0.001" value="0">
           </div>
-          <div>
-            <label>工程时长（留空 = 按当前选角精算）</label>
-            <input id="durInput" type="text" inputmode="numeric">
+          <div class="row controls">
+            <button id="play" class="btn primary" title="按当前选角生成工程并开始播放">▶ 播放</button>
+            <button id="pause" class="btn">⏸ 暂停</button>
+            <button id="export" class="btn">导出 WAV</button>
+            <button id="exportMp3" class="btn">导出 MP3 · 320k</button>
+            <label class="vol" title="只影响试听音量；导出音频仍按工程的增益与压缩器渲染">
+              <span>音量</span>
+              <input id="vol" type="range" min="0" max="100" step="1" value="100">
+              <span id="volVal" class="small">100%</span>
+            </label>
+            <label class="switch" title="勾选导出 16-bit PCM；不勾为默认的 32-bit float"><input id="wav16" type="checkbox"><span>16-bit PCM</span></label>
+            <span id="exportStatus" class="small"></span>
           </div>
         </div>
 
         <div style="margin-top:14px;font-weight:700">声部槽位与角色</div>
         <div class="small">点开任一槽位的下拉即可<strong>搜索角色</strong>（中文名 / 日文名 / 英文名 / id 均可），条目第一行中文名、第二行「日文原名 |英文名」、右侧为角色编号，当前选择会高亮。蓝色条为该槽的出场时间轴。</div>
         <div id="slots"></div>
-
-        <div id="eggHint" class="note egg" hidden></div>
 
         <div class="samechar-row">
           <div class="samechar-col">
@@ -264,6 +284,8 @@ a{color:var(--accent)}
                     title="随机挑 3 位角色（本曲阵容内、互不重复）分配到各站位，每次点击都不一样">我想听随机角色</button>
             <button class="btn" id="btnReset">恢复默认选角</button>
           </div>
+          <!-- 右侧开关组：整体右对齐；带特殊演出的曲子会多出「播放默认间奏 / 男声女声」，往左生长 -->
+          <div class="row switch-group" id="switchGroup">
           <label class="switch" id="interludeSwitch" hidden
                  title="勾上后间奏播放默认版本（vo_0000）；不勾则播放主唱角色对应的特殊演出">
             <input id="defaultInterlude" type="checkbox">
@@ -275,29 +297,49 @@ a{color:var(--accent)}
             <input id="balance" type="checkbox" checked>
             <span>平衡补偿</span>
           </label>
-        </div>
+          <label class="switch" id="sfxSwitch" hidden
+                 title="勾上后伴奏用「含演出音效」那一版（bgm_01）；不勾用「无演出音效」（bgm_02），与官方默认一致">
+            <input id="bgmSfx" type="checkbox">
+            <span>演出音效</span>
+          </label>
+          </div>
       </div>
 
-      <div class="card" id="outCard" style="display:none">
+      <div id="summary" class="card" style="display:none">
+        <div class="stats">
+          <div class="stat"><span>采样率</span><b id="sr">-</b></div>
+          <div class="stat"><span>时长</span><b id="dur">-</b></div>
+          <div class="stat"><span>音轨数</span><b id="count">-</b></div>
+          <div class="stat"><span>已载入</span><b id="loaded">0 / 0</b></div>
+          <div class="stat"><span>平衡补偿</span><b id="mixBalance">-</b></div>
+        </div>
+        <div id="outMsg" class="small" style="margin-top:8px"></div>
+      </div>
+
+      <div id="lyricsCard" class="card" style="display:none">
         <div class="row" style="justify-content:space-between">
-          <div style="font-weight:700">生成的混音工程 JSON</div>
-          <span class="badge" id="outStat">—</span>
+          <div style="font-weight:700">歌词</div>
+          <span id="lyricsStat" class="small"></span>
         </div>
-        <div class="row" style="margin:10px 0">
-          <button class="btn primary" id="btnMixer">▶ 送入混音器播放/导出</button>
-          <button class="btn" id="btnDownload">下载 JSON</button>
-          <button class="btn" id="btnCopy">复制 JSON</button>
-        </div>
-        <div id="outMsg" class="small"></div>
-        <div class="kv" id="outKv" style="margin:10px 0"></div>
-        <pre id="jsonPreview"></pre>
+        <div id="lyrics"></div>
+      </div>
+
+      <div id="tracksCard" class="card" style="display:none">
+        <div style="font-weight:700;margin-bottom:10px">解析后的音轨</div>
+        <div id="tracks" class="trackbox"></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:10px">Log</div>
+        <pre id="log"></pre>
       </div>
     </div>
   </div>
 
 </div>
 <script src="js/core.js?v=315b31a0"></script>
-<script src="js/app.js?v=584fffa1"></script>
+<script src="js/app.js?v=8c0ab008"></script>
+<script src="js/player.js?v=6d2bf5ff"></script>
 <footer class="site-footer">
   <div>© 2026 Yuweisha</div>
   <div class="footer-links"><a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a></div>
