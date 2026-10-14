@@ -70,6 +70,13 @@
 
   /* ---------------- 启动 ---------------- */
 
+  /** 顶部状态条元素已按需求移除：这里做空值兜底，读取失败时退回 outMsg */
+  function setBoot(cls, html) {
+    var el = $("boot");
+    if (el) { el.className = cls; el.innerHTML = html; return; }
+    if (cls === "warn") $("outMsg").textContent = String(html).replace(/<[^>]+>/g, "");
+  }
+
   async function boot() {
     try {
       catalog = await getJSON(DATA + "catalog.json");
@@ -81,14 +88,12 @@
       // 个别文件不是 48000 Hz（实测 1006/chara_1043:w0 = 44100）→ 逐轨采样率与时长换算按它
       try { rates = await getJSON(DATA + "media-rates.json"); } catch (e) { rates = {}; }
     } catch (e) {
-      $("boot").className = "warn";
-      $("boot").innerHTML = "读取混音数据失败：" + esc(e.message) +
+      setBoot("warn", "读取混音数据失败：" + esc(e.message) +
         "<br>本页需要通过 HTTP 打开（file:// 会被浏览器阻止 fetch）。本地预览：<code>python tools/serve.py</code>，" +
-        "或直接部署到 GitHub Pages。";
+        "或直接部署到 GitHub Pages。");
       return;
     }
-    $("boot").className = "note";
-    $("boot").innerHTML = "混音数据就绪：" + catalog.songs.length + " 首";
+    setBoot("note", "混音数据就绪：" + catalog.songs.length + " 首");
     $("libStat").textContent = catalog.songs.length + " 首可浏览";
     renderList("");
     $("search").addEventListener("input", function (e) { renderList(e.target.value); });
