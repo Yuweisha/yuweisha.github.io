@@ -184,6 +184,10 @@
   }
 
   function renderSong() {
+    // 换 Live：先把播放器停掉并重置（否则播放键与进度条会停在上一次的状态）
+    if (window.__umaPlayer && typeof window.__umaPlayer.reset === "function") {
+      try { window.__umaPlayer.reset(); } catch (e) { /* 播放器未就绪时忽略 */ }
+    }
     $("songCard").style.display = "";
     /* 输出卡已并入播放器（摘要/音轨/日志由 player.js 控制显示） */
     $("cover").src = DATA + "jackets/" + detail.musicId + ".png";

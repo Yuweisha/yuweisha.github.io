@@ -5,7 +5,7 @@
 "use strict";
 const $=id=>document.getElementById(id);
 const C=window.UmaCore;
-const logEl=$("log");
+const logEl=$("log");            // 日志卡已移除：这里可能为 null，log() 内部兜底
 let project=null, baseUrl="";
 const TRIM=true, COMPRESS=true;   // 按需求常开：裁剪编码延迟/尾填充、压缩器
 let sampleRate=48000, durationSec=0, buffers=new Map();
@@ -49,7 +49,7 @@ function parseTrack(t){
 const SLOT_ZH={center:"主唱角色",left:"左侧伴唱",right:"右侧伴唱",left2:"左副伴唱",right2:"右副伴唱",left3:"左副伴唱2",right3:"右副伴唱2"};
 let startedAt=0, pausedAt=0, raf=0;
 
-function log(s){const t=new Date().toLocaleTimeString();logEl.textContent+="["+t+"] "+s+"\n";logEl.scrollTop=logEl.scrollHeight}
+function log(s){const el=logEl||document.getElementById("log");if(!el)return;const t=new Date().toLocaleTimeString();el.textContent+="["+t+"] "+s+"\n";el.scrollTop=el.scrollHeight}
 function fmt(x){x=Math.max(0,Number(x)||0);const m=Math.floor(x/60),s=x-m*60;return String(m).padStart(2,"0")+":"+s.toFixed(3).padStart(6,"0")}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
 
@@ -143,17 +143,19 @@ async function preload(){
       const i=idx++, t=list[i];
       const rem=resolveMedia(t.media);
       const urls=[rem,(baseUrl||C.mediaBaseDefault())+sinkIndex(t)];
-      const st=$("ts-"+i), rowEl=st?st.parentNode:null;
+      const st=$("ts-"+i), rowEl=st?st.parentNode:null;   // 音轨表已移除：st 可能为 null
       if(rowEl)rowEl.title=maskUrl(urls[0])||t.media||"(无 URL)";
       try{
         if(!rem)throw new Error("没有可识别的音频 URL");
-        st.textContent="载入中";
+        if(st)st.textContent="载入中";
         const b=await fetchFirstOk(urls.filter(Boolean),t.stream,ctx);
         buffers.set(t.id,b);ok++;
-        st.textContent=b.duration.toFixed(3)+" s"+(t.stream&&t.stream.sampleRate!==b.sampleRate?" (⚠ "+b.sampleRate+"Hz)":"");
-        st.className="small ok dur";
+        if(st){
+          st.textContent=b.duration.toFixed(3)+" s"+(t.stream&&t.stream.sampleRate!==b.sampleRate?" (⚠ "+b.sampleRate+"Hz)":"");
+          st.className="small ok dur";
+        }
       }catch(e){
-        st.textContent="失败";st.className="small err dur";
+        if(st){st.textContent="失败";st.className="small err dur";}
         if(rowEl)rowEl.title=e.message+" · 尝试："+maskUrl(urls[0]);   // 链接不显示，错误靠悬停看
         log("轨道 "+t.id+"（"+t.name+"）："+e.message);
       }
@@ -188,7 +190,7 @@ function keepOrphans(p){
   return Object.assign({},p,{durationMs:p.durationMs||0});
 }
 async function loadProject(p){
-  $("summary").style.display=$("player").style.display=$("tracksCard").style.display="none";
+  $("summary").style.display=$("player").style.display="none";
     $("lyricsCard").style.display="none";
   buffers.clear(); disconnectGraph();
   try{
@@ -213,25 +215,9 @@ async function loadProject(p){
     })();
     $("total").textContent=durationSec?fmt(durationSec):"--:--";
     $("seek").max=durationSec||1;$("seek").value=0;
-    $("summary").style.display=$("player").style.display=$("tracksCard").style.display="";
+    $("summary").style.display=$("player").style.display="";
 
-    const box=$("tracks");box.innerHTML="";
-    const head=document.createElement("div");head.className="track-head";
-    head.innerHTML="<div>序号</div><div>角色</div><div>音轨</div><div>站位</div><div>时长</div><div>增益</div>";
-    box.appendChild(head);
-    project.tracks.forEach((t,i)=>{
-      const el=document.createElement("div");el.className="track";
-      const pt=parseTrack(t);
-      el.innerHTML="<div class='idx'>"+(i+1)+"</div>"+
-        "<div class='role' title='"+esc(t.name||t.id||"")+"'>"+esc(pt.role)+"</div>"+
-        "<div class='wave'>"+esc(pt.wave)+"</div>"+
-        "<div class='slot'>"+esc(SLOT_ZH[pt.slot]||pt.slot)+"</div>"+
-        "<div class='dur small' id='ts-"+i+"'>载入中</div>"+
-        "<div class='db'>"+esc(fmtDb(t.volumeDb??0))+"</div>";
-      el.title=t.media||"";   // 链接不显示在表格里，鼠标悬停可见
-      box.appendChild(el);
-    });
-
+    /* 解析后的音轨卡已按需求移除：跳过表格构建 */
     log("工程："+project.tracks.length+" 轨 / "+sampleRate+" Hz / "+(durationSec?durationSec.toFixed(3)+" 秒":"时长待实测"));
     await preload();
     $("lyricsCard").style.display="";
@@ -548,6 +534,22 @@ bind("export",async()=>{
   try{await renderOffline()}catch(e){const s=document.getElementById("exportStatus");if(s)s.textContent="失败";log("导出失败："+(e.stack||e));}
   finally{if(b)b.disabled=false}
 });
-window.__umaPlayer={load:(p)=>{loadedProject=p;return loadProject(p)},play:playPlayback,pause:pausePlayback,playOrBuild};
+/** 切换 Live 时用：停播 + 清缓冲 + 进度条归零，避免上一首的状态残留（播放键变黑、进度停在半路） */
+function resetPlayer(){
+  try{pausePlayback()}catch(e){}
+  try{disconnectGraph()}catch(e){}
+  buffers.clear();
+  project=null; loadedProject=null; pausedAt=0; durationSec=0;
+  const sk=$("seek"); if(sk){sk.max=1;sk.value=0;paintSeek(0)}
+  const c=$("current"); if(c)c.textContent="00:00.000";
+  const t=$("total"); if(t)t.textContent="00:00.000";
+  ["play","pause","export","exportMp3"].forEach(id=>{const el=$(id);if(el)el.disabled=false});
+  const st=$("state"); if(st)st.textContent="准备就绪";
+  setState("ready","准备就绪");
+  ["summary","lyricsCard"].forEach(id=>{const el=$(id);if(el)el.style.display="none"});
+  const ly=$("lyrics"); if(ly)ly.innerHTML="";
+  log("已重置播放器（等待新的 Live）");
+}
+window.__umaPlayer={load:(p)=>{loadedProject=p;return loadProject(p)},play:playPlayback,pause:pausePlayback,playOrBuild,reset:resetPlayer};
 log("播放器 已就绪");
 })();
