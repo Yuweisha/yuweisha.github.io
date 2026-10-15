@@ -1,0 +1,16 @@
+{
+  "musicId": 1210,
+  "credits": "作词：アッシュ井上 (Dream Monster)・柿沼雅美\n作曲・编曲：アッシュ井上 (Dream Monster)\n歌词提供：迪枫Stan\n翻译提供：KAISHUI守夜中",
+  "creditLines": [
+    "作词：アッシュ井上 (Dream Monster)・柿沼雅美",
+    "作曲・编曲：アッシュ井上 (Dream Monster)",
+    "歌词提供：迪枫Stan",
+    "翻译提供：KAISHUI守夜中"
+  ],
+  "intro": "正因为有劲敌们在，新时代才得以开辟。\n如果有想要抵达的地方——那就一起奔跑吧，前往终幕的彼方",
+  "introLines": [
+    "正因为有劲敌们在，新时代才得以开辟。",
+    "如果有想要抵达的地方——那就一起奔跑吧，前往终幕的彼方"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

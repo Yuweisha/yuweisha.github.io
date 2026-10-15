@@ -1,0 +1,16 @@
+{
+  "musicId": 1081,
+  "credits": "作词：松井洋平\n作曲・编曲：三好啓太\n译：毫毛\n翻译提供：唯一的星愿",
+  "creditLines": [
+    "作词：松井洋平",
+    "作曲・编曲：三好啓太",
+    "译：毫毛",
+    "翻译提供：唯一的星愿"
+  ],
+  "intro": "各自的道路不断交汇，劲敌们亦不断重逢。\n将炽热的激情埋藏于心，Running to the top!",
+  "introLines": [
+    "各自的道路不断交汇，劲敌们亦不断重逢。",
+    "将炽热的激情埋藏于心，Running to the top!"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

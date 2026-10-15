@@ -1,0 +1,14 @@
+{
+  "musicId": 1182,
+  "credits": "作词・作曲・编曲：瀬名水紀 (Dream Monster)\n歌词・翻译提供：初家p",
+  "creditLines": [
+    "作词・作曲・编曲：瀬名水紀 (Dream Monster)",
+    "歌词・翻译提供：初家p"
+  ],
+  "intro": "『#kawaii』『#梦幻柔软』『#心动不已？』\n可爱是能传达到宇宙的暗号！呐，可以再多喜欢我一点吗？",
+  "introLines": [
+    "『#kawaii』『#梦幻柔软』『#心动不已？』",
+    "可爱是能传达到宇宙的暗号！呐，可以再多喜欢我一点吗？"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

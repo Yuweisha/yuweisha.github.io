@@ -1,0 +1,14 @@
+{
+  "musicId": 1166,
+  "credits": "作词・作曲・编曲：Aira (Dream Monster)\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词・作曲・编曲：Aira (Dream Monster)",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "随心所欲，随风而去，飞向遥远的彼方！\n若想知晓风的去向，聆听这首曲子便好。",
+  "introLines": [
+    "随心所欲，随风而去，飞向遥远的彼方！",
+    "若想知晓风的去向，聆听这首曲子便好。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

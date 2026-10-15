@@ -1,0 +1,16 @@
+{
+  "musicId": 1123,
+  "credits": "作词：Tayuto Nakasu・Kanata Okajima\n作曲：Kanata Okajima・MEG (MEGMETAL)\n编曲：MEG (MEGMETAL)\n歌词・翻译提供：黑骑2236",
+  "creditLines": [
+    "作词：Tayuto Nakasu・Kanata Okajima",
+    "作曲：Kanata Okajima・MEG (MEGMETAL)",
+    "编曲：MEG (MEGMETAL)",
+    "歌词・翻译提供：黑骑2236"
+  ],
+  "intro": "不赌上一切的胜负有什么价值？\n让热血沸腾，洞察极限，赌徒现在就要出手……！",
+  "introLines": [
+    "不赌上一切的胜负有什么价值？",
+    "让热血沸腾，洞察极限，赌徒现在就要出手……！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

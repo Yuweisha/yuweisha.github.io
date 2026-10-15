@@ -1,0 +1,15 @@
+{
+  "musicId": 1208,
+  "credits": "作词：岩井彩夏 (Cygames)\n作曲・编曲：加藤庆久 (Cygames)\n歌词・翻译提供：关于我的任何事",
+  "creditLines": [
+    "作词：岩井彩夏 (Cygames)",
+    "作曲・编曲：加藤庆久 (Cygames)",
+    "歌词・翻译提供：关于我的任何事"
+  ],
+  "intro": "在怀旧的旋律中，回想起的是黄金般的心象。\n自由的旅人未曾停下脚步——无论谁，都会对那段旅途心怀梦想。",
+  "introLines": [
+    "在怀旧的旋律中，回想起的是黄金般的心象。",
+    "自由的旅人未曾停下脚步——无论谁，都会对那段旅途心怀梦想。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,17 @@
+{
+  "musicId": 1138,
+  "credits": "作词：Giz'Mo(from Jam9)\n作曲：YUU for YOU・Giz'Mo(from Jam9)\n编曲：YUU for YOU\n歌词提供：lyhyuhanOfficial\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词：Giz'Mo(from Jam9)",
+    "作曲：YUU for YOU・Giz'Mo(from Jam9)",
+    "编曲：YUU for YOU",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "来吧，出发！向着光明的未来。\n——只要和你在一起，无论到哪里！",
+  "introLines": [
+    "来吧，出发！向着光明的未来。",
+    "——只要和你在一起，无论到哪里！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

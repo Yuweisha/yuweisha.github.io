@@ -1,0 +1,16 @@
+{
+  "musicId": 1152,
+  "credits": "作词：伊禮完(Cygames)\n作曲：市橋卓也(Cygames)、伊禮完(Cygames)\n编曲：伊禮完(Cygames)\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词：伊禮完(Cygames)",
+    "作曲：市橋卓也(Cygames)、伊禮完(Cygames)",
+    "编曲：伊禮完(Cygames)",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "海里的美味、河里的美味，全都来吧～☆人生就是要尽情享受\n翻滚吧！带着鲑鱼般的好运，精彩地GO GO！",
+  "introLines": [
+    "海里的美味、河里的美味，全都来吧～☆人生就是要尽情享受",
+    "翻滚吧！带着鲑鱼般的好运，精彩地GO GO！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

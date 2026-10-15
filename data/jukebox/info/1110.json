@@ -1,0 +1,15 @@
+{
+  "musicId": 1110,
+  "credits": "作词・作曲・编曲：TAKU INOUE\n歌词提供：依田kokoro\n翻译提供：Halation95",
+  "creditLines": [
+    "作词・作曲・编曲：TAKU INOUE",
+    "歌词提供：依田kokoro",
+    "翻译提供：Halation95"
+  ],
+  "intro": "超越法则，领先光速──只要在我的脚加上名为「你」的要素，\n就能解答一切，揭开未曾见得的A计划。",
+  "introLines": [
+    "超越法则，领先光速──只要在我的脚加上名为「你」的要素，",
+    "就能解答一切，揭开未曾见得的A计划。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

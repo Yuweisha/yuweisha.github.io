@@ -1,0 +1,15 @@
+{
+  "musicId": 1134,
+  "credits": "作词：T4K・モリタコータ\n作曲・编曲：T4K\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词：T4K・モリタコータ",
+    "作曲・编曲：T4K",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "这双腿，这血液，让我奔跑。\n我所展现的是最快的血统。我的奔跑是血潮的咆哮。",
+  "introLines": [
+    "这双腿，这血液，让我奔跑。",
+    "我所展现的是最快的血统。我的奔跑是血潮的咆哮。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,16 @@
+{
+  "musicId": 1122,
+  "credits": "作词：新谷風太\n作曲・编曲：藤井健太郎 (HANO)\n歌词提供：lyhyuhanOfficial\n翻译提供：黑骑2236",
+  "creditLines": [
+    "作词：新谷風太",
+    "作曲・编曲：藤井健太郎 (HANO)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：黑骑2236"
+  ],
+  "intro": "让脑髓都震颤的狂野斗争本能。\n真正的王者，征服一切，走向荣耀。",
+  "introLines": [
+    "让脑髓都震颤的狂野斗争本能。",
+    "真正的王者，征服一切，走向荣耀。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

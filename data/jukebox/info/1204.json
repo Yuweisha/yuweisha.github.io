@@ -1,0 +1,17 @@
+{
+  "musicId": 1204,
+  "credits": "作词：敬也-amazuti-\n作曲：s敬也-amazuti-・宫崎谅-amazuti-\n编曲：宫崎谅-amazuti-\n歌词提供：lyhyuhanOfficial\n翻译提供：嘤嘤嘤qwp",
+  "creditLines": [
+    "作词：敬也-amazuti-",
+    "作曲：s敬也-amazuti-・宫崎谅-amazuti-",
+    "编曲：宫崎谅-amazuti-",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：嘤嘤嘤qwp"
+  ],
+  "intro": "跑完英里达成我的哩规则！满面笑容这就登场！\n比任何人都想要闪耀的这个舞台，唯独第一绝不让步！Go Go 英里！",
+  "introLines": [
+    "跑完英里达成我的哩规则！满面笑容这就登场！",
+    "比任何人都想要闪耀的这个舞台，唯独第一绝不让步！Go Go 英里！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

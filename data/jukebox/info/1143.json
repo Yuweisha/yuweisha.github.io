@@ -1,0 +1,16 @@
+{
+  "musicId": 1143,
+  "credits": "作词：柿沼雅美・白戸佑輔 (Dream Monster)\n作曲・编曲：白戸佑輔 (Dream Monster)\n歌词提供：lyhyuhanOfficial\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词：柿沼雅美・白戸佑輔 (Dream Monster)",
+    "作曲・编曲：白戸佑輔 (Dream Monster)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "填补无数不足，稍微踮起脚尖。\n我也一定能实现……因为我相信。",
+  "introLines": [
+    "填补无数不足，稍微踮起脚尖。",
+    "我也一定能实现……因为我相信。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

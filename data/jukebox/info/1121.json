@@ -1,0 +1,17 @@
+{
+  "musicId": 1121,
+  "credits": "作词：Mitsu (TRYTONELABO)\n作曲：Lucas (TRYTONELABO)\n编曲：岡野裕次郎 (TRYTONELABO)\n歌词提供：Soyo_长崎爽世\n翻译提供：千代纸-",
+  "creditLines": [
+    "作词：Mitsu (TRYTONELABO)",
+    "作曲：Lucas (TRYTONELABO)",
+    "编曲：岡野裕次郎 (TRYTONELABO)",
+    "歌词提供：Soyo_长崎爽世",
+    "翻译提供：千代纸-"
+  ],
+  "intro": "不管周围怎么说，我就是我。\n虽然笨拙，但不是装出来的，我是真心在这里——",
+  "introLines": [
+    "不管周围怎么说，我就是我。",
+    "虽然笨拙，但不是装出来的，我是真心在这里——"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

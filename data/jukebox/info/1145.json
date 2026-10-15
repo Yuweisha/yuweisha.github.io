@@ -1,0 +1,15 @@
+{
+  "musicId": 1145,
+  "credits": "作词：森本 練\n作曲・编曲：佐藤厚仁 (Dream Monster)\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词：森本 練",
+    "作曲・编曲：佐藤厚仁 (Dream Monster)",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "追逐憧憬，积累的努力一定会结出果实。\n绚烂盛开的花束。如果要赠送的话，请一定送给你。",
+  "introLines": [
+    "追逐憧憬，积累的努力一定会结出果实。",
+    "绚烂盛开的花束。如果要赠送的话，请一定送给你。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

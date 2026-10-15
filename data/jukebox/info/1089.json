@@ -1,0 +1,17 @@
+{
+  "musicId": 1089,
+  "credits": "作词・作曲：伊禮完 (Cygames)\n编曲：伊禮完 (Cygames)・市橋卓也 (Cygames)\n译：Kitasanゞ卫ちゃ\n歌词提供：lyhyuhanOfficial\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词・作曲：伊禮完 (Cygames)",
+    "编曲：伊禮完 (Cygames)・市橋卓也 (Cygames)",
+    "译：Kitasanゞ卫ちゃ",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "没有时间眨眼了！宇宙现正随着超新星们的不断出现\n而无限扩张――这，就是U.M.A.WORLD！",
+  "introLines": [
+    "没有时间眨眼了！宇宙现正随着超新星们的不断出现",
+    "而无限扩张――这，就是U.M.A.WORLD！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

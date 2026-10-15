@@ -1,0 +1,13 @@
+{
+  "musicId": 8505,
+  "credits": "作曲：Yuki Kobayashi",
+  "creditLines": [
+    "作曲：Yuki Kobayashi"
+  ],
+  "intro": "于StarHorse4的生产环节播放的BGM。\n随着成长过程与影片一同欣赏十分令人心满意足。",
+  "introLines": [
+    "于StarHorse4的生产环节播放的BGM。",
+    "随着成长过程与影片一同欣赏十分令人心满意足。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

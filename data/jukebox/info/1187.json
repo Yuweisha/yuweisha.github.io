@@ -1,0 +1,14 @@
+{
+  "musicId": 1187,
+  "credits": "作词・作曲・编曲：三好啓太\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词・作曲・编曲：三好啓太",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "华丽、优雅、勇敢！点燃内心的充满力量的乐曲！\n无论遇到什么困难都不会屈服——这才是公主应有的姿态！",
+  "introLines": [
+    "华丽、优雅、勇敢！点燃内心的充满力量的乐曲！",
+    "无论遇到什么困难都不会屈服——这才是公主应有的姿态！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

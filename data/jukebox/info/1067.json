@@ -1,0 +1,17 @@
+{
+  "musicId": 1067,
+  "credits": "作词：真崎エリカ\n作曲：桑原聖 (Arte Refact)\n编曲：酒井拓也 (Arte Refact)\n歌词提供：奥列莉亚\n翻译提供：RDJTS_魚",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲：桑原聖 (Arte Refact)",
+    "编曲：酒井拓也 (Arte Refact)",
+    "歌词提供：奥列莉亚",
+    "翻译提供：RDJTS_魚"
+  ],
+  "intro": "以向往之心纺织而成的，纯情之歌。憧憬永不会停止。\n因为……唯有这场比赛，我不愿败北。",
+  "introLines": [
+    "以向往之心纺织而成的，纯情之歌。憧憬永不会停止。",
+    "因为……唯有这场比赛，我不愿败北。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

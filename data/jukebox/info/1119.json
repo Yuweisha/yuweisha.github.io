@@ -1,0 +1,16 @@
+{
+  "musicId": 1119,
+  "credits": "作词：真崎エリカ\n作曲・编曲：渡邉俊彦\n歌词提供：小狐狸泰可爱\n翻译提供：Yuiii-",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲・编曲：渡邉俊彦",
+    "歌词提供：小狐狸泰可爱",
+    "翻译提供：Yuiii-"
+  ],
+  "intro": "为心灵的杯子增添色彩的是……\n怀着淡淡的忧伤，歌唱新的旅程。",
+  "introLines": [
+    "为心灵的杯子增添色彩的是……",
+    "怀着淡淡的忧伤，歌唱新的旅程。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

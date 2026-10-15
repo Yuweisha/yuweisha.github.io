@@ -1,0 +1,15 @@
+{
+  "musicId": 1141,
+  "credits": "作词・作曲：shilo\n编曲：高橋 諒\n歌词・翻译提供：老夫自有妙哉",
+  "creditLines": [
+    "作词・作曲：shilo",
+    "编曲：高橋 諒",
+    "歌词・翻译提供：老夫自有妙哉"
+  ],
+  "intro": "即使到达彼方并抓住，也会从手中滑落。所以——\n追逐着，追逐着，追逐着——终于抓住了。",
+  "introLines": [
+    "即使到达彼方并抓住，也会从手中滑落。所以——",
+    "追逐着，追逐着，追逐着——终于抓住了。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

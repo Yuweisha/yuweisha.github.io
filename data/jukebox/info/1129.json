@@ -1,0 +1,15 @@
+{
+  "musicId": 1129,
+  "credits": "作词：柿沼雅美\n作曲・编曲：Aira (Dream Monster)\n歌词提供：JamesXin66",
+  "creditLines": [
+    "作词：柿沼雅美",
+    "作曲・编曲：Aira (Dream Monster)",
+    "歌词提供：JamesXin66"
+  ],
+  "intro": "贯彻强烈意志的身姿，高贵而尊贵。\n将苦难化为养分的钻石光辉，照亮未来。",
+  "introLines": [
+    "贯彻强烈意志的身姿，高贵而尊贵。",
+    "将苦难化为养分的钻石光辉，照亮未来。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,13 @@
+{
+  "musicId": 8504,
+  "credits": "作曲：Yuki Kobayashi",
+  "creditLines": [
+    "作曲：Yuki Kobayashi"
+  ],
+  "intro": "于StarHorse4的生产环节播放的BGM。\n是能够慢慢思考自己专属血统表的曲风。",
+  "introLines": [
+    "于StarHorse4的生产环节播放的BGM。",
+    "是能够慢慢思考自己专属血统表的曲风。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

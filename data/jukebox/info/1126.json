@@ -1,0 +1,16 @@
+{
+  "musicId": 1126,
+  "credits": "作词・作曲：大石昌良　编曲：eba (F.M.F)\n弦乐编写：岩嵜壮志\n译：Kitasanゞ卫ちゃ\n歌词・翻译提供：狂三是我娘子",
+  "creditLines": [
+    "作词・作曲：大石昌良　编曲：eba (F.M.F)",
+    "弦乐编写：岩嵜壮志",
+    "译：Kitasanゞ卫ちゃ",
+    "歌词・翻译提供：狂三是我娘子"
+  ],
+  "intro": "打破新时代之门的人……就是我！\n追求最强灵魂的呐喊，我将撼动大地！",
+  "introLines": [
+    "打破新时代之门的人……就是我！",
+    "追求最强灵魂的呐喊，我将撼动大地！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

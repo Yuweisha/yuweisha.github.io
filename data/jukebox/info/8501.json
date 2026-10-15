@@ -1,0 +1,13 @@
+{
+  "musicId": 8501,
+  "credits": "作曲：Yuki Kobayashi",
+  "creditLines": [
+    "作曲：Yuki Kobayashi"
+  ],
+  "intro": "突然开播的新闻节目「スタホTV」的BGM。\n听到这首歌的话，就关注一下StarHorse4的最新情报吧！",
+  "introLines": [
+    "突然开播的新闻节目「スタホTV」的BGM。",
+    "听到这首歌的话，就关注一下StarHorse4的最新情报吧！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

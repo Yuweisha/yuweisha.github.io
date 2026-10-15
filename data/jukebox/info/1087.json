@@ -1,0 +1,15 @@
+{
+  "musicId": 1087,
+  "credits": "作词・作曲：meiyo\n编曲：三好啓太\n歌词・翻译提供：_-七叶-_",
+  "creditLines": [
+    "作词・作曲：meiyo",
+    "编曲：三好啓太",
+    "歌词・翻译提供：_-七叶-_"
+  ],
+  "intro": "辣妹赛马娘们统统嗨起来！为了辣妹而存在的歌曲！\n我们是forever☆最强的赛马娘死党！",
+  "introLines": [
+    "辣妹赛马娘们统统嗨起来！为了辣妹而存在的歌曲！",
+    "我们是forever☆最强的赛马娘死党！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

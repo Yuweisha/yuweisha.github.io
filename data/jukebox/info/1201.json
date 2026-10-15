@@ -1,0 +1,15 @@
+{
+  "musicId": 1201,
+  "credits": "作词・作曲・编曲：佐藤遥 (Cygames)\n歌词提供：lyhyuhanOfficial\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词・作曲・编曲：佐藤遥 (Cygames)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "所需要的，是一点点勇气。即使害怕，只要描绘出来就一定会改变。\n因为不想只停留在想象中——就迈出脚步吧，趁现在！",
+  "introLines": [
+    "所需要的，是一点点勇气。即使害怕，只要描绘出来就一定会改变。",
+    "因为不想只停留在想象中——就迈出脚步吧，趁现在！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,17 @@
+{
+  "musicId": 1128,
+  "credits": "作词：真崎エリカ\n作曲：本多友紀 (Arte Refact)\n编曲：水野谷怜 (Arte Refact)\n歌词提供：JamesXin66\n翻译提供：Ogurl_Cap",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲：本多友紀 (Arte Refact)",
+    "编曲：水野谷怜 (Arte Refact)",
+    "歌词提供：JamesXin66",
+    "翻译提供：Ogurl_Cap"
+  ],
+  "intro": "那天看到的星光，遥远而虚幻，\n在这无法触及的地方消散——",
+  "introLines": [
+    "那天看到的星光，遥远而虚幻，",
+    "在这无法触及的地方消散——"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

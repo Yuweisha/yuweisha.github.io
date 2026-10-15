@@ -1,0 +1,15 @@
+{
+  "musicId": 1100,
+  "credits": "作词・作曲：新田目駿\n编曲：新田目駿・廣澤優也\n歌词・翻译提供：遗梦之心",
+  "creditLines": [
+    "作词・作曲：新田目駿",
+    "编曲：新田目駿・廣澤優也",
+    "歌词・翻译提供：遗梦之心"
+  ],
+  "intro": "What's up?用力嗨起来吧♪\n最棒的开场小号！要送给大家喔～！！",
+  "introLines": [
+    "What's up?用力嗨起来吧♪",
+    "最棒的开场小号！要送给大家喔～！！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

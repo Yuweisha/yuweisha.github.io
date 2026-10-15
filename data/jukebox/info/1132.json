@@ -1,0 +1,16 @@
+{
+  "musicId": 1132,
+  "credits": "作词：柿沼雅美\n作曲・编曲：佐藤厚仁 (Dream Monster)\n歌词提供：圆满结局咫尺\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词：柿沼雅美",
+    "作曲・编曲：佐藤厚仁 (Dream Monster)",
+    "歌词提供：圆满结局咫尺",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "即使受伤，只要有憧憬的心情就能再次迈步。\n无论何时，世界都可以改变。",
+  "introLines": [
+    "即使受伤，只要有憧憬的心情就能再次迈步。",
+    "无论何时，世界都可以改变。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

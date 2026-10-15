@@ -1,0 +1,15 @@
+{
+  "musicId": 1160,
+  "credits": "作词：佐藤遥 (Cygames)\n作曲・编曲：池田健仁 (Cygames)\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词：佐藤遥 (Cygames)",
+    "作曲・编曲：池田健仁 (Cygames)",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "喧哗上等！放马过来！有这首歌的话绝对不会输！\n把你们全部都弄得头冒金星！……这就是充满如此气概的灵魂之曲！",
+  "introLines": [
+    "喧哗上等！放马过来！有这首歌的话绝对不会输！",
+    "把你们全部都弄得头冒金星！……这就是充满如此气概的灵魂之曲！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

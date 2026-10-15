@@ -1,0 +1,15 @@
+{
+  "musicId": 1065,
+  "credits": "作词：磯谷佳江\n作曲・编曲：渡部チェル\n歌词・翻译提供：Rain_Marginal",
+  "creditLines": [
+    "作词：磯谷佳江",
+    "作曲・编曲：渡部チェル",
+    "歌词・翻译提供：Rain_Marginal"
+  ],
+  "intro": "温柔地向支持者们表达感谢的，治愈的旋律。\n我想用硕大的爱去回应。与你一同，踏起柔和的步调。",
+  "introLines": [
+    "温柔地向支持者们表达感谢的，治愈的旋律。",
+    "我想用硕大的爱去回应。与你一同，踏起柔和的步调。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

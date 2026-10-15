@@ -1,0 +1,16 @@
+{
+  "musicId": 1162,
+  "credits": "作词：朝倉路\n作曲・编曲：長谷部翔 (Cygames)\n歌词提供：lyhyuhanOfficial\n翻译提供：嘤嘤嘤qwp",
+  "creditLines": [
+    "作词：朝倉路",
+    "作曲・编曲：長谷部翔 (Cygames)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：嘤嘤嘤qwp"
+  ],
+  "intro": "那段时光里不变的热血梦想，凝聚成这一曲。定能传递给每一个人！\n脚下的大地虽不同，但仰望的星空却是同一片！",
+  "introLines": [
+    "那段时光里不变的热血梦想，凝聚成这一曲。定能传递给每一个人！",
+    "脚下的大地虽不同，但仰望的星空却是同一片！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

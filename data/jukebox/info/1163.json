@@ -1,0 +1,16 @@
+{
+  "musicId": 1163,
+  "credits": "作词：Cocoro. (Dream Monster)\n作曲・编曲：白戸佑輔 (Dream Monster)\n歌词提供：lyhyuhanOfficial\n翻译提供：嘤嘤嘤qwp",
+  "creditLines": [
+    "作词：Cocoro. (Dream Monster)",
+    "作曲・编曲：白戸佑輔 (Dream Monster)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：嘤嘤嘤qwp"
+  ],
+  "intro": "刻骨铭心，一生都无法消逝的景色————\n“爱”往往就是如此之物。",
+  "introLines": [
+    "刻骨铭心，一生都无法消逝的景色————",
+    "“爱”往往就是如此之物。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

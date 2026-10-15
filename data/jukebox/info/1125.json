@@ -1,0 +1,17 @@
+{
+  "musicId": 1125,
+  "credits": "作词：真崎エリカ\n作曲：桑原 聖 (Arte Refact)\n编曲：酒井拓也 (Arte Refact)\n歌词提供：圆满结局咫尺\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲：桑原 聖 (Arte Refact)",
+    "编曲：酒井拓也 (Arte Refact)",
+    "歌词提供：圆满结局咫尺",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "充满挑战的路上，永远有大家在身旁。\n用跳跃的步伐抓住闪闪发光的碎片吧！",
+  "introLines": [
+    "充满挑战的路上，永远有大家在身旁。",
+    "用跳跃的步伐抓住闪闪发光的碎片吧！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

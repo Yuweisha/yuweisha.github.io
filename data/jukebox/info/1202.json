@@ -1,0 +1,15 @@
+{
+  "musicId": 1202,
+  "credits": "作词・作曲・编曲：やしきん (F.M.F)\n歌词提供：lyhyuhanOfficial\n翻译提供：贫穷的龙-",
+  "creditLines": [
+    "作词・作曲・编曲：やしきん (F.M.F)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：贫穷的龙-"
+  ],
+  "intro": "呜呼哦哦哦！尊爆赛马娘酱的坑来啦━(ﾟ∀ﾟ)━！！\n感谢与推相遇的奇迹！祈求全推幸福世界最尊！！！",
+  "introLines": [
+    "呜呼哦哦哦！尊爆赛马娘酱的坑来啦━(ﾟ∀ﾟ)━！！",
+    "感谢与推相遇的奇迹！祈求全推幸福世界最尊！！！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

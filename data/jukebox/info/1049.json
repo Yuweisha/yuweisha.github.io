@@ -1,0 +1,14 @@
+{
+  "musicId": 1049,
+  "credits": "作词：碓井雅隆 (Cygames)・淺田美咲 (Cygames)\n作曲・编曲：淺田美咲 (Cygames)",
+  "creditLines": [
+    "作词：碓井雅隆 (Cygames)・淺田美咲 (Cygames)",
+    "作曲・编曲：淺田美咲 (Cygames)"
+  ],
+  "intro": "属于爆进！根据爆进！！为了爆进而作的歌曲！！！\n听了这个的你，也是爆进伙伴了！（谈：班长）",
+  "introLines": [
+    "属于爆进！根据爆进！！为了爆进而作的歌曲！！！",
+    "听了这个的你，也是爆进伙伴了！（谈：班长）"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

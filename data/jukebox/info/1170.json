@@ -1,0 +1,14 @@
+{
+  "musicId": 1170,
+  "credits": "作词・作曲・编曲：伊禮完 (Cygames)\n歌词・翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词・作曲・编曲：伊禮完 (Cygames)",
+    "歌词・翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "有一种光芒让人无法移开目光。\n只要听这首曲子——不，其实你已经知道了吧？",
+  "introLines": [
+    "有一种光芒让人无法移开目光。",
+    "只要听这首曲子——不，其实你已经知道了吧？"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

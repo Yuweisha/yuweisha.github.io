@@ -1,0 +1,15 @@
+{
+  "musicId": 1056,
+  "credits": "作词：椎名宇伊 (Cygames)\n作曲・编曲：久保早瑠菜 (Cygames)\n歌词・翻译提供：Rain_Marginal",
+  "creditLines": [
+    "作词：椎名宇伊 (Cygames)",
+    "作曲・编曲：久保早瑠菜 (Cygames)",
+    "歌词・翻译提供：Rain_Marginal"
+  ],
+  "intro": "由名门目白家演唱的，旋律庄严的合唱曲。\n目白家族的荣光，无论何时都至高无上，绵延不绝――",
+  "introLines": [
+    "由名门目白家演唱的，旋律庄严的合唱曲。",
+    "目白家族的荣光，无论何时都至高无上，绵延不绝――"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

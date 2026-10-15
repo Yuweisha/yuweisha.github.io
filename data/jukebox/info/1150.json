@@ -1,0 +1,16 @@
+{
+  "musicId": 1150,
+  "credits": "作词：マイクスギヤマ\n作曲・编曲：東大路憲太\n歌词提供：lyhyuhanOfficial\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词：マイクスギヤマ",
+    "作曲・编曲：東大路憲太",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "点缀四周年的 FORCE——那就是挑战之心！\n从这里，属于你们时代的大门将开启！",
+  "introLines": [
+    "点缀四周年的 FORCE——那就是挑战之心！",
+    "从这里，属于你们时代的大门将开启！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

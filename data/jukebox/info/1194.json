@@ -1,0 +1,13 @@
+{
+  "musicId": 1194,
+  "credits": "作词・作曲・编曲：市桥卓也 (Cygames)",
+  "creditLines": [
+    "作词・作曲・编曲：市桥卓也 (Cygames)"
+  ],
+  "intro": "做好觉悟吧。只要听过一次，\n就会烙印在耳膜与灵魂深处，挥之不去的黄金旋律。",
+  "introLines": [
+    "做好觉悟吧。只要听过一次，",
+    "就会烙印在耳膜与灵魂深处，挥之不去的黄金旋律。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,15 @@
+{
+  "musicId": 1171,
+  "credits": "作词・作曲・编曲：椿山日南子 (Dream Monster)\n歌词提供：lyhyuhanOfficial\n翻译提供：贫穷的龙-",
+  "creditLines": [
+    "作词・作曲・编曲：椿山日南子 (Dream Monster)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：贫穷的龙-"
+  ],
+  "intro": "辉煌梦想的顶峰遥不可及，前路充满绝望……\n然后，少女走向了荣华之门。",
+  "introLines": [
+    "辉煌梦想的顶峰遥不可及，前路充满绝望……",
+    "然后，少女走向了荣华之门。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

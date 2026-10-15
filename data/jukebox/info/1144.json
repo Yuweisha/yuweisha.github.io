@@ -1,0 +1,15 @@
+{
+  "musicId": 1144,
+  "credits": "作词：八城雄太\n作曲：池田光穂\n编曲：伊藤 翼・Devin Kinoshita",
+  "creditLines": [
+    "作词：八城雄太",
+    "作曲：池田光穂",
+    "编曲：伊藤 翼・Devin Kinoshita"
+  ],
+  "intro": "右手握着高贵，左手怀着慈爱。\n为了成为引领一切的女王——走上吧，这荣耀之路。",
+  "introLines": [
+    "右手握着高贵，左手怀着慈爱。",
+    "为了成为引领一切的女王——走上吧，这荣耀之路。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

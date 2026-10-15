@@ -1,0 +1,15 @@
+{
+  "musicId": 1184,
+  "credits": "作词：岩井彩夏 (Cygames)\n作曲・编曲：Lucas Nainemoutou (Cygames)\n歌词・翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词：岩井彩夏 (Cygames)",
+    "作曲・编曲：Lucas Nainemoutou (Cygames)",
+    "歌词・翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "灵魂为之震颤，歌颂着骄傲不屈的乐曲。\n绝不会轻易屈服，直到成为“女王”的那一天。",
+  "introLines": [
+    "灵魂为之震颤，歌颂着骄傲不屈的乐曲。",
+    "绝不会轻易屈服，直到成为“女王”的那一天。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,15 @@
+{
+  "musicId": 1209,
+  "credits": "作词・作曲・编曲：伊礼完 (Cygames)\n歌词提供：lyhyuhanOfficial\n翻译提供：嘤嘤嘤qwp",
+  "creditLines": [
+    "作词・作曲・编曲：伊礼完 (Cygames)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：嘤嘤嘤qwp"
+  ],
+  "intro": "要想夺取顶点就绝不妥协。顺从本能，将其粉碎吧！\n咆哮吧——刻印在新时代之上，那才是最强的证明！",
+  "introLines": [
+    "要想夺取顶点就绝不妥协。顺从本能，将其粉碎吧！",
+    "咆哮吧——刻印在新时代之上，那才是最强的证明！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

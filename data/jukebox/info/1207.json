@@ -1,0 +1,16 @@
+{
+  "musicId": 1207,
+  "credits": "作词：市桥卓也 (Cygames)・岩井彩夏 (Cygames)\n作曲・编曲：市桥卓也 (Cygames)\n歌词提供：lyhyuhanOfficial\n翻译提供：黑骑2236",
+  "creditLines": [
+    "作词：市桥卓也 (Cygames)・岩井彩夏 (Cygames)",
+    "作曲・编曲：市桥卓也 (Cygames)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：黑骑2236"
+  ],
+  "intro": "气氛嗨到爆！情绪拉到满！趴体・Party・fu～♪\n果然还是辣妹YYDS对吧♪毕竟今天的主角可是我！",
+  "introLines": [
+    "气氛嗨到爆！情绪拉到满！趴体・Party・fu～♪",
+    "果然还是辣妹YYDS对吧♪毕竟今天的主角可是我！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

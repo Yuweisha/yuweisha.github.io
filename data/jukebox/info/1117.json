@@ -1,0 +1,15 @@
+{
+  "musicId": 1117,
+  "credits": "作词：Cocoro. (Dream Monster)\n作曲・编曲：Kijibato (Dream Monster)\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词：Cocoro. (Dream Monster)",
+    "作曲・编曲：Kijibato (Dream Monster)",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "毫无疏漏，毫无阻碍，一切都缜密安排。彻底的管理就是完美，\n以钢铁意志贯彻的是『跑完全程的觉悟』——",
+  "introLines": [
+    "毫无疏漏，毫无阻碍，一切都缜密安排。彻底的管理就是完美，",
+    "以钢铁意志贯彻的是『跑完全程的觉悟』——"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

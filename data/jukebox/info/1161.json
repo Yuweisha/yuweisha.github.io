@@ -1,0 +1,14 @@
+{
+  "musicId": 1161,
+  "credits": "作词・作曲・编曲：Lucas Nainemoutou (Cygames)\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词・作曲・编曲：Lucas Nainemoutou (Cygames)",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "正在寻找未知的“某物”——为了触动心灵深处。\n那么，今天要度过怎样的一天呢？一边听这首歌一边思考吧！",
+  "introLines": [
+    "正在寻找未知的“某物”——为了触动心灵深处。",
+    "那么，今天要度过怎样的一天呢？一边听这首歌一边思考吧！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

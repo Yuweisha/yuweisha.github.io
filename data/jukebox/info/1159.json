@@ -1,0 +1,14 @@
+{
+  "musicId": 1159,
+  "credits": "作词・作曲・编曲：伊禮完 (Cygames)\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词・作曲・编曲：伊禮完 (Cygames)",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "常识被一脚踢开，灰烬在大地上刻下痕迹。\n坠入吧，向着黑白的世界——",
+  "introLines": [
+    "常识被一脚踢开，灰烬在大地上刻下痕迹。",
+    "坠入吧，向着黑白的世界——"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

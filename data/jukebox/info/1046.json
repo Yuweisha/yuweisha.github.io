@@ -1,0 +1,14 @@
+{
+  "musicId": 1046,
+  "credits": "作词・作曲・编曲：lull\n歌词提供：-NOIRE-",
+  "creditLines": [
+    "作词・作曲・编曲：lull",
+    "歌词提供：-NOIRE-"
+  ],
+  "intro": "『一逃到底☆SISTERS』将，冲入你的心灵！\n毕竟，恋爱最重要的就是冲刺！对吧？",
+  "introLines": [
+    "『一逃到底☆SISTERS』将，冲入你的心灵！",
+    "毕竟，恋爱最重要的就是冲刺！对吧？"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

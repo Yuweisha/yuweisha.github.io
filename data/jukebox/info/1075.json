@@ -1,0 +1,15 @@
+{
+  "musicId": 1075,
+  "credits": "作词：國吉理応 (Cygames)\n作曲：康貞蘭 (Cygames)・國吉理応 (Cygames)\n编曲：康貞蘭 (Cygames)",
+  "creditLines": [
+    "作词：國吉理応 (Cygames)",
+    "作曲：康貞蘭 (Cygames)・國吉理応 (Cygames)",
+    "编曲：康貞蘭 (Cygames)"
+  ],
+  "intro": "阿船's RAP！DE情绪燃起来！\n阿船与RAP，搞一首试试吧！",
+  "introLines": [
+    "阿船's RAP！DE情绪燃起来！",
+    "阿船与RAP，搞一首试试吧！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

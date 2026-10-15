@@ -1,0 +1,16 @@
+{
+  "musicId": 1047,
+  "credits": "作词：國土佳音\n作曲：櫻井詩郎\n编曲：佐々木聡作\n歌词・翻译提供：特特莓頭",
+  "creditLines": [
+    "作词：國土佳音",
+    "作曲：櫻井詩郎",
+    "编曲：佐々木聡作",
+    "歌词・翻译提供：特特莓頭"
+  ],
+  "intro": "轻轻回响于心灵的摇篮曲。\n越是痛苦与疲惫时，越要『PAYAPAYA』。……有什么意见吗？",
+  "introLines": [
+    "轻轻回响于心灵的摇篮曲。",
+    "越是痛苦与疲惫时，越要『PAYAPAYA』。……有什么意见吗？"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

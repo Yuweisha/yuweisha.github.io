@@ -1,0 +1,15 @@
+{
+  "musicId": 1098,
+  "credits": "作词：真崎エリカ\n作曲：本多友紀 (Arte Refact)\n编曲：水野谷怜 (Arte Refact)",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲：本多友紀 (Arte Refact)",
+    "编曲：水野谷怜 (Arte Refact)"
+  ],
+  "intro": "在更迭交替的季节里，与你共度的时光如同永恒──\n用不会褪色的色彩，让它永远停驻吧。",
+  "introLines": [
+    "在更迭交替的季节里，与你共度的时光如同永恒──",
+    "用不会褪色的色彩，让它永远停驻吧。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

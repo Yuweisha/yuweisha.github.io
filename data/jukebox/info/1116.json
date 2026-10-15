@@ -1,0 +1,16 @@
+{
+  "musicId": 1116,
+  "credits": "作词：Ereca・Teje (MUSIC FOR MUSIC)\n作曲・编曲：Soma Genda (MUSIC FOR MUSIC)・\nTeje (MUSIC FOR MUSIC)\n歌词・翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词：Ereca・Teje (MUSIC FOR MUSIC)",
+    "作曲・编曲：Soma Genda (MUSIC FOR MUSIC)・",
+    "Teje (MUSIC FOR MUSIC)",
+    "歌词・翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "每天坚持努力，总有顺风的时候……应该吧！\n配合流行的节奏，加油，加油，嗯！",
+  "introLines": [
+    "每天坚持努力，总有顺风的时候……应该吧！",
+    "配合流行的节奏，加油，加油，嗯！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

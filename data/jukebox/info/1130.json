@@ -1,0 +1,16 @@
+{
+  "musicId": 1130,
+  "credits": "作词：miyakei・Shadow-words\n作曲・编曲：TeddyLoid・Em.me\n歌词提供：lyhyuhanOfficial\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词：miyakei・Shadow-words",
+    "作曲・编曲：TeddyLoid・Em.me",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "种子和机关都由我亲手创造。\n在摩天楼展现吧，像魔法一样的胜利！",
+  "introLines": [
+    "种子和机关都由我亲手创造。",
+    "在摩天楼展现吧，像魔法一样的胜利！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

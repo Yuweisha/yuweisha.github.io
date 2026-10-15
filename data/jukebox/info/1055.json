@@ -1,0 +1,14 @@
+{
+  "musicId": 1055,
+  "credits": "作词：碓井雅隆 (Cygames)・淺田美咲 (Cygames)\n作曲・编曲：淺田美咲 (Cygames)",
+  "creditLines": [
+    "作词：碓井雅隆 (Cygames)・淺田美咲 (Cygames)",
+    "作曲・编曲：淺田美咲 (Cygames)"
+  ],
+  "intro": "看那儿！是船！？还是UFO！？都不是，是小金船哒！！！\nPeace Peace♪怎样～？这块地方被我掳走咯☆",
+  "introLines": [
+    "看那儿！是船！？还是UFO！？都不是，是小金船哒！！！",
+    "Peace Peace♪怎样～？这块地方被我掳走咯☆"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

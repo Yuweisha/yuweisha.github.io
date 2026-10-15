@@ -1,0 +1,14 @@
+{
+  "musicId": 1111,
+  "credits": "作词・作曲・编曲：中村瑛彦 (SUPA LOVE)\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词・作曲・编曲：中村瑛彦 (SUPA LOVE)",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "憧憬的她身边的位置，就算是我……！\n不论因为自己的笨拙而灰心多少次，最后也绝对能……！",
+  "introLines": [
+    "憧憬的她身边的位置，就算是我……！",
+    "不论因为自己的笨拙而灰心多少次，最后也绝对能……！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

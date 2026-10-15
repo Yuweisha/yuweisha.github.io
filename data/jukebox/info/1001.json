@@ -1,0 +1,15 @@
+{
+  "musicId": 1001,
+  "credits": "作词・作曲・编曲：本田晃弘 (Cygames)\n译：TV动画第二季第13集、南千和（Bilibili）\n歌词・翻译提供：是澪桑不是澪酱哦",
+  "creditLines": [
+    "作词・作曲・编曲：本田晃弘 (Cygames)",
+    "译：TV动画第二季第13集、南千和（Bilibili）",
+    "歌词・翻译提供：是澪桑不是澪酱哦"
+  ],
+  "intro": "粉饰URA总决赛的欢快歌曲。\n马儿跳♪马儿跳♪绝对能带起现场的气氛！",
+  "introLines": [
+    "粉饰URA总决赛的欢快歌曲。",
+    "马儿跳♪马儿跳♪绝对能带起现场的气氛！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

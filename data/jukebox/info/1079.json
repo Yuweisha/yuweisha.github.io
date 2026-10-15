@@ -1,0 +1,14 @@
+{
+  "musicId": 1079,
+  "credits": "作词・作曲・编曲：宮崎誠\n歌词・翻译提供：白陨_常年冷热不均",
+  "creditLines": [
+    "作词・作曲・编曲：宮崎誠",
+    "歌词・翻译提供：白陨_常年冷热不均"
+  ],
+  "intro": "赢得经典三冠的证明。\n那首赛马娘们所憧憬之乐曲的，Club Arrange版本！",
+  "introLines": [
+    "赢得经典三冠的证明。",
+    "那首赛马娘们所憧憬之乐曲的，Club Arrange版本！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

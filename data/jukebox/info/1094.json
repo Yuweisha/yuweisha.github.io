@@ -1,0 +1,16 @@
+{
+  "musicId": 1094,
+  "credits": "作词・作曲：池田健仁 (Cygames)\n编曲：MK\n译：Kitasanゞ卫ちゃ\n歌词提供：18歳的優妮前輩",
+  "creditLines": [
+    "作词・作曲：池田健仁 (Cygames)",
+    "编曲：MK",
+    "译：Kitasanゞ卫ちゃ",
+    "歌词提供：18歳的優妮前輩"
+  ],
+  "intro": "结束阶段。输入最后的代码吧。\nU+3042U+308AU+304CU+3068U+3046",
+  "introLines": [
+    "结束阶段。输入最后的代码吧。",
+    "U+3042U+308AU+304CU+3068U+3046"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

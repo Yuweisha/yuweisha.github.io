@@ -1,0 +1,15 @@
+{
+  "musicId": 1097,
+  "credits": "作词：内田ましろ\n作曲：青木宏憲 (HANO)\n编曲：日直伸次 (HANO)・青木宏憲 (HANO)",
+  "creditLines": [
+    "作词：内田ましろ",
+    "作曲：青木宏憲 (HANO)",
+    "编曲：日直伸次 (HANO)・青木宏憲 (HANO)"
+  ],
+  "intro": "用只属于你的颜色将这个世界染上Vivid的色调，\n用流行轻快的旋律散发出Bright的光芒，就是现在！",
+  "introLines": [
+    "用只属于你的颜色将这个世界染上Vivid的色调，",
+    "用流行轻快的旋律散发出Bright的光芒，就是现在！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

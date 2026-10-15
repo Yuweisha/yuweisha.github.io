@@ -1,0 +1,14 @@
+{
+  "musicId": 1169,
+  "credits": "作词：丸橋怜那 (Cygames)\n作曲・编曲：久保早瑠菜 (Cygames)",
+  "creditLines": [
+    "作词：丸橋怜那 (Cygames)",
+    "作曲・编曲：久保早瑠菜 (Cygames)"
+  ],
+  "intro": "旅途中拾起的风景，将成为连接未来的梦想。\n那么，今晚又会做怎样的梦呢……",
+  "introLines": [
+    "旅途中拾起的风景，将成为连接未来的梦想。",
+    "那么，今晚又会做怎样的梦呢……"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

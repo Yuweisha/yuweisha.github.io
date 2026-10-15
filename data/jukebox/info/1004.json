@@ -1,0 +1,16 @@
+{
+  "musicId": 1004,
+  "credits": "作词：磯谷佳江\n作曲：ヤナガワタカオ 编曲：睦月周平\n译：SinonJZH（萌娘百科）\n歌词・翻译提供：SinonJZH",
+  "creditLines": [
+    "作词：磯谷佳江",
+    "作曲：ヤナガワタカオ 编曲：睦月周平",
+    "译：SinonJZH（萌娘百科）",
+    "歌词・翻译提供：SinonJZH"
+  ],
+  "intro": "因为和你一同奔跑ー\n我们的旋律永远不会停止。已经，不会再回头了。",
+  "introLines": [
+    "因为和你一同奔跑ー",
+    "我们的旋律永远不会停止。已经，不会再回头了。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

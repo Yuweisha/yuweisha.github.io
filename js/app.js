@@ -222,7 +222,7 @@
     $("cover").src = jbCoverUrl(id);
     $("songTitle").textContent = jb.title;
     $("songMeta").textContent = "JUKEBOX " + id + (jb.durationMs ? " · " + fmtShort(jb.durationMs) : "");
-    $("liveCredits").hidden = true; $("liveIntro").hidden = true;
+    await loadJukeboxInfo(id);
     renderList($("search").value);
     if (window.__umaPlayer) window.__umaPlayer.load(current);
     $("outMsg").textContent = "已载入点唱机曲目「" + jb.title + "」，点播放开始" + (jb.hasLyrics ? "（含歌词）" : "");
@@ -253,6 +253,23 @@
       catch (e) { infoCache[musicId] = null; }   // 缺文件不影响主流程
     }
     var info = infoCache[musicId];
+    if (!info) return;
+    if (elC && info.credits) { elC.hidden = false; elC.textContent = info.credits; }
+    if (elI && info.intro) { elI.hidden = false; elI.textContent = info.intro; }
+  }
+
+  /* ---------------- 唱片机曲目信息：作词作曲 / 介绍 / 歌词与翻译提供（data/jukebox/info/<id>.json） ---------------- */
+
+  async function loadJukeboxInfo(musicId) {
+    var elC = $("liveCredits"), elI = $("liveIntro");
+    if (elC) { elC.hidden = true; elC.textContent = ""; }
+    if (elI) { elI.hidden = true; elI.textContent = ""; }
+    var key = "jb:" + musicId;
+    if (Object.prototype.hasOwnProperty.call(infoCache, key) === false) {
+      try { infoCache[key] = await getJSON(DATA + "../jukebox/info/" + musicId + ".json"); }
+      catch (e) { infoCache[key] = null; }   // 缺文件不影响主流程
+    }
+    var info = infoCache[key];
     if (!info) return;
     if (elC && info.credits) { elC.hidden = false; elC.textContent = info.credits; }
     if (elI && info.intro) { elI.hidden = false; elI.textContent = info.intro; }

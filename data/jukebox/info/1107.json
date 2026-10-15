@@ -1,0 +1,15 @@
+{
+  "musicId": 1107,
+  "credits": "作词：Cocoro. (Dream Monster)\n作曲・编曲：佐藤厚仁 (Dream Monster)\n歌词・翻译提供：18歳的優妮前輩",
+  "creditLines": [
+    "作词：Cocoro. (Dream Monster)",
+    "作曲・编曲：佐藤厚仁 (Dream Monster)",
+    "歌词・翻译提供：18歳的優妮前輩"
+  ],
+  "intro": "一生仅有一次的光辉就在此处。无论摔倒多少次都不会放弃。\n带着决心和勇气，与伙伴一起──用全力在梦想的舞台上奔驰。",
+  "introLines": [
+    "一生仅有一次的光辉就在此处。无论摔倒多少次都不会放弃。",
+    "带着决心和勇气，与伙伴一起──用全力在梦想的舞台上奔驰。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

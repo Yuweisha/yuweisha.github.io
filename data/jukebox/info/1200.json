@@ -1,0 +1,14 @@
+{
+  "musicId": 1200,
+  "credits": "作词：岩井彩夏 (Cygames)\n作曲・编曲：梯拓哉 (Cygames)",
+  "creditLines": [
+    "作词：岩井彩夏 (Cygames)",
+    "作曲・编曲：梯拓哉 (Cygames)"
+  ],
+  "intro": "呐，今晚也要互诉心声吗？我们要传达的可是彼此的爱。\n打开社区的大门——就是Love me♡Love you♡哦♡",
+  "introLines": [
+    "呐，今晚也要互诉心声吗？我们要传达的可是彼此的爱。",
+    "打开社区的大门——就是Love me♡Love you♡哦♡"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

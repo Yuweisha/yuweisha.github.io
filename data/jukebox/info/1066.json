@@ -1,0 +1,16 @@
+{
+  "musicId": 1066,
+  "credits": "作词：真崎エリカ\n作曲・编曲：田中俊亮\n歌词提供：小渣别跑\n翻译提供：Rain_Marginal",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲・编曲：田中俊亮",
+    "歌词提供：小渣别跑",
+    "翻译提供：Rain_Marginal"
+  ],
+  "intro": "势必劈开所有迎面而来的狂风。轰鸣着白色斗志的1曲。\n胜利不可退让，故继续抗争。那就是，咱的战斗之道呀。",
+  "introLines": [
+    "势必劈开所有迎面而来的狂风。轰鸣着白色斗志的1曲。",
+    "胜利不可退让，故继续抗争。那就是，咱的战斗之道呀。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,17 @@
+{
+  "musicId": 1108,
+  "credits": "作词：Cocoro. (Dream Monster)\n作曲：フワリ (Dream Monster)\n编曲：フワリ (Dream Monster)・高木龍一 (Dream Monster)\n歌词提供：8957毛利小猪王9527\n翻译提供：18歳的優妮前輩",
+  "creditLines": [
+    "作词：Cocoro. (Dream Monster)",
+    "作曲：フワリ (Dream Monster)",
+    "编曲：フワリ (Dream Monster)・高木龍一 (Dream Monster)",
+    "歌词提供：8957毛利小猪王9527",
+    "翻译提供：18歳的優妮前輩"
+  ],
+  "intro": "只要两人有良好的契合度，不走运的日子也Don't Worry☆\n幸运、快乐和胜利，全部都能抓进手中☆",
+  "introLines": [
+    "只要两人有良好的契合度，不走运的日子也Don't Worry☆",
+    "幸运、快乐和胜利，全部都能抓进手中☆"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

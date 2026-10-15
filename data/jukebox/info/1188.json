@@ -1,0 +1,17 @@
+{
+  "musicId": 1188,
+  "credits": "作词：森本練\n作曲：カイザー恵理菜\n编曲：中野領太\n歌词提供：lyhyuhanOfficial\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词：森本練",
+    "作曲：カイザー恵理菜",
+    "编曲：中野領太",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "在“永恒”之中，闪耀的一曲。\n距离实现曾与你许下的约定，只差一步之遥……。",
+  "introLines": [
+    "在“永恒”之中，闪耀的一曲。",
+    "距离实现曾与你许下的约定，只差一步之遥……。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

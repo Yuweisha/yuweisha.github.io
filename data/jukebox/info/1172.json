@@ -1,0 +1,15 @@
+{
+  "musicId": 1172,
+  "credits": "作词・作曲・编曲：梯拓哉 (Cygames)\n歌词提供：lyhyuhanOfficial\n翻译提供：_CHESS_",
+  "creditLines": [
+    "作词・作曲・编曲：梯拓哉 (Cygames)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：_CHESS_"
+  ],
+  "intro": "争先恐后超越他人的背影！\n燃烧的热情终将成为照亮新时代的灯火！",
+  "introLines": [
+    "争先恐后超越他人的背影！",
+    "燃烧的热情终将成为照亮新时代的灯火！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

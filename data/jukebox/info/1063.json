@@ -1,0 +1,16 @@
+{
+  "musicId": 1063,
+  "credits": "作词：中村彼方\n作曲・编曲：田村ジュン\n歌词提供：FranchiseFollower\n翻译提供：coco多吃米粉",
+  "creditLines": [
+    "作词：中村彼方",
+    "作曲・编曲：田村ジュン",
+    "歌词提供：FranchiseFollower",
+    "翻译提供：coco多吃米粉"
+  ],
+  "intro": "绝不背叛那日的约定与决心。\n这灰色的觉悟，将成为最闪耀的希望。",
+  "introLines": [
+    "绝不背叛那日的约定与决心。",
+    "这灰色的觉悟，将成为最闪耀的希望。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

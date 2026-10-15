@@ -1,0 +1,15 @@
+{
+  "musicId": 1073,
+  "credits": "作词・作曲・编曲：木下龍平\n歌词提供：TrashListener\n翻译提供：kaguramiyashiro",
+  "creditLines": [
+    "作词・作曲・编曲：木下龍平",
+    "歌词提供：TrashListener",
+    "翻译提供：kaguramiyashiro"
+  ],
+  "intro": "VayVa～y！嗨起来嗨起来↑像开趴一样有趣的乐曲☆\n总之先保持微笑？咱毕竟是太阳嘛！所以间奏就拜托咯～♪",
+  "introLines": [
+    "VayVa～y！嗨起来嗨起来↑像开趴一样有趣的乐曲☆",
+    "总之先保持微笑？咱毕竟是太阳嘛！所以间奏就拜托咯～♪"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

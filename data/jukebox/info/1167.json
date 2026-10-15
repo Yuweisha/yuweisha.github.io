@@ -1,0 +1,14 @@
+{
+  "musicId": 1167,
+  "credits": "作词・作曲・编曲：yoss\n歌词・翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词・作曲・编曲：yoss",
+    "歌词・翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "太阳正在地平线的某处升起……只是并非此处。\n奔跑吧。总有一天，这片阴云也会散去的。",
+  "introLines": [
+    "太阳正在地平线的某处升起……只是并非此处。",
+    "奔跑吧。总有一天，这片阴云也会散去的。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

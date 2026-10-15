@@ -1,0 +1,16 @@
+{
+  "musicId": 1118,
+  "credits": "作词：烏屋茶房\n作曲・编曲：睦月周平\n歌词提供：lyhyuhanOfficial\n翻译提供：芋泥芋泥派派派",
+  "creditLines": [
+    "作词：烏屋茶房",
+    "作曲・编曲：睦月周平",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：芋泥芋泥派派派"
+  ],
+  "intro": "涡轮全开！冲向极限的彼方！！\n所谓不放弃，就是这样的啊！！",
+  "introLines": [
+    "涡轮全开！冲向极限的彼方！！",
+    "所谓不放弃，就是这样的啊！！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

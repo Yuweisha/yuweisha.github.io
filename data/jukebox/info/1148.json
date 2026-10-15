@@ -1,0 +1,15 @@
+{
+  "musicId": 1148,
+  "credits": "作词：椎名宇伊 (Cygames)\n作曲・编曲：多田彰文\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词：椎名宇伊 (Cygames)",
+    "作曲・编曲：多田彰文",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "现在，宛如遥远银河的交响乐响彻。\n为了夺回黑暗中的星光，像彗星一样奔跑吧“宇宙赛马娘”。",
+  "introLines": [
+    "现在，宛如遥远银河的交响乐响彻。",
+    "为了夺回黑暗中的星光，像彗星一样奔跑吧“宇宙赛马娘”。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

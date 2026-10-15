@@ -1,0 +1,17 @@
+{
+  "musicId": 1040,
+  "credits": "作词：no_my\n作曲：no_my\n编曲：池田健仁 (TRYTONELABO)\n歌词提供：chinosk\n翻译提供：Rain_Marginal",
+  "creditLines": [
+    "作词：no_my",
+    "作曲：no_my",
+    "编曲：池田健仁 (TRYTONELABO)",
+    "歌词提供：chinosk",
+    "翻译提供：Rain_Marginal"
+  ],
+  "intro": "友情、竞争、眼泪、笑容、不安、希望――\n全部都是闪闪发光着的歌♪『青春』一定就是这样的感觉！",
+  "introLines": [
+    "友情、竞争、眼泪、笑容、不安、希望――",
+    "全部都是闪闪发光着的歌♪『青春』一定就是这样的感觉！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

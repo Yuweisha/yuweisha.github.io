@@ -1,0 +1,15 @@
+{
+  "musicId": 1103,
+  "credits": "作词：小池龍也\n作曲・编曲：田熊知存 (Dream Monster)\n歌词・翻译提供：hanafunyuu",
+  "creditLines": [
+    "作词：小池龍也",
+    "作曲・编曲：田熊知存 (Dream Monster)",
+    "歌词・翻译提供：hanafunyuu"
+  ],
+  "intro": "如同阳光一般温暖你的心。不用焦躁，慢慢来──\n一步一脚印地前进，梦想正在彼方等着我们。",
+  "introLines": [
+    "如同阳光一般温暖你的心。不用焦躁，慢慢来──",
+    "一步一脚印地前进，梦想正在彼方等着我们。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

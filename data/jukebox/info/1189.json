@@ -1,0 +1,15 @@
+{
+  "musicId": 1189,
+  "credits": "作词・作曲・编曲：菊池拓人 (Cygames)\n歌词提供：lyhyuhanOfficial\n翻译提供：Leebecoming",
+  "creditLines": [
+    "作词・作曲・编曲：菊池拓人 (Cygames)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：Leebecoming"
+  ],
+  "intro": "无数深深刻下的蹄印。它们终将编织出历史——\n正因如此，我也要前行。因为这足迹，将通往创世。",
+  "introLines": [
+    "无数深深刻下的蹄印。它们终将编织出历史——",
+    "正因如此，我也要前行。因为这足迹，将通往创世。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

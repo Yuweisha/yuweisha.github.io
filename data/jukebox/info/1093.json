@@ -1,0 +1,17 @@
+{
+  "musicId": 1093,
+  "credits": "作词：岩井彩夏 (Cygames)・國吉理応 (Cygames)\n作曲：うまさま製作委員会\n编曲：長谷部翔 (Cygames)\n译：yingyingying不嘤嘤嘤\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词：岩井彩夏 (Cygames)・國吉理応 (Cygames)",
+    "作曲：うまさま製作委員会",
+    "编曲：長谷部翔 (Cygames)",
+    "译：yingyingying不嘤嘤嘤",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "把情绪和欢呼声都拉升至最高潮！\n超越盛夏的酷热↑来吧！一起嗨翻天！",
+  "introLines": [
+    "把情绪和欢呼声都拉升至最高潮！",
+    "超越盛夏的酷热↑来吧！一起嗨翻天！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

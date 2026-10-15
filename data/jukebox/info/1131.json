@@ -1,0 +1,17 @@
+{
+  "musicId": 1131,
+  "credits": "作词：宮嶋淳子 (SUPA LOVE)\n作曲・编曲：池田健仁 (Cygames)\n弦乐编写：市橋卓也 (Cygames)\n歌词提供：JamesXin66\n翻译提供：究极生物",
+  "creditLines": [
+    "作词：宮嶋淳子 (SUPA LOVE)",
+    "作曲・编曲：池田健仁 (Cygames)",
+    "弦乐编写：市橋卓也 (Cygames)",
+    "歌词提供：JamesXin66",
+    "翻译提供：究极生物"
+  ],
+  "intro": "即使被疏远，也有持续照耀的光。\n但是——现在超越了，将这憧憬的光献上。",
+  "introLines": [
+    "即使被疏远，也有持续照耀的光。",
+    "但是——现在超越了，将这憧憬的光献上。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

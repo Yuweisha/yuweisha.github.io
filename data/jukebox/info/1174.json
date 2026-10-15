@@ -1,0 +1,16 @@
+{
+  "musicId": 1174,
+  "credits": "作词：佐藤遥 (Cygames)\n作曲・编曲：長谷部翔 (Cygames)\n歌词提供：lyhyuhanOfficial\n翻译提供：Leebecoming",
+  "creditLines": [
+    "作词：佐藤遥 (Cygames)",
+    "作曲・编曲：長谷部翔 (Cygames)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：Leebecoming"
+  ],
+  "intro": "在夕阳余晖下的归途，某天突然溢出的旋律。\n不可思议地，声音重叠着传来……就像那一天一样。",
+  "introLines": [
+    "在夕阳余晖下的归途，某天突然溢出的旋律。",
+    "不可思议地，声音重叠着传来……就像那一天一样。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

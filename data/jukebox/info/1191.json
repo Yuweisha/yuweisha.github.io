@@ -1,0 +1,16 @@
+{
+  "musicId": 1191,
+  "credits": "作词：岩井彩夏 (Cygames)・菊池拓人 (Cygames)\n作曲・编曲：長谷部翔 (Cygames)\n歌词提供：lyhyuhanOfficial\n翻译提供：缪妄-",
+  "creditLines": [
+    "作词：岩井彩夏 (Cygames)・菊池拓人 (Cygames)",
+    "作曲・编曲：長谷部翔 (Cygames)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：缪妄-"
+  ],
+  "intro": "三姐妹依偎在一起的和声，温柔地抚慰着心灵——\n让歌声与思念重叠吧。即便道路不同，我们永远相伴。",
+  "introLines": [
+    "三姐妹依偎在一起的和声，温柔地抚慰着心灵——",
+    "让歌声与思念重叠吧。即便道路不同，我们永远相伴。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

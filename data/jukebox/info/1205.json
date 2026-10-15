@@ -1,0 +1,14 @@
+{
+  "musicId": 1205,
+  "credits": "作词・作曲・编曲：梯拓哉 (Cygames)\n歌词・翻译提供：ReW1ND_T",
+  "creditLines": [
+    "作词・作曲・编曲：梯拓哉 (Cygames)",
+    "歌词・翻译提供：ReW1ND_T"
+  ],
+  "intro": "伴随着直指顶点的热情节拍，狂热度达到最高潮！\n来吧，去超越极限，为了在全新的舞台上闪耀！",
+  "introLines": [
+    "伴随着直指顶点的热情节拍，狂热度达到最高潮！",
+    "来吧，去超越极限，为了在全新的舞台上闪耀！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

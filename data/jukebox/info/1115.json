@@ -1,0 +1,15 @@
+{
+  "musicId": 1115,
+  "credits": "作词：柿沼雅美\n作曲・编曲：滝澤俊輔 (TRYTONELABO)\n歌词・翻译提供：黑骑2236",
+  "creditLines": [
+    "作词：柿沼雅美",
+    "作曲・编曲：滝澤俊輔 (TRYTONELABO)",
+    "歌词・翻译提供：黑骑2236"
+  ],
+  "intro": "轻快的摇滚节奏中高声歌唱，\n黄金的浪漫！以一夜暴富为目标，Ships set sail!",
+  "introLines": [
+    "轻快的摇滚节奏中高声歌唱，",
+    "黄金的浪漫！以一夜暴富为目标，Ships set sail!"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,13 @@
+{
+  "musicId": 1168,
+  "credits": "作词・作曲・编曲：市橋卓也 (Cygames)\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词・作曲・编曲：市橋卓也 (Cygames)",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "跪拜聆听！",
+  "introLines": [
+    "跪拜聆听！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

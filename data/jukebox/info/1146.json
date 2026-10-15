@@ -1,0 +1,16 @@
+{
+  "musicId": 1146,
+  "credits": "作词：Carlos K.・Shadow-words\n作曲・编曲：チバニャン・Carlos K.\n歌词提供：lyhyuhanOfficial\n翻译提供：黑骑2236",
+  "creditLines": [
+    "作词：Carlos K.・Shadow-words",
+    "作曲・编曲：チバニャン・Carlos K.",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：黑骑2236"
+  ],
+  "intro": "心中燃烧的心之火焰，耀眼地燃烧着。\n要与律动的节奏一起闪耀，my Queendom！",
+  "introLines": [
+    "心中燃烧的心之火焰，耀眼地燃烧着。",
+    "要与律动的节奏一起闪耀，my Queendom！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

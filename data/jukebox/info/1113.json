@@ -1,0 +1,14 @@
+{
+  "musicId": 1113,
+  "credits": "作词・作曲・编曲：MEG (MEGMETAL)・Hayato Yamamoto\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词・作曲・编曲：MEG (MEGMETAL)・Hayato Yamamoto",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "在寂静之中，背负着起誓过的使命持续奔驰。\n为了带着如同一等星般的闪耀，将胜利献给夜空──",
+  "introLines": [
+    "在寂静之中，背负着起誓过的使命持续奔驰。",
+    "为了带着如同一等星般的闪耀，将胜利献给夜空──"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,14 @@
+{
+  "musicId": 1086,
+  "credits": "作词：松井洋平\n作曲・编曲：中土智博",
+  "creditLines": [
+    "作词：松井洋平",
+    "作曲・编曲：中土智博"
+  ],
+  "intro": "如同谎言般酷帅的激昂歌曲，妆点着一年365天。\n那样的搭档，会成为你的个性。──by「BoC'z」。",
+  "introLines": [
+    "如同谎言般酷帅的激昂歌曲，妆点着一年365天。",
+    "那样的搭档，会成为你的个性。──by「BoC'z」。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

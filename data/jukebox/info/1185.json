@@ -1,0 +1,15 @@
+{
+  "musicId": 1185,
+  "credits": "作词：佐藤遥 (Cygames)・菊池拓人 (Cygames)\n作曲・编曲：佐藤遥 (Cygames)\n歌词・翻译提供：18歳的優妮前輩",
+  "creditLines": [
+    "作词：佐藤遥 (Cygames)・菊池拓人 (Cygames)",
+    "作曲・编曲：佐藤遥 (Cygames)",
+    "歌词・翻译提供：18歳的優妮前輩"
+  ],
+  "intro": "拜托了♡正因为是你，我才会这么想撒娇。\n连全世界都会为之着迷的，可爱的流行歌曲！",
+  "introLines": [
+    "拜托了♡正因为是你，我才会这么想撒娇。",
+    "连全世界都会为之着迷的，可爱的流行歌曲！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

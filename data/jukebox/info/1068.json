@@ -1,0 +1,16 @@
+{
+  "musicId": 1068,
+  "credits": "作词・作曲：原田篤 (Arte Refact)\n编曲：脇眞富 (Arte Refact)\n歌词提供：尛濤MoTao\n翻译提供：蒋生ing",
+  "creditLines": [
+    "作词・作曲：原田篤 (Arte Refact)",
+    "编曲：脇眞富 (Arte Refact)",
+    "歌词提供：尛濤MoTao",
+    "翻译提供：蒋生ing"
+  ],
+  "intro": "唱响那憧憬之梦、那背负心愿而奔跑的决意的歌曲。\n做一个永不会结束的梦吧――不论几次、不论何时。",
+  "introLines": [
+    "唱响那憧憬之梦、那背负心愿而奔跑的决意的歌曲。",
+    "做一个永不会结束的梦吧――不论几次、不论何时。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

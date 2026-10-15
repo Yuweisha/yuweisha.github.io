@@ -1,0 +1,16 @@
+{
+  "musicId": 1003,
+  "credits": "作词：yura\n作曲・编曲：高尾奏之介 (F.M.F)\n歌词提供：saaaatori\n翻译提供：w惠随风_",
+  "creditLines": [
+    "作词：yura",
+    "作曲・编曲：高尾奏之介 (F.M.F)",
+    "歌词提供：saaaatori",
+    "翻译提供：w惠随风_"
+  ],
+  "intro": "我们两人一起，什么都可以做到！\n这充满活力的乐曲，一定也能令你欢笑☆",
+  "introLines": [
+    "我们两人一起，什么都可以做到！",
+    "这充满活力的乐曲，一定也能令你欢笑☆"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,17 @@
+{
+  "musicId": 1044,
+  "credits": "作词：Apis (TRYTONELABO)\n作曲：no_my\n编曲：岡野裕次郎 (TRYTONELABO)\n歌词提供：千代纸-\n翻译提供：-福永葉子-",
+  "creditLines": [
+    "作词：Apis (TRYTONELABO)",
+    "作曲：no_my",
+    "编曲：岡野裕次郎 (TRYTONELABO)",
+    "歌词提供：千代纸-",
+    "翻译提供：-福永葉子-"
+  ],
+  "intro": "目标是，顶尖马娘偶像！拿起麦克风，以愉快的心情\n用可爱又活泼♪的笑容来唱歌吧☆",
+  "introLines": [
+    "目标是，顶尖马娘偶像！拿起麦克风，以愉快的心情",
+    "用可爱又活泼♪的笑容来唱歌吧☆"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

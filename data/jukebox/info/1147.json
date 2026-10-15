@@ -1,0 +1,16 @@
+{
+  "musicId": 1147,
+  "credits": "作词：hotaru\n作曲・编曲：eba (F.M.F)\n歌词提供：lyhyuhanOfficial\n翻译提供：黑骑2236",
+  "creditLines": [
+    "作词：hotaru",
+    "作曲・编曲：eba (F.M.F)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：黑骑2236"
+  ],
+  "intro": "用这双腿开拓无人到达的未来！\n刻下只属于我的轨迹，追寻那天憧憬的荣冠！",
+  "introLines": [
+    "用这双腿开拓无人到达的未来！",
+    "刻下只属于我的轨迹，追寻那天憧憬的荣冠！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

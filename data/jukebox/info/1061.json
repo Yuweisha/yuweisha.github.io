@@ -1,0 +1,15 @@
+{
+  "musicId": 1061,
+  "credits": "作词：松井洋平\n作曲：本多友紀 (Arte Refact)\n编曲：水野谷怜 (Arte Refact)",
+  "creditLines": [
+    "作词：松井洋平",
+    "作曲：本多友紀 (Arte Refact)",
+    "编曲：水野谷怜 (Arte Refact)"
+  ],
+  "intro": "有争斗、也有和睦！摇曳地♪塞满了赛马娘们软乎乎～时光\n的学园欢歌♪",
+  "introLines": [
+    "有争斗、也有和睦！摇曳地♪塞满了赛马娘们软乎乎～时光",
+    "的学园欢歌♪"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

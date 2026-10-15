@@ -1,0 +1,15 @@
+{
+  "musicId": 1127,
+  "credits": "作词・作曲・编曲：アオワイファイ (TOKYO LOGIC)\n歌词提供：lyhyuhanOfficial\n翻译提供：最强不沉舰",
+  "creditLines": [
+    "作词・作曲・编曲：アオワイファイ (TOKYO LOGIC)",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：最强不沉舰"
+  ],
+  "intro": "前进、行进、船进进！变成幼儿园小朋友的\n小金船的Supisupi进行曲，Pisupiisu☆",
+  "introLines": [
+    "前进、行进、船进进！变成幼儿园小朋友的",
+    "小金船的Supisupi进行曲，Pisupiisu☆"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

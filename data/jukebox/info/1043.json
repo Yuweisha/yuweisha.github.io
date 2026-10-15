@@ -1,0 +1,16 @@
+{
+  "musicId": 1043,
+  "credits": "作词：真崎エリカ\n作曲：本多友紀 (Arte Refact)\n编曲：河合泰志 (Arte Refact)\n翻译提供：ssj2012",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲：本多友紀 (Arte Refact)",
+    "编曲：河合泰志 (Arte Refact)",
+    "翻译提供：ssj2012"
+  ],
+  "intro": "紧靠着被冷雨冻僵的肩膀，誓要创造奇迹的少女们的歌曲。\n我会无数次闪耀，只要有梦相伴——只要有你相伴。",
+  "introLines": [
+    "紧靠着被冷雨冻僵的肩膀，誓要创造奇迹的少女们的歌曲。",
+    "我会无数次闪耀，只要有梦相伴——只要有你相伴。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

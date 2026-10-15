@@ -1,0 +1,15 @@
+{
+  "musicId": 1078,
+  "credits": "作词：真崎エリカ\n作曲・编曲：大熊淳生 (Arte Refact)\n歌词提供：18歳的優妮前輩",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲・编曲：大熊淳生 (Arte Refact)",
+    "歌词提供：18歳的優妮前輩"
+  ],
+  "intro": "献给一同追寻过憧憬的她，如此一首青春之歌。\n虽然珍视你，但我不会败给你。与你就此……决胜！",
+  "introLines": [
+    "献给一同追寻过憧憬的她，如此一首青春之歌。",
+    "虽然珍视你，但我不会败给你。与你就此……决胜！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

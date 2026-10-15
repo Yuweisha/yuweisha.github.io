@@ -1,0 +1,16 @@
+{
+  "musicId": 1041,
+  "credits": "作词：村野直球\n作曲・编曲：高田暁\n歌词提供：閒雲遮月\n翻译提供：Rain_Marginal",
+  "creditLines": [
+    "作词：村野直球",
+    "作曲・编曲：高田暁",
+    "歌词提供：閒雲遮月",
+    "翻译提供：Rain_Marginal"
+  ],
+  "intro": "描绘了互相切磋的少女们的心意的乐曲。\n梦想多么高远、多么宽广、多么蔚蓝生辉。来，一同前行吧！",
+  "introLines": [
+    "描绘了互相切磋的少女们的心意的乐曲。",
+    "梦想多么高远、多么宽广、多么蔚蓝生辉。来，一同前行吧！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,15 @@
+{
+  "musicId": 1074,
+  "credits": "作词・作曲・编曲：鶴﨑輝一\n歌词提供：千代纸-\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词・作曲・编曲：鶴﨑輝一",
+    "歌词提供：千代纸-",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "不可思议的轻盈，又有几分边缘感的乐曲。\n那些日子的苦痛，请你一定不要忘记……好吗？",
+  "introLines": [
+    "不可思议的轻盈，又有几分边缘感的乐曲。",
+    "那些日子的苦痛，请你一定不要忘记……好吗？"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,16 @@
+{
+  "musicId": 1092,
+  "credits": "作词・作曲・编曲：ハマダコウキ\n译：Kitasanゞ卫ちゃ\n歌词提供：lyhyuhanOfficial\n翻译提供：18歳的優妮前輩",
+  "creditLines": [
+    "作词・作曲・编曲：ハマダコウキ",
+    "译：Kitasanゞ卫ちゃ",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：18歳的優妮前輩"
+  ],
+  "intro": "丰收！种下蔬菜，制作料理，吃完后就元气满满地跑向前吧！\n感谢今天的美味与爱，我要开动啦——！",
+  "introLines": [
+    "丰收！种下蔬菜，制作料理，吃完后就元气满满地跑向前吧！",
+    "感谢今天的美味与爱，我要开动啦——！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

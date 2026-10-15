@@ -1,0 +1,16 @@
+{
+  "musicId": 1071,
+  "credits": "作词：うらん\n作曲・编曲：山口朗彦\n歌词提供：TYBR-逆光\n翻译提供：耶耶耶啦啦啦吱吱吱",
+  "creditLines": [
+    "作词：うらん",
+    "作曲・编曲：山口朗彦",
+    "歌词提供：TYBR-逆光",
+    "翻译提供：耶耶耶啦啦啦吱吱吱"
+  ],
+  "intro": "带着那无法抑制的心跳声飞翔起来吧♪\n直奔那憧憬之地！的雀跃之歌！Take Off☆",
+  "introLines": [
+    "带着那无法抑制的心跳声飞翔起来吧♪",
+    "直奔那憧憬之地！的雀跃之歌！Take Off☆"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

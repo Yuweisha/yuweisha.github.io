@@ -1,0 +1,17 @@
+{
+  "musicId": 1013,
+  "credits": "作词：真崎エリカ\n作曲：新田目翔\n编曲：田熊知存\n歌词提供：Fl-aw\n翻译提供：GrayBishop",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲：新田目翔",
+    "编曲：田熊知存",
+    "歌词提供：Fl-aw",
+    "翻译提供：GrayBishop"
+  ],
+  "intro": "星光照亮前路，你的未来充满光明。\n为支持我的人们表达感谢的1曲。",
+  "introLines": [
+    "星光照亮前路，你的未来充满光明。",
+    "为支持我的人们表达感谢的1曲。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

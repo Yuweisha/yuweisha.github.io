@@ -1,0 +1,17 @@
+{
+  "musicId": 1142,
+  "credits": "作词・作曲：Haggy Rock (Dream Monster)\n编曲：アッシュ井上 (Dream Monster)\n弦乐编写：椿山日南子 (Dream Monster)\n歌词提供：FranchiseFollower\n翻译提供：h回忆最痛",
+  "creditLines": [
+    "作词・作曲：Haggy Rock (Dream Monster)",
+    "编曲：アッシュ井上 (Dream Monster)",
+    "弦乐编写：椿山日南子 (Dream Monster)",
+    "歌词提供：FranchiseFollower",
+    "翻译提供：h回忆最痛"
+  ],
+  "intro": "怀抱在心中的孤狼誓言绝不动摇。\n无论是自己的影子还是前方的背影，都要像吞噬般甩开！！",
+  "introLines": [
+    "怀抱在心中的孤狼誓言绝不动摇。",
+    "无论是自己的影子还是前方的背影，都要像吞噬般甩开！！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,15 @@
+{
+  "musicId": 1064,
+  "credits": "作词：Apis (TRYTONELABO)\n作曲・编曲：TAKT (TRYTONELABO)\n歌词・翻译提供：FranchiseFollower",
+  "creditLines": [
+    "作词：Apis (TRYTONELABO)",
+    "作曲・编曲：TAKT (TRYTONELABO)",
+    "歌词・翻译提供：FranchiseFollower"
+  ],
+  "intro": "将胜利握入手中。疾驰至天涯海角。\n无人可挡，那觉悟便是――『一马当先，万马无光』。",
+  "introLines": [
+    "将胜利握入手中。疾驰至天涯海角。",
+    "无人可挡，那觉悟便是――『一马当先，万马无光』。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

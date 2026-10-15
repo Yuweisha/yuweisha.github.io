@@ -1,0 +1,14 @@
+{
+  "musicId": 1183,
+  "credits": "作词・作曲・编曲：佐藤遥 (Cygames)\n歌词・翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词・作曲・编曲：佐藤遥 (Cygames)",
+    "歌词・翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "高涨的心跳已经无法抑制！\n毫无保留地倾诉炽热的思念，一首让人心跳加速的歌曲！",
+  "introLines": [
+    "高涨的心跳已经无法抑制！",
+    "毫无保留地倾诉炽热的思念，一首让人心跳加速的歌曲！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

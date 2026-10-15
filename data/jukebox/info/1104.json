@@ -1,0 +1,15 @@
+{
+  "musicId": 1104,
+  "credits": "作词・作曲・编曲：松坂康司\n歌词提供：千代纸-\n翻译提供：米喵gogogo",
+  "creditLines": [
+    "作词・作曲・编曲：松坂康司",
+    "歌词提供：千代纸-",
+    "翻译提供：米喵gogogo"
+  ],
+  "intro": "想要的并不只是理论，还有只能和你一起抵达的未来。\n将情谊化为力量，超越无法估量的命运。",
+  "introLines": [
+    "想要的并不只是理论，还有只能和你一起抵达的未来。",
+    "将情谊化为力量，超越无法估量的命运。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

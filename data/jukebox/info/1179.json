@@ -1,0 +1,15 @@
+{
+  "musicId": 1179,
+  "credits": "作词・作曲：たかはしほのか (リーガルリリー)\n编曲：藤木寛茂 / INTERCEPTBEATS\n歌词・翻译提供：鲨鱼字幕组",
+  "creditLines": [
+    "作词・作曲：たかはしほのか (リーガルリリー)",
+    "编曲：藤木寛茂 / INTERCEPTBEATS",
+    "歌词・翻译提供：鲨鱼字幕组"
+  ],
+  "intro": "不善于使用言语表达……即便如此，还是想要传达出来。\n就是这样，一首稍微有点笨拙的歌。",
+  "introLines": [
+    "不善于使用言语表达……即便如此，还是想要传达出来。",
+    "就是这样，一首稍微有点笨拙的歌。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

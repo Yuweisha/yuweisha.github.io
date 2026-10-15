@@ -1,0 +1,17 @@
+{
+  "musicId": 1156,
+  "credits": "作词：市橋卓也(Cygames)・佐藤遥(Cygames)\n作曲・編曲：市橋卓也(Cygames)\n译：yingyingyingqwq\n歌词提供：lyhyuhanOfficial\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词：市橋卓也(Cygames)・佐藤遥(Cygames)",
+    "作曲・編曲：市橋卓也(Cygames)",
+    "译：yingyingyingqwq",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "托大家的福——『已经变得这么大啦♡』\n满载爱的感谢献给你♡请从你喜欢的地方欣赏吧♪",
+  "introLines": [
+    "托大家的福——『已经变得这么大啦♡』",
+    "满载爱的感谢献给你♡请从你喜欢的地方欣赏吧♪"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

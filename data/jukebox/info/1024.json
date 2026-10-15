@@ -1,0 +1,15 @@
+{
+  "musicId": 1024,
+  "credits": "作词：corochi (Cygames)\n作曲：本田晃弘 (Cygames)\n编曲：本田晃弘 (Cygames)・松田彬人",
+  "creditLines": [
+    "作词：corochi (Cygames)",
+    "作曲：本田晃弘 (Cygames)",
+    "编曲：本田晃弘 (Cygames)・松田彬人"
+  ],
+  "intro": "把过去、现在所经历过的全部装进宝箱，面向未来！\n――来吧，让整个世界充满『最喜欢了！』吧。",
+  "introLines": [
+    "把过去、现在所经历过的全部装进宝箱，面向未来！",
+    "――来吧，让整个世界充满『最喜欢了！』吧。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

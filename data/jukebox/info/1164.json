@@ -1,0 +1,15 @@
+{
+  "musicId": 1164,
+  "credits": "作词・作曲・编曲：梯拓哉 (Cygames)\n歌词提供：重叠广州\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词・作曲・编曲：梯拓哉 (Cygames)",
+    "歌词提供：重叠广州",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "为了清白正直，让我们忍耐吧。严于律己，\n唯有自制。忍耐才是美德。是的，听了这首歌就会明白。",
+  "introLines": [
+    "为了清白正直，让我们忍耐吧。严于律己，",
+    "唯有自制。忍耐才是美德。是的，听了这首歌就会明白。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

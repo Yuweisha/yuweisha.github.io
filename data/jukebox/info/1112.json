@@ -1,0 +1,15 @@
+{
+  "musicId": 1112,
+  "credits": "作词：柿沼雅美\n作曲・编曲：白戸佑輔 (Dream Monster)\n翻译提供：白陨_常年冷热不均",
+  "creditLines": [
+    "作词：柿沼雅美",
+    "作曲・编曲：白戸佑輔 (Dream Monster)",
+    "翻译提供：白陨_常年冷热不均"
+  ],
+  "intro": "赞颂霸王吧！奏响欢喜吧！见证这震撼人心的一幕吧！\n现在，前无古人的荣光，即将刻划在历史上。",
+  "introLines": [
+    "赞颂霸王吧！奏响欢喜吧！见证这震撼人心的一幕吧！",
+    "现在，前无古人的荣光，即将刻划在历史上。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

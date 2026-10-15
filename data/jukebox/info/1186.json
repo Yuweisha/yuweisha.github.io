@@ -1,0 +1,16 @@
+{
+  "musicId": 1186,
+  "credits": "作词：やぎぬまかな\n作曲・编曲：伊藤翼・半田翼\n歌词提供：lyhyuhanOfficial\n翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词：やぎぬまかな",
+    "作曲・编曲：伊藤翼・半田翼",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "注入了能一扫无聊日常的特别魔法的乐曲！\n只需要相信的心。仅凭这一点——无论什么都一定能做到！",
+  "introLines": [
+    "注入了能一扫无聊日常的特别魔法的乐曲！",
+    "只需要相信的心。仅凭这一点——无论什么都一定能做到！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

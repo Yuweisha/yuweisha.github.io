@@ -1,0 +1,16 @@
+{
+  "musicId": 1048,
+  "credits": "作词：真崎エリカ 作曲：山本恭平 (Arte Refact)\n编曲：河合泰志 (Arte Refact)\n译：南千和（Bilibili）\n歌词・翻译提供：白陨_常年冷热不均",
+  "creditLines": [
+    "作词：真崎エリカ 作曲：山本恭平 (Arte Refact)",
+    "编曲：河合泰志 (Arte Refact)",
+    "译：南千和（Bilibili）",
+    "歌词・翻译提供：白陨_常年冷热不均"
+  ],
+  "intro": "闸门已经敞开。对奔跑者而言一切都是广泛而平等的。\n――来吧，挑战吧！来吧，奔跑吧！向着那强风吹拂的方向！",
+  "introLines": [
+    "闸门已经敞开。对奔跑者而言一切都是广泛而平等的。",
+    "――来吧，挑战吧！来吧，奔跑吧！向着那强风吹拂的方向！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

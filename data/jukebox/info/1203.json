@@ -1,0 +1,14 @@
+{
+  "musicId": 1203,
+  "credits": "作词・作曲・编曲：菊池拓人 (Cygames)\n歌词・翻译提供：Kitasan丶卫酱",
+  "creditLines": [
+    "作词・作曲・编曲：菊池拓人 (Cygames)",
+    "歌词・翻译提供：Kitasan丶卫酱"
+  ],
+  "intro": "请，轻轻地牵起彼此的手。因为那份温暖，会化作\n思念的圆环——为了能传达到所有孤独之人的心中，倾注祈愿。",
+  "introLines": [
+    "请，轻轻地牵起彼此的手。因为那份温暖，会化作",
+    "思念的圆环——为了能传达到所有孤独之人的心中，倾注祈愿。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

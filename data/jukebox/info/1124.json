@@ -1,0 +1,15 @@
+{
+  "musicId": 1124,
+  "credits": "作词：國吉理応 (Cygames)\n作曲・编曲：康貞蘭 (Cygames)\n歌词・翻译提供：18歳的優妮前輩",
+  "creditLines": [
+    "作词：國吉理応 (Cygames)",
+    "作曲・编曲：康貞蘭 (Cygames)",
+    "歌词・翻译提供：18歳的優妮前輩"
+  ],
+  "intro": "奔跑过的道路，与你的足迹，将一直延续到远方。\n不要忘记，这如奇迹般的日子。",
+  "introLines": [
+    "奔跑过的道路，与你的足迹，将一直延续到远方。",
+    "不要忘记，这如奇迹般的日子。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

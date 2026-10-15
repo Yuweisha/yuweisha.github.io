@@ -1,0 +1,15 @@
+{
+  "musicId": 1192,
+  "credits": "作词・作曲：ひとみ (from あたらよ)\n编曲：れいらむる\n歌词・翻译提供：龙吟metro",
+  "creditLines": [
+    "作词・作曲：ひとみ (from あたらよ)",
+    "编曲：れいらむる",
+    "歌词・翻译提供：龙吟metro"
+  ],
+  "intro": "寄宿着觉悟的少女们，坚定不移的决心之曲。\n因为宿敌赋予了我们力量——无论到哪里，都一起前行吧。",
+  "introLines": [
+    "寄宿着觉悟的少女们，坚定不移的决心之曲。",
+    "因为宿敌赋予了我们力量——无论到哪里，都一起前行吧。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

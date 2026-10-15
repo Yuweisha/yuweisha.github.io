@@ -1,0 +1,16 @@
+{
+  "musicId": 1070,
+  "credits": "作词：真崎エリカ\n作曲・编曲：水野谷怜 (Arte Refact)\n歌词提供：卯森\n翻译提供：和好inn年年",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲・编曲：水野谷怜 (Arte Refact)",
+    "歌词提供：卯森",
+    "翻译提供：和好inn年年"
+  ],
+  "intro": "轻柔地、婀娜地……如微风般奔跑的自由之歌。\n旋律时而改变风向，随心吹拂。",
+  "introLines": [
+    "轻柔地、婀娜地……如微风般奔跑的自由之歌。",
+    "旋律时而改变风向，随心吹拂。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

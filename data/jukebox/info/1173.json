@@ -1,0 +1,15 @@
+{
+  "musicId": 1173,
+  "credits": "作词・作曲・编曲：藤井健太郎\n歌词提供：lyhyuhanOfficial\n翻译提供：嘤嘤嘤qwp",
+  "creditLines": [
+    "作词・作曲・编曲：藤井健太郎",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：嘤嘤嘤qwp"
+  ],
+  "intro": "奔跑吧，Frontier！用震撼的全力疾奔撼动世界！\n来吧，究竟是谁将开辟全新的世界！？",
+  "introLines": [
+    "奔跑吧，Frontier！用震撼的全力疾奔撼动世界！",
+    "来吧，究竟是谁将开辟全新的世界！？"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

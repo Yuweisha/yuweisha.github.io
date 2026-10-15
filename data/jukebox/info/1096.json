@@ -1,0 +1,14 @@
+{
+  "musicId": 1096,
+  "credits": "作词：松井洋平\n作曲・编曲：矢鴇つかさ (Arte Refact)",
+  "creditLines": [
+    "作词：松井洋平",
+    "作曲・编曲：矢鴇つかさ (Arte Refact)"
+  ],
+  "intro": "在镜球的照耀下，你就是Dancing Queen──\n带着心中的这份雀跃，手舞足蹈♪又酷又炫地☆热力四射！",
+  "introLines": [
+    "在镜球的照耀下，你就是Dancing Queen──",
+    "带着心中的这份雀跃，手舞足蹈♪又酷又炫地☆热力四射！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

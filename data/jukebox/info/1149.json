@@ -1,0 +1,14 @@
+{
+  "musicId": 1149,
+  "credits": "作词・作曲・编曲：Chinozo\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词・作曲・编曲：Chinozo",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "去皮OK！火候刚好！营养满分！你猜隐藏的调味是什么？\n美味做好啦！来，快来多吃点美食吧！",
+  "introLines": [
+    "去皮OK！火候刚好！营养满分！你猜隐藏的调味是什么？",
+    "美味做好啦！来，快来多吃点美食吧！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

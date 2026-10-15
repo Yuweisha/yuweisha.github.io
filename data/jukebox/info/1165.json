@@ -1,0 +1,16 @@
+{
+  "musicId": 1165,
+  "credits": "作词・作曲・编曲：GAK-amazuti-\n弦乐编曲：宝野聡史\n歌词提供：lyhyuhanOfficial\n翻译提供：特别周的训练员",
+  "creditLines": [
+    "作词・作曲・编曲：GAK-amazuti-",
+    "弦乐编曲：宝野聡史",
+    "歌词提供：lyhyuhanOfficial",
+    "翻译提供：特别周的训练员"
+  ],
+  "intro": "万物所向披靡的优雅旋律，是胜者的绝对证明！\n她的道路无人能挡！只因任何事物在她面前都如微风一般！",
+  "introLines": [
+    "万物所向披靡的优雅旋律，是胜者的绝对证明！",
+    "她的道路无人能挡！只因任何事物在她面前都如微风一般！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,14 @@
+{
+  "musicId": 1106,
+  "credits": "作词・作曲・编曲：武宮健\n歌词提供：樱百合Sakura_Lily",
+  "creditLines": [
+    "作词・作曲・编曲：武宮健",
+    "歌词提供：樱百合Sakura_Lily"
+  ],
+  "intro": "为了达成使命，去钻研磨练、去激昂、热血起来。\n超越现在的自己吧──SUPER STRONG.",
+  "introLines": [
+    "为了达成使命，去钻研磨练、去激昂、热血起来。",
+    "超越现在的自己吧──SUPER STRONG."
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

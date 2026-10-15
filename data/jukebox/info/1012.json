@@ -1,0 +1,15 @@
+{
+  "musicId": 1012,
+  "credits": "作词：真崎エリカ\n作曲：桑原聖 (Arte Refact) 编曲：酒井拓也 (Arte Refact)\n译：雪村あおいaoi（Bilibili）",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲：桑原聖 (Arte Refact) 编曲：酒井拓也 (Arte Refact)",
+    "译：雪村あおいaoi（Bilibili）"
+  ],
+  "intro": "无论奔跑还是玩耍，我们都全力以赴！　用旋律来承载\n大家缤纷的梦想――Let's Go Starting Gate!",
+  "introLines": [
+    "无论奔跑还是玩耍，我们都全力以赴！　用旋律来承载",
+    "大家缤纷的梦想――Let's Go Starting Gate!"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

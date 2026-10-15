@@ -1,0 +1,14 @@
+{
+  "musicId": 1151,
+  "credits": "作词・作曲・编曲：梯拓哉 (Cygames)\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词・作曲・编曲：梯拓哉 (Cygames)",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "向在这个时代出生的所有人宣告——\n来吧，放声欢呼吧。你也将成为『传奇』的暴风眼！",
+  "introLines": [
+    "向在这个时代出生的所有人宣告——",
+    "来吧，放声欢呼吧。你也将成为『传奇』的暴风眼！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

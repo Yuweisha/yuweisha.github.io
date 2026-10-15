@@ -1,0 +1,15 @@
+{
+  "musicId": 1088,
+  "credits": "作词・作曲・编曲：市橋卓也 (Cygames)\n译：Kitasanゞ卫ちゃ\n歌词提供：lyhyuhanOfficial",
+  "creditLines": [
+    "作词・作曲・编曲：市橋卓也 (Cygames)",
+    "译：Kitasanゞ卫ちゃ",
+    "歌词提供：lyhyuhanOfficial"
+  ],
+  "intro": "纯度100%・运动员们的斗志，于歌舞中迸发而出！！\n一场暴热的表演！！敬请期待！！！！",
+  "introLines": [
+    "纯度100%・运动员们的斗志，于歌舞中迸发而出！！",
+    "一场暴热的表演！！敬请期待！！！！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,15 @@
+{
+  "musicId": 1109,
+  "credits": "作词：真崎エリカ\n作曲・编曲：山本恭平 (Arte Refact)\n歌词・翻译提供：朱雀歌剧院",
+  "creditLines": [
+    "作词：真崎エリカ",
+    "作曲・编曲：山本恭平 (Arte Refact)",
+    "歌词・翻译提供：朱雀歌剧院"
+  ],
+  "intro": "倾注祝福！醉于狂乱！禁忌的果实就在不可能的彼端。\n来吧，这是超越神话的破灭之始。",
+  "introLines": [
+    "倾注祝福！醉于狂乱！禁忌的果实就在不可能的彼端。",
+    "来吧，这是超越神话的破灭之始。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

@@ -1,0 +1,15 @@
+{
+  "musicId": 1101,
+  "credits": "作词：磯谷佳江\n作曲：ヤナガワタカオ\n编曲：睦月周平",
+  "creditLines": [
+    "作词：磯谷佳江",
+    "作曲：ヤナガワタカオ",
+    "编曲：睦月周平"
+  ],
+  "intro": "Are you ready!?一旦起跑就不会停下了喔？\n融入节奏之后，Don't look back!!",
+  "introLines": [
+    "Are you ready!?一旦起跑就不会停下了喔？",
+    "融入节奏之后，Don't look back!!"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

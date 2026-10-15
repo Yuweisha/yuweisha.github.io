@@ -1,0 +1,16 @@
+{
+  "musicId": 1137,
+  "credits": "作词：松井洋平\n作曲・编曲：森本貴大\n歌词提供：yuukishizuku\n翻译提供：MikazukiHitori",
+  "creditLines": [
+    "作词：松井洋平",
+    "作曲・编曲：森本貴大",
+    "歌词提供：yuukishizuku",
+    "翻译提供：MikazukiHitori"
+  ],
+  "intro": "用力祈愿，虔诚祈祷！冲向闪耀的未来！\n来吧来吧，请一起高唱！开运招福福来临！",
+  "introLines": [
+    "用力祈愿，虔诚祈祷！冲向闪耀的未来！",
+    "来吧来吧，请一起高唱！开运招福福来临！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

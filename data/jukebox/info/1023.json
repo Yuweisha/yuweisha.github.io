@@ -1,0 +1,16 @@
+{
+  "musicId": 1023,
+  "credits": "作词：corochi (Cygames)\n作曲・编曲：藤井亮太・小高光太郎\n歌词提供：税棋\n翻译提供：Rain_Marginal",
+  "creditLines": [
+    "作词：corochi (Cygames)",
+    "作曲・编曲：藤井亮太・小高光太郎",
+    "歌词提供：税棋",
+    "翻译提供：Rain_Marginal"
+  ],
+  "intro": "经常吵架，也互不道歉――但是，想永远一起欢笑下去。\n这是青涩而又略带苦涩的，我们的友情应援歌。",
+  "introLines": [
+    "经常吵架，也互不道歉――但是，想永远一起欢笑下去。",
+    "这是青涩而又略带苦涩的，我们的友情应援歌。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

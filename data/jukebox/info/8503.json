@@ -1,0 +1,13 @@
+{
+  "musicId": 8503,
+  "credits": "作曲：Ryohei Kohno",
+  "creditLines": [
+    "作曲：Ryohei Kohno"
+  ],
+  "intro": "出道时若播放这首歌将备受瞩目！\n在StarHorse4中听见这首歌是玩家的目标之一。",
+  "introLines": [
+    "出道时若播放这首歌将备受瞩目！",
+    "在StarHorse4中听见这首歌是玩家的目标之一。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

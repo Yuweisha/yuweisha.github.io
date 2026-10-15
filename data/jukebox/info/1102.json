@@ -1,0 +1,15 @@
+{
+  "musicId": 1102,
+  "credits": "作词・作曲・编曲：lull\nブラスアレンジ：TAKT (TRYTONELABO)\n歌词・翻译提供：18歳的優妮前輩",
+  "creditLines": [
+    "作词・作曲・编曲：lull",
+    "ブラスアレンジ：TAKT (TRYTONELABO)",
+    "歌词・翻译提供：18歳的優妮前輩"
+  ],
+  "intro": "还很渺小的我，在心中怀抱的是像苫小牧的天空一样广大的梦想！\n想传达给最重要的你♪要更加更～加喜爱苫小牧！",
+  "introLines": [
+    "还很渺小的我，在心中怀抱的是像苫小牧的天空一样广大的梦想！",
+    "想传达给最重要的你♪要更加更～加喜爱苫小牧！"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}

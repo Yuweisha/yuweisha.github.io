@@ -1,0 +1,15 @@
+{
+  "musicId": 1069,
+  "credits": "作词：森由里子\n作曲・编曲：滝澤俊輔 (TRYTONELABO)\n歌词・翻译提供：Halation95",
+  "creditLines": [
+    "作词：森由里子",
+    "作曲・编曲：滝澤俊輔 (TRYTONELABO)",
+    "歌词・翻译提供：Halation95"
+  ],
+  "intro": "比起未来、比起过去，更要把握燃烧生命的现在――\n心怀对那刹那光辉的祈祷，玻璃的叙事曲。",
+  "introLines": [
+    "比起未来、比起过去，更要把握燃烧生命的现在――",
+    "心怀对那刹那光辉的祈祷，玻璃的叙事曲。"
+  ],
+  "source": "text_data_dict.json 类别 17/128 + lyrics json lyricUser/transUser"
+}
