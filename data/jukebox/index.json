@@ -503,7 +503,7 @@
    "hasLyrics": true,
    "durationMs": 261333,
    "sampleCount": 11524800,
-   "chara": null
+   "chara": "摩耶重炮"
   },
   {
    "musicId": 1072,
@@ -723,7 +723,7 @@
   },
   {
    "musicId": 1100,
-   "title": "Make debut! (モリシー (Awesome City Club) Remix)",
+   "title": "Make debut!(Remix)",
    "cover": "1100.png",
    "hasLyrics": true,
    "durationMs": 251067,
@@ -746,7 +746,7 @@
    "hasLyrics": true,
    "durationMs": 226080,
    "sampleCount": 9970128,
-   "chara": null
+   "chara": "北港火山"
   },
   {
    "musicId": 1103,
@@ -827,7 +827,7 @@
    "hasLyrics": true,
    "durationMs": 222920,
    "sampleCount": 9830772,
-   "chara": null
+   "chara": "名将怒涛"
   },
   {
    "musicId": 1112,
@@ -885,12 +885,12 @@
   },
   {
    "musicId": 1118,
-   "title": "▷▷▷▶ぶっとび かっとび 全開エンジン！",
+   "title": "▷▶ぶっとび かっとび 全開エンジン！",
    "cover": "1118.png",
    "hasLyrics": true,
    "durationMs": 219560,
    "sampleCount": 9682607,
-   "chara": null
+   "chara": "双涡轮"
   },
   {
    "musicId": 1119,
@@ -980,7 +980,7 @@
    "hasLyrics": true,
    "durationMs": 259333,
    "sampleCount": 11436600,
-   "chara": null
+   "chara": "北部玄驹"
   },
   {
    "musicId": 1129,
@@ -989,7 +989,7 @@
    "hasLyrics": true,
    "durationMs": 326133,
    "sampleCount": 14382480,
-   "chara": null
+   "chara": "里见光钻"
   },
   {
    "musicId": 1130,
@@ -1007,7 +1007,7 @@
    "hasLyrics": true,
    "durationMs": 323587,
    "sampleCount": 14270172,
-   "chara": null
+   "chara": "高尚骏逸"
   },
   {
    "musicId": 1132,
@@ -1101,12 +1101,12 @@
   },
   {
    "musicId": 1142,
-   "title": "シャドーロールの誓い (The Solid Revision)",
+   "title": "シャドーロールの誓い",
    "cover": "1142.png",
    "hasLyrics": true,
    "durationMs": 252173,
    "sampleCount": 11120844,
-   "chara": null
+   "chara": "成田白仁"
   },
   {
    "musicId": 1143,
@@ -1155,7 +1155,7 @@
   },
   {
    "musicId": 1148,
-   "title": "宇宙走娘＜コスモピュエラ＞　銀河冒険譚",
+   "title": "宇宙走娘銀河冒険譚",
    "cover": "1148.png",
    "hasLyrics": true,
    "durationMs": 282173,
@@ -1448,7 +1448,7 @@
    "hasLyrics": true,
    "durationMs": 226442,
    "sampleCount": 9986111,
-   "chara": null
+   "chara": "真机怜"
   },
   {
    "musicId": 1183,
@@ -1466,7 +1466,7 @@
    "hasLyrics": true,
    "durationMs": 203840,
    "sampleCount": 9784320,
-   "chara": null
+   "chara": "极峰"
   },
   {
    "musicId": 1185,
@@ -1484,7 +1484,7 @@
    "hasLyrics": true,
    "durationMs": 232177,
    "sampleCount": 10239023,
-   "chara": null
+   "chara": "东商变革"
   },
   {
    "musicId": 1187,
@@ -1493,7 +1493,7 @@
    "hasLyrics": true,
    "durationMs": 191838,
    "sampleCount": 8460074,
-   "chara": null
+   "chara": "川上公主"
   },
   {
    "musicId": 1188,
@@ -1502,7 +1502,7 @@
    "hasLyrics": true,
    "durationMs": 180083,
    "sampleCount": 7941646,
-   "chara": null
+   "chara": "迷人景致"
   },
   {
    "musicId": 1189,
@@ -1511,7 +1511,7 @@
    "hasLyrics": true,
    "durationMs": 184223,
    "sampleCount": 8124255,
-   "chara": null
+   "chara": "创世驹"
   },
   {
    "musicId": 1190,
@@ -1560,12 +1560,12 @@
   },
   {
    "musicId": 1200,
-   "title": "【おやすみ配信】みんなとラヴ補充した～い",
+   "title": "みんなとラヴ補充した～い",
    "cover": "1200.png",
    "hasLyrics": true,
    "durationMs": 238160,
    "sampleCount": 10502856,
-   "chara": null
+   "chara": "唯独爱你"
   },
   {
    "musicId": 1201,
@@ -1574,7 +1574,7 @@
    "hasLyrics": true,
    "durationMs": 270273,
    "sampleCount": 11919050,
-   "chara": null
+   "chara": "洛林军歌"
   },
   {
    "musicId": 1202,
@@ -1583,7 +1583,7 @@
    "hasLyrics": true,
    "durationMs": 211361,
    "sampleCount": 9321010,
-   "chara": null
+   "chara": "爱丽数码"
   },
   {
    "musicId": 1203,
@@ -1592,7 +1592,7 @@
    "hasLyrics": true,
    "durationMs": 314874,
    "sampleCount": 13885933,
-   "chara": null
+   "chara": "比萨胜驹"
   },
   {
    "musicId": 1204,
@@ -1601,7 +1601,7 @@
    "hasLyrics": true,
    "durationMs": 224985,
    "sampleCount": 9921839,
-   "chara": null
+   "chara": "放声欢呼"
   },
   {
    "musicId": 1205,
@@ -1637,7 +1637,7 @@
    "hasLyrics": true,
    "durationMs": 292161,
    "sampleCount": 12884299,
-   "chara": null
+   "chara": "黄金旅程"
   },
   {
    "musicId": 1209,
