@@ -229,14 +229,24 @@ async function loadProject(p){
 }
 
 /* ---------- 混音图 ---------- */
-function schedule(param,pts,map,maxT,smooth){
+function schedule(param,pts,map,maxT,smooth,when,startSec){
+  /* when：本次起播的上下文时间；startSec：工程内起播位置（秒）。
+     自动化点用的是工程时间，必须换算成上下文时间，否则从中间起播/暂停续播时
+     增益会停留在工程开头的值（典型症状：主唱整段没人声）。 */
   param.cancelScheduledValues(0);
   if(!pts.length)return;
-  param.setValueAtTime(map(pts[0].v),0);
-  for(let i=1;i<pts.length;i++){
-    const t=Math.min(maxT,Math.max(0,pts[i].t));
-    if(smooth&&t>0)param.setTargetAtTime(map(pts[i].v),t,0.008);
-    else param.setValueAtTime(map(pts[i].v),t);
+  when=Number(when)||0;startSec=Number(startSec)||0;
+  const at=t=>Math.max(0,when+(t-startSec));
+  let init=pts[0].v;
+  for(const p of pts){if(p.t<=startSec+1e-9)init=p.v;else break}
+  param.setValueAtTime(map(init),Math.max(0,when));
+  for(let i=0;i<pts.length;i++){
+    const p=pts[i];
+    if(p.t<=startSec+1e-9)continue;                 // 已播放过的段：只用来定初值
+    const t=Math.min(maxT,Math.max(startSec,p.t));
+    const tt=at(t);
+    if(smooth&&tt>Math.max(0,when))param.setTargetAtTime(map(p.v),tt,0.008);
+    else param.setValueAtTime(map(p.v),tt);
   }
 }
 function series(arr,key,fallback){
@@ -250,7 +260,7 @@ function series(arr,key,fallback){
 function dbGain(db){return db<=-60?0:Math.pow(10,db/20)}
 function anySolo(){return project.tracks.some(t=>t.solo)}
 
-function createTrackGraph(ctx,b,t,maxT,smooth){
+function createTrackGraph(ctx,b,t,maxT,smooth,when,startSec){
   const startOffsetSec=((Number(t.startOffsetMs)||0)+(Number(t.timelineStartSample)||0)/sampleRate*1000)/1000;
   const src=ctx.createBufferSource();src.buffer=b;
   const tg=ctx.createGain();
@@ -260,9 +270,9 @@ function createTrackGraph(ctx,b,t,maxT,smooth){
 
   const vp=series(t.volumeAutomation,"volumeDb",t.volumeDb??0);
   const pp=series(t.pannerAutomation,"panner",t.panner??0);
-  schedule(tg.gain,vp,dbGain,maxT,smooth);
+  schedule(tg.gain,vp,dbGain,maxT,smooth,when,startSec);
 
-  if(pan){ schedule(pan.pan,pp,x=>Math.max(-1,Math.min(1,x)),maxT,smooth); src.connect(tg).connect(pan).connect(user); }
+  if(pan){ schedule(pan.pan,pp,x=>Math.max(-1,Math.min(1,x)),maxT,smooth,when,startSec); src.connect(tg).connect(pan).connect(user); }
   else { src.connect(tg).connect(user); }
   return{src,last:user,nodes:[tg,pan,user].filter(Boolean),startOffsetSec};
 }
@@ -399,7 +409,7 @@ async function playPlayback(){
   for(const t of project.tracks){
     const b=buffers.get(t.id);
     if(!b)continue;
-    const g=createTrackGraph(audioCtx,b,t,durationSec,smooth);
+    const g=createTrackGraph(audioCtx,b,t,durationSec,smooth,when,start);
     g.last.connect(masterGain);graph.push(g);
     const off=start-g.startOffsetSec;
     if(off<0){ try{g.src.start(when-off,0)}catch(e){log("轨道 "+t.id+" 启动失败："+e.message)} continue; }
@@ -448,7 +458,7 @@ async function renderProjectBuffer(){
   for(const t of project.tracks){
     const b=buffers.get(t.id);
     if(!b)continue;
-    const g=createTrackGraph(off,b,t,durationSec,smooth);
+    const g=createTrackGraph(off,b,t,durationSec,smooth,0,0);
     g.last.connect(master);
     if(g.startOffsetSec>0)g.src.start(g.startOffsetSec,0);else g.src.start(0);
     n++;
@@ -600,6 +610,19 @@ function resetPlayer(){
   const ly=$("lyrics"); if(ly)ly.innerHTML="";
   log("已重置播放器（等待新的 Live）");
 }
-window.__umaPlayer={load:(p)=>{loadedProject=p;return loadProject(p)},play:playPlayback,pause:pausePlayback,playOrBuild,reset:resetPlayer};
+/* 只重置进度（参数改动时用）：停播、回到 0，但保留已解码的音频，下次播放按新工程重建 */
+function resetProgress(){
+  const pausing=(async()=>{try{await pausePlayback()}catch(e){}})();
+  if(raf){cancelAnimationFrame(raf);raf=0}
+  pausedAt=0;startedAt=0;
+  const c=$("current");if(c)c.textContent="00:00.000";
+  const s=$("seek");if(s)s.value="0";
+  paintSeek(0);
+  syncLyrics(0);
+  const p=$("play");if(p)p.disabled=false;
+  pausing.then(()=>{setState("ready","准备就绪")});
+}
+window.__umaPlayer={load:(p)=>{loadedProject=p;return loadProject(p)},play:playPlayback,pause:pausePlayback,playOrBuild,reset:resetPlayer,resetProgress,
+  _gains:()=>graph.map(g=>({gain:g.nodes[0]?g.nodes[0].gain.value:null,pan:g.nodes[1]?g.nodes[1].pan.value:null}))};
 log("播放器 已就绪");
 })();

@@ -20,7 +20,7 @@
   var scVoice = null;                            // 特殊演出的声部版本（带 voices 的曲子，如 1151 的男声/女声）
   /* 全曲同一角色：开启后所有槽位改用同一个角色；castBefore 记录开启前的逐槽选角以便还原 */
   var sameCharId = null, castBefore = null;
-  var sfx = false;                               // 「演出音效」复选框：勾上用含演出音效的那版伴奏（bgm_01）
+  var sfx = true;                                // 「演出音效」复选框：默认勾上，用含演出音效的那版伴奏（bgm_01）
   var openCombo = null;
 
   /** 时长查表：优先指定 bgm，其次 bgm_01，最后退回该曲剩下的任一值。
@@ -188,6 +188,11 @@
       b.classList.toggle("active", b.dataset.mode === mode);
     });
     document.body.classList.toggle("jb-mode", mode === "jukebox");
+    /* 切库（Live ↔ 唱片机）先停播并清空工程：否则上一个工程的轨道数/进度会留在新标签页下 */
+    if (window.__umaPlayer && typeof window.__umaPlayer.reset === "function") {
+      try { window.__umaPlayer.reset(); } catch (e) {}
+    }
+    $("outMsg").textContent = "";
     if (mode === "jukebox") await ensureJukeboxIndex();
     renderList($("search").value);
   }
@@ -231,6 +236,8 @@
   /* ---------------- 选中曲目 ---------------- */
 
   async function selectSong(musicId) {
+    $("outMsg").textContent = "";        // 清掉上一条（可能是唱片机的）提示
+    curJb = null;
     curSong = catalog.songs.find(function (s) { return s.musicId === musicId; });
     detail = await getJSON(DATA + "songs/" + musicId + ".json");
     await loadSongInfo(musicId);
@@ -298,7 +305,8 @@
     var box = $("sfxSwitch");
     var has = !!bgmSfxId(detail);
     if (box) box.hidden = !has;
-    if (!has) { sfx = false; if ($("bgmSfx")) $("bgmSfx").checked = false; }
+    if (has) { if ($("bgmSfx")) $("bgmSfx").checked = !!sfx; }
+    else { sfx = false; if ($("bgmSfx")) $("bgmSfx").checked = false; }
     applyBgm();
   }
 
@@ -681,6 +689,10 @@
       specialCut: !!C.specialCutOf(detail), specialCutDefault: defaultInterlude, specialCutVoice: scVoice,
       durationMs: null, streams: songStreams, samples: songSamples, rates: songRates
     });
+    /* 任何参数改动（选角/伴奏/平衡/特殊演出…）都把播放进度归零 */
+    if (window.__umaPlayer && typeof window.__umaPlayer.resetProgress === "function") {
+      try { window.__umaPlayer.resetProgress(); } catch (e) {}
+    }
     /* 摘要与 JSON 预览已按需求移除：这里只保留 current（送入混音器要用） */
   }
 
