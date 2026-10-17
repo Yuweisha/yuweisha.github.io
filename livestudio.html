@@ -319,6 +319,11 @@ a{color:var(--accent)}
         <div id="outMsg" class="small" style="margin-top:8px"></div>
       </div>
 
+      <style>
+        /* 歌词卡插到播放控件与声部之间时去掉外层卡片外观，避免出现嵌套边框 */
+        #lyricsCard.lyrics-inline{border:0;background:transparent;box-shadow:none;padding:0;margin:14px 0 2px}
+        #lyricsCard.lyrics-inline #lyrics{max-height:240px}
+      </style>
       <div id="lyricsCard" class="card" style="display:none">
         <div class="row" style="justify-content:space-between">
           <div style="font-weight:700">歌词</div>
@@ -333,7 +338,7 @@ a{color:var(--accent)}
 </div>
 <script src="js/core.js?v=315b31a0"></script>
 <script src="js/app.js?v=54d30df3"></script>
-<script src="js/player.js?v=5964a855"></script>
+<script src="js/player.js?v=2470c355"></script>
 <footer class="site-footer">
   <div>© 2026 Yuweisha</div>
   <div class="footer-links"><a href="https://github.com/" target="_blank" rel="noopener">Powered By GitHub</a></div>

@@ -220,12 +220,31 @@ async function loadProject(p){
 
     /* 解析后的音轨卡已按需求移除：跳过表格构建 */
     log("工程："+project.tracks.length+" 轨 / "+sampleRate+" Hz / "+(durationSec?durationSec.toFixed(3)+" 秒":"时长待实测"));
-    /* 歌词只依赖工程本身，先出歌词再等音频预载（本地取不到 R2 时也能看到歌词） */
-    $("lyricsCard").style.display="";
+    /* 歌词只依赖工程本身，先把内容准备好；卡片等按下播放后再显示（插到播放控件与声部之间） */
+    $("lyricsCard").style.display="none";
     await loadLyrics();
+    mountLyricsInline();          // 先就位但保持隐藏，等按下播放再显示
     await preload();
   }catch(e){log("错误："+(e.stack||e));alert(e.message||String(e))}
   finally{}
+}
+
+/** 把歌词卡插到「播放控件」与「声部槽位」之间，并去掉外层卡片边框 */
+function mountLyricsInline(){
+  const card=$("lyricsCard"),slot=$("slotBlock");
+  if(!card)return false;
+  if(!card.querySelector("#lyrics")||!card.querySelector("#lyrics").children.length)return false;
+  if(slot&&slot.parentNode&&card.previousElementSibling!==$("player")){
+    if(!card._homeParent){card._homeParent=card.parentNode;card._homeNext=card.nextSibling}
+    slot.parentNode.insertBefore(card,slot);
+    card.classList.add("lyrics-inline");
+  }
+  return true;
+}
+/** 按下播放后：歌词卡出现在播放控件与声部之间（声部及以下自动下移） */
+function showLyricsInline(){
+  if(!mountLyricsInline())return;
+  $("lyricsCard").style.display="";
 }
 
 /* ---------- 混音图 ---------- */
@@ -419,6 +438,7 @@ async function playPlayback(){
   startedAt=when;pausedAt=start;
   await audioCtx.resume();
   setState("playing","播放中");$("play").disabled=true;
+  showLyricsInline();
   cancelAnimationFrame(raf);tick();
 }
 async function pausePlayback(){
@@ -607,6 +627,11 @@ function resetPlayer(){
   const st=$("state"); if(st)st.textContent="准备就绪";
   setState("ready","准备就绪");
   ["summary","lyricsCard"].forEach(id=>{const el=$(id);if(el)el.style.display="none"});
+  const lyc=$("lyricsCard");
+  if(lyc&&lyc.classList.contains("lyrics-inline")){
+    lyc.classList.remove("lyrics-inline");
+    if(lyc._homeParent)lyc._homeParent.insertBefore(lyc,lyc._homeNext||null);
+  }
   const ly=$("lyrics"); if(ly)ly.innerHTML="";
   log("已重置播放器（等待新的 Live）");
 }
