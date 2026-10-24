@@ -138,9 +138,9 @@
 
   /* ---------------- 唱片机（点唱机）标签 ---------------- */
 
-  /** 封面与音频都在 R2：<媒体基址>/media/jukebox/… */
-  function jbCoverUrl(id) { return C.mediaBaseDefault() + "/media/jukebox/covers/" + id + ".png"; }
-  function jbAudioUrl(id) { return C.mediaBaseDefault() + "/media/jukebox/" + id + ".mp3"; }
+  /** 整曲音频与封面都在 <媒体基址>/media/jukefull/…（原 /media/jukebox/ 整体改名） */
+  function jbCoverUrl(id) { return C.mediaBaseDefault() + "/media/jukefull/covers/" + id + ".png"; }
+  function jbAudioUrl(id) { return C.mediaBaseDefault() + "/media/jukefull/" + id + ".mp3"; }
 
   async function ensureJukeboxIndex() {
     if (jbIndex) return jbIndex;
