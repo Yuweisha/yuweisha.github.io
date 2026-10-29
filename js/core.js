@@ -286,7 +286,14 @@
       var active = !!(e && (e.waveIndex === wave));
       var v;
       if (kind === "volumeDb") {
-        var lin = active ? slotVolumeLin(p, slot) * balanceFactor(activeCount(p, castSlots), balance) : 0;
+        var lin = 0;
+        if (active) {
+          lin = slotVolumeLin(p, slot);
+          /* 按轨补偿（官方 parts 里人声整体偏小）：
+             wave0（主唱/齐唱）= +4 dB，wave1（和声）= +2 dB */
+          lin *= (wave === 0 ? 1.5849 : 1.2589);   // 10^(4/20) / 10^(2/20)
+          lin *= balanceFactor(activeCount(p, castSlots), balance);
+        }
         v = linToDb(lin);
       } else {
         v = active ? slotPan(p, slot) : 0;

@@ -648,6 +648,7 @@ function resetProgress(){
   pausing.then(()=>{setState("ready","准备就绪")});
 }
 window.__umaPlayer={load:(p)=>{loadedProject=p;return loadProject(p)},play:playPlayback,pause:pausePlayback,playOrBuild,reset:resetPlayer,resetProgress,
-  _gains:()=>graph.map(g=>({gain:g.nodes[0]?g.nodes[0].gain.value:null,pan:g.nodes[1]?g.nodes[1].pan.value:null}))};
+  _gains:()=>graph.map(g=>({gain:g.nodes[0]?g.nodes[0].gain.value:null,pan:g.nodes[1]?g.nodes[1].pan.value:null,
+    user:g.nodes[2]?g.nodes[2].gain.value:null}))};
 log("播放器 已就绪");
 })();

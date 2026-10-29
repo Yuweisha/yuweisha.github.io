@@ -1,0 +1,17 @@
+{
+  "liveId": 1195,
+  "titleJa": "繚乱縁舞",
+  "titleZh": "缭乱缘舞",
+  "credits": "作词・作曲：安部大希-amazuti-・GAK-amazuti-\n编曲：GAK-amazuti-\n译：yingyingyingqwq",
+  "creditLines": [
+    "作词・作曲：安部大希-amazuti-・GAK-amazuti-",
+    "编曲：GAK-amazuti-",
+    "译：yingyingyingqwq"
+  ],
+  "intro": "起舞、许愿、高歌、祈祷，直至心意传抵苍穹。\n在舞台上响彻回荡的汝之名，定将为这片大地带来光明。",
+  "introLines": [
+    "起舞、许愿、高歌、祈祷，直至心意传抵苍穹。",
+    "在舞台上响彻回荡的汝之名，定将为这片大地带来光明。"
+  ],
+  "source": "text_data_dict.json 类别 16/17/128"
+}

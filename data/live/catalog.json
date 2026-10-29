@@ -10988,6 +10988,111 @@
    "hasLyrics": true,
    "hasPart": true,
    "detail": "data/live/songs/1193.json"
+  },
+  {
+   "musicId": 1195,
+   "title": {
+    "ja": "繚乱縁舞",
+    "zh": null
+   },
+   "live": {
+    "sort": 24,
+    "musicType": 1,
+    "songCharaType": 2,
+    "memberCount": 15
+   },
+   "jacket": "data/live/jackets/1195.png",
+   "bgm": [
+    "bgm_01",
+    "bgm_02"
+   ],
+   "characters": [
+    {
+     "charaId": 1003,
+     "nameJa": "トウカイテイオー",
+     "nameZh": "东海帝王"
+    },
+    {
+     "charaId": 1009,
+     "nameJa": "ダイワスカーレット",
+     "nameZh": "大和赤骥"
+    },
+    {
+     "charaId": 1011,
+     "nameJa": "グラスワンダー",
+     "nameZh": "草上飞"
+    },
+    {
+     "charaId": 1017,
+     "nameJa": "シンボリルドルフ",
+     "nameZh": "鲁道夫象征"
+    },
+    {
+     "charaId": 1021,
+     "nameJa": "タマモクロス",
+     "nameZh": "玉藻十字"
+    },
+    {
+     "charaId": 1024,
+     "nameJa": "マヤノトップガン",
+     "nameZh": "摩耶重炮"
+    },
+    {
+     "charaId": 1029,
+     "nameJa": "ユキノビジン",
+     "nameZh": "雪之美人"
+    },
+    {
+     "charaId": 1034,
+     "nameJa": "イナリワン",
+     "nameZh": "稻荷一"
+    },
+    {
+     "charaId": 1039,
+     "nameJa": "カワカミプリンセス",
+     "nameZh": "川上公主"
+    },
+    {
+     "charaId": 1040,
+     "nameJa": "ゴールドシチー",
+     "nameZh": "黄金城市"
+    },
+    {
+     "charaId": 1089,
+     "nameJa": "シュヴァルグラン",
+     "nameZh": "高尚骏逸"
+    },
+    {
+     "charaId": 1096,
+     "nameJa": "ノーリーズン",
+     "nameZh": "莫名其妙"
+    },
+    {
+     "charaId": 1100,
+     "nameJa": "ワンダーアキュート",
+     "nameZh": "奇锐骏"
+    },
+    {
+     "charaId": 1105,
+     "nameJa": "ネオユニヴァース",
+     "nameZh": "新宇宙"
+    },
+    {
+     "charaId": 1128,
+     "nameJa": "ブラストワンピース",
+     "nameZh": "防爆装束"
+    },
+    {
+     "charaId": 1135,
+     "nameJa": "ステイゴールド",
+     "nameZh": "黄金旅程"
+    },
+    {
+     "charaId": 1149,
+     "nameJa": "ファレノプシス",
+     "nameZh": "蝴蝶兰"
+    }
+   ]
   }
  ]
 }
